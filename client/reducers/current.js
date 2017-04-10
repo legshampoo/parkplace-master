@@ -14,7 +14,7 @@ export function current(state=initialState.current, action){
 
         return Object.assign({}, state, {
           ['currentUnit'] : action.unit
-        })
+      })
 
     default:
       return state;

@@ -3,6 +3,7 @@ import React from 'react'
 import TextLink from './TextLink'
 import ControlPanel from './ControlPanel';
 import NextPageButton from './NextPageButton';
+import dashboardData from '../data/controlPanelVideo'
 
 class T extends React.Component {
   render(){
@@ -17,7 +18,7 @@ class T extends React.Component {
           <TextLink path='/filler' displayText='VIDEO #3' allowAddToFolio={false} />
           <TextLink path='/filler' displayText='SLIDESHOW #2' allowAddToFolio={false} />
         </div>
-        <ControlPanel />
+        <ControlPanel dashboardData={dashboardData} type='video-controls'/>
         <NextPageButton />
       </div>
     )

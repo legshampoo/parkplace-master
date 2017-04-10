@@ -1,0 +1,1280 @@
+[
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "6"
+      }
+    ],
+    "media": [
+      {
+        "name": "6W Plan",
+        "pan": "",
+        "half_screen": "assets/residences/6W Floor Plan Half.jpg",
+        "full_screen": "assets/residences/6W Floor Plan.jpg",
+        "residence": 1,
+        "type": 1
+      },
+      {
+        "name": "Living/Dining",
+        "pan": "assets/residences/6W Pan Living Dining.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 1,
+        "type": 2
+      },
+      {
+        "name": "Kitchen",
+        "pan": "assets/residences/6W Kitchen.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 1,
+        "type": 2
+      },
+      {
+        "name": "Master Bedroom",
+        "pan": "assets/residences/6W Master Bedroom.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 1,
+        "type": 2
+      },
+      {
+        "name": "Master Bathroom",
+        "pan": "assets/residences/6W Bathroom.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 1,
+        "type": 2
+      },
+      {
+        "name": "View",
+        "pan": "assets/residences/6W View.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 1,
+        "type": 2
+      }
+    ],
+    "unit": "Unit 6W",
+    "name": "6W",
+    "line": "w",
+    "bedrooms": 1,
+    "bathrooms": "1.0",
+    "interior_square_feet": "880.00",
+    "interior_square_meters": "81.750",
+    "terrace": true,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 1
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "6"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 6E",
+    "name": "6E",
+    "line": "e",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "2180.00",
+    "interior_square_meters": "202.530",
+    "terrace": true,
+    "exterior_square_feet": "279.00",
+    "exterior_square_meters": "26.85",
+    "price": "0.00",
+    "type": 2
+  },
+  {
+    "availability": "Unavailable",
+    "floors": [
+      {
+        "name": "7"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 7W",
+    "name": "7W",
+    "line": "w",
+    "bedrooms": 1,
+    "bathrooms": "1.0",
+    "interior_square_feet": "880.00",
+    "interior_square_meters": "81.750",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 1
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "7"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 7E",
+    "name": "7E",
+    "line": "e",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "1954.00",
+    "interior_square_meters": "181.530",
+    "terrace": true,
+    "exterior_square_feet": "235.00",
+    "exterior_square_meters": "21.83",
+    "price": "0.00",
+    "type": 2
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "8"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 8W",
+    "name": "8W",
+    "line": "w",
+    "bedrooms": 1,
+    "bathrooms": "1.0",
+    "interior_square_feet": "880.00",
+    "interior_square_meters": "81.750",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 1
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "8"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 8E",
+    "name": "8E",
+    "line": "e",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "1958.00",
+    "interior_square_meters": "181.900",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 2
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "9"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 9W",
+    "name": "9W",
+    "line": "w",
+    "bedrooms": 1,
+    "bathrooms": "1.0",
+    "interior_square_feet": "880.00",
+    "interior_square_meters": "81.750",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 1
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "9"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 9E",
+    "name": "9E",
+    "line": "e",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "1958.00",
+    "interior_square_meters": "181.900",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 2
+  },
+  {
+    "availability": "Unavailable",
+    "floors": [
+      {
+        "name": "10"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 10W",
+    "name": "10W",
+    "line": "w",
+    "bedrooms": 1,
+    "bathrooms": "1.0",
+    "interior_square_feet": "880.00",
+    "interior_square_meters": "81.750",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 1
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "10"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 10E",
+    "name": "10E",
+    "line": "e",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "1958.00",
+    "interior_square_meters": "181.900",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 2
+  },
+  {
+    "availability": "Unavailable",
+    "floors": [
+      {
+        "name": "11"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 11W",
+    "name": "11W",
+    "line": "w",
+    "bedrooms": 1,
+    "bathrooms": "1.0",
+    "interior_square_feet": "880.00",
+    "interior_square_meters": "81.750",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 1
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "11"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 11E",
+    "name": "11E",
+    "line": "e",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "1958.00",
+    "interior_square_meters": "181.900",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 2
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "12"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 12W",
+    "name": "12W",
+    "line": "w",
+    "bedrooms": 1,
+    "bathrooms": "1.0",
+    "interior_square_feet": "880.00",
+    "interior_square_meters": "81.750",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 1
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "12"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 12E",
+    "name": "12E",
+    "line": "e",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "1958.00",
+    "interior_square_meters": "181.900",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 2
+  },
+  {
+    "availability": "Unavailable",
+    "floors": [
+      {
+        "name": "14"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 14W",
+    "name": "14W",
+    "line": "w",
+    "bedrooms": 1,
+    "bathrooms": "1.0",
+    "interior_square_feet": "880.00",
+    "interior_square_meters": "81.750",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 1
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "14"
+      }
+    ],
+    "media": [
+      {
+        "name": "14E Plan",
+        "pan": "",
+        "half_screen": "assets/residences/14E Floor Plan Half.jpg",
+        "full_screen": "assets/residences/14E Floor Plan.jpg",
+        "residence": 16,
+        "type": 1
+      },
+      {
+        "name": "Bedroom",
+        "pan": "assets/residences/14E Pan Bedroom.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 16,
+        "type": 2
+      },
+      {
+        "name": "Terrace",
+        "pan": "assets/residences/14E Pan Terrace Northeast.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 16,
+        "type": 2
+      },
+      {
+        "name": "Living/Dining",
+        "pan": "assets/residences/14E Pan Living Dining.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 16,
+        "type": 2
+      },
+      {
+        "name": "LT LRDR Kitchen",
+        "pan": "",
+        "half_screen": "assets/residences/LT LRDR Kitchen Half.jpg",
+        "full_screen": "assets/residences/LT LRDR Kitchen.jpg",
+        "residence": 16,
+        "type": 3
+      }
+    ],
+    "unit": "Unit 14E",
+    "name": "14E",
+    "line": "e",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "1958.00",
+    "interior_square_meters": "181.900",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 2
+  },
+  {
+    "availability": "Unavailable",
+    "floors": [
+      {
+        "name": "15"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 15W",
+    "name": "15W",
+    "line": "e",
+    "bedrooms": 1,
+    "bathrooms": "1.0",
+    "interior_square_feet": "880.00",
+    "interior_square_meters": "81.750",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 1
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "15"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 15E",
+    "name": "15E",
+    "line": "e",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "1958.00",
+    "interior_square_meters": "181.900",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 2
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "17"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 17W",
+    "name": "17W",
+    "line": "w",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1565.00",
+    "interior_square_meters": "145.390",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 3
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "17"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 17E",
+    "name": "17E",
+    "line": "e",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1512.00",
+    "interior_square_meters": "140.470",
+    "terrace": true,
+    "exterior_square_feet": "372.00",
+    "exterior_square_meters": "34.56",
+    "price": "0.00",
+    "type": 4
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "18"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 18W",
+    "name": "18W",
+    "line": "w",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1565.00",
+    "interior_square_meters": "145.390",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 3
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "18"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 18E",
+    "name": "18E",
+    "line": "e",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1512.00",
+    "interior_square_meters": "140.470",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 4
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "19"
+      }
+    ],
+    "media": [
+      {
+        "name": "19W Plan",
+        "pan": "",
+        "half_screen": "assets/residences/19W Floor Plan Half.jpg",
+        "full_screen": "assets/residences/19W Floor Plan.jpg",
+        "residence": 23,
+        "type": 1
+      },
+      {
+        "name": "Bedroom",
+        "pan": "assets/residences/19W Pan Bedroom.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 23,
+        "type": 2
+      },
+      {
+        "name": "Living/Dining",
+        "pan": "assets/residences/19W Pan Living Dining.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 23,
+        "type": 2
+      },
+      {
+        "name": "LT LRDR Kitchen",
+        "pan": "",
+        "half_screen": "assets/residences/LT LRDR Kitchen Half.jpg",
+        "full_screen": "assets/residences/LT LRDR Kitchen.jpg",
+        "residence": 23,
+        "type": 3
+      }
+    ],
+    "unit": "Unit 19W",
+    "name": "19W",
+    "line": "w",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1565.00",
+    "interior_square_meters": "145.390",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 3
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "19"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 19E",
+    "name": "19E",
+    "line": "e",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1512.00",
+    "interior_square_meters": "140.470",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 4
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "20"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 20W",
+    "name": "20W",
+    "line": "w",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1565.00",
+    "interior_square_meters": "145.390",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 3
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "20"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 20E",
+    "name": "20E",
+    "line": "e",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1512.00",
+    "interior_square_meters": "140.470",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 4
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "21"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 21W",
+    "name": "21W",
+    "line": "w",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1565.00",
+    "interior_square_meters": "145.390",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 3
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "21"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 21E",
+    "name": "21E",
+    "line": "e",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1512.00",
+    "interior_square_meters": "140.470",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 4
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "22"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 22W",
+    "name": "22W",
+    "line": "w",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1565.00",
+    "interior_square_meters": "145.390",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 3
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "22"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 22E",
+    "name": "22E",
+    "line": "e",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1512.00",
+    "interior_square_meters": "140.470",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 4
+  },
+  {
+    "availability": "Unavailable",
+    "floors": [
+      {
+        "name": "23"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 23W",
+    "name": "23W",
+    "line": "w",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1565.00",
+    "interior_square_meters": "145.390",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 3
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "23"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 23E",
+    "name": "23E",
+    "line": "e",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1512.00",
+    "interior_square_meters": "140.470",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 4
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "24"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 24",
+    "name": "24",
+    "line": "f",
+    "bedrooms": 4,
+    "bathrooms": "4.5",
+    "interior_square_feet": "3562.00",
+    "interior_square_meters": "303.050",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 5
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "25"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 25",
+    "name": "25",
+    "line": "f",
+    "bedrooms": 4,
+    "bathrooms": "4.5",
+    "interior_square_feet": "3562.00",
+    "interior_square_meters": "303.050",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 5
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "26"
+      }
+    ],
+    "media": [
+      {
+        "name": "26 Plan",
+        "pan": "",
+        "half_screen": "assets/residences/26 Floor Plan Half.jpg",
+        "full_screen": "assets/residences/26 Floor Plan.jpg",
+        "residence": 35,
+        "type": 1
+      },
+      {
+        "name": "Bedroom",
+        "pan": "assets/residences/26 Pan Bedroom.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 35,
+        "type": 2
+      },
+      {
+        "name": "Living/Dining",
+        "pan": "assets/residences/26 Pan Living Dining.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 35,
+        "type": 2
+      },
+      {
+        "name": "LT LRDR Kitchen",
+        "pan": "",
+        "half_screen": "assets/residences/LT LRDR Kitchen Half.jpg",
+        "full_screen": "assets/residences/LT LRDR Kitchen.jpg",
+        "residence": 35,
+        "type": 3
+      }
+    ],
+    "unit": "Unit 26",
+    "name": "26",
+    "line": "f",
+    "bedrooms": 4,
+    "bathrooms": "4.5",
+    "interior_square_feet": "3562.00",
+    "interior_square_meters": "303.050",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 5
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "27"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 27",
+    "name": "27",
+    "line": "f",
+    "bedrooms": 4,
+    "bathrooms": "4.5",
+    "interior_square_feet": "3562.00",
+    "interior_square_meters": "303.050",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 5
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "28"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 28",
+    "name": "28",
+    "line": "f",
+    "bedrooms": 4,
+    "bathrooms": "4.5",
+    "interior_square_feet": "3562.00",
+    "interior_square_meters": "303.050",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 5
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "29"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 29",
+    "name": "29",
+    "line": "f",
+    "bedrooms": 4,
+    "bathrooms": "4.5",
+    "interior_square_feet": "3562.00",
+    "interior_square_meters": "303.050",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 5
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "30"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 30",
+    "name": "30",
+    "line": "f",
+    "bedrooms": 4,
+    "bathrooms": "4.5",
+    "interior_square_feet": "3238.00",
+    "interior_square_meters": "300.820",
+    "terrace": true,
+    "exterior_square_feet": "323.00",
+    "exterior_square_meters": "30.01",
+    "price": "0.00",
+    "type": 6
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "31"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 31",
+    "name": "31",
+    "line": "f",
+    "bedrooms": 4,
+    "bathrooms": "4.5",
+    "interior_square_feet": "3238.00",
+    "interior_square_meters": "300.820",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 6
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "32"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 32",
+    "name": "32",
+    "line": "f",
+    "bedrooms": 4,
+    "bathrooms": "4.5",
+    "interior_square_feet": "3238.00",
+    "interior_square_meters": "300.820",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 6
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "33"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 33",
+    "name": "33",
+    "line": "f",
+    "bedrooms": 4,
+    "bathrooms": "4.5",
+    "interior_square_feet": "3238.00",
+    "interior_square_meters": "300.820",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 6
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "34"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 34",
+    "name": "34",
+    "line": "f",
+    "bedrooms": 4,
+    "bathrooms": "4.5",
+    "interior_square_feet": "3238.00",
+    "interior_square_meters": "300.820",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 6
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "35"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 35",
+    "name": "35",
+    "line": "f",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "3238.00",
+    "interior_square_meters": "300.820",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 7
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "36"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 36",
+    "name": "36",
+    "line": "f",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "3238.00",
+    "interior_square_meters": "300.820",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 7
+  },
+  {
+    "availability": "Unavailable",
+    "floors": [
+      {
+        "name": "37"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 37",
+    "name": "37",
+    "line": "f",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "3238.00",
+    "interior_square_meters": "300.820",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 7
+  },
+  {
+    "availability": "Unavailable",
+    "floors": [
+      {
+        "name": "38"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 38",
+    "name": "38",
+    "line": "f",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "3.00",
+    "interior_square_meters": "3.500",
+    "terrace": false,
+    "exterior_square_feet": "3238.00",
+    "exterior_square_meters": "300.82",
+    "price": "0.00",
+    "type": 7
+  },
+  {
+    "availability": "Unavailable",
+    "floors": [
+      {
+        "name": "39"
+      }
+    ],
+    "media": [],
+    "unit": "Unit 39",
+    "name": "39",
+    "line": "f",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "3238.00",
+    "interior_square_meters": "300.820",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00",
+    "type": 7
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "40"
+      },
+      {
+        "name": "41"
+      }
+    ],
+    "media": [
+      {
+        "name": "PHA Plan",
+        "pan": "",
+        "half_screen": "assets/residences/PHA Floor Plan Half.jpg",
+        "full_screen": "assets/residences/PHA Floor Plan.jpg",
+        "residence": 49,
+        "type": 1
+      },
+      {
+        "name": "Bedroom",
+        "pan": "assets/residences/PHA Pan Bedroom.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 49,
+        "type": 2
+      },
+      {
+        "name": "Living/Dining",
+        "pan": "assets/residences/PHA Pan Living Dining.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 49,
+        "type": 2
+      },
+      {
+        "name": "Living/Dining",
+        "pan": "assets/residences/PHA Pan Living Dining.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 49,
+        "type": 2
+      }
+    ],
+    "unit": "Unit PH A",
+    "name": "PH A",
+    "line": "D",
+    "bedrooms": 4,
+    "bathrooms": "6.5",
+    "interior_square_feet": "5441.00",
+    "interior_square_meters": "505.486",
+    "terrace": true,
+    "exterior_square_feet": "824.00",
+    "exterior_square_meters": "76.55",
+    "price": "0.00",
+    "type": 8
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "42"
+      },
+      {
+        "name": "43"
+      }
+    ],
+    "media": [
+      {
+        "name": "PHB Plan",
+        "pan": "",
+        "half_screen": "assets/residences/PHA Floor Plan Half.jpg",
+        "full_screen": "assets/residences/PHA Floor Plan.jpg",
+        "residence": 49,
+        "type": 1
+      },
+      {
+        "name": "Bedroom",
+        "pan": "assets/residences/PHA Pan Bedroom.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 49,
+        "type": 2
+      },
+      {
+        "name": "Living/Dining",
+        "pan": "assets/residences/PHA Pan Living Dining.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 49,
+        "type": 2
+      },
+      {
+        "name": "Livingz/Diningz",
+        "pan": "assets/residences/PHA Pan Living Dining.jpg",
+        "half_screen": "",
+        "full_screen": "",
+        "residence": 49,
+        "type": 2
+      }
+    ],
+    "unit": "Unit PH B",
+    "name": "PH B",
+    "line": "D",
+    "bedrooms": 4,
+    "bathrooms": "6.5",
+    "interior_square_feet": "5441.00",
+    "interior_square_meters": "505.486",
+    "terrace": true,
+    "exterior_square_feet": "371.00",
+    "exterior_square_meters": "34.47",
+    "price": "0.00",
+    "type": 8
+  }
+]

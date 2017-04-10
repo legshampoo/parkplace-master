@@ -4,6 +4,8 @@ import TextLink from './TextLink'
 import ViewHeader from './ViewHeader';
 import NextPageButton from './NextPageButton';
 import RemoveUnit from './RemoveUnit';
+import AddToFolioButton from './AddToFolioButton';
+import ControlPanel from './ControlPanel';
 
 class P2 extends React.Component {
   constructor(){
@@ -28,9 +30,11 @@ class P2 extends React.Component {
           <TextLink path='/filler' displayText='RENDERING' allowAddToFolio={true} />
           <TextLink path='/filler' displayText='RENDERING' allowAddToFolio={true} />
         </div>
-        <ViewHeader unitId={'64E'}/>
-        <RemoveUnit styleClass='remove-unit-button-left' onClick={this.navigateBack.bind(this)}/>
+        <ViewHeader unitId={'2W'}/>
+        <AddToFolioButton styleClass='add-to-folio-button' />
+        <RemoveUnit styleClass='remove-unit-button-center' onClick={this.navigateBack.bind(this)}/>
         <NextPageButton />
+        <ControlPanel type='photo-controls' />
       </div>
     )
   }

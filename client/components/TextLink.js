@@ -18,7 +18,12 @@ class TextLink extends React.Component {
   }
 
   handleSubmit(event){
-    console.log('TextLink clicked... path: ' + this.props.path)
+    // console.log('TextLink clicked... path: ' + this.props.path)
+    // console.log('selected asset: ' + )
+  }
+
+  click(){
+    console.log('clickered');
   }
 
   render(){
@@ -27,7 +32,7 @@ class TextLink extends React.Component {
         <div className='add-to-folio-wrapper'>
           <this.AllowAddToFolio allow={this.props.allowAddToFolio} />
         </div>
-        <div className='text-link-button' onClick={this.handleSubmit}>
+        <div className='text-link-button' onClick={() => this.click()}>
           <h2 className='text-link-text'>{this.props.displayText}</h2>
         </div>
       </div>

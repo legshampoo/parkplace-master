@@ -8,9 +8,9 @@ class ViewHeader extends React.Component {
     return(
       <div className='view-header'>
         <div className='view-header-text'>
-          <div className='view-header-title'>
+          {/* <div className='view-header-title'>
             RESIDENCE
-          </div>
+          </div> */}
           <div className='view-header-unit'>
             {this.props.unitId}
           </div>

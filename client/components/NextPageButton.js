@@ -13,8 +13,11 @@ class NextPageButton extends React.Component{
   render(){
     return(
       <div className='next-page-button' onClick={() => this.onClick()}>
-        <h2>1/2</h2>
         <div className='next-page-icon'>
+          &#60;
+        </div>
+        <div className='next-page-icon'>
+          &#62;
         </div>
       </div>
     )

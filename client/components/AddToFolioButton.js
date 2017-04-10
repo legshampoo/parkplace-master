@@ -32,10 +32,8 @@ class AddToFolioButton extends React.Component{
 
   render(){
     return(
-      // <div className='add-to-folio-wrapper'>
-      // </div>
       <div className={this.props.styleClass} onClick={(e) => this.onClick(e)}>
-        <h1>+</h1>
+        +
       </div>
     )
   }

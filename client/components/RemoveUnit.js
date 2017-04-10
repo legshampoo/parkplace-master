@@ -9,7 +9,7 @@ class RemoveUnit extends React.Component{
     return(
       <div className={this.props.styleClass} onClick={() => this.props.onClick(this)}>
         <div className='remove-unit-icon'>
-          <h1>X</h1>
+          X
         </div>
       </div>
     )

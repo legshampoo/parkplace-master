@@ -3,6 +3,7 @@ import React from 'react'
 import TextLink from './TextLink'
 import NextPageButton from './NextPageButton';
 import ControlPanel from './ControlPanel';
+import dashboardData from '../data/controlPanelImage';
 
 class Am extends React.Component {
   render(){
@@ -17,7 +18,7 @@ class Am extends React.Component {
           <TextLink path='/filler' displayText='POOL' allowAddToFolio={false}/>
           <TextLink path='/filler' displayText='CHILDRENS PLAYROOM' allowAddToFolio={false}/>
         </div>
-        <ControlPanel />
+        <ControlPanel dashboardData={dashboardData} type='photo-controls'/>
         <NextPageButton />
       </div>
     )

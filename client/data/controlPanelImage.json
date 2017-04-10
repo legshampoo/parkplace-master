@@ -3,7 +3,7 @@
     {
       "group": 1,
       "name": "image-transform-controls",
-      "buttons": ["play", "restart"]
+      "buttons": ["fill-horizontal", "fill-vertical", "pan-left", "center", "pan-right"]
     }
   ]
 }

@@ -10,8 +10,8 @@ export default {
     t: false
   },
   folio:{
-    ap1: 'empty',
-    ap2: 'empty'
+    ap1: '',
+    ap2: ''
   },
   current:{
     currentTag: '',

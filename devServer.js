@@ -68,7 +68,7 @@ function handleConnection(conn){
         }
       }
     }catch(e){
-      console.log('error:', e);
+      console.log('errrrrror:', e);
     }
   }
 

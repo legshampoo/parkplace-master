@@ -20,34 +20,65 @@ class Keypad extends React.Component {
   }
 
   updateInput(val){
+    console.log(val);
+    let newString = this.state.input;
 
-    let newString = this.state.input
+    // if(val == 'PHA' || val == 'PHB'){
+    //   newString = val.slice(0, 2) + " " + val.slice(2);
+    //   console.log('new val: ' + newString);
+    // }
+
 
     if(val == 'del'){
       //remove one character from end of string
       newString = newString.substring(0, newString.length - 1)
-    }else if(val == 'blank'){
-      console.log('blank');
-      return;
     }else{
       //add the new char to the string
-      newString = this.state.input + val
+      newString = this.state.input + val;
     }
+
+    // switch(val){
+    //   case 'del':
+    //     newString = newString.substring(0, newString.length - 1);
+    //     break;
+    //   case 'PHA':
+    //     newString = val.slice(0, 2) + " " + val.slice(2);
+    //     break;
+    //   default:
+    //     newString = this.state.input + val;
+    // }
+
+    console.log('INPUT: ' + newString);
 
     this.setState({input: newString}, () => {
       console.log(this.state.input)
     })
   }
 
-  submit(){
-    // console.log('submit: ' + this.state.input)
-    // const id = this.state.input;
+  submit(val){
+    // console.log(val);
+    // switch(val){
+    //   case 'PHA':
+    //     console.log(val);
+    //     // const path = '/unit-details/' + val;
+    //     // updateCurrentUnit(this.state.input);
+    //     // this.context.router.push(path)
+    //     break;
+    //   case 'PHB':
+    //     console.log(val);
+    //     break;
+    //   default:
+    //     break;
+    //
+    // }
+    // if(val == 'PHA' || val == 'PHB'){
+    //   var newString = val.slice(1) + " " + txt1.slice(2);
+    //   console.log('new: ' + newString);
+    // }
+
     const path = '/unit-details/' + this.state.input;
     updateCurrentUnit(this.state.input);
     this.context.router.push(path)
-
-    //UPDATE CURRENT UNIT IN STORE (NEEDS NEW STATE)
-    //IE: 'NOW WE ARE VIEWING UNIT #??? '
   }
 
   render(){
@@ -58,6 +89,11 @@ class Keypad extends React.Component {
 
           <div className='keypad'>
             <KeypadConsole userInput={this.state.input} updateInput={this.updateInput}/>
+            {/* <div className='keypad-underline-container'>
+              <div className='keypad-underline'></div>
+              <div className='keypad-underline'></div>
+              <div className='keypad-underline'></div>
+            </div> */}
             <div className='inner-keypad-wrapper'>
               <KeypadButton styleClass='keypad-button' displayText='1' value='1' updateInput={this.updateInput}/>
               <KeypadButton styleClass='keypad-button' displayText='2' value='2' updateInput={this.updateInput}/>
@@ -71,9 +107,9 @@ class Keypad extends React.Component {
               <KeypadButton styleClass='keypad-button' displayText='W' value='W' updateInput={this.updateInput}/>
               <KeypadButton styleClass='keypad-button' displayText='0' value='0' updateInput={this.updateInput}/>
               <KeypadButton styleClass='keypad-button' displayText='E' value='E' updateInput={this.updateInput}/>
-              <KeypadButton styleClass='keypad-button' displayText='' value='blank' updateInput={this.updateInput}/>
+              <KeypadButton styleClass='keypad-button' displayText='PHA' value='PHA' updateInput={this.updateInput}/>
+              <KeypadButton styleClass='keypad-button' displayText='PHB' value='PHB' updateInput={this.updateInput}/>
               <KeypadButton styleClass='keypad-button' displayText='ENTER' value='submit' updateInput={this.submit}/>
-              <KeypadButton styleClass='keypad-button' displayText='' value='blank' updateInput={this.updateInput}/>
             </div>
           </div>
         </div>

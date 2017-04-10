@@ -4,7 +4,7 @@ class AssignToTokenButton extends React.Component {
   render(){
     return(
       <div className='assign-unit-button' onClick={() => this.props.onClick(this)}>
-        <h1>{this.props.displayText}</h1>
+        {this.props.displayText}
       </div>
     )
   }

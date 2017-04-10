@@ -4,7 +4,8 @@ import { Link } from 'react-router'
 import TextLink from './TextLink'
 import ViewTitle from './ViewTitle';
 import NextPageButton from './NextPageButton';
-import ControlPanel from './ControlPanel'
+import ControlPanel from './ControlPanel';
+import dashboardData from '../data/controlPanelVideo';
 
 class N extends React.Component {
   render(){
@@ -19,7 +20,7 @@ class N extends React.Component {
           <TextLink path='/filler' displayText='STORY X' allowAddToFolio={false} />
           <TextLink path='/filler' displayText='STORY Y' allowAddToFolio={false} />
         </div>
-        <ControlPanel />
+        <ControlPanel dashboardData={dashboardData} type='video-controls'/>
         <NextPageButton />
       </div>
     )

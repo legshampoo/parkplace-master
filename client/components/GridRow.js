@@ -1,6 +1,6 @@
-import React from 'react'
-
-import GridUnit from './GridUnit'
+import React from 'react';
+import sample_data from '../data/data.json';
+import GridUnit from './GridUnit';
 
 class GridRow extends React.Component {
   constructor(){
@@ -13,23 +13,37 @@ class GridRow extends React.Component {
     )
   }
 
-  createUnits(units){
-    return units.map(this.createUnit);
+  createUnits(type){
+    var list = [];
+
+    //get all of the units of the current type (# of bedrooms)
+    Object.keys(sample_data).map(function(key){
+      if(sample_data[key].bedrooms == type){
+        list.push(sample_data[key].name);
+      }
+    });
+
+    //to view 4 units per page
+    var viewIndex = 0;
+    var unitsToDisplay = 4;
+    var currentList = list.slice(viewIndex, viewIndex + unitsToDisplay);
+
+    return currentList.map(this.createUnit);
   }
 
   render(){
     return(
       <div className='grid-row'>
-        <GridUnit key={this.props.name} name={this.props.name} interactive={false}/>
-        {this.createUnits(this.props.data.units_available)}
+        <GridUnit key={this.props.name} name={this.props.rowName} interactive={false}/>
+        {this.createUnits(this.props.type)}
       </div>
     )
   }
 }
 
 GridRow.propTypes = {
-  data: React.PropTypes.object.isRequired,
-  name: React.PropTypes.string.isRequired
+  rowName: React.PropTypes.string.isRequired,
+  type: React.PropTypes.number.isRequired
 }
 
 export default GridRow;

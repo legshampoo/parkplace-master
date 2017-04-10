@@ -1,0 +1,115 @@
+[
+  {
+    "photos": [
+      {
+        "name": "Lobby",
+        "icon": "",
+        "wall": "assets/amenities/led/06-lobby-to-courtyard-full.jpg",
+        "model": "",
+        "ipad": "assets/amenities/ipad/06-lobby-to-courtyard.jpg"
+      },
+      {
+        "name": "Tower At Dusk",
+        "icon": "",
+        "wall": "assets/amenities/led/02-t-tower-dusk-full.jpg",
+        "model": "",
+        "ipad": "assets/amenities/ipad/02-t-tower-dusk.jpg"
+      },
+      {
+        "name": "Lounge",
+        "icon": "",
+        "wall": "assets/amenities/led/07-second-floor-lounge-full.jpg",
+        "model": "",
+        "ipad": "assets/amenities/ipad/07-second-floor-lounge.jpg"
+      },
+      {
+        "name": "Fitness Center",
+        "icon": "",
+        "wall": "assets/amenities/led/08-fitness-center-full.jpg",
+        "model": "",
+        "ipad": "assets/amenities/ipad/08-fitness-center.jpg"
+      },
+      {
+        "name": "Lobby - Width",
+        "icon": "",
+        "wall": "assets/amenities/06-lobby-to-courtyard-width.jpg",
+        "model": "",
+        "ipad": ""
+      },
+      {
+        "name": "Tower at Dusk - Height",
+        "icon": "",
+        "wall": "assets/amenities/02-t-tower-dusk-height.jpg",
+        "model": "",
+        "ipad": ""
+      },
+      {
+        "name": "Tower at Dusk - Width",
+        "icon": "",
+        "wall": "assets/amenities/02-t-tower-dusk-width.jpg",
+        "model": "",
+        "ipad": ""
+      },
+      {
+        "name": "Lobby - Height",
+        "icon": "",
+        "wall": "assets/amenities/06-lobby-to-courtyard-height.jpg",
+        "model": "",
+        "ipad": ""
+      },
+      {
+        "name": "Lounge - Height",
+        "icon": "",
+        "wall": "assets/amenities/07-second-floor-lounge-height.jpg",
+        "model": "",
+        "ipad": ""
+      },
+      {
+        "name": "Lounge - Width",
+        "icon": "",
+        "wall": "assets/amenities/07-second-floor-lounge-width.jpg",
+        "model": "",
+        "ipad": ""
+      },
+      {
+        "name": "Fitness Center - Height",
+        "icon": "",
+        "wall": "assets/amenities/08-fitness-center-height.jpg",
+        "model": "",
+        "ipad": ""
+      },
+      {
+        "name": "Fitness Center - Width",
+        "icon": "",
+        "wall": "assets/amenities/08-fitness-center-width.jpg",
+        "model": "",
+        "ipad": ""
+      }
+    ],
+    "videos": [],
+    "name": "Amenities"
+  },
+  {
+    "photos": [
+      {
+        "name": "Logo",
+        "icon": "",
+        "wall": "assets/led-wall-logo.jpg",
+        "model": "",
+        "ipad": "assets/ipad-logo.jpg"
+      }
+    ],
+    "videos": [],
+    "name": "Logo"
+  },
+  {
+    "photos": [],
+    "videos": [],
+    "name": "Neighborhood"
+  },
+  {
+    "photos": [],
+    "videos": [],
+    "name": "Team"
+  }
+]

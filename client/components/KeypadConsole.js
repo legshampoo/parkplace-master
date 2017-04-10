@@ -15,12 +15,13 @@ class KeypadConsole extends React.Component {
   render() {
     return(
       <div className='keypad-console'>
+        {/* <div className='keypad-text-underline'></div> */}
         <input
           type='text'
           className='keypad-text-display'
           value={this.props.userInput}
           name='unit'
-          placeholder='- - -'
+          placeholder=''
         />
         <KeypadButton styleClass={'keypad-backspace'} displayText='<<' value='del' updateInput={this.props.updateInput}/>
       </div>
