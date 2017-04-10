@@ -27,12 +27,13 @@ class TextLink extends React.Component {
   }
 
   render(){
+    //text-link-button should receive a class props, based on what is selected
     return(
       <div className='text-link-wrapper'>
         <div className='add-to-folio-wrapper'>
           <this.AllowAddToFolio allow={this.props.allowAddToFolio} />
         </div>
-        <div className='text-link-button' onClick={() => this.click()}>
+        <div className='text-link-button' onClick={() => this.props.handleClick()}>
           <h2 className='text-link-text'>{this.props.displayText}</h2>
         </div>
       </div>

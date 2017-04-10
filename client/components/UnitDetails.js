@@ -12,7 +12,8 @@ import ViewHeader from './ViewHeader';
 import NextPageButton from './NextPageButton';
 import RemoveUnit from './RemoveUnit';
 import AssignToTokenButton from './AssignToTokenButton';
-import ControlPanel from './ControlPanel'
+import ControlPanel from './ControlPanel';
+import RenderAssets from './RenderAssets';
 
 import * as folioActions from '../actions/actionCreators';
 import { updateCurrentUnit, assignUnitToToken } from '../actions/actionCreators';
@@ -107,7 +108,10 @@ class UnitDetails extends React.Component {
 
     //check if the unit has media
     if (details.media){
-      return details.media.map(this.renderAsset);
+      // return details.media.map(this.renderAsset);
+      return(
+        <RenderAssets handleClick={this.selectMedia} data={details.media} />
+      )
     }else{
       console.log('no unit media, going back to keypad');
       if(store.getState().current.currentUnit == ''){
@@ -121,18 +125,21 @@ class UnitDetails extends React.Component {
     }
   }
 
-  selectMedia() {
-    console.log('select Media');
+  selectMedia(media) {
+    // console.log('textlink selected: ' + textLink);
+    console.log(media);
   }
 
-  renderAsset(asset){
-    var key = Math.random();
-    var displayText = asset.name.toUpperCase();
-
-    return (
-      <TextLink key={key} path={asset.pan} displayText={displayText} allowAddToFolio={false} />
-    )
-  }
+  // renderAsset(asset){
+  //   var key = Math.random();
+  //   // var key = asset.name;
+  //   var displayText = asset.name.toUpperCase();
+  //
+  //   return (
+  //     <RenderAssets />
+  //     // <TextLink key={key} path={asset.pan} displayText={displayText} allowAddToFolio={false} />
+  //   )
+  // }
 
 
   render(){
@@ -143,7 +150,7 @@ class UnitDetails extends React.Component {
           {this.renderAssets(data)}
         </div>
         <ViewHeader unitId={this.getUnitId()} />
-        <RemoveUnit styleClass='remove-unit-button-center' onClick={this.removeUnit.bind(this)}/>
+        <RemoveUnit handleClick={this.selectMedia} styleClass='remove-unit-button-center' onClick={this.removeUnit.bind(this)}/>
         <NextPageButton />
         <ControlPanel dashboardData={dashboardData} type='blank'/>
         <AssignToTokenButton displayText={'+'} onClick={this.assignToToken.bind(this)}/>
