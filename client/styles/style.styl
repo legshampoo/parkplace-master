@@ -360,6 +360,7 @@ input:checked + .slider:before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 700;
 }
 
 .view-header-text{
@@ -402,7 +403,7 @@ input:checked + .slider:before {
   /*background-color: rgba(200, 200, 20, .5);*/
 }
 
-.link-container {
+.media-assets-container {
   width: 100%;
   height: 80%;
   /*margin: 10px auto;*/
@@ -414,68 +415,92 @@ input:checked + .slider:before {
   justify-content: center;
 }
 
-.link-container-border {
-  /* this covers the outter borders of the links */
+
+/* this is the black border overlay that covers */
+/* the outter borders of the links */
+.media-container-border-overlay {
   position: absolute;
-  /*the width should be 2 * test-link-wraper width */
-  width: 96%;
+  width: 100%;
   height: 80%;
   /*background-color: rgba(200, 20, 20, .25);*/
-  /*background-color: black;*/
+  box-sizing: border-box;
   border-top: 60px solid black;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
-  /*border-bottom: 1px solid white;*/
+  border-left: 50px solid black;
+  border-right: 50px solid black;
+  z-index: 500;
 }
 
-.text-link-wrapper {
-  /*
-  use min-height
-  padding
-  align-items: baseline (to align the text to eachother)
-  */
-  /*width: calc(40% - 20px);*/
-  width: 48%;
-  /*width: 49.5%;*/
-  /*min-height: 50px;*/
-  height: 33.33%;
-  /*height: 33%;*/
-  margin: 0px 0px 0px 0px;
-  /*margin: 10px;*/
-  /*background: rgba(20, 200, 200, .5);*/
-  /*text-align: center;*/
-  /*vertical-align: middle;*/
-  border: 1px solid white;
-
+/* this is the main container holding all of the text-links */
+.media-container-inner-wrapper {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  margin-top: 50px;
+  /*background: rgba(20, 20, 200, .25);*/
+  /*border: 1px solid green;*/
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 
-.text-link-button {
-  width: 100%;
-  height: 80%;
-  /*margin-bottom: 10%;*/
-  /*margin: auto;*/
-  /*margin-top: auto;*/
-  /*background-color: transparent;*/
-  /*background: rgba(200, 200, 20, .5);*/
-  /*text-align: center;*/
-  /*vertical-align: middle;*/
-  /*border: none;*/
+/* this should have same properties as link-container */
+/* this is just the container to hold the white borders */
+.media-assets-border-overlay-container {
+  position: absolute;
+  width: 91%;
+  height: 72%;
+  margin-top: 50px;
+  /*background-color: rgba(20, 20, 200, .25);*/
+  /*border: 5px solid red;*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* each individual text-link button */
+.media-asset-button {
+  position: relative;
+  width: 49.5%;
+  height: 33%;
+  /*background-color: rgba(200, 20, 20, .25);*/
   display: flex;
   align-items: center;
   justify-content: center;
-  /*padding-top: 20px;*/
-  /*vertical-align: middle;*/
-  z-index: 500;
+  z-index: 600;
   word-wrap: wrap;
   text-align: center;
 }
 
+/* when the button is selected */
+.media-asset-button-active {
+  position: relative;
+  width: 49.5%;
+  height: 33%;
+  background-color: rgba(20, 200, 200, .25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 600;
+  word-wrap: wrap;
+  text-align: center;
+}
+
+/* this is the white border around each text-link */
+/* should have same properties as text-link-button */
+.media-asset-border {
+  /*position: relative;*/
+  width: 49.5%;
+  height: 33%;
+  /*background-color: rgba(200, 20, 20, .25);*/
+  border: 1px solid white;
+  z-index: 400;
+}
+
+/* the text inside the text-links */
 .text-link-text {
-  transform: translateY(-20px);
   word-spacing: 999999999999px;
 }
 
@@ -486,25 +511,6 @@ input:checked + .slider:before {
     /*background-color: rgba(0, 0, 200, .5);*/
     z-index: 500;
 }
-
-/*.add-to-folio-button {*/
-  /*position: absolute;*/
-  /*display: block;*/
-  /*width: 10%;*/
-  /*height: 80%;*/
-  /*top: -10px;*/
-  /*left: 0;*/
-  /*font-size: 400px;*/
-  /*font-size: 300%;*/
-  /*left: calc((100% - 15%) - 10px);*/
-  /*background: rgba(200, 20, 20, .5);*/
-  /*border: none;*/
-  /*background-color: rgba(200, 20, 20, .5);*/
-
-  /*display: flex;*/
-  /*align-items: center;*/
-  /*justify-content: center;*/
-/*}*/
 
 .add-to-folio-button {
   position: absolute;

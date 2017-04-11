@@ -1,22 +1,17 @@
 import React from 'react';
 
 class NextPageButton extends React.Component{
-  constructor(){
-    super();
-    this.onClick = this.onClick.bind(this);
-  }
-
-  onClick(e){
-    console.log('Next Page Clicked');
+  constructor(props){
+    super(props);
   }
 
   render(){
     return(
-      <div className='next-page-button' onClick={() => this.onClick()}>
-        <div className='next-page-icon'>
+      <div className='next-page-button'>
+        <div className='next-page-icon' onClick={() => this.props.handleClick(-1)}>
           &#60;
         </div>
-        <div className='next-page-icon'>
+        <div className='next-page-icon' onClick={() => this.props.handleClick(1)}>
           &#62;
         </div>
       </div>

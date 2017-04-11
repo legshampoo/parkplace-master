@@ -14,6 +14,7 @@ import RemoveUnit from './RemoveUnit';
 import AssignToTokenButton from './AssignToTokenButton';
 import ControlPanel from './ControlPanel';
 import RenderAssets from './RenderAssets';
+import TextLinkBorder from './TextLinkBorder';
 
 import * as folioActions from '../actions/actionCreators';
 import { updateCurrentUnit, assignUnitToToken } from '../actions/actionCreators';
@@ -30,9 +31,9 @@ class UnitDetails extends React.Component {
     //   selectedAsset: {},
     //   status: {}
     // }
-    // this.state = {
-    //   activeButton: {}
-    // }
+    this.state = {
+      activeButton: ''
+    }
   }
 
   componentDidMount(){
@@ -55,8 +56,10 @@ class UnitDetails extends React.Component {
   }
 
   shouldComponentUpdate(){
-    console.log('should component update: false');
-    return false;
+    var shouldUpdate = false;
+    console.log('should component update: ' + shouldUpdate);
+    // return false;
+    return shouldUpdate;
   }
 
   getUnitId(){
@@ -87,7 +90,9 @@ class UnitDetails extends React.Component {
     updateCurrentUnit('empty');
     const currentTag = this.props.current.currentTag;
     assignUnitToToken(currentTag, '');
-    this.context.router.goBack();
+    var path = currentTag;
+    // this.context.router.goBack();
+    this.context.router.push(path);
   }
 
   renderAssets(d){
@@ -107,12 +112,8 @@ class UnitDetails extends React.Component {
     }
 
     //check if the unit has media
-    if (details.media){
-      // return details.media.map(this.renderAsset);
-      return(
-        <RenderAssets handleClick={this.selectMedia} data={details.media} />
-      )
-    }else{
+    if (!details.media){
+      //if there's no media assets, go back to keypad
       console.log('no unit media, going back to keypad');
       if(store.getState().current.currentUnit == ''){
         console.log('no token found, go home');
@@ -122,35 +123,35 @@ class UnitDetails extends React.Component {
         console.log('token is still down, go to keypad');
         this.context.router.goBack();
       }
+    }else{
+      //render media assets
+      return(
+        <RenderAssets handleClick={this.selectMedia} data={details.media} activeButton={this.state.activeButton}/>
+      )
     }
   }
 
   selectMedia(media) {
-    // console.log('textlink selected: ' + textLink);
-    console.log(media);
+    // console.log(media);
+
+    var activeButton = this.state.activeButton;
+    activeButton = media.name;
+
+    this.setState({activeButton: activeButton}, function(){
+      console.log('active button: ' + this.state.activeButton);
+    });
   }
-
-  // renderAsset(asset){
-  //   var key = Math.random();
-  //   // var key = asset.name;
-  //   var displayText = asset.name.toUpperCase();
-  //
-  //   return (
-  //     <RenderAssets />
-  //     // <TextLink key={key} path={asset.pan} displayText={displayText} allowAddToFolio={false} />
-  //   )
-  // }
-
 
   render(){
     return(
       <div className='view'>
-        <div className='link-container'>
-          <div className='link-container-border'></div>
+        <div className='media-assets-container'>
+          <TextLinkBorder />
+          <div className='media-container-border-overlay'></div>
           {this.renderAssets(data)}
         </div>
         <ViewHeader unitId={this.getUnitId()} />
-        <RemoveUnit handleClick={this.selectMedia} styleClass='remove-unit-button-center' onClick={this.removeUnit.bind(this)}/>
+        <RemoveUnit styleClass='remove-unit-button-center' onClick={this.removeUnit.bind(this)}/>
         <NextPageButton />
         <ControlPanel dashboardData={dashboardData} type='blank'/>
         <AssignToTokenButton displayText={'+'} onClick={this.assignToToken.bind(this)}/>
