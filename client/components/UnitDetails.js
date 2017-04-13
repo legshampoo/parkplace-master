@@ -56,8 +56,8 @@ class UnitDetails extends React.Component {
   }
 
   shouldComponentUpdate(){
-    var shouldUpdate = false;
-    console.log('should component update: ' + shouldUpdate);
+    var shouldUpdate = true;
+    // console.log('should component update: ' + shouldUpdate);
     // return false;
     return shouldUpdate;
   }
@@ -77,7 +77,7 @@ class UnitDetails extends React.Component {
   }
 
   assignToToken(d){
-    console.log('assign unit to token');
+    // console.log('assign unit to token');
     //get the current tag and current unit
     const currentTag = this.props.current.currentTag;
     const currentUnit = this.props.current.currentUnit;

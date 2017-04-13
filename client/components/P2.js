@@ -23,12 +23,12 @@ class P2 extends React.Component {
       <div className='view'>
         <div className='link-container'>
           <div className='link-container-border'></div>
-          <TextLink path='/filler' displayText='FLOORPLAN' allowAddToFolio={true} />
+          {/* <TextLink path='/filler' displayText='FLOORPLAN' allowAddToFolio={true} />
           <TextLink path='/filler' displayText='VIEW' allowAddToFolio={true} />
           <TextLink path='/filler' displayText='RENDERING' allowAddToFolio={true} />
           <TextLink path='/filler' displayText='RENDERING' allowAddToFolio={true} />
           <TextLink path='/filler' displayText='RENDERING' allowAddToFolio={true} />
-          <TextLink path='/filler' displayText='RENDERING' allowAddToFolio={true} />
+          <TextLink path='/filler' displayText='RENDERING' allowAddToFolio={true} /> */}
         </div>
         <ViewHeader unitId={'2W'}/>
         <AddToFolioButton styleClass='add-to-folio-button' />

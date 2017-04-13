@@ -2,7 +2,7 @@ import * as types from '../reducers/types';
 import store from '../store';
 
 export function updateCurrentTag(tagName){
-  console.log('update current tag');
+  // console.log('update current tag');
   store.dispatch({
     type: 'UPDATE_CURRENT_TAG',
     tagName: tagName

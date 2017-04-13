@@ -5,6 +5,14 @@ import * as tagActions from '../actions/actionCreators';
 import { updateTagStatus, updateCurrentTag, updateCurrentUnit } from '../actions/actionCreators';
 
 class EventHandler extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      penthouseA: 'PHA',
+      penthouseB: 'PHB'
+    }
+  }
 
   componentDidMount(){
     const webSocketPort = 5560;
@@ -42,14 +50,14 @@ class EventHandler extends React.Component {
         //if the status is true
         // if(json.status == 'true'){  //use this line for actual RFID
         if(json.status == true){
-          console.log('tag is TRUE');
+          // console.log('tag is TRUE');
           updateCurrentTag(json.tag);
 
           path = path + json.tag;
 
           const folioTags = ['ap1', 'ap2'];
           const isFolioTag = folioTags.includes(json.tag);
-          console.log('isFolioTag: ' + isFolioTag);
+          // console.log('isFolioTag: ' + isFolioTag);
 
           var unitRouteHandler = false;
 
@@ -59,6 +67,23 @@ class EventHandler extends React.Component {
           }else{
             console.log('tag is not a folio tag');
             unitRouteHandler = false;
+          }
+
+          const penthouseTag = ['p1', 'p2'];
+          const isPenthouseTag = penthouseTag.includes(json.tag);
+
+          if(isPenthouseTag){
+            console.log('tag is a penthouse tag');
+            if(json.tag === 'p1'){
+              updateCurrentUnit(this.state.penthouseA);
+              path = '/unit-details/' + this.state.penthouseA;
+            }
+            if(json.tag === 'p2'){
+              updateCurrentUnit(this.state.penthouseB);
+              path = '/unit-details/' + this.state.penthouseB;
+            }
+          }else{
+            console.log('no penthouse');
           }
 
           if(unitRouteHandler){
@@ -93,7 +118,6 @@ class EventHandler extends React.Component {
                   path = '/ap1';
                 }
                 break;
-
               case 'ap2':
                 //if there is a unit assigned
                 if(this.props.folio.ap1 != ''){
@@ -104,7 +128,16 @@ class EventHandler extends React.Component {
                   path = '/ap2';
                 }
                 break;
-
+              case 'p1':
+                console.log('p1 is still down');
+                updateCurrentUnit(this.state.penthouseA);
+                path = '/unit-details/' + this.state.penthouseA;
+                break;
+              case 'p2':
+                console.log('p2 is still down');
+                updateCurrentUnit(this.state.penthouseB);
+                path = '/unit-details/' + this.state.penthouseB;
+                break;
               default:
                 //go to route /t or /p1... whatever the tag is
                 path = '/' + lastTag;
