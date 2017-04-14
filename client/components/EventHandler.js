@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import * as tagActions from '../actions/actionCreators';
 import { updateTagStatus, updateCurrentTag, updateCurrentUnit } from '../actions/actionCreators';
 
+// var getData = require('./RequestData');
+
 class EventHandler extends React.Component {
   constructor(props){
     super(props);
@@ -15,6 +17,9 @@ class EventHandler extends React.Component {
   }
 
   componentDidMount(){
+    // getData.getResidenceData();
+    // getData.getNonResidenceData();
+
     const webSocketPort = 5560;
     this.socket = new WebSocket('ws://localhost:' + webSocketPort);
     this.socket.onopen = function(event){
@@ -65,7 +70,7 @@ class EventHandler extends React.Component {
             console.log('folio tag detected');
             unitRouteHandler = this.apartmentRouteFn(path, json.tag);
           }else{
-            console.log('tag is not a folio tag');
+            // console.log('tag is not a folio tag');
             unitRouteHandler = false;
           }
 
@@ -83,7 +88,7 @@ class EventHandler extends React.Component {
               path = '/unit-details/' + this.state.penthouseB;
             }
           }else{
-            console.log('no penthouse');
+            // console.log('no penthouse');
           }
 
           if(unitRouteHandler){
@@ -164,14 +169,14 @@ class EventHandler extends React.Component {
   apartmentRouteFn(defaultRoute, tag){
 
     const ap1Unit = this.props.folio['ap1'];
-    console.log('ap1 unit: ' + ap1Unit);
+    // console.log('ap1 unit: ' + ap1Unit);
     const ap2Unit = this.props.folio['ap2'];
-    console.log('ap2 unit: ' + ap2Unit);
+    // console.log('ap2 unit: ' + ap2Unit);
 
     //if ap1 and ap2 tags are both down at same time
     //if(this.props.tags['ap1'] == 'true' && this.props.tags['ap2'] == 'true'){  //use line above for actual RFID
     if(this.props.tags['ap1'] == true && this.props.tags['ap2'] == true){  //use this line for test RFID
-      console.log('both are true');
+      console.log('both ap1 and ap2 are active');
       console.log(ap1Unit);
       console.log(ap2Unit);
       if(ap1Unit != '' && ap2Unit != ''){
@@ -185,7 +190,7 @@ class EventHandler extends React.Component {
         return `/unit-details/${ap2Unit}`
       }
     }else{
-      console.log('ap1 and ap2 are NOT down');
+      // console.log('ap1 and ap2 are NOT down');
     }
 
     //if one tag (ap1 or ap2) is down

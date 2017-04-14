@@ -9,26 +9,23 @@ import TextLink from './TextLink';
 import GenericButton from './GenericButton';
 import UnitInfo from './UnitInfo';
 import AddToFolioButton from './AddToFolioButton';
+import RemoveUnit from './RemoveUnit';
+import { updateCurrentUnit, updateCurrentTag, assignUnitToToken } from '../actions/actionCreators';
 
 class CompareUnitDetails extends React.Component {
   constructor(){
     super();
-    this.removeApartment = this.removeApartment.bind(this);
   }
 
-  removeApartment(){
-    // console.log('remove:', this.props.unitId);
-    // const getUnitApartment = localStorage.getItem(this.props.token);
-    // console.log('remove: ', getUnitApartment);
-    // localStorage.removeItem(this.props.token);
-    // this.context.router.push(this.props.lastPath);
+  removeUnit(d){
+    console.log(this.props.tag);
 
-    // const getUnit = this.props.unitId;
-    const tag = this.props.token;
-    // removeFromFolio(tag);
-    removeFromFolio(tag);
-    this.context.router.push(this.props.lastPath);
-
+    const currentTag = this.props.tag;
+    updateCurrentTag(this.props.tag);
+    updateCurrentUnit('');
+    assignUnitToToken(currentTag, '');
+    var path = '/' + this.props.tag;
+    this.context.router.push(path);
   }
 
   render(){
@@ -43,12 +40,12 @@ class CompareUnitDetails extends React.Component {
         <div className='compare-unit-sub-header'>
           <h2>DETAILS</h2>
         </div>
-        {/* <GenericButton styleClass='remove-apartment-button' action={this.removeApartment} textDisplay='X' /> */}
         <ViewHeader unitId={this.props.unitId}/>
         <UnitInfo />
-        {/* <div className='compare-unit-link-wrapper'>
-        </div> */}
-
+        <RemoveUnit
+          styleClass='remove-unit-button-compare'
+          onClick={this.removeUnit.bind(this)}
+        />
       </div>
     )
   }
@@ -60,13 +57,14 @@ CompareUnitDetails.contextTypes = {
 
 CompareUnitDetails.propTypes = {
   unitId: React.PropTypes.string.isRequired,
-  token: React.PropTypes.string.isRequired,
+  tag: React.PropTypes.string.isRequired,
   lastPath: React.PropTypes.string.isRequired
 }
 
 function mapStateToProps(state){
   return {
-    folio: state.folio
+    folio: state.folio,
+    current: state.current
   }
 }
 

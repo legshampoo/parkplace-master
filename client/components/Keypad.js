@@ -20,14 +20,8 @@ class Keypad extends React.Component {
   }
 
   updateInput(val){
-    console.log(val);
+    // console.log(val);
     let newString = this.state.input;
-
-    // if(val == 'PHA' || val == 'PHB'){
-    //   newString = val.slice(0, 2) + " " + val.slice(2);
-    //   console.log('new val: ' + newString);
-    // }
-
 
     if(val == 'del'){
       //remove one character from end of string
@@ -37,45 +31,14 @@ class Keypad extends React.Component {
       newString = this.state.input + val;
     }
 
-    // switch(val){
-    //   case 'del':
-    //     newString = newString.substring(0, newString.length - 1);
-    //     break;
-    //   case 'PHA':
-    //     newString = val.slice(0, 2) + " " + val.slice(2);
-    //     break;
-    //   default:
-    //     newString = this.state.input + val;
-    // }
-
-    console.log('INPUT: ' + newString);
+    // console.log('INPUT: ' + newString);
 
     this.setState({input: newString}, () => {
-      console.log(this.state.input)
+      // console.log(this.state.input)
     })
   }
 
   submit(val){
-    // console.log(val);
-    // switch(val){
-    //   case 'PHA':
-    //     console.log(val);
-    //     // const path = '/unit-details/' + val;
-    //     // updateCurrentUnit(this.state.input);
-    //     // this.context.router.push(path)
-    //     break;
-    //   case 'PHB':
-    //     console.log(val);
-    //     break;
-    //   default:
-    //     break;
-    //
-    // }
-    // if(val == 'PHA' || val == 'PHB'){
-    //   var newString = val.slice(1) + " " + txt1.slice(2);
-    //   console.log('new: ' + newString);
-    // }
-
     const path = '/unit-details/' + this.state.input;
     updateCurrentUnit(this.state.input);
     this.context.router.push(path)

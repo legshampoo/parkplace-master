@@ -20,6 +20,7 @@ class RenderNonUnitAssets extends React.Component {
     // this.setState({count: 0});
     this.count = 0;
 
+    console.log(d);
     //first render all video assets, using _this.count to keep track of
     //how many have been loaded.  After videos, we then move on to photo assets
     return(
@@ -27,10 +28,12 @@ class RenderNonUnitAssets extends React.Component {
         if((_this.props.pageIndex * 6) <= index && index < ((_this.props.pageIndex + 1) * 6)){
           // this.setState({count: count++});
           _this.count++;
-          console.log(_this.count);
+          var mediaType = 'video';
+          // console.log(_this.count);
           return(
             <TextLink
-              handleClick={_this.props.handleClick.bind(this, media)}
+              handleClick={_this.props.handleClick.bind(this, media, mediaType)}
+              mediaType={mediaType}
               activeButton={_this.props.activeButton}
               id={media.name}
               key={index}
@@ -54,9 +57,12 @@ class RenderNonUnitAssets extends React.Component {
           // this.setState({count: count++});
           // _this.count++;
           // console.log(_this.count);
+          var mediaType = 'photo';
+
           return(
             <TextLink
-              handleClick={_this.props.handleClick.bind(this, media)}
+              handleClick={_this.props.handleClick.bind(this, media, mediaType)}
+              mediaType='photo'
               activeButton={_this.props.activeButton}
               id={media.name}
               key={index}

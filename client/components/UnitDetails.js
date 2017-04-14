@@ -3,7 +3,7 @@ import Redux, { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import data from '../data/data.json';
-import dashboardData from '../data/controlPanelImage';
+// import dashboardData from '../data/controlPanelImage';
 import store from '../store';
 
 import TextLink from './TextLink';
@@ -27,45 +27,28 @@ class UnitDetails extends React.Component {
     this.removeUnit = this.removeUnit.bind(this);
     this.selectMedia = this.selectMedia.bind(this);
 
-    // this.state = {
-    //   selectedAsset: {},
-    //   status: {}
-    // }
     this.state = {
-      activeButton: ''
+      mediaGroup: '',
+      activeButton: {},
+      selectedMediaType: '',
+      pageIndex: 0
     }
   }
 
   componentDidMount(){
-    // this.state.status({
-    //   asset_01: false,
-    //   asset_02: false,
-    //   asset_03: false
-    // });
-    // this.state.status.push({
-    //   asset_01: false
-    // })
-    // var newState = [];
-    // newState.push({
-    //   'asset_01': false,
-    //   'asset_02': false
-    // });
-
     this.assignToToken();
 
   }
 
   shouldComponentUpdate(){
     var shouldUpdate = true;
-    // console.log('should component update: ' + shouldUpdate);
-    // return false;
     return shouldUpdate;
   }
 
   getUnitId(){
 
     var unitId = this.props.current.currentUnit;
-    console.log('unit: ' + unitId);
+    // console.log('unit: ' + unitId);
 
     //if unit is PHA or PHB, insert a 'space' char
     //so it will match with the data.json
@@ -77,7 +60,6 @@ class UnitDetails extends React.Component {
   }
 
   assignToToken(d){
-    // console.log('assign unit to token');
     //get the current tag and current unit
     const currentTag = this.props.current.currentTag;
     const currentUnit = this.props.current.currentUnit;
@@ -87,59 +69,123 @@ class UnitDetails extends React.Component {
 
   removeUnit(d){
     console.log('remove unit from token');
-    updateCurrentUnit('empty');
+    updateCurrentUnit('');
     const currentTag = this.props.current.currentTag;
     assignUnitToToken(currentTag, '');
     var path = currentTag;
-    // this.context.router.goBack();
     this.context.router.push(path);
   }
 
-  renderAssets(d){
-    var unit = this.getUnitId();
-    var details = {};
+  checkUnitExists(d, unit){
+    console.log(unit);
+    var found = false;
 
-    //check if the unit exists in d (data)
     try{
       Object.keys(d).map(function(key, index){
         if(d[key].name == unit){
-          details = d[key];
-          console.log('unit found');
+          found = true;
         }
       });
     }catch(err){
       console.log('errrrrrr');
     }
 
-    //check if the unit has media
-    if (!details.media){
-      //if there's no media assets, go back to keypad
-      console.log('no unit media, going back to keypad');
-      if(store.getState().current.currentUnit == ''){
-        console.log('no token found, go home');
-        var path = '/';
-        this.context.router.push(path);
-      }else{
-        console.log('token is still down, go to keypad');
-        this.context.router.goBack();
+    return found;
+  }
+
+  getUnitData(d, unit){
+    // console.log(unit);
+    var unitData = {};
+
+    try{
+      Object.keys(d).map(function(key, index){
+        if(d[key].name == unit){
+          unitData = d[key];
+        }
+      });
+    }catch(err){
+      console.log('errrrrrr');
+    }
+
+    return unitData;
+  }
+
+  checkIfEmpty(obj){
+    try{
+      return Object.keys(obj).length === 0;
+    }catch(e){
+      return true;
+    }
+    return false;
+  }
+
+  renderAssets(d){
+    var unit = this.getUnitId();
+
+    var found = this.checkUnitExists(d, unit);
+
+    if(found){
+      var details = this.getUnitData(d, unit);
+      console.log(details);
+      var empty = this.checkIfEmpty(details.media);
+      if(empty){
+        console.log('no media found');
       }
-    }else{
-      //render media assets
+
       return(
-        <RenderAssets handleClick={this.selectMedia} data={details.media} activeButton={this.state.activeButton}/>
+        <RenderAssets pageIndex={this.state.pageIndex} handleClick={this.selectMedia} data={details.media} activeButton={this.state.activeButton} mediaType='photo' />
+      )
+
+    }else{
+      console.log('unit ' + unit + ' not found');
+      console.log('return to keypad');
+      var path = this.props.current.currentTag;
+      this.context.router.push(path);
+      return;
+    }
+  }
+
+  selectMedia(media, type) {
+    var activeButton = this.state.activeButton;
+    activeButton = media;
+
+    var selectedMediaType = this.state.selectedMediaType;
+    selectedMediaType = type;
+
+    this.setState({
+      activeButton: activeButton,
+      selectedMediaType: selectedMediaType
+    }, function(){
+      console.log('active button: ' + activeButton.name);
+      console.log('type: ' + selectedMediaType)
+    });
+  }
+
+  renderControlPanel(){
+    if(this.state.selectedMediaType === 'video'){
+      console.log('vid');
+      return(
+         <ControlPanel type='video-controls' handleClick={this.sendControlMessage.bind(this)}/>
+      )
+    }
+    if(this.state.selectedMediaType === 'photo'){
+      return(
+        <ControlPanel type='photo-controls' handleClick={this.sendControlMessage.bind(this)}/>
       )
     }
   }
 
-  selectMedia(media) {
-    // console.log(media);
+  sendControlMessage(command){
 
-    var activeButton = this.state.activeButton;
-    activeButton = media.name;
+    var msg = {
+      'media-group': this.state.mediaGroup,
+      'media': this.state.activeButton,
+      'command': command
+    }
 
-    this.setState({activeButton: activeButton}, function(){
-      console.log('active button: ' + this.state.activeButton);
-    });
+    console.log('socket send:');
+    console.log(msg);
+
   }
 
   render(){
@@ -153,7 +199,7 @@ class UnitDetails extends React.Component {
         <ViewHeader unitId={this.getUnitId()} />
         <RemoveUnit styleClass='remove-unit-button-center' onClick={this.removeUnit.bind(this)}/>
         <NextPageButton />
-        <ControlPanel dashboardData={dashboardData} type='blank'/>
+        {this.renderControlPanel()}
         <AssignToTokenButton displayText={'+'} onClick={this.assignToToken.bind(this)}/>
       </div>
     )

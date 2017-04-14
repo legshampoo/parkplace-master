@@ -591,8 +591,8 @@ input:checked + .slider:before {
   width: 40px;
   height: 40px;
   left: calc(50% - (40px / 2));
-  bottom: 0;
-  margin-bottom: 30px;
+  bottom: 40px;
+  /*margin-bottom: 30px;*/
   font-size: 200%;
   /*background: rgba(200, 20, 200, .25);*/
   display: flex;
@@ -600,13 +600,14 @@ input:checked + .slider:before {
   justify-content: center;
 }
 
-.remove-unit-button-right {
+.remove-unit-button-compare {
   position: absolute;
   width: 40px;
   height: 40px;
-  right: 0;
-  bottom: 0;
-  margin-bottom: 30px;
+  left: calc(50% - (40px / 2));
+  bottom: -80px;
+  /*margin-bottom: 30px;*/
+  font-size: 200%;
   /*background: rgba(200, 20, 200, .25);*/
   display: flex;
   align-content: flex-start;

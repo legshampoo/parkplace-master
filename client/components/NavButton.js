@@ -7,7 +7,7 @@ class NavButton extends React.Component {
 
   onClick(event){
     event.preventDefault();
-    console.log('nav to: ' + this.props.path);
+    // console.log('nav to: ' + this.props.path);
     this.context.router.push(this.props.path)
   }
 

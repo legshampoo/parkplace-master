@@ -18,7 +18,7 @@ class TextLink extends React.Component {
 }
 
 TextLink.propTypes = {
-  path: React.PropTypes.string.isRequired,
+  // path: React.PropTypes.string.isRequired,
   displayText: React.PropTypes.string.isRequired,
   styleClass: React.PropTypes.string.isRequired
 }

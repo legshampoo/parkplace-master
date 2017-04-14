@@ -36,10 +36,10 @@ class CompareUnits extends React.Component {
         <div className='compare-container'>
           <div className='compare-border'></div>
           <div className='compare-division-line'></div>
-          <CompareUnitDetails token='ap1' unitId={this.getUnitId('ap1')} lastPath='/ap1'/>
-          <CompareUnitDetails token='ap2' unitId={this.getUnitId('ap2')} lastPath='/ap2'/>
-          <RemoveUnit styleClass='remove-unit-button-left' onClick={this.removeUnitAp1.bind(this)}/>
-          <RemoveUnit styleClass='remove-unit-button-right' onClick={this.removeUnitAp2.bind(this)}/>
+          <CompareUnitDetails tag='ap1' unitId={this.getUnitId('ap1')} lastPath='/ap1'/>
+          <CompareUnitDetails tag='ap2' unitId={this.getUnitId('ap2')} lastPath='/ap2'/>
+          {/* <RemoveUnit styleClass='remove-unit-button-left' onClick={this.removeUnitAp1.bind(this)}/> */}
+          {/* <RemoveUnit styleClass='remove-unit-button-right' onClick={this.removeUnitAp2.bind(this)}/> */}
         </div>
       </div>
     )

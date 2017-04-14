@@ -9,7 +9,7 @@ import RenderNonUnitAssets from './RenderNonUnitAssets';
 import ViewTitle from './ViewTitle';
 import NextPageButton from './NextPageButton';
 import ControlPanel from './ControlPanel';
-import dashboardData from '../data/controlPanelVideo';
+// import dashboardData from '../data/controlPanelVideo';
 
 class N extends React.Component {
   constructor(props){

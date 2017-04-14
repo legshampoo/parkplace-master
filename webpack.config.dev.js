@@ -21,7 +21,8 @@ module.exports = {
     loaders: [
       //js
       {
-        test: /\.jsx?$/,
+        test: /\.js|\.jsx?$/,
+        exclude: path.join(__dirname, '/node_modules/'),
         loaders: ['babel-loader'],
         include: path.join(__dirname, 'client')
       },
@@ -31,18 +32,22 @@ module.exports = {
         include: path.join(__dirname, 'client'),
         loader: 'style-loader!css-loader!stylus-loader'
       },
+      //json (not necessary, but trying to ignore json)
+      {
+        test: /\.json$/,
+        exclude: path.join(__dirname, '/client/data/*'),
+        loader: 'json-loader'
+      },
       //fonts
       {
         test: /\.(otf|ttc)$/,
         loader: 'file-loader?name=[name].[ext]'
+      },
+      //images
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=8192'
       }
-      // {
-      //   test: /\.(otf)$/,
-      //   loader: 'file-loader',
-      //   options: {
-      //     name: 'assets/fonts/Gotham-Medium.otf',
-      //   }
-      // }
     ]
   }
 };

@@ -3,7 +3,7 @@ import React from 'react'
 import TextLink from './TextLink'
 import ControlPanel from './ControlPanel';
 import NextPageButton from './NextPageButton';
-import dashboardData from '../data/controlPanelVideo'
+// import dashboardData from '../data/controlPanelVideo'
 
 class T extends React.Component {
   render(){

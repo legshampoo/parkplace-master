@@ -6,7 +6,7 @@ import App from './components/App';
 import Home from './components/Home';
 import Ap1 from './components/Ap1';
 import Ap2 from './components/Ap2'
-import Am from './components/Am'
+import MediaGroup from './components/MediaGroup'
 import N from './components/N'
 import P1 from './components/P1'
 import P2 from './components/P2'
@@ -30,11 +30,11 @@ const router = (
         <IndexRoute component={Home}></IndexRoute>
         <Route path='/ap1' component={Ap1}></Route>
         <Route path='/ap2' component={Ap2}></Route>
-        <Route path='/am' component={Am}></Route>
-        <Route path='/n' component={N}></Route>
+        <Route path='/am' component={MediaGroup}></Route>
+        <Route path='/n' component={MediaGroup}></Route>
         <Route path='/p1' component={P1}></Route>
         <Route path='/p2' component={P2}></Route>
-        <Route path='/t' component={T}></Route>
+        <Route path='/t' component={MediaGroup}></Route>
         <Route path='/grid' component={Grid}></Route>
         <Route path='/keypad' component={Keypad}></Route>
         <Route path='/unit-details/:unitId' component={UnitDetails}></Route>

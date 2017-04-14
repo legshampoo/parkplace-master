@@ -9,7 +9,7 @@ class KeypadButton extends React.Component {
   }
 
   handleClick(event){
-    console.log('click');
+    // console.log('click');
     this.props.updateInput(this.props.value)
   }
 

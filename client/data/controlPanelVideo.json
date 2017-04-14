@@ -1,9 +1,0 @@
-{
-  "groups": [
-    {
-      "group": 1,
-      "name": "video-playback-controls",
-      "buttons": ["play", "restart"]
-    }
-  ]
-}
