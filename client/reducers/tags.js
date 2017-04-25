@@ -5,8 +5,6 @@ export function tags(state=initialState.tags, action){
   switch(action.type){
     case 'UPDATE_TAG_STATUS':
 
-      // const tag = action.tagName;
-
       return Object.assign({}, state, {
         [action.tagName]: action.status,
       });

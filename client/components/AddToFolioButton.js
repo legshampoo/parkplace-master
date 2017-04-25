@@ -40,7 +40,6 @@ class AddToFolioButton extends React.Component{
 }
 
 AddToFolioButton.propTypes = {
-  // unitId: React.PropTypes.string.isRequired
 }
 
 function mapStateToProps(state){

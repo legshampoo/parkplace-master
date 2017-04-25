@@ -12,7 +12,7 @@ class AssignToTokenButton extends React.Component {
 }
 
 AssignToTokenButton.contextTypes = {
-  router: React.PropTypes.object
+  router: PropTypes.object
 }
 
 AssignToTokenButton.propTypes = {
