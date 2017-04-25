@@ -1,5 +1,7 @@
 import React from 'react';
-import sample_data from '../data/data.json';
+import PropTypes from 'prop-types';
+
+import sample_data from '../data/residence.json';
 import GridUnit from './GridUnit';
 
 class GridRow extends React.Component {
@@ -42,8 +44,8 @@ class GridRow extends React.Component {
 }
 
 GridRow.propTypes = {
-  rowName: React.PropTypes.string.isRequired,
-  type: React.PropTypes.number.isRequired
+  rowName: PropTypes.string.isRequired,
+  type: PropTypes.number.isRequired
 }
 
 export default GridRow;

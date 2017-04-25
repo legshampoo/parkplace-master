@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Redux, { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as tagActions from '../actions/actionCreators';
@@ -46,6 +47,7 @@ class EventHandler extends React.Component {
           case '5000': json.tag = 'p1'; break;
           case '6000': json.tag = 'p2'; break;
           case '7000': json.tag = 't'; break;
+          case '8000': json.tag = 'a'; break;
         }
 
         updateTagStatus(json.tag, json.status);
@@ -217,7 +219,7 @@ class EventHandler extends React.Component {
 }
 
 EventHandler.contextTypes = {
-  router: React.PropTypes.object
+  router: PropTypes.object
 }
 
 function mapStateToProps(state){

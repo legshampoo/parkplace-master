@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import GridUnit from './GridUnit'
+import GridUnit from './GridUnit';
 
 class GridColumn extends React.Component {
   constructor(){
@@ -29,8 +30,8 @@ class GridColumn extends React.Component {
 }
 
 GridColumn.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  data: React.PropTypes.array.isRequired
+  name: PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired
 }
 
 export default GridColumn;

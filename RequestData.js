@@ -1,105 +1,68 @@
 var http = require('http');
 var fs = require('fs');
-var requestTimer = 1000 * 10;
+var request = require('request');
+var fetchTimer = 1000 * 60;
+var requestTimeout = 1000 * 10;
 
-const residenceURL = '/api/residence/';
+const residenceURL = '/residence/';
 const residenceFilename = 'data.json';
-const nonResidenceURL = '/api/media/';
+const nonResidenceURL = '/media/';
 const nonResidenceFilename = 'media_groups.json';
 
 var options = {
-  host: '192.168.45.21',
-  path: '/api/residence/',
+  baseUrl: 'http://192.168.45.21/api',
+  uri: '',
   method: 'GET',
   headers: {
     Accept: 'application/json'
   },
-  cache: 'default'
+  cache: 'default',
+  timeout: requestTimeout
 }
 
 module.exports = {
-  residenceData: function(){
 
-    //do it without delay the first time
-    requestData();
+  //fetch data, type passed in argument
+  //if successful, set a timer to request again later
+  //if not successful, try again immediately
+  fetchData: function(type){
+    var _this = this;
 
-    //then set it to loop
-    setInterval(function(){
-      requestData('residence');
-      requestData('nonResidence');
-    }, requestTimer);
+    console.log('fetching ' + type + ' data...');
 
-  },
+    //build the path to data type
+    options.uri = '/' + type + '/';
 
-  nonResidenceData: function(){
-    console.log('fetch non residence data');
+    //make the request for data
+    request(options, function (error, response, body) {
+
+      //if there's no error and status code is 'OK'
+      if (!error && response.statusCode === 200) {
+        console.log('Request for ' + type + ' data successful...');
+        try{
+          var parsedData= JSON.parse(body);
+          var json = JSON.stringify(parsedData, null, 2);
+
+          fs.writeFile('./client/data/' + type + '.json', json, 'utf8', function(){
+            console.log('finished saving ' + type + ' data to file');
+            console.log('Another request for ' + type + ' data will occur in ' + fetchTimer / 1000 + ' seconds');
+            //if successful, set it to repeat later
+            setTimeout(function(){
+              _this.fetchData(type);
+            }, fetchTimer);
+          });
+        }catch(e){
+          //if there's a save to file error, retry
+          console.log(e);
+          console.log('File save error, attempting ' + type + ' data request immediately...');
+          _this.fetchData(type);
+        }
+      }else{
+        //if there's a request error, retry
+        console.log(error);
+        console.log('GET request error, attempting ' + type + ' data request immediately...');
+        _this.fetchData(type);
+      }
+    })
   }
 };
-
-function requestData(type){
-  console.log('fetching ' + type + ' data');
-  var filename = '';
-
-  switch(type){
-    case 'residence':
-      options.path = residenceURL;
-      filename = residenceFilename;
-    case 'nonResidence':
-      options.path = nonResidenceURL;
-      filename = nonResidenceFilename;
-    default:
-      break;
-  }
-  // options.path = residencePath;
-
-  var obj = [];
-
-  const request = http.request(options, (res) => {
-    console.log(`STATUS: ${res.statusCode}`);
-
-
-    res.setEncoding('utf8');
-
-    res.on('data', (chunk) => {
-      console.log('received data chunk');
-      obj.push(chunk);
-    });
-
-    res.on('end', () => {
-      console.log('end of response...');
-
-      // try{
-      //   var parsedData= JSON.parse(obj);
-      //   // console.log(parsedData);
-      //   var json = JSON.stringify(parsedData);
-      //   // console.log(json);
-      //   // console.log(obj);
-      //   fs.writeFile('./client/data/' + filename, json, 'utf8', function(){
-      //     console.log('finished saving ' + type + ' data to file');
-      //   });
-      // }catch(e){
-      //   console.log(e);
-      // }
-    });
-  });
-
-  request.on('error', (e) => {
-    console.log('problem with request: ' + e.message);
-  });
-
-  request.end(function(){
-    console.log('try to save');
-    try{
-      var parsedData= JSON.parse(obj);
-      // console.log(parsedData);
-      var json = JSON.stringify(parsedData);
-      // console.log(json);
-      // console.log(obj);
-      fs.writeFile('./client/data/' + filename, json, 'utf8', function(){
-        console.log('finished saving ' + type + ' data to file');
-      });
-    }catch(e){
-      console.log(e);
-    }
-  });
-}

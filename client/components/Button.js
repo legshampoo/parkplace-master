@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import { browserHistory } from 'react-router';
 
 // import { connect } from 'react-redux';
@@ -87,16 +88,16 @@ class Button extends React.Component {
 }
 
 Button.contextTypes = {
-  router: React.PropTypes.object
+  router: PropTypes.object
 }
 
 Button.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  path: React.PropTypes.string.isRequired,
-  buttonClicked: React.PropTypes.func.isRequired,
-  tagStatus: React.PropTypes.object.isRequired,
-  tagState: React.PropTypes.bool,
-  tags: React.PropTypes.object.isRequired
+  name: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  buttonClicked: PropTypes.func.isRequired,
+  tagStatus: PropTypes.object.isRequired,
+  tagState: PropTypes.bool,
+  tags: PropTypes.object.isRequired
 }
 
 export default Button;

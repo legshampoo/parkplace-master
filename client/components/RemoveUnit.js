@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class RemoveUnit extends React.Component{
   constructor(){
@@ -17,7 +18,7 @@ class RemoveUnit extends React.Component{
 }
 
 RemoveUnit.propTypes = {
-  styleClass: React.PropTypes.string.isRequired
+  styleClass: PropTypes.string.isRequired
 }
 
 export default RemoveUnit;

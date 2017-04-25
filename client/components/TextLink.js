@@ -1,11 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import AddToFolioButton from './AddToFolioButton';
 
 class TextLink extends React.Component {
   constructor(props){
     super(props)
-    // console.log(props);
   }
 
   render(){
@@ -18,9 +18,8 @@ class TextLink extends React.Component {
 }
 
 TextLink.propTypes = {
-  // path: React.PropTypes.string.isRequired,
-  displayText: React.PropTypes.string.isRequired,
-  styleClass: React.PropTypes.string.isRequired
+  displayText: PropTypes.string.isRequired,
+  styleClass: PropTypes.string.isRequired
 }
 
 export default TextLink

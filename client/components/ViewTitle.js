@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class ViewTitle extends React.Component {
   render(){
@@ -12,8 +13,8 @@ class ViewTitle extends React.Component {
 }
 
 ViewTitle.propTypes = {
-  title: React.PropTypes.string.isRequired,
-  subtitle: React.PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired
 }
 
 export default ViewTitle

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import Toggle from './Toggle';
+// import Toggle from './Toggle';
 import EventHandler from './EventHandler';
-import DevMenu from './DevMenu';
+// import DevMenu from './DevMenu';
 import ControlPanel from './ControlPanel';
 
 const Main = React.createClass({

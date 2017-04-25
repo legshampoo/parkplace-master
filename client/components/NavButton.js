@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class NavButton extends React.Component {
   constructor(){
@@ -24,13 +25,13 @@ class NavButton extends React.Component {
 }
 
 NavButton.contextTypes = {
-  router: React.PropTypes.object
+  router: PropTypes.object
 }
 
 NavButton.propTypes = {
-  styleClass: React.PropTypes.string.isRequired,
-  name: React.PropTypes.string.isRequired,
-  path: React.PropTypes.string.isRequired
+  styleClass: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired
 }
 
 export default NavButton;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import KeypadButton from './KeypadButton';
 import KeypadConsole from './KeypadConsole';
@@ -82,7 +83,7 @@ class Keypad extends React.Component {
 }
 
 Keypad.contextTypes = {
-  router: React.PropTypes.object
+  router: PropTypes.object
 }
 
 export default Keypad

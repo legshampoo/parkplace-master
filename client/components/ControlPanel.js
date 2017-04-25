@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import ControlGroup from './ControlGroup';
 import AddToFolioButton from './AddToFolioButton';
@@ -33,13 +34,13 @@ class ControlPanel extends React.Component {
       <div className='control-panel-groups'>
         <AddToFolioButton styleClass='add-to-folio-button'/>
         <div className='control-panel-left'>
-          <ControlButton name='fill-horizontal' icon={require('../assets/icons/left_right_arrow.jpg')} handleClick={this.props.handleClick.bind(this)}/>
-        <ControlButton name='fill-vertical' icon={require('../assets/icons/up_down_arrow.jpg')} handleClick={this.props.handleClick.bind(this)}/>
+          <ControlButton name='fill-horizontal' icon={require('../assets/icons/left_right_arrow.png')} handleClick={this.props.handleClick.bind(this)}/>
+        <ControlButton name='fill-vertical' icon={require('../assets/icons/up_down_arrow.png')} handleClick={this.props.handleClick.bind(this)}/>
         </div>
         <div className='control-panel-right'>
-          <ControlButton name='pan-left' icon={require('../assets/icons/left_arrow.jpg')} handleClick={this.props.handleClick.bind(this)}/>
-        <ControlButton name='center-image' icon={require('../assets/icons/center.jpg')} handleClick={this.props.handleClick.bind(this)}/>
-      <ControlButton name='pan-right' icon={require('../assets/icons/right_arrow.jpg')} handleClick={this.props.handleClick.bind(this)}/>
+          <ControlButton name='pan-left' icon={require('../assets/icons/left_arrow.png')} handleClick={this.props.handleClick.bind(this)}/>
+        <ControlButton name='center-image' icon={require('../assets/icons/center.png')} handleClick={this.props.handleClick.bind(this)}/>
+      <ControlButton name='pan-right' icon={require('../assets/icons/right_arrow.png')} handleClick={this.props.handleClick.bind(this)}/>
         </div>
       </div>
     )
@@ -50,10 +51,10 @@ class ControlPanel extends React.Component {
       <div className='control-panel-groups'>
         <AddToFolioButton styleClass='add-to-folio-button'/>
         <div className='control-panel-left'>
-          <ControlButton name='play' icon={require('../assets/icons/play.jpg')} handleClick={this.props.handleClick.bind(this)}/>
+          <ControlButton name='play' icon={require('../assets/icons/play.png')} handleClick={this.props.handleClick.bind(this)}/>
         </div>
         <div className='control-panel-right'>
-          <ControlButton name='restart' icon={require('../assets/icons/restart.jpg')} handleClick={this.props.handleClick.bind(this)}/>
+          <ControlButton name='restart' icon={require('../assets/icons/restart.png')} handleClick={this.props.handleClick.bind(this)}/>
         </div>
       </div>
     )
@@ -85,7 +86,7 @@ class ControlPanel extends React.Component {
 }
 
 ControlPanel.propTypes = {
-  type: React.PropTypes.string.isRequired
+  type: PropTypes.string.isRequired
 }
 
 export default ControlPanel;

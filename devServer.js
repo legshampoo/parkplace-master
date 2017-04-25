@@ -30,48 +30,9 @@ app.listen(PORT, 'localhost', function(err){
   console.log('DevServer listening at http://localhost:' + PORT);
 });
 
-getData.residenceData();
-
-// var options = {
-//   host: '192.168.45.21',
-//   // host: 'www.google.com',
-//   path: '/api/residence/',
-//   // mode: 'no-cors',
-//   method: 'GET',
-//   headers: {
-//     Accept: 'application/json'
-//   },
-//   cache: 'default'
-// }
-
-
-// const req = http.request(options, (res) => {
-//   console.log(`STATUS: ${res.statusCode}`);
-//   var obj = [];
-//
-//   res.setEncoding('utf8');
-//   res.on('data', (chunk) => {
-//     console.log('received data chunk');
-//     obj.push(chunk);
-//   });
-//   res.on('end', () => {
-//     console.log('end of response...');
-//
-//     var parsedData = JSON.parse(obj);
-//     var json = JSON.stringify(parsedData);
-//     fs.writeFile('./client/data/data.json', json, 'utf8', function(){
-//       console.log('finished saving json to file');
-//     });
-//   });
-// });
-//
-// req.on('error', (e) => {
-//   console.log(`problem with request: ${e.message}`);
-// })
-//
-// req.end();
-
-
+//request apartment data
+getData.fetchData('residence');
+getData.fetchData('media');
 
 //------------------------------
 //

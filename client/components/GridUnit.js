@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import { updateCurrentUnit } from '../actions/actionCreators';
 
@@ -30,12 +31,12 @@ class GridUnit extends React.Component {
 }
 
 GridUnit.contextTypes = {
-  router: React.PropTypes.object
+  router: PropTypes.object
 }
 
 GridUnit.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  interactive: React.PropTypes.bool.isRequired
+  name: PropTypes.string.isRequired,
+  interactive: PropTypes.bool.isRequired
 }
 
 export default GridUnit;

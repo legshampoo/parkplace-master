@@ -1,5 +1,5 @@
 import React from 'react'
-import sample_data from '../data/data.json';
+import data from '../data/residence.json';
 
 import GridRow from './GridRow'
 import NavButton from './NavButton';
@@ -42,7 +42,7 @@ class Grid extends React.Component {
         <div className='grid-wrapper'>
           <span className ='grid-border-overlay'></span>
           <span className = 'grid-vertical-overlay'></span>
-          {this.createRows(sample_data)}
+          {this.createRows(data)}
         </div>
       </div>
     )

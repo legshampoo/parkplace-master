@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Redux, { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as folioActions from '../actions/actionCreators';
@@ -41,7 +42,7 @@ class CompareUnitDetails extends React.Component {
           <h2>DETAILS</h2>
         </div>
         <ViewHeader unitId={this.props.unitId}/>
-        <UnitInfo />
+        <UnitInfo unitId={this.props.unitId}/>
         <RemoveUnit
           styleClass='remove-unit-button-compare'
           onClick={this.removeUnit.bind(this)}
@@ -52,13 +53,13 @@ class CompareUnitDetails extends React.Component {
 }
 
 CompareUnitDetails.contextTypes = {
-  router: React.PropTypes.object
+  router: PropTypes.object
 }
 
 CompareUnitDetails.propTypes = {
-  unitId: React.PropTypes.string.isRequired,
-  tag: React.PropTypes.string.isRequired,
-  lastPath: React.PropTypes.string.isRequired
+  unitId: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  lastPath: PropTypes.string.isRequired
 }
 
 function mapStateToProps(state){

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class KeypadButton extends React.Component {
   constructor(){
@@ -25,10 +26,10 @@ class KeypadButton extends React.Component {
 }
 
 KeypadButton.propTypes = {
-  styleClass: React.PropTypes.string.isRequired,
-  displayText: React.PropTypes.string.isRequired,
-  value: React.PropTypes.string.isRequired,
-  updateInput: React.PropTypes.func.isRequired
+  styleClass: PropTypes.string.isRequired,
+  displayText: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  updateInput: PropTypes.func.isRequired
 }
 
 export default KeypadButton

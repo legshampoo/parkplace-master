@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class GenericButton extends React.Component {
   constructor(){
@@ -15,9 +16,9 @@ class GenericButton extends React.Component {
 }
 
 GenericButton.propTypes = {
-  styleClass: React.PropTypes.string.isRequired,
-  action: React.PropTypes.func.isRequired,
-  textDisplay: React.PropTypes.string
+  styleClass: PropTypes.string.isRequired,
+  action: PropTypes.func.isRequired,
+  textDisplay: PropTypes.string
 }
 
 export default GenericButton

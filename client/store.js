@@ -7,7 +7,7 @@ import thunkMiddleware from 'redux-thunk';
 import rootReducer from './reducers/index';
 
 //import sample data
-import data from './data/data';
+// import data from './data/data';
 // import comments from './data/comments';
 // import posts from './data/posts';
 

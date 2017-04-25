@@ -2,14 +2,13 @@ import React from 'react';
 import Redux, { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import data from '../data/media_groups.json';
+import data from '../data/media.json';
 
 import TextLink from './TextLink';
 import TextLinkBorder from './TextLinkBorder';
 import RenderNonUnitAssets from './RenderNonUnitAssets';
 import NextPageButton from './NextPageButton';
 import ControlPanel from './ControlPanel';
-// import dashboardData from '../data/controlPanelImage';
 import * as folioActions from '../actions/actionCreators';
 
 class MediaGroup extends React.Component {
@@ -46,13 +45,17 @@ class MediaGroup extends React.Component {
         console.log(tag);
         mediaGroup = 'Team';
         break;
+      case 'a':
+        console.log(tag);
+        mediaGroup = 'Architecture';
+        break;
       default:
         console.log('default');
         break;
     }
 
     this.setState({mediaGroup: mediaGroup}, function(){
-      console.log('media group set to ' + mediaGroup);
+      // console.log('media group set to ' + mediaGroup);
     });
   }
 
@@ -85,7 +88,11 @@ class MediaGroup extends React.Component {
 
       if(!isEmpty){
         return(
-          <RenderNonUnitAssets pageIndex={this.state.pageIndex} handleClick={this.selectMedia} data={media} activeButton={this.state.activeButton}/>
+          <RenderNonUnitAssets
+            pageIndex={this.state.pageIndex}
+            handleClick={this.selectMedia}
+            data={media}
+            activeButton={this.state.activeButton}/>
         )
       }
   }
@@ -107,6 +114,12 @@ class MediaGroup extends React.Component {
     }, function(){
       console.log('active button: ' + this.state.activeButton.name);
     });
+
+    var message = {
+      command: 'select',
+      media: media
+    }
+    this.sendControlMessage(message);
   }
 
   changePageIndex(val){
@@ -131,7 +144,6 @@ class MediaGroup extends React.Component {
 
   renderControlPanel(){
     if(this.state.selectedMediaType === 'video'){
-      console.log('vid');
       return(
          <ControlPanel type='video-controls' handleClick={this.sendControlMessage.bind(this)}/>
       )
@@ -143,16 +155,17 @@ class MediaGroup extends React.Component {
     }
   }
 
-  sendControlMessage(command){
+  sendControlMessage(msg){
 
-    var msg = {
-      'media-group': this.state.mediaGroup,
-      'media': this.state.activeButton,
-      'command': command
-    }
+    // var msg = {
+    //   'media-group': this.state.mediaGroup,
+    //   'media': this.state.activeButton,
+    //   'command': command
+    // }
 
-    console.log('socket send:');
-    console.log(msg);
+    console.log('socket send: ');
+    console.log(msg.command);
+    console.log(msg.media);
 
   }
 

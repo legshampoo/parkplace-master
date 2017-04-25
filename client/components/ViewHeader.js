@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class ViewHeader extends React.Component {
   constructor(){
@@ -21,7 +22,7 @@ class ViewHeader extends React.Component {
 }
 
 ViewHeader.propTypes = {
-  unitId: React.PropTypes.string.isRequired
+  unitId: PropTypes.string.isRequired
 }
 
 export default ViewHeader;

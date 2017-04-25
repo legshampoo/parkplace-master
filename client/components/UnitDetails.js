@@ -1,9 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Redux, { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import data from '../data/data.json';
-// import dashboardData from '../data/controlPanelImage';
+import data from '../data/residence.json';
 import store from '../store';
 
 import TextLink from './TextLink';
@@ -26,6 +26,7 @@ class UnitDetails extends React.Component {
     this.assignToToken = this.assignToToken.bind(this);
     this.removeUnit = this.removeUnit.bind(this);
     this.selectMedia = this.selectMedia.bind(this);
+    this.changePageIndex = this.changePageIndex.bind(this);
 
     this.state = {
       mediaGroup: '',
@@ -43,6 +44,26 @@ class UnitDetails extends React.Component {
   shouldComponentUpdate(){
     var shouldUpdate = true;
     return shouldUpdate;
+  }
+
+  changePageIndex(val){
+    var index = this.state.pageIndex + val;
+
+    if(index < 0){
+      index = 0;
+    }
+    // console.log('pageIndex: ' + index);
+
+    var unit = this.getUnitId();
+    var unitData = this.getUnitData(data, unit);
+
+
+    if((index + 1) > Math.ceil(unitData.media.length / 6)){
+      // console.log('page index limit');
+      index = index - 1;
+    }
+
+    this.setState({pageIndex: index});
   }
 
   getUnitId(){
@@ -77,7 +98,7 @@ class UnitDetails extends React.Component {
   }
 
   checkUnitExists(d, unit){
-    console.log(unit);
+    // console.log('unit: ' + unit);
     var found = false;
 
     try{
@@ -126,14 +147,19 @@ class UnitDetails extends React.Component {
 
     if(found){
       var details = this.getUnitData(d, unit);
-      console.log(details);
+      // console.log(details);
       var empty = this.checkIfEmpty(details.media);
       if(empty){
         console.log('no media found');
       }
 
       return(
-        <RenderAssets pageIndex={this.state.pageIndex} handleClick={this.selectMedia} data={details.media} activeButton={this.state.activeButton} mediaType='photo' />
+        <RenderAssets
+          pageIndex={this.state.pageIndex}
+          handleClick={this.selectMedia}
+          data={details.media}
+          activeButton={this.state.activeButton}
+          mediaType='photo' />
       )
 
     }else{
@@ -157,13 +183,12 @@ class UnitDetails extends React.Component {
       selectedMediaType: selectedMediaType
     }, function(){
       console.log('active button: ' + activeButton.name);
-      console.log('type: ' + selectedMediaType)
     });
   }
 
   renderControlPanel(){
     if(this.state.selectedMediaType === 'video'){
-      console.log('vid');
+      // console.log('vid');
       return(
          <ControlPanel type='video-controls' handleClick={this.sendControlMessage.bind(this)}/>
       )
@@ -198,7 +223,7 @@ class UnitDetails extends React.Component {
         </div>
         <ViewHeader unitId={this.getUnitId()} />
         <RemoveUnit styleClass='remove-unit-button-center' onClick={this.removeUnit.bind(this)}/>
-        <NextPageButton />
+        <NextPageButton handleClick={this.changePageIndex}/>
         {this.renderControlPanel()}
         <AssignToTokenButton displayText={'+'} onClick={this.assignToToken.bind(this)}/>
       </div>
@@ -207,12 +232,11 @@ class UnitDetails extends React.Component {
 }
 
 UnitDetails.contextTypes = {
-  router: React.PropTypes.object
+  router: PropTypes.object
 }
 
 UnitDetails.propTypes = {
-  // assignUnit: React.PropTypes.func.isRequired,
-  // unitId: React.PropTypes.string.isRequired
+
 }
 
 function mapStateToProps(state){

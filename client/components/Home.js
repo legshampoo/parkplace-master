@@ -1,6 +1,6 @@
 import React from 'react'
 
-import HomepageLogo from './HomepageLogo'
+// import HomepageLogo from './HomepageLogo'
 // import Toggle from './Toggle';
 // import DevMenu from './DevMenu';
 

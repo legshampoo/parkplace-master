@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class AssignToTokenButton extends React.Component {
   render(){
@@ -15,8 +16,8 @@ AssignToTokenButton.contextTypes = {
 }
 
 AssignToTokenButton.propTypes = {
-  displayText: React.PropTypes.string,
-  onClick: React.PropTypes.func.isRequired
+  displayText: PropTypes.string,
+  onClick: PropTypes.func.isRequired
 }
 
 export default AssignToTokenButton;
