@@ -6,13 +6,15 @@ import TextLink from './TextLink';
 class RenderAssets extends React.Component {
   constructor(props){
     super(props);
+    console.log(props);
     var count = 0;
   }
 
   renderAssets(d){
     var _this = this;
     this.count = 0;
-
+    // console.log('here');
+    // console.log(d);
     return(
       // d.map((media, index) => (
       d.map(function(media, index){

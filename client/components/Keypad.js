@@ -40,7 +40,7 @@ class Keypad extends React.Component {
   }
 
   submit(val){
-    const path = '/unit-details/' + this.state.input;
+    const path = '/assets/' + this.state.input;
     updateCurrentUnit(this.state.input);
     this.context.router.push(path)
   }

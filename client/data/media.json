@@ -4,44 +4,44 @@
       {
         "name": "Lobby To Courtyard",
         "icon": "",
-        "wall": "assets/renders/led/06_lobby_to_courtyard_2304x1280.jpg",
-        "ipad": "assets/renders/led/06_lobby_to_courtyard_2304x1280.jpg"
+        "wall": "assets/renders/led/45PP_06 LOBBY TO COURTYARD-2304x1280.jpg",
+        "ipad": "assets/renders/led/45PP_06 LOBBY TO COURTYARD-2304x1280.jpg"
       },
       {
         "name": "Tower At Dusk",
         "icon": "",
-        "wall": "assets/renders/led/03_top_of_tower_dusk_2304x1280.jpg",
-        "ipad": "assets/renders/ipad/03_top_of_tower_dusk_5464x4096.jpg"
+        "wall": "assets/renders/led/45PP_03 TOP OF TOWER DUSK-2304x1280.jpg",
+        "ipad": "assets/renders/led/45PP_03 TOP OF TOWER DUSK-2304x1280.jpg"
       },
       {
-        "name": "Lounge",
+        "name": "Second Floor Lounge",
         "icon": "",
-        "wall": "assets/renders/led/07_second_floor_lounge_2304x1280.jpg",
-        "ipad": "assets/renders/ipad/07_second_floor_lounge_5464x4096.jpg"
+        "wall": "assets/renders/led/45PP_07 SECOND FLOOR LOUNGE-2304x1280.jpg",
+        "ipad": "assets/renders/led/45PP_07 SECOND FLOOR LOUNGE-2304x1280.jpg"
       },
       {
         "name": "Fitness Center",
         "icon": "",
-        "wall": "assets/renders/led/08-FITNESS-2304x1280.jpg",
-        "ipad": "assets/renders/ipad/08 FITNESS_5464x4096.jpg"
+        "wall": "assets/renders/led/45PP_08 FITNESS-2304x1280.jpg",
+        "ipad": "assets/renders/led/45PP_08 FITNESS-2304x1280.jpg"
       },
       {
         "name": "Arrival",
         "icon": "",
-        "wall": "assets/renders/led/04-ARRIVAL-2304x1280.jpg",
-        "ipad": "assets/renders/ipad/04 ARRIVAL_5464x4096.jpg"
+        "wall": "assets/renders/led/45PP_04 ARRIVAL-2304x1280.jpg",
+        "ipad": "assets/renders/led/45PP_04 ARRIVAL-2304x1280.jpg"
       },
       {
         "name": "Lobby To Street",
         "icon": "",
-        "wall": "assets/renders/led/05-LOBBYTOSTREET-2304x1280.jpg",
-        "ipad": "assets/renders/ipad/05-LOBBYTOSTREET-5464x4096.jpg"
+        "wall": "assets/renders/led/45PP_05 LOBBY TO STREET-2304x1280.jpg",
+        "ipad": "assets/renders/led/45PP_05 LOBBY TO STREET-2304x1280.jpg"
       },
       {
         "name": "Lobby Desk",
         "icon": "",
-        "wall": "assets/renders/led/05B-DETLOBBYDESKDETAIL-2304x1280.jpg",
-        "ipad": "assets/renders/ipad/5-DETLOBBYDESKDETAIL-5464x4096.jpg"
+        "wall": "assets/renders/led/45PP_05DET-LOBBY DESK-2304x1280.jpg",
+        "ipad": "assets/renders/led/45PP_05DET-LOBBY DESK-2304x1280.jpg"
       },
       {
         "name": "Lounge From Above",
@@ -52,20 +52,38 @@
       {
         "name": "Children's Playroom",
         "icon": "",
-        "wall": "",
-        "ipad": ""
+        "wall": "assets/renders/led/45PP_09 CHILDRENS PLAYROOM-2304x1280.jpg",
+        "ipad": "assets/renders/led/45PP_09 CHILDRENS PLAYROOM-2304x1280.jpg"
       },
       {
         "name": "Pool",
         "icon": "",
-        "wall": "assets/renders/led/10-Pool-2304x1280.jpg",
-        "ipad": "assets/renders/ipad/10-Pool-5464x4096.jpg"
+        "wall": "assets/renders/led/45PP_10 POOL-2304x1280.jpg",
+        "ipad": "assets/renders/led/45PP_10 POOL-2304x1280.jpg"
       },
       {
-        "name": "Pool From Above",
+        "name": "Pool - Straight Down",
         "icon": "",
-        "wall": "assets/renders/led/11-POOLSTRAIGHTDOWN-2304x1280.jpg",
-        "ipad": "assets/renders/ipad/11-BPOOLSTRAIGHTDOWN-5464x4096.jpg"
+        "wall": "assets/renders/led/45PP_11 POOL STRAIGHT DOWN-2304x1280.jpg",
+        "ipad": "assets/renders/led/45PP_11 POOL STRAIGHT DOWN-2304x1280.jpg"
+      },
+      {
+        "name": "Building Hero",
+        "icon": "",
+        "wall": "assets/renders/led/45PP_01 BUILDING HERO-2304x1280.jpg",
+        "ipad": "assets/renders/led/45PP_01 BUILDING HERO-2304x1280.jpg"
+      },
+      {
+        "name": "Second Floor Lounge - Straight Down",
+        "icon": "",
+        "wall": "assets/renders/led/45PP_07B SECOND FLOOR LOUNGE STRAIGHT DOWN-2304x1280.jpg",
+        "ipad": "assets/renders/led/45PP_07B SECOND FLOOR LOUNGE STRAIGHT DOWN-2304x1280.jpg"
+      },
+      {
+        "name": "Pool - Straight On",
+        "icon": "",
+        "wall": "assets/renders/led/45PP_10 POOL STRAIGHT ON-2304x1280.jpg",
+        "ipad": "assets/renders/led/45PP_10 POOL STRAIGHT ON-2304x1280.jpg"
       }
     ],
     "videos": [],

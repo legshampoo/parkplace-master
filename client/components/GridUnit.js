@@ -11,7 +11,8 @@ class GridUnit extends React.Component {
 
   onClick(event){
     event.preventDefault();
-    var path = '/unit-details/' + this.props.name;
+    // var path = '/unit-details/' + this.props.name;
+    var path = '/assets/' + this.props.name;
 
     if(this.props.interactive){
       updateCurrentUnit(this.props.name);

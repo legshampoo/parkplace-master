@@ -102,6 +102,7 @@ class MediaGroup extends React.Component {
   }
 
   selectMedia(media, type){
+
     var activeButton = this.state.activeButton;
     activeButton = media;
 

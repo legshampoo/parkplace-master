@@ -28,8 +28,8 @@ class RenderNonUnitAssets extends React.Component {
           // this.setState({count: count++});
           _this.count++;
           var mediaType = 'video';
-          console.log(_this.props.activeButton);
-          console.log(media.name);
+          // console.log(_this.props.activeButton);
+          // console.log(media.name);
           return(
             <TextLink
               handleClick={_this.props.handleClick.bind(this, media, mediaType)}
