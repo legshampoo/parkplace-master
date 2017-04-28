@@ -38,7 +38,7 @@ class Grid extends React.Component {
   render(){
     return(
       <div className='view'>
-        <NavButton styleClass='nav-grid-to-keypad' name='KEYPAD OPTION' path='/keypad' />
+        <NavButton styleClass='nav-grid-to-keypad' name='KEYPAD' path='/keypad' />
         <div className='grid-wrapper'>
           <span className ='grid-border-overlay'></span>
           <span className = 'grid-vertical-overlay'></span>

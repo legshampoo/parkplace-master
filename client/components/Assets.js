@@ -14,6 +14,7 @@ import RenderAssets from './RenderAssets';
 import RenderNonUnitAssets from './RenderNonUnitAssets';
 import RemoveUnit from './RemoveUnit';
 import ViewHeader from './ViewHeader';
+// import AddToFolio from './AddToFolio';
 import * as folioActions from '../actions/actionCreators';
 import { updateCurrentUnit, assignUnitToToken } from '../actions/actionCreators';
 import { handleNewTag } from './RouteLogic';
@@ -45,6 +46,8 @@ class Assets extends React.Component {
 
   updateProps(){
     console.log('LOADING...');
+    console.log(media);
+    console.log(residence);
     // this.assignToToken();
 
     var mediaGroup = this.state.mediaGroup;
@@ -82,7 +85,7 @@ class Assets extends React.Component {
     console.log('before state update');
 
     if(this.state.mediaGroup !== mediaGroup) {
-      console.log(mediaGroup, '---')
+      console.log('mediagroup: ' + mediaGroup)
       this.setState({
         mediaGroup: mediaGroup,
         locationPathname: this.props.location.pathname
@@ -149,7 +152,8 @@ class Assets extends React.Component {
 
   getAssets(data, val){
     var unitData = {};
-
+    console.log(data);
+    console.log(val);
     try{
       Object.keys(data).map(function(key, index){
         if(data[key].name == val){
@@ -272,10 +276,11 @@ class Assets extends React.Component {
       }
     }else{
       //otherwise render Media assets
-      var details = this.getAssets(media, this.state.mediaGroup);
-      // console.log(details);
+      // var details = this.getAssets(media, this.state.mediaGroup);
+      var details = this.getAssets(d, this.state.mediaGroup);
+      console.log(details);
       var isEmpty = this.checkIfEmpty(details);
-
+      console.log(isEmpty);
       if(!isEmpty){
         return (
           <RenderNonUnitAssets
@@ -311,12 +316,12 @@ class Assets extends React.Component {
   renderControlPanel(){
     if(this.state.selectedMediaType === 'video'){
       return(
-         <ControlPanel type='video-controls' handleClick={this.sendControlMessage.bind(this)}/>
+         <ControlPanel type='video-controls' handleClick={this.sendControlMessage.bind(this)} selectedAsset={this.state.activeButton}/>
       )
     }
     if(this.state.selectedMediaType === 'photo'){
       return(
-        <ControlPanel type='photo-controls' handleClick={this.sendControlMessage.bind(this)}/>
+        <ControlPanel type='photo-controls' handleClick={this.sendControlMessage.bind(this)} selectedAsset={this.state.activeButton}/>
       )
     }
   }
@@ -327,7 +332,7 @@ class Assets extends React.Component {
         <div className='media-assets-container'>
           <TextLinkBorder />
           <div className='media-container-border-overlay'></div>
-        {this.state.mediaGroup == 'Unit' || this.state.mediaGroup == 'Unit_Penthouse' ? this.renderAssets(residence) : this.renderAssets(media)}
+          {this.state.mediaGroup === 'Unit' || this.state.mediaGroup === 'Unit_Penthouse' ? this.renderAssets(residence) : this.renderAssets(media)}
         </div>
         <ViewHeader unitId={this.state.mediaGroup == 'Unit'|| this.state.mediaGroup == 'Unit_Penthouse' ? this.getUnitId() : this.state.mediaGroup} />
         {this.state.mediaGroup == 'Unit' ? this.renderRemoveUnitButton() : '' }

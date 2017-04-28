@@ -18,7 +18,9 @@ class NavButton extends React.Component {
         <div className='nav-button-text'>
           {this.props.name}
         </div>
-        <div className='grid-icon'></div>
+        {/* <div className='grid-icon'>
+
+        </div> */}
       </div>
     )
   }

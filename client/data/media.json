@@ -44,12 +44,6 @@
         "ipad": "assets/renders/led/45PP_05DET-LOBBY DESK-2304x1280.jpg"
       },
       {
-        "name": "Lounge From Above",
-        "icon": "",
-        "wall": "assets/renders/led/07B-SECONDFLOORLOUNGESTRAIGHTDOWN-2304x1280.jpg",
-        "ipad": "assets/renders/ipad/07-B SECOND FLOOR LOUNGE STRAIGHT DOWN_5464x4096.jpg"
-      },
-      {
         "name": "Children's Playroom",
         "icon": "",
         "wall": "assets/renders/led/45PP_09 CHILDRENS PLAYROOM-2304x1280.jpg",
@@ -88,54 +82,6 @@
     ],
     "videos": [],
     "name": "Amenities"
-  },
-  {
-    "photos": [
-      {
-        "name": "Building Hero",
-        "icon": "",
-        "wall": "assets/renders/led/HeroShot-2304x1280.jpg",
-        "ipad": "assets/renders/ipad/HeroShot-5464x4096.jpg"
-      },
-      {
-        "name": "Top of Tower - Dusk",
-        "icon": "",
-        "wall": "assets/renders/led/03-TOPOFTOWERDUSK-2304x1280.jpg",
-        "ipad": "assets/renders/ipad/03 TOP OF TOWER DUSK_5464x4096.jpg"
-      },
-      {
-        "name": "Building - Looking up",
-        "icon": "",
-        "wall": "",
-        "ipad": ""
-      },
-      {
-        "name": "Aerial Hero - North",
-        "icon": "",
-        "wall": "",
-        "ipad": ""
-      },
-      {
-        "name": "Aerial Hero - South",
-        "icon": "",
-        "wall": "",
-        "ipad": ""
-      },
-      {
-        "name": "Building Facade",
-        "icon": "",
-        "wall": "",
-        "ipad": ""
-      },
-      {
-        "name": "Top of Tower - Day",
-        "icon": "",
-        "wall": "",
-        "ipad": ""
-      }
-    ],
-    "videos": [],
-    "name": "Architecture"
   },
   {
     "photos": [

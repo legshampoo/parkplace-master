@@ -34,7 +34,7 @@ class CompareUnits extends React.Component {
     return(
       <div className='view'>
         <div className='compare-container'>
-          <div className='compare-border'></div>
+          {/* <div className='compare-border'></div> */}
           <div className='compare-division-line'></div>
           <CompareUnitDetails tag='ap1' unitId={this.getUnitId('ap1')} lastPath='/ap1'/>
           <CompareUnitDetails tag='ap2' unitId={this.getUnitId('ap2')} lastPath='/ap2'/>

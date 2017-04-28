@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import AddToFolioButton from './AddToFolioButton';
-
 class TextLink extends React.Component {
   constructor(props){
     super(props)
@@ -11,7 +9,7 @@ class TextLink extends React.Component {
   render(){
     return(
       <div className={this.props.styleClass} onClick={() => this.props.handleClick()}>
-        <h2 className='text-link-text'>{this.props.displayText}</h2>
+        <div className='text-link-text'>{this.props.displayText}</div>
       </div>
     )
   }

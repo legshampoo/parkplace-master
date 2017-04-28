@@ -9,7 +9,7 @@ import ViewHeader from './ViewHeader';
 import TextLink from './TextLink';
 import GenericButton from './GenericButton';
 import UnitInfo from './UnitInfo';
-import AddToFolioButton from './AddToFolioButton';
+import AddToFolio from './AddToFolio';
 import RemoveUnit from './RemoveUnit';
 import { updateCurrentUnit, updateCurrentTag, assignUnitToToken } from '../actions/actionCreators';
 
@@ -32,16 +32,16 @@ class CompareUnitDetails extends React.Component {
   render(){
     return(
       <div className='compare-unit-wrapper'>
-        <div className='add-to-folio-wrapper-compare'>
-          <AddToFolioButton styleClass='add-to-folio-button-compare' />
-        </div>
+        {/* <div className='add-to-folio-wrapper-compare'> */}
+          {/* <AddToFolioButton styleClass='add-to-folio-button-compare' /> */}
+        {/* </div> */}
+        <ViewHeader unitId={this.props.unitId}/>
         <div className='compare-unit-header'>
-          <h1>FLOORPLAN</h1>
+          FLOORPLAN
         </div>
         <div className='compare-unit-sub-header'>
-          <h2>DETAILS</h2>
+          DETAILS
         </div>
-        <ViewHeader unitId={this.props.unitId}/>
         <UnitInfo unitId={this.props.unitId}/>
         <RemoveUnit
           styleClass='remove-unit-button-compare'

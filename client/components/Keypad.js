@@ -53,11 +53,6 @@ class Keypad extends React.Component {
 
           <div className='keypad'>
             <KeypadConsole userInput={this.state.input} updateInput={this.updateInput}/>
-            {/* <div className='keypad-underline-container'>
-              <div className='keypad-underline'></div>
-              <div className='keypad-underline'></div>
-              <div className='keypad-underline'></div>
-            </div> */}
             <div className='inner-keypad-wrapper'>
               <KeypadButton styleClass='keypad-button' displayText='1' value='1' updateInput={this.updateInput}/>
               <KeypadButton styleClass='keypad-button' displayText='2' value='2' updateInput={this.updateInput}/>

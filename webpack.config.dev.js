@@ -35,7 +35,6 @@ module.exports = {
       //json (not necessary, but trying to ignore json)
       {
         test: /\.json$/,
-        exclude: path.join(__dirname, '/client/data/*'),
         loader: 'json-loader'
       },
       //fonts
