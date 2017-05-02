@@ -6,6 +6,7 @@ import * as tagActions from '../actions/actionCreators';
 import { updateTagStatus, updateCurrentTag, updateCurrentUnit } from '../actions/actionCreators';
 
 import { handleNewTag, handleTagRemoved } from './RouteLogic';
+import { socketConnectCMS } from './MessageHandler';
 
 class EventHandler extends React.Component {
   constructor(props){
@@ -18,11 +19,12 @@ class EventHandler extends React.Component {
   }
 
   componentDidMount(){
+    socketConnectCMS();
 
     const webSocketPort = 5560;
     this.socket = new WebSocket('ws://localhost:' + webSocketPort);
     this.socket.onopen = function(event){
-      console.log('User Interface WebSocket connected to: ' + event.currentTarget.URL);
+      console.log('Websocket connecting to server: ' + event.currentTarget.URL);
     }
 
     //-----------------------
@@ -53,16 +55,16 @@ class EventHandler extends React.Component {
 
         // if(json.status == 'true'){  //use this line for actual RFID
         if(json.status == true){
-          console.log(json.tag + ' active');
+          // console.log(json.tag + ' active');
           updateCurrentTag(json.tag);
           var tag = this.props.current.currentTag;
           path = handleNewTag(tag);
           this.context.router.push(path);
           return;
         }else if(json.status == false){
-          console.log(json.tag + ' removed');
+          // console.log(json.tag + ' removed');
           path = handleTagRemoved();
-          console.log('pushing to ' + path);
+          // console.log('pushing to ' + path);
           this.context.router.push(path);
           return;
         }

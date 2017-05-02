@@ -4,7 +4,7 @@ import { updateCurrentUnit, updateCurrentTag } from '../actions/actionCreators';
 
 
 export function handleNewTag(tag){
-  console.log(tag);
+  // console.log(tag);
   var path = '';
   switch(tag){
     case 'ap1':
@@ -12,14 +12,14 @@ export function handleNewTag(tag){
       var ap1Unit = store.getState().folio['ap1'];
       var ap2Unit = store.getState().folio['ap2'];
       var bothTagsActive = checkBothActive();
-      console.log(bothTagsActive);
+      // console.log(bothTagsActive);
       if(bothTagsActive){
         console.log('both');
         path = handleBothActive(ap1Unit, ap2Unit);
         console.log(path);
       }else if(!bothTagsActive){
         path = handleOneTagActive(ap1Unit, ap2Unit);
-        console.log(path);
+        // console.log(path);
       }
       break;
     case 'am':
@@ -39,20 +39,20 @@ export function handleNewTag(tag){
       break;
   }
 
-  console.log(path);
+  // console.log(path);
   return path;
 }
 
 export function handleTagRemoved(){
-  console.log('start');
+  // console.log('start');
   var tags = store.getState().tags;
   // console.log(tags);
   var isTagActive = Object.keys(tags).filter(function(key){
     return tags[key] == true;
   }, this);
-  console.log(isTagActive);
+  // console.log(isTagActive);
   var path = '';
-  console.log(path);
+  // console.log(path);
   if(isTagActive.length > 0){
     var lastTag = isTagActive[isTagActive.length - 1];
     // updateCurrentTag(lastTag);
@@ -63,13 +63,13 @@ export function handleTagRemoved(){
     console.log(path);
   }else{
     //if there is no tag on table, go to home path
-    console.log('no tags active, going to home');
+    // console.log('no tags active, going to home');
     path = '/';
     updateCurrentTag('');
     updateCurrentUnit('');
-    console.log(path);
+    // console.log(path);
   }
-  console.log(path);
+  // console.log(path);
   return path;
 }
 
