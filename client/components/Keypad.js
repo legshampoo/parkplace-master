@@ -8,6 +8,7 @@ import NavButton from './NavButton';
 import ViewTitle from './ViewTitle';
 
 import { updateCurrentUnit } from '../actions/actionCreators';
+import { handleNewTag } from './RouteLogic';
 
 class Keypad extends React.Component {
   constructor(){
@@ -39,8 +40,16 @@ class Keypad extends React.Component {
     })
   }
 
-  submit(val){
-    const path = '/assets/' + this.state.input;
+  submit(){
+    // var path = '/assets/' + this.state.input;
+    // console.log(this.state.input);
+    var path = '';
+    if(this.state.input == 'PHA' || this.state.input == 'PHB'){
+      path = handleNewTag(this.state.input);
+    }else{
+      path = '/assets/' + this.state.input;
+    }
+
     updateCurrentUnit(this.state.input);
     this.context.router.push(path)
   }

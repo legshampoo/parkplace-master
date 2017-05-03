@@ -46,6 +46,7 @@ export function combineAssets(d, type){
 export function getUnitId(){
   var unitId = '';
 
+  //if the current tag is PH1 or PH2
   if(store.getState().current.currentTag == 'PHA' || store.getState().current.currentTag == 'PHB'){
     unitId = store.getState().current.currentTag;
     if(unitId == 'PHA' || unitId == 'PHB'){
@@ -53,7 +54,15 @@ export function getUnitId(){
     }
   }else{
     unitId = store.getState().current.currentUnit;
+    if(unitId == 'PHA' || unitId == 'PHB'){
+      unitId = unitId.slice(0, 2) + " " + unitId.slice(2);
+    }
   }
+
+  // else if(store.getState().current.currentTag == 'ap1' || store.getState().current.currentTag == 'ap2'){
+  //   if(store.getState().current.currentUnit == 'PHA' || store.getState().current.currentUnit == 'PHB'){
+  //     unitId = store.get
+  //   }
 
   return unitId;
 }

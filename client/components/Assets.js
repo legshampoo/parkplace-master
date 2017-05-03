@@ -11,13 +11,10 @@ import TextLinkBorder from './TextLinkBorder';
 import NextPageButton from './NextPageButton';
 import ControlPanel from './ControlPanel';
 import RenderAssets from './RenderAssets';
-// import RenderNonUnitAssets from './RenderNonUnitAssets';
 import RemoveUnit from './RemoveUnit';
 import ViewHeader from './ViewHeader';
-// import AddToFolio from './AddToFolio';
 import * as folioActions from '../actions/actionCreators';
 import { updateCurrentUnit, assignUnitToToken } from '../actions/actionCreators';
-// import { handleNewTag } from './RouteLogic';
 import { sendCommand, assetSelection } from './MessageHandler';
 import { combineAssets, getUnitId, getAssets, checkUnitExists, checkIfEmpty } from './AssetManager';
 
@@ -56,12 +53,18 @@ class Assets extends React.Component {
     switch(tag){
       case 'ap1':
       case 'ap2':
-        mediaGroup = 'Unit';
-        this.assignToToken();
-        break;
       case 'PHA':
       case 'PHB':
-        mediaGroup = 'Unit_Penthouse';
+        // if(this.props.current.currentUnit == 'PHA' || this.props.current.currentUnit == 'PHAB'){
+        //   mediaGroup = 'Unit_Penthouse';
+        // }else{
+        // }
+        console.log('here');
+        mediaGroup = 'Unit';
+        this.assignToToken();
+        // break;
+        // mediaGroup = 'Unit_Penthouse';
+        // mediaGroup = 'Unit';
         break;
       case 'am':
         mediaGroup = 'Amenities';
@@ -79,12 +82,11 @@ class Assets extends React.Component {
     }
 
     if(this.state.mediaGroup !== mediaGroup) {
-      // console.log('mediagroup: ' + mediaGroup)
       this.setState({
         mediaGroup: mediaGroup,
         locationPathname: this.props.location.pathname
       }, function(){
-        // console.log('media group set to ' + mediaGroup);
+        console.log('media group set to ' + mediaGroup);
       });
     }
   }
@@ -130,13 +132,6 @@ class Assets extends React.Component {
 
   selectMedia(media, type){
     var msg = assetSelection;
-    // console.log(media);
-
-    // this.setState({
-    //   selectedMedia: media
-    // }, function(){
-    //   console.log('selectedMedia updated');
-    // })
 
     this.setState({
       selectedMedia: media,
@@ -158,7 +153,6 @@ class Assets extends React.Component {
       msg.params.url = media.wall;
     }
 
-    //send a websocket command to LED wall
     sendCommand(msg);
   }
 
@@ -251,9 +245,9 @@ class Assets extends React.Component {
         <div className='media-assets-container'>
           <TextLinkBorder />
           <div className='media-container-border-overlay'></div>
-          {this.state.mediaGroup === 'Unit' || this.state.mediaGroup === 'Unit_Penthouse' ? this.renderAssets(residence) : this.renderAssets(media)}
+          {this.state.mediaGroup === 'Unit' ? this.renderAssets(residence) : this.renderAssets(media)}
         </div>
-        <ViewHeader unitId={this.state.mediaGroup == 'Unit'|| this.state.mediaGroup == 'Unit_Penthouse' ? getUnitId() : this.state.mediaGroup} />
+        <ViewHeader unitId={this.state.mediaGroup == 'Unit' ? getUnitId() : this.state.mediaGroup} />
         {this.state.mediaGroup == 'Unit' ? this.renderRemoveUnitButton() : '' }
         <NextPageButton handleClick={this.changePageIndex} />
         {this.renderControlPanel()}

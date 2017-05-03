@@ -29,25 +29,22 @@ export function socketConnectCMS(){
 }
 
 export function sendCommand(msg){
-  socketCMS.send(msg);
+  var message = JSON.stringify(msg);
   console.log('sending message: ');
-  console.log(msg);
+  console.log(message);
+  socketCMS.send(message);
 }
 
-
-// export var addToFolio = {
-//   'command': 'add-to-folio',
-//   'to': 'wall',
-//   'params': {
-//     'url': 'path'
-//   }
-// }
 
 export function addToFolio(path){
   console.log('Sending ADD TO FOLIO: ' + path);
 
   // var url = 'http://192.168.45.21/api/folio/';
   var url = 'http://' + ip + '/api/folio';
+
+  var message = {
+    'url': path
+  }
 
   fetch(url, {
     method: 'POST',
@@ -57,9 +54,7 @@ export function addToFolio(path){
       'Access-Control-Allow-Origin': '*'
     },
     mode: 'no-cors',
-    body: JSON.stringify({
-      url: path
-    })
+    body: JSON.stringify({message})
   }).then(function(response){
     if(!response.ok){
       throw Error(response.statusText);
@@ -134,3 +129,11 @@ export var assetSelection = {
     'url': 'path'
   }
 }
+
+// export var addToFolio = {
+//   'command': 'add-to-folio',
+//   'to': 'wall',
+//   'params': {
+//     'url': 'path'
+//   }
+// }

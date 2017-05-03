@@ -1,21 +1,12 @@
 import React from 'react';
-import { render } from 'react-dom'; //renders to html
+import { render } from 'react-dom'; 
 
 import css from './styles/style.styl';
 import App from './components/App';
 import Home from './components/Home';
-// import Ap1 from './components/Ap1';
-// import Ap2 from './components/Ap2'
-// import MediaGroup from './components/MediaGroup';
 import Assets from './components/Assets';
 import PenthouseA from './components/PenthouseA';
-// import N from './components/N'
-// import P1 from './components/P1'
-// import P2 from './components/P2'
-// import T from './components/T'
-// import UnitDetails from './components/UnitDetails'
 import CompareUnits from './components/CompareUnits'
-// import DevMenu from './components/DevMenu'
 import Grid from './components/Grid'
 import Keypad from './components/Keypad'
 

@@ -54,14 +54,14 @@ class EventHandler extends React.Component {
         var path = '/';
 
         // if(json.status == 'true'){  //use this line for actual RFID
-        if(json.status == true){
+        if(json.status == 'true'){
           // console.log(json.tag + ' active');
           updateCurrentTag(json.tag);
           var tag = this.props.current.currentTag;
           path = handleNewTag(tag);
           this.context.router.push(path);
           return;
-        }else if(json.status == false){
+        }else if(json.status == 'false'){
           // console.log(json.tag + ' removed');
           path = handleTagRemoved();
           // console.log('pushing to ' + path);

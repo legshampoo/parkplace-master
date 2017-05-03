@@ -92,54 +92,6 @@
   {
     "photos": [
       {
-        "name": "Building Hero",
-        "icon": "",
-        "wall": "assets/renders/led/HeroShot-2304x1280.jpg",
-        "ipad": "assets/renders/ipad/HeroShot-5464x4096.jpg"
-      },
-      {
-        "name": "Top of Tower - Dusk",
-        "icon": "",
-        "wall": "assets/renders/led/03-TOPOFTOWERDUSK-2304x1280.jpg",
-        "ipad": "assets/renders/ipad/03 TOP OF TOWER DUSK_5464x4096.jpg"
-      },
-      {
-        "name": "Building - Looking up",
-        "icon": "",
-        "wall": "",
-        "ipad": ""
-      },
-      {
-        "name": "Aerial Hero - North",
-        "icon": "",
-        "wall": "",
-        "ipad": ""
-      },
-      {
-        "name": "Aerial Hero - South",
-        "icon": "",
-        "wall": "",
-        "ipad": ""
-      },
-      {
-        "name": "Building Facade",
-        "icon": "",
-        "wall": "",
-        "ipad": ""
-      },
-      {
-        "name": "Top of Tower - Day",
-        "icon": "",
-        "wall": "",
-        "ipad": ""
-      }
-    ],
-    "videos": [],
-    "name": "Architecture"
-  },
-  {
-    "photos": [
-      {
         "name": "Logo",
         "icon": "",
         "wall": "assets/logo/led-wall-logo.jpg",

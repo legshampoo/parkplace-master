@@ -4,7 +4,6 @@ import TextLink from './TextLink';
 import { assetSelection } from './MessageHandler';
 import { combineAssets } from './AssetManager';
 
-//pass the className as a prop, based on what is selected
 class RenderAssets extends React.Component {
   constructor(props){
     super(props);
@@ -23,12 +22,11 @@ class RenderAssets extends React.Component {
     var _this = this;
 
     var data = combineAssets(this.props.data, this.props.type);
-    // console.log(data);
+
     return(
       data.map(function(media,index){
         if((_this.props.pageIndex * 6) <= index && index < ((_this.props.pageIndex + 1) * 6)){
           var mediaType = media.type;
-          // console.log(mediaType);
           return(
             <TextLink
               handleClick={mediaType === 'video' || mediaType === 'photo' ? _this.props.handleClick.bind(this, media, mediaType) : _this.emptyClickHandler}
