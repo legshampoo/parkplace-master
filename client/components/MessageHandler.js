@@ -40,7 +40,7 @@ export function addToFolio(path){
   console.log('Sending ADD TO FOLIO: ' + path);
 
   // var url = 'http://192.168.45.21/api/folio/';
-  var url = 'http://' + ip + '/api/folio';
+  var url = 'http://' + ip + '/api/folio/';
 
   var message = {
     'url': path
