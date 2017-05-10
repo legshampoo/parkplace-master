@@ -21,7 +21,12 @@ import rootReducer from './reducers/index';
 const middlewares = [thunkMiddleware];
 // Create logger
 const logger = createLogger();
-middlewares.push(logger);
+if (process.env.NODE_ENV !== 'production') {
+  middlewares.push(logger);
+} else {
+  //console.log = () => {};
+}
+
 
 //compose is imported from react-redux
 const enhancers = compose(

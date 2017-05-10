@@ -24,6 +24,7 @@ class ControlPanel extends React.Component {
     }else{
       mediaPath = media.wall;
     }
+    console.log('add to folio');
     addToFolio(mediaPath);
   }
 

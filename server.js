@@ -1,19 +1,28 @@
 var path = require('path');
 var express = require('express');
-var webpack = require('webpack');
-var config = require('./webpack.config.dev');
+// var config = require('./webpack.config.prod');
 var getData = require('./RequestData');
 
-
 var app = express();
-var compiler = webpack(config);
 
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
-}));
+const NODE_ENV = process.env.NODE_ENV;
 
-app.use(require('webpack-hot-middleware')(compiler));
+if (NODE_ENV==='dev'){
+  var webpack = require('webpack');
+  var config = require('./webpack.config.dev');
+
+  var compiler = webpack(config);
+
+  app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath
+  }));
+
+  app.use(require('webpack-hot-middleware')(compiler));
+} else {
+  app.use(express.static('dist'))
+}
+
 
 app.get('*', function(req, res){
   res.sendFile(path.join(__dirname, 'index.html'));

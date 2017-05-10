@@ -33,7 +33,6 @@ class Assets extends React.Component {
     this.state = {
       previousTag: '',
       mediaGroup: '',
-      // activeButton: {},
       selectedMedia: {},
       selectedMediaType: '',
       pageIndex: 0
@@ -187,7 +186,7 @@ class Assets extends React.Component {
 
   renderAssets(d){
     var details = {};
-    if(this.state.mediaGroup === 'Unit' || this.state.mediaGroup === 'Unit_Penthouse'){
+    if(this.state.mediaGroup === 'Unit'){
       var unit = getUnitId();
       var found = checkUnitExists(d, unit);
       try{

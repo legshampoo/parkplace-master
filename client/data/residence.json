@@ -3,118 +3,18 @@
     "availability": "Available",
     "floors": [
       {
-        "name": "18"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Wetroom",
-        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 22
-      },
-      {
-        "type": "Render",
-        "name": "Wetroom - Stone & Fixture",
-        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 22
-      },
-      {
-        "type": "Render",
-        "name": "Living Room",
-        "ipad": "assets/renders/ipad/45PP_28 LIVING ROOM 23A-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_28 LIVING ROOM 23A-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 22
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_18-23E.jpg",
-        "full_screen": "assets/floorplans/45PP_18-23E.jpg",
-        "half_screen": "",
-        "residence": 22
-      }
-    ],
-    "unit": "Unit 18E",
-    "type": "2BR - East",
-    "name": "18E",
-    "line": "e",
-    "bedrooms": 2,
-    "bathrooms": "2.5",
-    "interior_square_feet": "1512.00",
-    "interior_square_meters": "140.470",
-    "terrace": false,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
-    "availability": "Available",
-    "floors": [
-      {
-        "name": "18"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Wetroom",
-        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 21
-      },
-      {
-        "type": "Render",
-        "name": "Wetroom - Stone & Fixture",
-        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 21
-      },
-      {
-        "type": "Render",
-        "name": "Living Room",
-        "ipad": "assets/renders/ipad/45PP_27 LIVING ROOM 23B-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_27 LIVING ROOM 23B-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 21
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_17-23W.jpg",
-        "full_screen": "assets/floorplans/45PP_17-23W.jpg",
-        "half_screen": "",
-        "residence": 21
-      }
-    ],
-    "unit": "Unit 18W",
-    "type": "2 BR - West",
-    "name": "18W",
-    "line": "w",
-    "bedrooms": 2,
-    "bathrooms": "2.5",
-    "interior_square_feet": "1565.00",
-    "interior_square_meters": "145.390",
-    "terrace": false,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
-    "availability": "Available",
-    "floors": [
-      {
         "name": "30"
       }
     ],
     "media": [
+      {
+        "type": "Render",
+        "name": "Private Elevator",
+        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 39
+      },
       {
         "type": "Render",
         "name": "Great Room - Day",
@@ -140,18 +40,18 @@
         "residence": 39
       },
       {
-        "type": "Render",
-        "name": "Private Elevator",
-        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 39
-      },
-      {
         "type": "Floorplan",
         "name": "Floorplan",
         "ipad": "assets/floorplans/45PP_30.jpg",
         "full_screen": "assets/floorplans/45PP_30.jpg",
+        "half_screen": "",
+        "residence": 39
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-24-30-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-24-30-2304x1280.jpg",
         "half_screen": "",
         "residence": 39
       }
@@ -173,217 +73,25 @@
     "availability": "Available",
     "floors": [
       {
-        "name": "17"
+        "name": "29"
       }
     ],
     "media": [
       {
         "type": "Render",
-        "name": "Wetroom",
-        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
+        "name": "Private Elevator",
+        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
         "half_screen": "",
-        "residence": 20
+        "residence": 38
       },
-      {
-        "type": "Render",
-        "name": "Wetroom - Stone & Fixture",
-        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 20
-      },
-      {
-        "type": "Render",
-        "name": "Living Room",
-        "ipad": "assets/renders/ipad/45PP_28 LIVING ROOM 23A-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_28 LIVING ROOM 23A-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 20
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_17E.jpg",
-        "full_screen": "assets/floorplans/45PP_17E.jpg",
-        "half_screen": "",
-        "residence": 20
-      }
-    ],
-    "unit": "Unit 17E",
-    "type": "2BR - East",
-    "name": "17E",
-    "line": "e",
-    "bedrooms": 2,
-    "bathrooms": "2.5",
-    "interior_square_feet": "1512.00",
-    "interior_square_meters": "140.470",
-    "terrace": true,
-    "exterior_square_feet": "372.00",
-    "exterior_square_meters": "34.56",
-    "price": "0.00"
-  },
-  {
-    "availability": "Available",
-    "floors": [
-      {
-        "name": "17"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Wetroom",
-        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 19
-      },
-      {
-        "type": "Render",
-        "name": "Wetroom - Stone & Fixture",
-        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 19
-      },
-      {
-        "type": "Render",
-        "name": "Living Room",
-        "ipad": "assets/renders/ipad/45PP_27 LIVING ROOM 23B-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_27 LIVING ROOM 23B-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 19
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_17-23W.jpg",
-        "full_screen": "assets/floorplans/45PP_17-23W.jpg",
-        "half_screen": "",
-        "residence": 19
-      }
-    ],
-    "unit": "Unit 17W",
-    "type": "2 BR - West",
-    "name": "17W",
-    "line": "w",
-    "bedrooms": 2,
-    "bathrooms": "2.5",
-    "interior_square_feet": "1565.00",
-    "interior_square_meters": "145.390",
-    "terrace": false,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
-    "availability": "Available",
-    "floors": [
-      {
-        "name": "15"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Kitchen & Living Room",
-        "ipad": "assets/renders/ipad/45PP_13 KITCHEN AND LIVING-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_13 KITCHEN AND LIVING-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 18
-      },
-      {
-        "type": "Render",
-        "name": "Kitchen",
-        "ipad": "assets/renders/led/45PP_13B KITCHEN 15A CLOSE UP-2304x1280.jpg",
-        "full_screen": "assets/renders/led/45PP_13B KITCHEN 15A CLOSE UP-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 18
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_9-15E.jpg",
-        "full_screen": "assets/floorplans/45PP_9-15E.jpg",
-        "half_screen": "",
-        "residence": 18
-      }
-    ],
-    "unit": "Unit 15E",
-    "type": "3BR - Lower",
-    "name": "15E",
-    "line": "e",
-    "bedrooms": 3,
-    "bathrooms": "3.5",
-    "interior_square_feet": "1958.00",
-    "interior_square_meters": "181.900",
-    "terrace": false,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
-    "availability": "Unavailable",
-    "floors": [
-      {
-        "name": "15"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Kitchen & Living Room",
-        "ipad": "assets/renders/ipad/45PP_14 KITCHEN AND LIVING 15B-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_14 KITCHEN AND LIVING 15B-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 17
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_6-15W.jpg",
-        "full_screen": "assets/floorplans/45PP_6-15W.jpg",
-        "half_screen": "",
-        "residence": 17
-      },
-      {
-        "type": "View",
-        "name": "Southwest",
-        "ipad": "assets/images/views/led/15 SW 1280 height.jpg",
-        "full_screen": "assets/images/views/led/15 SW 1280 height.jpg",
-        "half_screen": "",
-        "residence": 17
-      }
-    ],
-    "unit": "Unit 15W",
-    "type": "1BR",
-    "name": "15W",
-    "line": "e",
-    "bedrooms": 1,
-    "bathrooms": "1.0",
-    "interior_square_feet": "880.00",
-    "interior_square_meters": "81.750",
-    "terrace": false,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
-    "availability": "Available",
-    "floors": [
-      {
-        "name": "27"
-      }
-    ],
-    "media": [
       {
         "type": "Render",
         "name": "Great Room - Day",
         "ipad": "assets/renders/ipad/45PP_16 GREAT ROOM 39 DAY-5464x4096.jpg",
         "full_screen": "assets/renders/led/45PP_16 GREAT ROOM 39 DAY-2304x1280.jpg",
         "half_screen": "",
-        "residence": 36
+        "residence": 38
       },
       {
         "type": "Render",
@@ -391,7 +99,7 @@
         "ipad": "assets/renders/ipad/45PP_17 GREAT ROOM 39 DUSK-5464x4096.jpg",
         "full_screen": "assets/renders/led/45PP_17 GREAT ROOM 39 DUSK-2304x1280.jpg",
         "half_screen": "",
-        "residence": 36
+        "residence": 38
       },
       {
         "type": "Render",
@@ -399,28 +107,28 @@
         "ipad": "assets/renders/ipad/45PP_20 POWDER ROOM-5464x4096.jpg",
         "full_screen": "assets/renders/led/45PP_20 POWDER ROOM-2304x1280.jpg",
         "half_screen": "",
-        "residence": 36
+        "residence": 38
       },
       {
         "type": "Floorplan",
         "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_27.jpg",
-        "full_screen": "assets/floorplans/45PP_27.jpg",
+        "ipad": "assets/floorplans/45PP_29.jpg",
+        "full_screen": "assets/floorplans/45PP_29.jpg",
         "half_screen": "",
-        "residence": 36
+        "residence": 38
       },
       {
-        "type": "Render",
-        "name": "Private Elevator",
-        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-24-30-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-24-30-2304x1280.jpg",
         "half_screen": "",
-        "residence": 36
+        "residence": 38
       }
     ],
-    "unit": "Unit 27",
+    "unit": "Unit 29",
     "type": "4 BR - Large",
-    "name": "27",
+    "name": "29",
     "line": "f",
     "bedrooms": 4,
     "bathrooms": "4.5",
@@ -439,6 +147,14 @@
       }
     ],
     "media": [
+      {
+        "type": "Render",
+        "name": "Private Elevator",
+        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 37
+      },
       {
         "type": "Render",
         "name": "Great Room - Day",
@@ -472,10 +188,10 @@
         "residence": 37
       },
       {
-        "type": "Render",
-        "name": "Private Elevator",
-        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-24-30-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-24-30-2304x1280.jpg",
         "half_screen": "",
         "residence": 37
       }
@@ -497,17 +213,25 @@
     "availability": "Available",
     "floors": [
       {
-        "name": "29"
+        "name": "27"
       }
     ],
     "media": [
+      {
+        "type": "Render",
+        "name": "Private Elevator",
+        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 36
+      },
       {
         "type": "Render",
         "name": "Great Room - Day",
         "ipad": "assets/renders/ipad/45PP_16 GREAT ROOM 39 DAY-5464x4096.jpg",
         "full_screen": "assets/renders/led/45PP_16 GREAT ROOM 39 DAY-2304x1280.jpg",
         "half_screen": "",
-        "residence": 38
+        "residence": 36
       },
       {
         "type": "Render",
@@ -515,7 +239,7 @@
         "ipad": "assets/renders/ipad/45PP_17 GREAT ROOM 39 DUSK-5464x4096.jpg",
         "full_screen": "assets/renders/led/45PP_17 GREAT ROOM 39 DUSK-2304x1280.jpg",
         "half_screen": "",
-        "residence": 38
+        "residence": 36
       },
       {
         "type": "Render",
@@ -523,28 +247,28 @@
         "ipad": "assets/renders/ipad/45PP_20 POWDER ROOM-5464x4096.jpg",
         "full_screen": "assets/renders/led/45PP_20 POWDER ROOM-2304x1280.jpg",
         "half_screen": "",
-        "residence": 38
-      },
-      {
-        "type": "Render",
-        "name": "Private Elevator",
-        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 38
+        "residence": 36
       },
       {
         "type": "Floorplan",
         "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_29.jpg",
-        "full_screen": "assets/floorplans/45PP_29.jpg",
+        "ipad": "assets/floorplans/45PP_27.jpg",
+        "full_screen": "assets/floorplans/45PP_27.jpg",
         "half_screen": "",
-        "residence": 38
+        "residence": 36
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-24-30-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-24-30-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 36
       }
     ],
-    "unit": "Unit 29",
+    "unit": "Unit 27",
     "type": "4 BR - Large",
-    "name": "29",
+    "name": "27",
     "line": "f",
     "bedrooms": 4,
     "bathrooms": "4.5",
@@ -559,56 +283,18 @@
     "availability": "Available",
     "floors": [
       {
-        "name": "14"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Kitchen & Living Room",
-        "ipad": "assets/renders/ipad/45PP_13 KITCHEN AND LIVING-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_13 KITCHEN AND LIVING-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 16
-      },
-      {
-        "type": "Render",
-        "name": "Kitchen",
-        "ipad": "assets/renders/led/45PP_13B KITCHEN 15A CLOSE UP-2304x1280.jpg",
-        "full_screen": "assets/renders/led/45PP_13B KITCHEN 15A CLOSE UP-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 16
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_9-15E.jpg",
-        "full_screen": "assets/floorplans/45PP_9-15E.jpg",
-        "half_screen": "",
-        "residence": 16
-      }
-    ],
-    "unit": "Unit 14E",
-    "type": "3BR - Lower",
-    "name": "14E",
-    "line": "e",
-    "bedrooms": 3,
-    "bathrooms": "3.5",
-    "interior_square_feet": "1958.00",
-    "interior_square_meters": "181.900",
-    "terrace": false,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
-    "availability": "Available",
-    "floors": [
-      {
         "name": "26"
       }
     ],
     "media": [
+      {
+        "type": "Render",
+        "name": "Private Elevator",
+        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 35
+      },
       {
         "type": "Render",
         "name": "Great Room - Day",
@@ -642,10 +328,10 @@
         "residence": 35
       },
       {
-        "type": "Render",
-        "name": "Private Elevator",
-        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-24-30-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-24-30-2304x1280.jpg",
         "half_screen": "",
         "residence": 35
       }
@@ -671,6 +357,14 @@
       }
     ],
     "media": [
+      {
+        "type": "Render",
+        "name": "Private Elevator",
+        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 34
+      },
       {
         "type": "Render",
         "name": "Great Room - Day",
@@ -704,10 +398,10 @@
         "residence": 34
       },
       {
-        "type": "Render",
-        "name": "Private Elevator",
-        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-24-30-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-24-30-2304x1280.jpg",
         "half_screen": "",
         "residence": 34
       }
@@ -720,6 +414,138 @@
     "bathrooms": "4.5",
     "interior_square_feet": "3562.00",
     "interior_square_meters": "303.050",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "24"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Private Elevator",
+        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 33
+      },
+      {
+        "type": "Render",
+        "name": "Great Room - Day",
+        "ipad": "assets/renders/ipad/45PP_16 GREAT ROOM 39 DAY-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_16 GREAT ROOM 39 DAY-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 33
+      },
+      {
+        "type": "Render",
+        "name": "Great Room - Dusk",
+        "ipad": "assets/renders/ipad/45PP_17 GREAT ROOM 39 DUSK-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_17 GREAT ROOM 39 DUSK-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 33
+      },
+      {
+        "type": "Render",
+        "name": "Powder Room",
+        "ipad": "assets/renders/ipad/45PP_20 POWDER ROOM-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_20 POWDER ROOM-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 33
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_24.jpg",
+        "full_screen": "assets/floorplans/45PP_24.jpg",
+        "half_screen": "",
+        "residence": 33
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-24-30-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-24-30-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 33
+      }
+    ],
+    "unit": "Unit 24",
+    "type": "4 BR - Large",
+    "name": "24",
+    "line": "f",
+    "bedrooms": 4,
+    "bathrooms": "4.5",
+    "interior_square_feet": "3562.00",
+    "interior_square_meters": "303.050",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "23"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Living Room",
+        "ipad": "assets/renders/ipad/45PP_28 LIVING ROOM 23A-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_28 LIVING ROOM 23A-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 32
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom",
+        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 32
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom - Stone & Fixture",
+        "ipad": "assets/renders/ipad/12_det_wetroom_5464x4096.jpg",
+        "full_screen": "assets/renders/led/12_det_wetroom_2304x1280.jpg",
+        "half_screen": "",
+        "residence": 32
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_18-23E.jpg",
+        "full_screen": "assets/floorplans/45PP_18-23E.jpg",
+        "half_screen": "",
+        "residence": 32
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 32
+      }
+    ],
+    "unit": "Unit 23E",
+    "type": "2BR - East",
+    "name": "23E",
+    "line": "e",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1512.00",
+    "interior_square_meters": "140.470",
     "terrace": false,
     "exterior_square_feet": "0.00",
     "exterior_square_meters": "0.00",
@@ -894,156 +720,62 @@
     "price": "0.00"
   },
   {
-    "availability": "Unavailable",
-    "floors": [
-      {
-        "name": "11"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Kitchen & Living Room",
-        "ipad": "assets/renders/ipad/45PP_14 KITCHEN AND LIVING 15B-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_14 KITCHEN AND LIVING 15B-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 11
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_6-15W.jpg",
-        "full_screen": "assets/floorplans/45PP_6-15W.jpg",
-        "half_screen": "",
-        "residence": 11
-      }
-    ],
-    "unit": "Unit 11W",
-    "type": "1BR",
-    "name": "11W",
-    "line": "w",
-    "bedrooms": 1,
-    "bathrooms": "1.0",
-    "interior_square_feet": "880.00",
-    "interior_square_meters": "81.750",
-    "terrace": false,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
     "availability": "Available",
     "floors": [
       {
-        "name": "24"
+        "name": "22"
       }
     ],
     "media": [
       {
         "type": "Render",
-        "name": "Great Room - Day",
-        "ipad": "assets/renders/ipad/45PP_16 GREAT ROOM 39 DAY-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_16 GREAT ROOM 39 DAY-2304x1280.jpg",
+        "name": "Living Room",
+        "ipad": "assets/renders/ipad/45PP_28 LIVING ROOM 23A-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_28 LIVING ROOM 23A-2304x1280.jpg",
         "half_screen": "",
-        "residence": 33
+        "residence": 30
       },
       {
         "type": "Render",
-        "name": "Great Room - Dusk",
-        "ipad": "assets/renders/ipad/45PP_17 GREAT ROOM 39 DUSK-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_17 GREAT ROOM 39 DUSK-2304x1280.jpg",
+        "name": "Wetroom",
+        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
         "half_screen": "",
-        "residence": 33
+        "residence": 30
       },
       {
         "type": "Render",
-        "name": "Powder Room",
-        "ipad": "assets/renders/ipad/45PP_20 POWDER ROOM-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_20 POWDER ROOM-2304x1280.jpg",
+        "name": "Wetroom - Stone & Fixture",
+        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
         "half_screen": "",
-        "residence": 33
+        "residence": 30
       },
       {
         "type": "Floorplan",
         "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_24.jpg",
-        "full_screen": "assets/floorplans/45PP_24.jpg",
+        "ipad": "assets/floorplans/45PP_18-23E.jpg",
+        "full_screen": "assets/floorplans/45PP_18-23E.jpg",
         "half_screen": "",
-        "residence": 33
+        "residence": 30
       },
       {
         "type": "View",
-        "name": "North",
-        "ipad": "assets/images/views/led/24 N 1280-height",
-        "full_screen": "assets/images/views/led/24 N 1280-height",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-19-23-2304x1280.jpg",
         "half_screen": "",
-        "residence": 33
-      },
-      {
-        "type": "View",
-        "name": "Northeast",
-        "ipad": "assets/images/views/led/24 NE 1280-height.jpg",
-        "full_screen": "assets/images/views/led/24 NE 1280-height.jpg",
-        "half_screen": "",
-        "residence": 33
-      },
-      {
-        "type": "View",
-        "name": "Northwest",
-        "ipad": "assets/images/views/led/31 NW 1280-height.jpg",
-        "full_screen": "assets/images/views/led/31 NW 1280-height.jpg",
-        "half_screen": "",
-        "residence": 33
-      },
-      {
-        "type": "View",
-        "name": "South",
-        "ipad": "assets/images/views/led/24 S 1280-height",
-        "full_screen": "assets/images/views/led/24 S 1280-height",
-        "half_screen": "",
-        "residence": 33
-      },
-      {
-        "type": "View",
-        "name": "Southeast",
-        "ipad": "assets/images/views/led/24 SE 1280-height.jpg",
-        "full_screen": "assets/images/views/led/24 SE 1280-height.jpg",
-        "half_screen": "",
-        "residence": 33
-      },
-      {
-        "type": "View",
-        "name": "Southwest",
-        "ipad": "assets/images/views/led/24 SW 1280-height.jpg",
-        "full_screen": "assets/images/views/led/24 SW 1280-height.jpg",
-        "half_screen": "",
-        "residence": 33
-      },
-      {
-        "type": "View",
-        "name": "West",
-        "ipad": "assets/images/views/led/24 W 1280-height.jpg",
-        "full_screen": "assets/images/views/led/24 W 1280-height.jpg",
-        "half_screen": "",
-        "residence": 33
-      },
-      {
-        "type": "Render",
-        "name": "Private Elevator",
-        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 33
+        "residence": 30
       }
     ],
-    "unit": "Unit 24",
-    "type": "4 BR - Large",
-    "name": "24",
-    "line": "f",
-    "bedrooms": 4,
-    "bathrooms": "4.5",
-    "interior_square_feet": "3562.00",
-    "interior_square_meters": "303.050",
+    "unit": "Unit 22E",
+    "type": "2BR - East",
+    "name": "22E",
+    "line": "e",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1512.00",
+    "interior_square_meters": "140.470",
     "terrace": false,
     "exterior_square_feet": "0.00",
     "exterior_square_meters": "0.00",
@@ -1090,44 +822,6 @@
     "bathrooms": "3.5",
     "interior_square_feet": "1958.00",
     "interior_square_meters": "181.900",
-    "terrace": false,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
-    "availability": "Unavailable",
-    "floors": [
-      {
-        "name": "10"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Kitchen & Living Room",
-        "ipad": "assets/renders/ipad/45PP_14 KITCHEN AND LIVING 15B-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_14 KITCHEN AND LIVING 15B-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 9
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_6-15W.jpg",
-        "full_screen": "assets/floorplans/45PP_6-15W.jpg",
-        "half_screen": "",
-        "residence": 9
-      }
-    ],
-    "unit": "Unit 10W",
-    "type": "1BR",
-    "name": "10W",
-    "line": "w",
-    "bedrooms": 1,
-    "bathrooms": "1.0",
-    "interior_square_feet": "880.00",
-    "interior_square_meters": "81.750",
     "terrace": false,
     "exterior_square_feet": "0.00",
     "exterior_square_meters": "0.00",
@@ -1183,51 +877,59 @@
     "availability": "Available",
     "floors": [
       {
-        "name": "23"
+        "name": "22"
       }
     ],
     "media": [
+      {
+        "type": "Render",
+        "name": "Living Room",
+        "ipad": "assets/renders/ipad/45PP_27 LIVING ROOM 23B-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_27 LIVING ROOM 23B-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 29
+      },
       {
         "type": "Render",
         "name": "Wetroom",
         "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
         "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
         "half_screen": "",
-        "residence": 32
+        "residence": 29
       },
       {
         "type": "Render",
         "name": "Wetroom - Stone & Fixture",
-        "ipad": "assets/renders/ipad/12_det_wetroom_5464x4096.jpg",
-        "full_screen": "assets/renders/led/12_det_wetroom_2304x1280.jpg",
+        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
         "half_screen": "",
-        "residence": 32
-      },
-      {
-        "type": "Render",
-        "name": "Living Room",
-        "ipad": "assets/renders/ipad/45PP_28 LIVING ROOM 23A-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_28 LIVING ROOM 23A-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 32
+        "residence": 29
       },
       {
         "type": "Floorplan",
         "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_18-23E.jpg",
-        "full_screen": "assets/floorplans/45PP_18-23E.jpg",
+        "ipad": "assets/floorplans/45PP_17-23W.jpg",
+        "full_screen": "assets/floorplans/45PP_17-23W.jpg",
         "half_screen": "",
-        "residence": 32
+        "residence": 29
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 29
       }
     ],
-    "unit": "Unit 23E",
-    "type": "2BR - East",
-    "name": "23E",
-    "line": "e",
+    "unit": "Unit 22W",
+    "type": "2 BR - West",
+    "name": "22W",
+    "line": "w",
     "bedrooms": 2,
     "bathrooms": "2.5",
-    "interior_square_feet": "1512.00",
-    "interior_square_meters": "140.470",
+    "interior_square_feet": "1565.00",
+    "interior_square_meters": "145.390",
     "terrace": false,
     "exterior_square_feet": "0.00",
     "exterior_square_meters": "0.00",
@@ -1266,60 +968,6 @@
     "bathrooms": "1.0",
     "interior_square_feet": "880.00",
     "interior_square_meters": "81.750",
-    "terrace": false,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
-    "availability": "Unavailable",
-    "floors": [
-      {
-        "name": "23"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Wet Room",
-        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 31
-      },
-      {
-        "type": "Render",
-        "name": "Wet Room - Stone & Fixture",
-        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 31
-      },
-      {
-        "type": "Render",
-        "name": "Living Room",
-        "ipad": "assets/renders/ipad/45PP_27 LIVING ROOM 23B-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_27 LIVING ROOM 23B-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 31
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_17-23W.jpg",
-        "full_screen": "assets/floorplans/45PP_17-23W.jpg",
-        "half_screen": "",
-        "residence": 31
-      }
-    ],
-    "unit": "Unit 23W",
-    "type": "2 BR - West",
-    "name": "23W",
-    "line": "w",
-    "bedrooms": 2,
-    "bathrooms": "2.5",
-    "interior_square_feet": "1565.00",
-    "interior_square_meters": "145.390",
     "terrace": false,
     "exterior_square_feet": "0.00",
     "exterior_square_meters": "0.00",
@@ -1375,6 +1023,978 @@
     "availability": "Available",
     "floors": [
       {
+        "name": "21"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Living Room",
+        "ipad": "assets/renders/ipad/45PP_28 LIVING ROOM 23A-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_28 LIVING ROOM 23A-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 28
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom",
+        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 28
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom - Stone & Fixture",
+        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 28
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_18-23E.jpg",
+        "full_screen": "assets/floorplans/45PP_18-23E.jpg",
+        "half_screen": "",
+        "residence": 28
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 28
+      }
+    ],
+    "unit": "Unit 21E",
+    "type": "2BR - East",
+    "name": "21E",
+    "line": "e",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1512.00",
+    "interior_square_meters": "140.470",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "21"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Living Room",
+        "ipad": "assets/renders/ipad/45PP_27 LIVING ROOM 23B-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_27 LIVING ROOM 23B-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 27
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom",
+        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 27
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom - Stone & Fixture",
+        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 27
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_17-23W.jpg",
+        "full_screen": "assets/floorplans/45PP_17-23W.jpg",
+        "half_screen": "",
+        "residence": 27
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 27
+      }
+    ],
+    "unit": "Unit 21W",
+    "type": "2 BR - West",
+    "name": "21W",
+    "line": "w",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1565.00",
+    "interior_square_meters": "145.390",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "20"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Living Room",
+        "ipad": "assets/renders/ipad/45PP_28 LIVING ROOM 23A-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_28 LIVING ROOM 23A-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 26
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom",
+        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 26
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom - Stone & Fixture",
+        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 26
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_18-23E.jpg",
+        "full_screen": "assets/floorplans/45PP_18-23E.jpg",
+        "half_screen": "",
+        "residence": 26
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 26
+      }
+    ],
+    "unit": "Unit 20E",
+    "type": "2BR - East",
+    "name": "20E",
+    "line": "e",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1512.00",
+    "interior_square_meters": "140.470",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "8"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Kitchen & Living Room",
+        "ipad": "assets/renders/ipad/45PP_14 KITCHEN AND LIVING 15B-5464x4096.jpg",
+        "full_screen": "assets/renders/ipad/45PP_14 KITCHEN AND LIVING 15B-5464x4096.jpg",
+        "half_screen": "",
+        "residence": 5
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_6-15W.jpg",
+        "full_screen": "assets/floorplans/45PP_6-15W.jpg",
+        "half_screen": "",
+        "residence": 5
+      }
+    ],
+    "unit": "Unit 8W",
+    "type": "1BR",
+    "name": "8W",
+    "line": "w",
+    "bedrooms": 1,
+    "bathrooms": "1.0",
+    "interior_square_feet": "880.00",
+    "interior_square_meters": "81.750",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "20"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Living Room",
+        "ipad": "assets/renders/ipad/45PP_27 LIVING ROOM 23B-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_27 LIVING ROOM 23B-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 25
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom",
+        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 25
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom - Stone & Fixture",
+        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 25
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_17-23W.jpg",
+        "full_screen": "assets/floorplans/45PP_17-23W.jpg",
+        "half_screen": "",
+        "residence": 25
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 25
+      }
+    ],
+    "unit": "Unit 20W",
+    "type": "2 BR - West",
+    "name": "20W",
+    "line": "w",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1565.00",
+    "interior_square_meters": "145.390",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "7"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Kitchen & Living Room",
+        "ipad": "assets/renders/ipad/45PP_13 KITCHEN AND LIVING-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_13 KITCHEN AND LIVING-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 4
+      },
+      {
+        "type": "Render",
+        "name": "Kitchen",
+        "ipad": "assets/renders/ipad/45PP_13B KITCHEN 15A CLOSE UP-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_13B KITCHEN 15A CLOSE UP-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 4
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_7E.jpg",
+        "full_screen": "assets/floorplans/45PP_7E.jpg",
+        "half_screen": "",
+        "residence": 4
+      }
+    ],
+    "unit": "Unit 7E",
+    "type": "3BR - Lower",
+    "name": "7E",
+    "line": "e",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "1954.00",
+    "interior_square_meters": "181.530",
+    "terrace": true,
+    "exterior_square_feet": "235.00",
+    "exterior_square_meters": "21.83",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "19"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Living Room",
+        "ipad": "assets/renders/ipad/45PP_28 LIVING ROOM 23A-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_28 LIVING ROOM 23A-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 24
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom",
+        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 24
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom - Stone & Fixture",
+        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 24
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_18-23E.jpg",
+        "full_screen": "assets/floorplans/45PP_18-23E.jpg",
+        "half_screen": "",
+        "residence": 24
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 24
+      }
+    ],
+    "unit": "Unit 19E",
+    "type": "2BR - East",
+    "name": "19E",
+    "line": "e",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1512.00",
+    "interior_square_meters": "140.470",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Unavailable",
+    "floors": [
+      {
+        "name": "7"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Kitchen & Living Room",
+        "ipad": "assets/renders/ipad/45PP_14 KITCHEN AND LIVING 15B-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_14 KITCHEN AND LIVING 15B-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 3
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_6-15W.jpg",
+        "full_screen": "assets/floorplans/45PP_6-15W.jpg",
+        "half_screen": "",
+        "residence": 3
+      }
+    ],
+    "unit": "Unit 7W",
+    "type": "1BR",
+    "name": "7W",
+    "line": "w",
+    "bedrooms": 1,
+    "bathrooms": "1.0",
+    "interior_square_feet": "880.00",
+    "interior_square_meters": "81.750",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "19"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Living Room",
+        "ipad": "assets/renders/ipad/45PP_27 LIVING ROOM 23B-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_27 LIVING ROOM 23B-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 23
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom",
+        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 23
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom - Stone & Fixture",
+        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 23
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_17-23W.jpg",
+        "full_screen": "assets/floorplans/45PP_17-23W.jpg",
+        "half_screen": "",
+        "residence": 23
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 23
+      }
+    ],
+    "unit": "Unit 19W",
+    "type": "2 BR - West",
+    "name": "19W",
+    "line": "w",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1565.00",
+    "interior_square_meters": "145.390",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "6"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Kitchen & Living Room",
+        "ipad": "assets/renders/ipad/45PP_13 KITCHEN AND LIVING-5464x4096.jpg",
+        "full_screen": "assets/renders/ipad/45PP_13 KITCHEN AND LIVING-5464x4096.jpg",
+        "half_screen": "",
+        "residence": 2
+      },
+      {
+        "type": "Render",
+        "name": "Kitchen",
+        "ipad": "assets/renders/ipad/45PP_13B KITCHEN 15A CLOSE UP-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_13B KITCHEN 15A CLOSE UP-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 2
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_6E.jpg",
+        "full_screen": "assets/floorplans/45PP_6E.jpg",
+        "half_screen": "",
+        "residence": 2
+      }
+    ],
+    "unit": "Unit 6E",
+    "type": "3BR - Lower",
+    "name": "6E",
+    "line": "e",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "2180.00",
+    "interior_square_meters": "202.530",
+    "terrace": true,
+    "exterior_square_feet": "279.00",
+    "exterior_square_meters": "26.85",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "18"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Living Room",
+        "ipad": "assets/renders/ipad/45PP_28 LIVING ROOM 23A-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_28 LIVING ROOM 23A-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 22
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom",
+        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 22
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom - Stone & Fixture",
+        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 22
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_18-23E.jpg",
+        "full_screen": "assets/floorplans/45PP_18-23E.jpg",
+        "half_screen": "",
+        "residence": 22
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-15-18-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-15-18-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 22
+      }
+    ],
+    "unit": "Unit 18E",
+    "type": "2BR - East",
+    "name": "18E",
+    "line": "e",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1512.00",
+    "interior_square_meters": "140.470",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "18"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Living Room",
+        "ipad": "assets/renders/ipad/45PP_27 LIVING ROOM 23B-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_27 LIVING ROOM 23B-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 21
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom",
+        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 21
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom - Stone & Fixture",
+        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 21
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_17-23W.jpg",
+        "full_screen": "assets/floorplans/45PP_17-23W.jpg",
+        "half_screen": "",
+        "residence": 21
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-15-18-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-15-18-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 21
+      }
+    ],
+    "unit": "Unit 18W",
+    "type": "2 BR - West",
+    "name": "18W",
+    "line": "w",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1565.00",
+    "interior_square_meters": "145.390",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "17"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Living Room",
+        "ipad": "assets/renders/ipad/45PP_28 LIVING ROOM 23A-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_28 LIVING ROOM 23A-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 20
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom",
+        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 20
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom - Stone & Fixture",
+        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 20
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_17E.jpg",
+        "full_screen": "assets/floorplans/45PP_17E.jpg",
+        "half_screen": "",
+        "residence": 20
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-15-18-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-15-18-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 20
+      }
+    ],
+    "unit": "Unit 17E",
+    "type": "2BR - East",
+    "name": "17E",
+    "line": "e",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1512.00",
+    "interior_square_meters": "140.470",
+    "terrace": true,
+    "exterior_square_feet": "372.00",
+    "exterior_square_meters": "34.56",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "17"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Living Room",
+        "ipad": "assets/renders/ipad/45PP_27 LIVING ROOM 23B-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_27 LIVING ROOM 23B-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 19
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom",
+        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 19
+      },
+      {
+        "type": "Render",
+        "name": "Wetroom - Stone & Fixture",
+        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 19
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_17-23W.jpg",
+        "full_screen": "assets/floorplans/45PP_17-23W.jpg",
+        "half_screen": "",
+        "residence": 19
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-15-18-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-15-18-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 19
+      }
+    ],
+    "unit": "Unit 17W",
+    "type": "2 BR - West",
+    "name": "17W",
+    "line": "w",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1565.00",
+    "interior_square_meters": "145.390",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "6"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Kitchen & Living Room",
+        "ipad": "assets/renders/ipad/45PP_14 KITCHEN AND LIVING 15B-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_14 KITCHEN AND LIVING 15B-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 1
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_6-15W.jpg",
+        "full_screen": "assets/floorplans/45PP_6-15W.jpg",
+        "half_screen": "",
+        "residence": 1
+      }
+    ],
+    "unit": "Unit 6W",
+    "type": "1BR",
+    "name": "6W",
+    "line": "w",
+    "bedrooms": 1,
+    "bathrooms": "1.0",
+    "interior_square_feet": "880.00",
+    "interior_square_meters": "81.750",
+    "terrace": true,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "15"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Kitchen & Living Room",
+        "ipad": "assets/renders/ipad/45PP_13 KITCHEN AND LIVING-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_13 KITCHEN AND LIVING-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 18
+      },
+      {
+        "type": "Render",
+        "name": "Kitchen",
+        "ipad": "assets/renders/led/45PP_13B KITCHEN 15A CLOSE UP-2304x1280.jpg",
+        "full_screen": "assets/renders/led/45PP_13B KITCHEN 15A CLOSE UP-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 18
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_9-15E.jpg",
+        "full_screen": "assets/floorplans/45PP_9-15E.jpg",
+        "half_screen": "",
+        "residence": 18
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-15-18-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-15-18-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 18
+      }
+    ],
+    "unit": "Unit 15E",
+    "type": "3BR - Lower",
+    "name": "15E",
+    "line": "e",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "1958.00",
+    "interior_square_meters": "181.900",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Unavailable",
+    "floors": [
+      {
+        "name": "15"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Kitchen & Living Room",
+        "ipad": "assets/renders/ipad/45PP_14 KITCHEN AND LIVING 15B-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_14 KITCHEN AND LIVING 15B-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 17
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_6-15W.jpg",
+        "full_screen": "assets/floorplans/45PP_6-15W.jpg",
+        "half_screen": "",
+        "residence": 17
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-15-18-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-15-18-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 17
+      }
+    ],
+    "unit": "Unit 15W",
+    "type": "1BR",
+    "name": "15W",
+    "line": "e",
+    "bedrooms": 1,
+    "bathrooms": "1.0",
+    "interior_square_feet": "880.00",
+    "interior_square_meters": "81.750",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
+        "name": "14"
+      }
+    ],
+    "media": [
+      {
+        "type": "Render",
+        "name": "Kitchen & Living Room",
+        "ipad": "assets/renders/ipad/45PP_13 KITCHEN AND LIVING-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_13 KITCHEN AND LIVING-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 16
+      },
+      {
+        "type": "Render",
+        "name": "Kitchen",
+        "ipad": "assets/renders/led/45PP_13B KITCHEN 15A CLOSE UP-2304x1280.jpg",
+        "full_screen": "assets/renders/led/45PP_13B KITCHEN 15A CLOSE UP-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 16
+      },
+      {
+        "type": "Floorplan",
+        "name": "Floorplan",
+        "ipad": "assets/floorplans/45PP_9-15E.jpg",
+        "full_screen": "assets/floorplans/45PP_9-15E.jpg",
+        "half_screen": "",
+        "residence": 16
+      }
+    ],
+    "unit": "Unit 14E",
+    "type": "3BR - Lower",
+    "name": "14E",
+    "line": "e",
+    "bedrooms": 3,
+    "bathrooms": "3.5",
+    "interior_square_feet": "1958.00",
+    "interior_square_meters": "181.900",
+    "terrace": false,
+    "exterior_square_feet": "0.00",
+    "exterior_square_meters": "0.00",
+    "price": "0.00"
+  },
+  {
+    "availability": "Available",
+    "floors": [
+      {
         "name": "42"
       },
       {
@@ -1385,7 +2005,7 @@
       {
         "type": "Render",
         "name": "Kitchen",
-        "ipad": "assets/renders/ipad/45PP_21 KITCHEN PH40-5464x4096.jpg",
+        "ipad": "assets/renders/led/45PP_21 KITCHEN PH40-2304x1280.jpg",
         "full_screen": "assets/renders/led/45PP_21 KITCHEN PH40-2304x1280.jpg",
         "half_screen": "",
         "residence": 50
@@ -1408,14 +2028,6 @@
       },
       {
         "type": "Render",
-        "name": "Great Room - Day",
-        "ipad": "",
-        "full_screen": "",
-        "half_screen": "",
-        "residence": 50
-      },
-      {
-        "type": "Render",
         "name": "Great Room - Dusk",
         "ipad": "assets/renders/ipad/45PP_23 GREAT ROOM PH40 DUSK-5464x4096.jpg",
         "full_screen": "assets/renders/led/45PP_23 GREAT ROOM PH40 DUSK-2304x1280.jpg",
@@ -1424,9 +2036,17 @@
       },
       {
         "type": "Render",
-        "name": "Reading Corner",
-        "ipad": "assets/renders/ipad/45PP_25DET READING CORNER-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_25DET READING CORNER-2304x1280.jpg",
+        "name": "Great Room - Looking South",
+        "ipad": "assets/renders/ipad/45PP_24B GREAT ROOM PH40 LOOKING SOUTH-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_24B GREAT ROOM PH40 LOOKING SOUTH-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 50
+      },
+      {
+        "type": "Render",
+        "name": "Master Bedroom",
+        "ipad": "assets/renders/ipad/45PP_25 MASTER BEDROOM PH41-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_25 MASTER BEDROOM PH41-2304x1280.jpg",
         "half_screen": "",
         "residence": 50
       },
@@ -1440,9 +2060,9 @@
       },
       {
         "type": "Render",
-        "name": "Master Bedroom",
-        "ipad": "assets/renders/ipad/45PP_25 MASTER BEDROOM PH41-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_25 MASTER BEDROOM PH41-2304x1280.jpg",
+        "name": "Reading Corner",
+        "ipad": "assets/renders/ipad/45PP_25DET READING CORNER-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_25DET READING CORNER-2304x1280.jpg",
         "half_screen": "",
         "residence": 50
       },
@@ -1463,26 +2083,18 @@
         "residence": 50
       },
       {
-        "type": "Render",
-        "name": "Great Room Looking South",
-        "ipad": "assets/renders/ipad/45PP_24B GREAT ROOM PH40 LOOKING SOUTH-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_24B GREAT ROOM PH40 LOOKING SOUTH-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 50
-      },
-      {
-        "type": "Render",
-        "name": "Living Room Terrace",
-        "ipad": "",
-        "full_screen": "",
-        "half_screen": "",
-        "residence": 50
-      },
-      {
         "type": "Floorplan",
         "name": "Floorplan - Upper",
         "ipad": "assets/floorplans/45PP_PH-B_UPPER.jpg",
         "full_screen": "assets/floorplans/45PP_PH-B_UPPER.jpg",
+        "half_screen": "",
+        "residence": 50
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-39-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-39-2304x1280.jpg",
         "half_screen": "",
         "residence": 50
       }
@@ -1498,60 +2110,6 @@
     "terrace": true,
     "exterior_square_feet": "371.00",
     "exterior_square_meters": "34.47",
-    "price": "0.00"
-  },
-  {
-    "availability": "Available",
-    "floors": [
-      {
-        "name": "22"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Wetroom",
-        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 30
-      },
-      {
-        "type": "Render",
-        "name": "Wetroom - Stone & Fixture",
-        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 30
-      },
-      {
-        "type": "Render",
-        "name": "Living Room",
-        "ipad": "assets/renders/ipad/45PP_28 LIVING ROOM 23A-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_28 LIVING ROOM 23A-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 30
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_18-23E.jpg",
-        "full_screen": "assets/floorplans/45PP_18-23E.jpg",
-        "half_screen": "",
-        "residence": 30
-      }
-    ],
-    "unit": "Unit 22E",
-    "type": "2BR - East",
-    "name": "22E",
-    "line": "e",
-    "bedrooms": 2,
-    "bathrooms": "2.5",
-    "interior_square_feet": "1512.00",
-    "interior_square_meters": "140.470",
-    "terrace": false,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
     "price": "0.00"
   },
   {
@@ -1599,9 +2157,9 @@
       },
       {
         "type": "Render",
-        "name": "Great Room - Day",
-        "ipad": "",
-        "full_screen": "",
+        "name": "Great Room - Looking South",
+        "ipad": "assets/renders/ipad/45PP_24B GREAT ROOM PH40 LOOKING SOUTH-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_24B GREAT ROOM PH40 LOOKING SOUTH-2304x1280.jpg",
         "half_screen": "",
         "residence": 49
       },
@@ -1610,6 +2168,14 @@
         "name": "Master Bedroom",
         "ipad": "assets/renders/ipad/45PP_25 MASTER BEDROOM PH41-5464x4096.jpg",
         "full_screen": "assets/renders/led/45PP_25 MASTER BEDROOM PH41-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 49
+      },
+      {
+        "type": "Render",
+        "name": "Master Bedroom From Outside",
+        "ipad": "assets/renders/ipad/45PP_25B MASTER BEDROOM PH41 OUTSIDE-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_25B MASTER BEDROOM PH41 OUTSIDE-2304x1280.jpg",
         "half_screen": "",
         "residence": 49
       },
@@ -1630,30 +2196,6 @@
         "residence": 49
       },
       {
-        "type": "Render",
-        "name": "Master Bedroom From Outside",
-        "ipad": "assets/renders/ipad/45PP_25B MASTER BEDROOM PH41 OUTSIDE-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_25B MASTER BEDROOM PH41 OUTSIDE-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 49
-      },
-      {
-        "type": "Render",
-        "name": "Great Room Looking South",
-        "ipad": "assets/renders/ipad/45PP_24B GREAT ROOM PH40 LOOKING SOUTH-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_24B GREAT ROOM PH40 LOOKING SOUTH-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 49
-      },
-      {
-        "type": "Render",
-        "name": "Living Room Terrace",
-        "ipad": "",
-        "full_screen": "",
-        "half_screen": "",
-        "residence": 49
-      },
-      {
         "type": "Floorplan",
         "name": "Floorplan - Lower",
         "ipad": "assets/floorplans/45PP_PH-A_LOWER.jpg",
@@ -1666,6 +2208,14 @@
         "name": "Floorplan - Upper",
         "ipad": "assets/floorplans/45PP_PH-A_UPPER.jpg",
         "full_screen": "assets/floorplans/45PP_PH-A_UPPER.jpg",
+        "half_screen": "",
+        "residence": 49
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-39-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-39-2304x1280.jpg",
         "half_screen": "",
         "residence": 49
       }
@@ -1749,57 +2299,9 @@
       },
       {
         "type": "View",
-        "name": "Southwest",
-        "ipad": "assets/images/views/led/39 SW_2304x1280.jpg",
-        "full_screen": "assets/images/views/led/39 SW_2304x1280.jpg",
-        "half_screen": "",
-        "residence": 48
-      },
-      {
-        "type": "View",
-        "name": "Southeast",
-        "ipad": "assets/images/views/led/39 SE_2304x1280.jpg",
-        "full_screen": "assets/images/views/led/39 SE_2304x1280.jpg",
-        "half_screen": "",
-        "residence": 48
-      },
-      {
-        "type": "View",
-        "name": "South",
-        "ipad": "assets/images/views/led/39 S_2304x1280.jpg",
-        "full_screen": "assets/images/views/led/39 S_2304x1280.jpg",
-        "half_screen": "",
-        "residence": 48
-      },
-      {
-        "type": "View",
-        "name": "Northwest",
-        "ipad": "assets/images/views/led/39 NW_2304x1280.jpg",
-        "full_screen": "assets/images/views/led/39 NW_2304x1280.jpg",
-        "half_screen": "",
-        "residence": 48
-      },
-      {
-        "type": "View",
-        "name": "Northeast",
-        "ipad": "assets/images/views/led/39 NE_2304x1280.jpg",
-        "full_screen": "assets/images/views/led/39 NE_2304x1280.jpg",
-        "half_screen": "",
-        "residence": 48
-      },
-      {
-        "type": "View",
-        "name": "North",
-        "ipad": "assets/images/views/led/39 N_2304x1280.jpg",
-        "full_screen": "assets/images/views/led/39 N_2304x1280.jpg",
-        "half_screen": "",
-        "residence": 48
-      },
-      {
-        "type": "View",
-        "name": "East",
-        "ipad": "assets/images/views/led/39 E_2304x1280.jpg",
-        "full_screen": "assets/images/views/led/39 E_2304x1280.jpg",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-39-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-39-2304x1280.jpg",
         "half_screen": "",
         "residence": 48
       }
@@ -1818,38 +2320,62 @@
     "price": "0.00"
   },
   {
-    "availability": "Available",
+    "availability": "Unavailable",
     "floors": [
       {
-        "name": "8"
+        "name": "23"
       }
     ],
     "media": [
       {
         "type": "Render",
-        "name": "Kitchen & Living Room",
-        "ipad": "assets/renders/ipad/45PP_14 KITCHEN AND LIVING 15B-5464x4096.jpg",
-        "full_screen": "assets/renders/ipad/45PP_14 KITCHEN AND LIVING 15B-5464x4096.jpg",
+        "name": "Living Room",
+        "ipad": "assets/renders/led/45PP_27 LIVING ROOM 23B-2304x1280.jpg",
+        "full_screen": "assets/renders/led/45PP_27 LIVING ROOM 23B-2304x1280.jpg",
         "half_screen": "",
-        "residence": 5
+        "residence": 31
+      },
+      {
+        "type": "Render",
+        "name": "Wet Room",
+        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 31
+      },
+      {
+        "type": "Render",
+        "name": "Wet Room - Stone & Fixture",
+        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 31
       },
       {
         "type": "Floorplan",
         "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_6-15W.jpg",
-        "full_screen": "assets/floorplans/45PP_6-15W.jpg",
+        "ipad": "assets/floorplans/45PP_17-23W.jpg",
+        "full_screen": "assets/floorplans/45PP_17-23W.jpg",
         "half_screen": "",
-        "residence": 5
+        "residence": 31
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-19-23-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 31
       }
     ],
-    "unit": "Unit 8W",
-    "type": "1BR",
-    "name": "8W",
+    "unit": "Unit 23W",
+    "type": "2 BR - West",
+    "name": "23W",
     "line": "w",
-    "bedrooms": 1,
-    "bathrooms": "1.0",
-    "interior_square_feet": "880.00",
-    "interior_square_meters": "81.750",
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "interior_square_feet": "1565.00",
+    "interior_square_meters": "145.390",
     "terrace": false,
     "exterior_square_feet": "0.00",
     "exterior_square_meters": "0.00",
@@ -1866,7 +2392,7 @@
       {
         "type": "Render",
         "name": "Great Room - Day",
-        "ipad": "assets/renders/ipad/45PP_16 GREAT ROOM 39 DAY-5464x4096.jpg",
+        "ipad": "assets/renders/led/45PP_16 GREAT ROOM 39 DAY-2304x1280.jpg",
         "full_screen": "assets/renders/led/45PP_16 GREAT ROOM 39 DAY-2304x1280.jpg",
         "half_screen": "",
         "residence": 47
@@ -1874,7 +2400,7 @@
       {
         "type": "Render",
         "name": "Great Room - Dusk",
-        "ipad": "assets/renders/ipad/45PP_17 GREAT ROOM 39 DUSK-5464x4096.jpg",
+        "ipad": "assets/renders/led/45PP_17 GREAT ROOM 39 DUSK-2304x1280.jpg",
         "full_screen": "assets/renders/led/45PP_17 GREAT ROOM 39 DUSK-2304x1280.jpg",
         "half_screen": "",
         "residence": 47
@@ -1921,65 +2447,9 @@
       },
       {
         "type": "View",
-        "name": "West",
-        "ipad": "assets/images/views/led/38 W_1280-Height.jpg",
-        "full_screen": "assets/images/views/led/38 W_1280-Height.jpg",
-        "half_screen": "",
-        "residence": 47
-      },
-      {
-        "type": "View",
-        "name": "Southwest",
-        "ipad": "assets/images/views/led/38 SW 1280-height .jpg",
-        "full_screen": "assets/images/views/led/38 SW 1280-height .jpg",
-        "half_screen": "",
-        "residence": 47
-      },
-      {
-        "type": "View",
-        "name": "Southeast",
-        "ipad": "assets/images/views/led/38 SE 1280-height.jpg",
-        "full_screen": "assets/images/views/led/38 SE 1280-height.jpg",
-        "half_screen": "",
-        "residence": 47
-      },
-      {
-        "type": "View",
-        "name": "South",
-        "ipad": "assets/images/views/led/38 S 1280 height.jpg",
-        "full_screen": "assets/images/views/led/38 S 1280 height.jpg",
-        "half_screen": "",
-        "residence": 47
-      },
-      {
-        "type": "View",
-        "name": "Northwest",
-        "ipad": "assets/images/views/led/38 NW_1280 height.jpg",
-        "full_screen": "assets/images/views/led/38 NW_1280 height.jpg",
-        "half_screen": "",
-        "residence": 47
-      },
-      {
-        "type": "View",
-        "name": "Northeast",
-        "ipad": "assets/images/views/led/38 NE 1280_ height.jpg",
-        "full_screen": "assets/images/views/led/38 NE 1280_ height.jpg",
-        "half_screen": "",
-        "residence": 47
-      },
-      {
-        "type": "View",
-        "name": "North",
-        "ipad": "assets/images/views/led/38 N_1280-height.jpg",
-        "full_screen": "assets/images/views/led/38 N_1280-height.jpg",
-        "half_screen": "",
-        "residence": 47
-      },
-      {
-        "type": "View",
-        "name": "East",
-        "ipad": "assets/images/views/led/38 E 1280-height.jpg",
-        "full_screen": "assets/images/views/led/38 E 1280-height.jpg",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-35-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-35-2304x1280.jpg",
         "half_screen": "",
         "residence": 47
       }
@@ -1995,52 +2465,6 @@
     "terrace": false,
     "exterior_square_feet": "3238.00",
     "exterior_square_meters": "300.82",
-    "price": "0.00"
-  },
-  {
-    "availability": "Available",
-    "floors": [
-      {
-        "name": "7"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Kitchen & Living Room",
-        "ipad": "assets/renders/ipad/45PP_13 KITCHEN AND LIVING-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_13 KITCHEN AND LIVING-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 4
-      },
-      {
-        "type": "Render",
-        "name": "Kitchen",
-        "ipad": "assets/renders/ipad/45PP_13B KITCHEN 15A CLOSE UP-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_13B KITCHEN 15A CLOSE UP-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 4
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_7E.jpg",
-        "full_screen": "assets/floorplans/45PP_7E.jpg",
-        "half_screen": "",
-        "residence": 4
-      }
-    ],
-    "unit": "Unit 7E",
-    "type": "3BR - Lower",
-    "name": "7E",
-    "line": "e",
-    "bedrooms": 3,
-    "bathrooms": "3.5",
-    "interior_square_feet": "1954.00",
-    "interior_square_meters": "181.530",
-    "terrace": true,
-    "exterior_square_feet": "235.00",
-    "exterior_square_meters": "21.83",
     "price": "0.00"
   },
   {
@@ -2106,6 +2530,14 @@
         "full_screen": "assets/floorplans/45PP_35-39.jpg",
         "half_screen": "",
         "residence": 46
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-35-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-35-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 46
       }
     ],
     "unit": "Unit 37",
@@ -2116,44 +2548,6 @@
     "bathrooms": "3.5",
     "interior_square_feet": "3238.00",
     "interior_square_meters": "300.820",
-    "terrace": false,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
-    "availability": "Unavailable",
-    "floors": [
-      {
-        "name": "7"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Kitchen & Living Room",
-        "ipad": "assets/renders/ipad/45PP_14 KITCHEN AND LIVING 15B-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_14 KITCHEN AND LIVING 15B-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 3
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_6-15W.jpg",
-        "full_screen": "assets/floorplans/45PP_6-15W.jpg",
-        "half_screen": "",
-        "residence": 3
-      }
-    ],
-    "unit": "Unit 7W",
-    "type": "1BR",
-    "name": "7W",
-    "line": "w",
-    "bedrooms": 1,
-    "bathrooms": "1.0",
-    "interior_square_feet": "880.00",
-    "interior_square_meters": "81.750",
     "terrace": false,
     "exterior_square_feet": "0.00",
     "exterior_square_meters": "0.00",
@@ -2222,6 +2616,14 @@
         "full_screen": "assets/floorplans/45PP_35-39.jpg",
         "half_screen": "",
         "residence": 45
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-35-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-35-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 45
       }
     ],
     "unit": "Unit 36",
@@ -2235,52 +2637,6 @@
     "terrace": false,
     "exterior_square_feet": "0.00",
     "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
-    "availability": "Available",
-    "floors": [
-      {
-        "name": "6"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Kitchen & Living Room",
-        "ipad": "assets/renders/ipad/45PP_13 KITCHEN AND LIVING-5464x4096.jpg",
-        "full_screen": "assets/renders/ipad/45PP_13 KITCHEN AND LIVING-5464x4096.jpg",
-        "half_screen": "",
-        "residence": 2
-      },
-      {
-        "type": "Render",
-        "name": "Kitchen",
-        "ipad": "assets/renders/ipad/45PP_13B KITCHEN 15A CLOSE UP-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_13B KITCHEN 15A CLOSE UP-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 2
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_6E.jpg",
-        "full_screen": "assets/floorplans/45PP_6E.jpg",
-        "half_screen": "",
-        "residence": 2
-      }
-    ],
-    "unit": "Unit 6E",
-    "type": "3BR - Lower",
-    "name": "6E",
-    "line": "e",
-    "bedrooms": 3,
-    "bathrooms": "3.5",
-    "interior_square_feet": "2180.00",
-    "interior_square_meters": "202.530",
-    "terrace": true,
-    "exterior_square_feet": "279.00",
-    "exterior_square_meters": "26.85",
     "price": "0.00"
   },
   {
@@ -2349,49 +2705,9 @@
       },
       {
         "type": "View",
-        "name": "Southwest",
-        "ipad": "assets/images/views/led/35 SW 1280-height.jpg",
-        "full_screen": "assets/images/views/led/35 SW 1280-height.jpg",
-        "half_screen": "",
-        "residence": 44
-      },
-      {
-        "type": "View",
-        "name": "Southeast",
-        "ipad": "assets/images/views/led/35 SE 1280-height.jpg",
-        "full_screen": "assets/images/views/led/35 SE 1280-height.jpg",
-        "half_screen": "",
-        "residence": 44
-      },
-      {
-        "type": "View",
-        "name": "South",
-        "ipad": "assets/images/views/led/35 S 1280-height.jpg",
-        "full_screen": "assets/images/views/led/35 S 1280-height.jpg",
-        "half_screen": "",
-        "residence": 44
-      },
-      {
-        "type": "View",
-        "name": "Northeast",
-        "ipad": "assets/images/views/led/35 NE 1280-height.jpg",
-        "full_screen": "assets/images/views/led/35 NE 1280-height.jpg",
-        "half_screen": "",
-        "residence": 44
-      },
-      {
-        "type": "View",
-        "name": "North",
-        "ipad": "assets/images/views/led/35 N 1280-width.jpg",
-        "full_screen": "assets/images/views/led/35 N 1280-width.jpg",
-        "half_screen": "",
-        "residence": 44
-      },
-      {
-        "type": "View",
-        "name": "East",
-        "ipad": "assets/images/views/led/35 E 1280-height.jpg",
-        "full_screen": "assets/images/views/led/35 E 1280-height.jpg",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-35-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-35-2304x1280.jpg",
         "half_screen": "",
         "residence": 44
       }
@@ -2413,118 +2729,18 @@
     "availability": "Available",
     "floors": [
       {
-        "name": "22"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Wetroom",
-        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 29
-      },
-      {
-        "type": "Render",
-        "name": "Wetroom - Stone & Fixture",
-        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 29
-      },
-      {
-        "type": "Render",
-        "name": "Living Room",
-        "ipad": "assets/renders/ipad/45PP_27 LIVING ROOM 23B-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_27 LIVING ROOM 23B-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 29
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_17-23W.jpg",
-        "full_screen": "assets/floorplans/45PP_17-23W.jpg",
-        "half_screen": "",
-        "residence": 29
-      }
-    ],
-    "unit": "Unit 22W",
-    "type": "2 BR - West",
-    "name": "22W",
-    "line": "w",
-    "bedrooms": 2,
-    "bathrooms": "2.5",
-    "interior_square_feet": "1565.00",
-    "interior_square_meters": "145.390",
-    "terrace": false,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
-    "availability": "Available",
-    "floors": [
-      {
-        "name": "21"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Wetroom",
-        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 28
-      },
-      {
-        "type": "Render",
-        "name": "Wetroom - Stone & Fixture",
-        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 28
-      },
-      {
-        "type": "Render",
-        "name": "Living Room",
-        "ipad": "assets/renders/ipad/45PP_28 LIVING ROOM 23A-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_28 LIVING ROOM 23A-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 28
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_18-23E.jpg",
-        "full_screen": "assets/floorplans/45PP_18-23E.jpg",
-        "half_screen": "",
-        "residence": 28
-      }
-    ],
-    "unit": "Unit 21E",
-    "type": "2BR - East",
-    "name": "21E",
-    "line": "e",
-    "bedrooms": 2,
-    "bathrooms": "2.5",
-    "interior_square_feet": "1512.00",
-    "interior_square_meters": "140.470",
-    "terrace": false,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
-    "availability": "Available",
-    "floors": [
-      {
         "name": "34"
       }
     ],
     "media": [
+      {
+        "type": "Render",
+        "name": "Private Elevator",
+        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 43
+      },
       {
         "type": "Render",
         "name": "Great Room - Day",
@@ -2550,18 +2766,18 @@
         "residence": 43
       },
       {
-        "type": "Render",
-        "name": "Private Elevator",
-        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 43
-      },
-      {
         "type": "Floorplan",
         "name": "Floorplan",
         "ipad": "assets/floorplans/45PP_31-34.jpg",
         "full_screen": "assets/floorplans/45PP_31-34.jpg",
+        "half_screen": "",
+        "residence": 43
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-31-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-31-2304x1280.jpg",
         "half_screen": "",
         "residence": 43
       }
@@ -2583,156 +2799,18 @@
     "availability": "Available",
     "floors": [
       {
-        "name": "6"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Kitchen & Living Room",
-        "ipad": "assets/renders/ipad/45PP_14 KITCHEN AND LIVING 15B-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_14 KITCHEN AND LIVING 15B-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 1
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_6-15W.jpg",
-        "full_screen": "assets/floorplans/45PP_6-15W.jpg",
-        "half_screen": "",
-        "residence": 1
-      }
-    ],
-    "unit": "Unit 6W",
-    "type": "1BR",
-    "name": "6W",
-    "line": "w",
-    "bedrooms": 1,
-    "bathrooms": "1.0",
-    "interior_square_feet": "880.00",
-    "interior_square_meters": "81.750",
-    "terrace": true,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
-    "availability": "Available",
-    "floors": [
-      {
-        "name": "21"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Wetroom",
-        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 27
-      },
-      {
-        "type": "Render",
-        "name": "Wetroom - Stone & Fixture",
-        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 27
-      },
-      {
-        "type": "Render",
-        "name": "Living Room",
-        "ipad": "assets/renders/ipad/45PP_27 LIVING ROOM 23B-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_27 LIVING ROOM 23B-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 27
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_17-23W.jpg",
-        "full_screen": "assets/floorplans/45PP_17-23W.jpg",
-        "half_screen": "",
-        "residence": 27
-      }
-    ],
-    "unit": "Unit 21W",
-    "type": "2 BR - West",
-    "name": "21W",
-    "line": "w",
-    "bedrooms": 2,
-    "bathrooms": "2.5",
-    "interior_square_feet": "1565.00",
-    "interior_square_meters": "145.390",
-    "terrace": false,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
-    "availability": "Available",
-    "floors": [
-      {
-        "name": "20"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Wetroom",
-        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 26
-      },
-      {
-        "type": "Render",
-        "name": "Wetroom - Stone & Fixture",
-        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 26
-      },
-      {
-        "type": "Render",
-        "name": "Living Room",
-        "ipad": "assets/renders/ipad/45PP_28 LIVING ROOM 23A-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_28 LIVING ROOM 23A-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 26
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_18-23E.jpg",
-        "full_screen": "assets/floorplans/45PP_18-23E.jpg",
-        "half_screen": "",
-        "residence": 26
-      }
-    ],
-    "unit": "Unit 20E",
-    "type": "2BR - East",
-    "name": "20E",
-    "line": "e",
-    "bedrooms": 2,
-    "bathrooms": "2.5",
-    "interior_square_feet": "1512.00",
-    "interior_square_meters": "140.470",
-    "terrace": false,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
-    "availability": "Available",
-    "floors": [
-      {
         "name": "33"
       }
     ],
     "media": [
+      {
+        "type": "Render",
+        "name": "Private Elevator",
+        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 42
+      },
       {
         "type": "Render",
         "name": "Great Room - Day",
@@ -2758,18 +2836,18 @@
         "residence": 42
       },
       {
-        "type": "Render",
-        "name": "Private Elevator",
-        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 42
-      },
-      {
         "type": "Floorplan",
         "name": "Floorplan",
         "ipad": "assets/floorplans/45PP_31-34.jpg",
         "full_screen": "assets/floorplans/45PP_31-34.jpg",
+        "half_screen": "",
+        "residence": 42
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-31-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-31-2304x1280.jpg",
         "half_screen": "",
         "residence": 42
       }
@@ -2797,6 +2875,14 @@
     "media": [
       {
         "type": "Render",
+        "name": "Private Elevator",
+        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 41
+      },
+      {
+        "type": "Render",
         "name": "Great Room - Day",
         "ipad": "assets/renders/ipad/45PP_16 GREAT ROOM 39 DAY-5464x4096.jpg",
         "full_screen": "assets/renders/led/45PP_16 GREAT ROOM 39 DAY-2304x1280.jpg",
@@ -2820,18 +2906,18 @@
         "residence": 41
       },
       {
-        "type": "Render",
-        "name": "Private Elevator",
-        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 41
-      },
-      {
         "type": "Floorplan",
         "name": "Floorplan",
         "ipad": "assets/floorplans/45PP_31-34.jpg",
         "full_screen": "assets/floorplans/45PP_31-34.jpg",
+        "half_screen": "",
+        "residence": 41
+      },
+      {
+        "type": "View",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-31-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-31-2304x1280.jpg",
         "half_screen": "",
         "residence": 41
       }
@@ -2853,64 +2939,18 @@
     "availability": "Available",
     "floors": [
       {
-        "name": "20"
-      }
-    ],
-    "media": [
-      {
-        "type": "Render",
-        "name": "Wetroom",
-        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 25
-      },
-      {
-        "type": "Render",
-        "name": "Wetroom - Stone & Fixture",
-        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 25
-      },
-      {
-        "type": "Render",
-        "name": "Living Room",
-        "ipad": "assets/renders/ipad/45PP_27 LIVING ROOM 23B-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_27 LIVING ROOM 23B-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 25
-      },
-      {
-        "type": "Floorplan",
-        "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_17-23W.jpg",
-        "full_screen": "assets/floorplans/45PP_17-23W.jpg",
-        "half_screen": "",
-        "residence": 25
-      }
-    ],
-    "unit": "Unit 20W",
-    "type": "2 BR - West",
-    "name": "20W",
-    "line": "w",
-    "bedrooms": 2,
-    "bathrooms": "2.5",
-    "interior_square_feet": "1565.00",
-    "interior_square_meters": "145.390",
-    "terrace": false,
-    "exterior_square_feet": "0.00",
-    "exterior_square_meters": "0.00",
-    "price": "0.00"
-  },
-  {
-    "availability": "Available",
-    "floors": [
-      {
         "name": "31"
       }
     ],
     "media": [
+      {
+        "type": "Render",
+        "name": "Private Elevator",
+        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
+        "half_screen": "",
+        "residence": 40
+      },
       {
         "type": "Render",
         "name": "Great Room - Day",
@@ -2936,14 +2976,6 @@
         "residence": 40
       },
       {
-        "type": "Render",
-        "name": "Private Elevator",
-        "ipad": "assets/renders/ipad/45PP_15 PRIVATE ELEVATOR-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_15 PRIVATE ELEVATOR-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 40
-      },
-      {
         "type": "Floorplan",
         "name": "Floorplan",
         "ipad": "assets/floorplans/45PP_31-34.jpg",
@@ -2953,25 +2985,9 @@
       },
       {
         "type": "View",
-        "name": "North",
-        "ipad": "assets/images/views/led/31 N 1280-height",
-        "full_screen": "assets/images/views/led/31 N 1280-height",
-        "half_screen": "",
-        "residence": 40
-      },
-      {
-        "type": "View",
-        "name": "Northeast",
-        "ipad": "assets/images/views/led/31 NE 1280-height.jpg",
-        "full_screen": "assets/images/views/led/31 NE 1280-height.jpg",
-        "half_screen": "",
-        "residence": 40
-      },
-      {
-        "type": "View",
-        "name": "Northwest",
-        "ipad": "assets/images/views/led/31 NW 1280-height.jpg",
-        "full_screen": "assets/images/views/led/31 NW 1280-height.jpg",
+        "name": "View",
+        "ipad": "assets/images/views/led/view-31-2304x1280.jpg",
+        "full_screen": "assets/images/views/led/view-31-2304x1280.jpg",
         "half_screen": "",
         "residence": 40
       }
@@ -2990,108 +3006,76 @@
     "price": "0.00"
   },
   {
-    "availability": "Available",
+    "availability": "Unavailable",
     "floors": [
       {
-        "name": "19"
+        "name": "10"
       }
     ],
     "media": [
       {
         "type": "Render",
-        "name": "Wetroom",
-        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
+        "name": "Kitchen & Living Room",
+        "ipad": "assets/renders/ipad/45PP_14 KITCHEN AND LIVING 15B-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_14 KITCHEN AND LIVING 15B-2304x1280.jpg",
         "half_screen": "",
-        "residence": 24
-      },
-      {
-        "type": "Render",
-        "name": "Wetroom - Stone & Fixture",
-        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 24
-      },
-      {
-        "type": "Render",
-        "name": "Living Room",
-        "ipad": "assets/renders/ipad/45PP_28 LIVING ROOM 23A-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_28 LIVING ROOM 23A-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 24
+        "residence": 9
       },
       {
         "type": "Floorplan",
         "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_18-23E.jpg",
-        "full_screen": "assets/floorplans/45PP_18-23E.jpg",
+        "ipad": "assets/floorplans/45PP_6-15W.jpg",
+        "full_screen": "assets/floorplans/45PP_6-15W.jpg",
         "half_screen": "",
-        "residence": 24
+        "residence": 9
       }
     ],
-    "unit": "Unit 19E",
-    "type": "2BR - East",
-    "name": "19E",
-    "line": "e",
-    "bedrooms": 2,
-    "bathrooms": "2.5",
-    "interior_square_feet": "1512.00",
-    "interior_square_meters": "140.470",
+    "unit": "Unit 10W",
+    "type": "1BR",
+    "name": "10W",
+    "line": "w",
+    "bedrooms": 1,
+    "bathrooms": "1.0",
+    "interior_square_feet": "880.00",
+    "interior_square_meters": "81.750",
     "terrace": false,
     "exterior_square_feet": "0.00",
     "exterior_square_meters": "0.00",
     "price": "0.00"
   },
   {
-    "availability": "Available",
+    "availability": "Unavailable",
     "floors": [
       {
-        "name": "19"
+        "name": "11"
       }
     ],
     "media": [
       {
         "type": "Render",
-        "name": "Wetroom",
-        "ipad": "assets/renders/ipad/45PP_12 WET ROOM-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12 WET ROOM-2304x1280.jpg",
+        "name": "Kitchen & Living Room",
+        "ipad": "assets/renders/ipad/45PP_14 KITCHEN AND LIVING 15B-5464x4096.jpg",
+        "full_screen": "assets/renders/led/45PP_14 KITCHEN AND LIVING 15B-2304x1280.jpg",
         "half_screen": "",
-        "residence": 23
-      },
-      {
-        "type": "Render",
-        "name": "Wetroom - Stone & Fixture",
-        "ipad": "assets/renders/ipad/45PP_12DET WET ROOM STONE AND FIXTURE-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_12DET WET ROOM STONE AND FIXTURE-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 23
-      },
-      {
-        "type": "Render",
-        "name": "Living Room",
-        "ipad": "assets/renders/ipad/45PP_27 LIVING ROOM 23B-5464x4096.jpg",
-        "full_screen": "assets/renders/led/45PP_27 LIVING ROOM 23B-2304x1280.jpg",
-        "half_screen": "",
-        "residence": 23
+        "residence": 11
       },
       {
         "type": "Floorplan",
         "name": "Floorplan",
-        "ipad": "assets/floorplans/45PP_17-23W.jpg",
-        "full_screen": "assets/floorplans/45PP_17-23W.jpg",
+        "ipad": "assets/floorplans/45PP_6-15W.jpg",
+        "full_screen": "assets/floorplans/45PP_6-15W.jpg",
         "half_screen": "",
-        "residence": 23
+        "residence": 11
       }
     ],
-    "unit": "Unit 19W",
-    "type": "2 BR - West",
-    "name": "19W",
+    "unit": "Unit 11W",
+    "type": "1BR",
+    "name": "11W",
     "line": "w",
-    "bedrooms": 2,
-    "bathrooms": "2.5",
-    "interior_square_feet": "1565.00",
-    "interior_square_meters": "145.390",
+    "bedrooms": 1,
+    "bathrooms": "1.0",
+    "interior_square_feet": "880.00",
+    "interior_square_meters": "81.750",
     "terrace": false,
     "exterior_square_feet": "0.00",
     "exterior_square_meters": "0.00",

@@ -8,15 +8,15 @@ class Details extends React.Component{
   }
 
   renderDetails(d){
-    console.log(d);
+    // console.log(d);
     return(
         Object.keys(d).map(function(key, index){
           if(typeof(d[key]) === 'object'){
-            console.log('found object');
+            // console.log('found object');
             return;
           }else{
             return(
-              <DetailText title={key} value={d[key]} />
+              <DetailText title={key} value={d[key]} key={index} />
             )
           }
       })

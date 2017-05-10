@@ -79,7 +79,7 @@ function checkBothActive(){
   var isAp1 = store.getState().tags['ap1'];
   var isAp2 = store.getState().tags['ap2'];
 
-  if(isAp1 && isAp2){
+  if(isAp1 === 'true' && isAp2 === 'true'){
     bothAlive = true;
   }else{
     bothAlive = false;

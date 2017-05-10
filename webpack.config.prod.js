@@ -12,7 +12,7 @@ module.exports = {
     publicPath: '/static/'
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': "'production'"
@@ -29,14 +29,24 @@ module.exports = {
       //js
       {
         test: /\.js$/,
-        loaders: ['babel'],
+        loaders: ['babel-loader'],
         include: path.join(__dirname, 'client')
-      }
+      },
       //css
       {
         test: /\.styl$/,
         include: path.join(__dirname, 'client'),
-        loader: 'style-loader!css-loaer!stylus-loader'
+        loader: 'style-loader!css-loader!stylus-loader'
+      },
+      //fonts
+      {
+        test: /\.(otf|ttc)$/,
+        loader: 'url-loader?name=[name].[ext]'
+      },
+      //images
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=8192'
       }
     ]
   }
