@@ -69,7 +69,7 @@ class EventHandler extends React.Component {
           return;
         }
       }catch(err){
-        console.log('errrrrr');
+        console.log('Unable to parse, message not formatted as JSON');
       }
     }
   }

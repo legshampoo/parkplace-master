@@ -48,7 +48,7 @@ export function handleTagRemoved(){
   var tags = store.getState().tags;
   // console.log(tags);
   var isTagActive = Object.keys(tags).filter(function(key){
-    return tags[key] == true;
+    return tags[key] == 'true';
   }, this);
   // console.log(isTagActive);
   var path = '';
