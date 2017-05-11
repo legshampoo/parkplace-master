@@ -30,7 +30,7 @@ export function combineAssets(d, type){
     var emptyObject = {
       name: '',
       path: 'blank-path',
-      type: 'blank'
+      type: 'blank-type'
     };
     for(var i = 0; i < 6 - remainder; i++){
       data.push(emptyObject);

@@ -3,73 +3,73 @@
     "photos": [
       {
         "name": "Building Hero",
-        "icon": "",
+        "icon": "assets/renders/led/45PP_01 BUILDING HERO-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_01 BUILDING HERO-2304x1280.jpg",
         "ipad": "assets/renders/led/45PP_01 BUILDING HERO-2304x1280.jpg"
       },
       {
         "name": "Top of Tower",
-        "icon": "",
+        "icon": "assets/renders/led/45PP_03 TOP OF TOWER DUSK-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_03 TOP OF TOWER DUSK-2304x1280.jpg",
         "ipad": "assets/renders/led/45PP_03 TOP OF TOWER DUSK-2304x1280.jpg"
       },
       {
         "name": "Arrival",
-        "icon": "",
+        "icon": "assets/renders/led/45PP_04 ARRIVAL-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_04 ARRIVAL-2304x1280.jpg",
         "ipad": "assets/renders/led/45PP_04 ARRIVAL-2304x1280.jpg"
       },
       {
         "name": "Lobby To Street",
-        "icon": "",
+        "icon": "assets/renders/led/45PP_05 LOBBY TO STREET-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_05 LOBBY TO STREET-2304x1280.jpg",
         "ipad": "assets/renders/led/45PP_05 LOBBY TO STREET-2304x1280.jpg"
       },
       {
         "name": "Lobby Desk",
-        "icon": "",
+        "icon": "assets/renders/led/45PP_05DET-LOBBY DESK-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_05DET-LOBBY DESK-2304x1280.jpg",
         "ipad": "assets/renders/led/45PP_05DET-LOBBY DESK-2304x1280.jpg"
       },
       {
         "name": "Lobby To Courtyard",
-        "icon": "",
+        "icon": "assets/renders/led/45PP_06 LOBBY TO COURTYARD-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_06 LOBBY TO COURTYARD-2304x1280.jpg",
         "ipad": "assets/renders/led/45PP_06 LOBBY TO COURTYARD-2304x1280.jpg"
       },
       {
         "name": "Second Floor Lounge",
-        "icon": "",
+        "icon": "assets/renders/led/45PP_07 SECOND FLOOR LOUNGE-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_07 SECOND FLOOR LOUNGE-2304x1280.jpg",
         "ipad": "assets/renders/led/45PP_07 SECOND FLOOR LOUNGE-2304x1280.jpg"
       },
       {
         "name": "Second Floor Lounge - Straight Down",
-        "icon": "",
+        "icon": "assets/renders/led/45PP_07B SECOND FLOOR LOUNGE STRAIGHT DOWN-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_07B SECOND FLOOR LOUNGE STRAIGHT DOWN-2304x1280.jpg",
         "ipad": "assets/renders/led/45PP_07B SECOND FLOOR LOUNGE STRAIGHT DOWN-2304x1280.jpg"
       },
       {
         "name": "Fitness Center",
-        "icon": "",
+        "icon": "assets/renders/led/45PP_08 FITNESS-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_08 FITNESS-2304x1280.jpg",
         "ipad": "assets/renders/led/45PP_08 FITNESS-2304x1280.jpg"
       },
       {
         "name": "Children's Playroom",
-        "icon": "",
+        "icon": "assets/renders/led/45PP_09 CHILDRENS PLAYROOM-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_09 CHILDRENS PLAYROOM-2304x1280.jpg",
         "ipad": "assets/renders/led/45PP_09 CHILDRENS PLAYROOM-2304x1280.jpg"
       },
       {
         "name": "Pool",
-        "icon": "",
+        "icon": "assets/renders/led/45PP_10 POOL-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_10 POOL-2304x1280.jpg",
         "ipad": "assets/renders/led/45PP_10 POOL-2304x1280.jpg"
       },
       {
         "name": "Pool - Straight On",
-        "icon": "",
+        "icon": "assets/renders/led/45PP_10 POOL STRAIGHT ON-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_10 POOL STRAIGHT ON-2304x1280.jpg",
         "ipad": "assets/renders/led/45PP_10 POOL STRAIGHT ON-2304x1280.jpg"
       }
@@ -80,32 +80,20 @@
   {
     "photos": [
       {
-        "name": "Logo",
-        "icon": "",
-        "wall": "assets/logo/led-wall-logo.jpg",
-        "ipad": "assets/logo/ipad-logo.jpg"
-      }
-    ],
-    "videos": [],
-    "name": "Logo"
-  },
-  {
-    "photos": [
-      {
         "name": "Oculus",
-        "icon": "",
+        "icon": "assets/images/neighborhood/led/neighborhood_2304x1280_15.jpg",
         "wall": "assets/images/neighborhood/led/neighborhood_2304x1280_15.jpg",
         "ipad": "assets/images/neighborhood/tablet/neighborhood_5464x4096_15.jpg"
       },
       {
         "name": "Historic Tribeca",
-        "icon": "",
+        "icon": "assets/images/neighborhood/led/neighborhood_2304x1280_17.jpg",
         "wall": "assets/images/neighborhood/led/neighborhood_2304x1280_17.jpg",
         "ipad": "assets/images/neighborhood/led/neighborhood_2304x1280_17.jpg"
       },
       {
         "name": "Hudson Riverfront",
-        "icon": "",
+        "icon": "assets/images/neighborhood/led/neighborhood_2304x1280_31.jpg",
         "wall": "assets/images/neighborhood/led/neighborhood_2304x1280_31.jpg",
         "ipad": "assets/images/neighborhood/tablet/neighborhood_5464x4096_30.jpg"
       }
@@ -117,43 +105,36 @@
     "photos": [
       {
         "name": "Sharif El-Gamal",
-        "icon": "",
+        "icon": "assets/images/team/led/sharif_el_gamal/sharif_el_gamal_2304x1280_4.jpg",
         "wall": "assets/images/team/led/sharif_el_gamal/sharif_el_gamal_2304x1280_4.jpg",
         "ipad": "assets/images/team/tablet/sharif_el_gamal/sharif_el_gamal_5464x4096_4.jpg"
       },
       {
         "name": "Piero Lissoni",
-        "icon": "",
+        "icon": "assets/images/team/led/piero_lissoni/piero_lissoni_2304x1280_3.jpg",
         "wall": "assets/images/team/led/piero_lissoni/piero_lissoni_2304x1280_3.jpg",
         "ipad": "assets/images/team/led/piero_lissoni/piero_lissoni_2304x1280_3.jpg"
       },
       {
         "name": "Jean Nouvel",
-        "icon": "",
+        "icon": "assets/images/team/led/jean_nouvel/jean_nouvel_2304x1280_4.jpg",
         "wall": "assets/images/team/led/jean_nouvel/jean_nouvel_2304x1280_4.jpg",
         "ipad": "assets/images/team/tablet/jean_nouvel/jean_nouvel_5464x4096_4.jpg"
       },
       {
         "name": "Michel Abboud",
-        "icon": "",
+        "icon": "assets/images/team/led/michel_abboud/michel_abboud_2304x1280_1.jpg",
         "wall": "assets/images/team/led/michel_abboud/michel_abboud_2304x1280_1.jpg",
         "ipad": "assets/images/team/tablet/michel_abboud/michel_abboud_5464x4096_1.jpg"
       },
       {
         "name": "Visionaries",
-        "icon": "",
+        "icon": "assets/images/team/led/visionaries_collective/visionaries_collective_2304x1280_9.jpg",
         "wall": "assets/images/team/led/visionaries_collective/visionaries_collective_2304x1280_9.jpg",
         "ipad": "assets/images/team/tablet/visionaries_collective/visionaries_collective_5464x4096_9.jpg"
       }
     ],
-    "videos": [
-      {
-        "name": "Visionaries",
-        "icon": "",
-        "wall": "",
-        "ipad": ""
-      }
-    ],
+    "videos": [],
     "name": "Team"
   }
 ]

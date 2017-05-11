@@ -15,7 +15,7 @@ class RenderAssets extends React.Component {
   }
 
   emptyClickHandler(){
-    console.log('BUTTON EMPTY - NO ACTION');
+    // console.log('BUTTON EMPTY - NO ACTION');
   }
 
   renderAssets(){
@@ -36,7 +36,8 @@ class RenderAssets extends React.Component {
               key={index}
               path={media.wall}
               displayText={media.name}
-              styleClass={media.name === _this.props.selectedMedia.name ? 'media-asset-button-active' : 'media-asset-button' }
+              // styleClass={media.name === _this.props.selectedMedia.name ? 'media-asset-button-active' : 'media-asset-button' }
+              styleClass={media.name === _this.props.selectedMedia.name ? 'media-asset-button-active' : (media.name === '' ? 'media-asset-button-blank' : 'media-asset-button') }
             />
           )
         }
