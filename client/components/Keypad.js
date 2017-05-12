@@ -9,6 +9,8 @@ import ViewTitle from './ViewTitle';
 
 import { updateCurrentUnit } from '../actions/actionCreators';
 import { handleNewTag } from './RouteLogic';
+import { checkUnitExists } from './AssetManager';
+import residenceData from '../data/residence';
 
 class Keypad extends React.Component {
   constructor(){
@@ -41,17 +43,28 @@ class Keypad extends React.Component {
   }
 
   submit(){
+    var path = '';
+    path = '/assets/' + this.state.input;
+
+    var unitExists = checkUnitExists(residenceData, this.state.input);
     // var path = '/assets/' + this.state.input;
     // console.log(this.state.input);
-    var path = '';
-    if(this.state.input == 'PHA' || this.state.input == 'PHB'){
-      path = handleNewTag(this.state.input);
-    }else{
-      path = '/assets/' + this.state.input;
-    }
+    // if(this.state.input == 'PHA' || this.state.input == 'PHB'){
+    //   path = handleNewTag(this.state.input);
+    // }else{
+    //   path = '/assets/' + this.state.input;
+    // }
 
-    updateCurrentUnit(this.state.input);
-    this.context.router.push(path)
+
+    //check if unit exists
+    if(unitExists){
+      updateCurrentUnit(this.state.input);
+      this.context.router.push(path)
+    }else{
+      this.setState({
+        input: ''
+      });
+    }
   }
 
   render(){

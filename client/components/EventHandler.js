@@ -8,6 +8,8 @@ import { updateTagStatus, updateCurrentTag, updateCurrentUnit } from '../actions
 import { handleNewTag, handleTagRemoved } from './RouteLogic';
 import { socketConnectCMS } from './MessageHandler';
 
+const io = require('socket.io-client');
+
 class EventHandler extends React.Component {
   constructor(props){
     super(props);
@@ -19,6 +21,18 @@ class EventHandler extends React.Component {
   }
 
   componentDidMount(){
+
+    // var sock = io();
+
+    // sock.on('connect', function(){
+    //   console.log('socket ID: ' + sock.id);
+    //   sock.emit('msg', { clientMessage: 'connecting...' });
+    //
+    // });
+    // sock.on('message', function() {
+    //   console.log('new data: ');
+    // });
+
     socketConnectCMS();
 
     const webSocketPort = 5560;

@@ -80,22 +80,100 @@
   {
     "photos": [
       {
-        "name": "Oculus",
-        "icon": "assets/images/neighborhood/led/neighborhood_2304x1280_15.jpg",
-        "wall": "assets/images/neighborhood/led/neighborhood_2304x1280_15.jpg",
-        "ipad": "assets/images/neighborhood/tablet/neighborhood_5464x4096_15.jpg"
+        "name": "Grand Banks",
+        "icon": "assets/images/neighborhood/led/grand_banks_2304x1280_30.jpg",
+        "wall": "assets/images/neighborhood/led/grand_banks_2304x1280_30.jpg",
+        "ipad": "assets/images/neighborhood/led/grand_banks_2304x1280_30.jpg"
+      },
+      {
+        "name": "Grand Banks 2",
+        "icon": "assets/images/neighborhood/led/grand_banks_detail.jpg",
+        "wall": "assets/images/neighborhood/led/grand_banks_detail.jpg",
+        "ipad": "assets/images/neighborhood/led/grand_banks_detail.jpg"
+      },
+      {
+        "name": "Apple Store",
+        "icon": "assets/images/neighborhood/led/apple_1_2304x1280_8.jpg",
+        "wall": "assets/images/neighborhood/led/apple_1_2304x1280_8.jpg",
+        "ipad": "assets/images/neighborhood/led/apple_1_2304x1280_8.jpg"
+      },
+      {
+        "name": "Apple Store 2",
+        "icon": "assets/images/neighborhood/led/apple_2_2304x1280_9.jpg",
+        "wall": "assets/images/neighborhood/led/apple_2_2304x1280_9.jpg",
+        "ipad": "assets/images/neighborhood/led/apple_2_2304x1280_9.jpg"
+      },
+      {
+        "name": "Atera",
+        "icon": "assets/images/neighborhood/led/atera_01_2304x1280_19.jpg",
+        "wall": "assets/images/neighborhood/led/atera_01_2304x1280_19.jpg",
+        "ipad": "assets/images/neighborhood/led/atera_01_2304x1280_19.jpg"
+      },
+      {
+        "name": "Atera 2",
+        "icon": "assets/images/neighborhood/led/atera_02_2304x1280_20.jpg",
+        "wall": "assets/images/neighborhood/led/atera_02_2304x1280_20.jpg",
+        "ipad": "assets/images/neighborhood/led/atera_02_2304x1280_20.jpg"
+      },
+      {
+        "name": "Brookfield Place",
+        "icon": "assets/images/neighborhood/led/brookfield_1_2304x1280_35.jpg",
+        "wall": "assets/images/neighborhood/led/brookfield_1_2304x1280_35.jpg",
+        "ipad": "assets/images/neighborhood/led/brookfield_1_2304x1280_35.jpg"
+      },
+      {
+        "name": "Brookfield Place 2",
+        "icon": "assets/images/neighborhood/led/brookfield_2_2304x1280_36.jpg",
+        "wall": "assets/images/neighborhood/led/brookfield_2_2304x1280_36.jpg",
+        "ipad": "assets/images/neighborhood/led/brookfield_2_2304x1280_36.jpg"
+      },
+      {
+        "name": "Brookfield 3",
+        "icon": "assets/images/neighborhood/led/brookfield_3_2304x1280_39.jpg",
+        "wall": "assets/images/neighborhood/led/brookfield_3_2304x1280_39.jpg",
+        "ipad": "assets/images/neighborhood/led/brookfield_3_2304x1280_39.jpg"
+      },
+      {
+        "name": "Fulton Center",
+        "icon": "assets/images/neighborhood/led/fulton_center_2304x1280_15.jpg",
+        "wall": "assets/images/neighborhood/led/fulton_center_2304x1280_15.jpg",
+        "ipad": "assets/images/neighborhood/led/fulton_center_2304x1280_15.jpg"
       },
       {
         "name": "Historic Tribeca",
-        "icon": "assets/images/neighborhood/led/neighborhood_2304x1280_17.jpg",
-        "wall": "assets/images/neighborhood/led/neighborhood_2304x1280_17.jpg",
-        "ipad": "assets/images/neighborhood/led/neighborhood_2304x1280_17.jpg"
+        "icon": "assets/images/neighborhood/led/historic_tribeca_2304x1280_28.jpg",
+        "wall": "assets/images/neighborhood/led/historic_tribeca_2304x1280_28.jpg",
+        "ipad": "assets/images/neighborhood/led/historic_tribeca_2304x1280_28.jpg"
       },
       {
-        "name": "Hudson Riverfront",
-        "icon": "assets/images/neighborhood/led/neighborhood_2304x1280_31.jpg",
-        "wall": "assets/images/neighborhood/led/neighborhood_2304x1280_31.jpg",
-        "ipad": "assets/images/neighborhood/tablet/neighborhood_5464x4096_30.jpg"
+        "name": "Locanda Verde",
+        "icon": "assets/images/neighborhood/led/locanda_2304x1280_46.jpg",
+        "wall": "assets/images/neighborhood/led/locanda_2304x1280_46.jpg",
+        "ipad": "assets/images/neighborhood/led/locanda_2304x1280_46.jpg"
+      },
+      {
+        "name": "Oculus",
+        "icon": "assets/images/neighborhood/led/oculus_2304x1280_13.jpg",
+        "wall": "assets/images/neighborhood/led/oculus_2304x1280_13.jpg",
+        "ipad": "assets/images/neighborhood/led/oculus_2304x1280_13.jpg"
+      },
+      {
+        "name": "One World Trade Center",
+        "icon": "assets/images/neighborhood/led/owtc_2304x1280_16.jpg",
+        "wall": "assets/images/neighborhood/led/owtc_2304x1280_16.jpg",
+        "ipad": "assets/images/neighborhood/led/owtc_2304x1280_16.jpg"
+      },
+      {
+        "name": "Shopping",
+        "icon": "assets/images/neighborhood/led/shopping_2304x1280_2.jpg",
+        "wall": "assets/images/neighborhood/led/shopping_2304x1280_2.jpg",
+        "ipad": "assets/images/neighborhood/led/shopping_2304x1280_2.jpg"
+      },
+      {
+        "name": "Staple Street",
+        "icon": "assets/images/neighborhood/led/staple_street_2304x1280_24.jpg",
+        "wall": "assets/images/neighborhood/led/staple_street_2304x1280_24.jpg",
+        "ipad": "assets/images/neighborhood/led/staple_street_2304x1280_24.jpg"
       }
     ],
     "videos": [],
@@ -105,9 +183,9 @@
     "photos": [
       {
         "name": "Sharif El-Gamal",
-        "icon": "assets/images/team/led/sharif_el_gamal/sharif_el_gamal_2304x1280_4.jpg",
-        "wall": "assets/images/team/led/sharif_el_gamal/sharif_el_gamal_2304x1280_4.jpg",
-        "ipad": "assets/images/team/tablet/sharif_el_gamal/sharif_el_gamal_5464x4096_4.jpg"
+        "icon": "assets/images/team/led/sharif_el_gamal/sharif_el_gamal_2304x1280_1.jpg",
+        "wall": "assets/images/team/led/sharif_el_gamal/sharif_el_gamal_2304x1280_1.jpg",
+        "ipad": "assets/images/team/led/sharif_el_gamal/sharif_el_gamal_2304x1280_1.jpg"
       },
       {
         "name": "Piero Lissoni",
@@ -123,9 +201,9 @@
       },
       {
         "name": "Michel Abboud",
-        "icon": "assets/images/team/led/michel_abboud/michel_abboud_2304x1280_1.jpg",
-        "wall": "assets/images/team/led/michel_abboud/michel_abboud_2304x1280_1.jpg",
-        "ipad": "assets/images/team/tablet/michel_abboud/michel_abboud_5464x4096_1.jpg"
+        "icon": "assets/images/team/led/michel_abboud/michel_abboud_2304x1280_2.jpg",
+        "wall": "assets/images/team/led/michel_abboud/michel_abboud_2304x1280_2.jpg",
+        "ipad": "assets/images/team/led/michel_abboud/michel_abboud_2304x1280_2.jpg"
       },
       {
         "name": "Visionaries",

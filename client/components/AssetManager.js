@@ -43,6 +43,7 @@ export function combineAssets(d, type){
 
 
 //finds the unit ID stored in the current state
+//in json the penthouses are called 'Unit PH A' and 'Unit PH B'
 export function getUnitId(){
   var unitId = '';
 
@@ -89,6 +90,17 @@ export function getAssets(data, val){
 export function checkUnitExists(d, unit){
   var found = false;
 
+  if(unit === 'PHA' || unit === 'PHB'){
+    if(unit === 'PHA'){
+      unit = 'PH A';
+    }
+    if(unit === 'PHB'){
+      unit = 'PH B';
+    }
+  }else{
+
+  }
+
   try{
     Object.keys(d).map(function(key, index){
       if(d[key].name == unit){
@@ -98,7 +110,7 @@ export function checkUnitExists(d, unit){
   }catch(err){
     console.log('unit exists errrr');
   }
-
+  console.log('Unit Found: ' + found);
   return found;
 }
 

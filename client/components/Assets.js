@@ -54,16 +54,17 @@ class Assets extends React.Component {
       case 'ap2':
       case 'PHA':
       case 'PHB':
-        // if(this.props.current.currentUnit == 'PHA' || this.props.current.currentUnit == 'PHAB'){
-        //   mediaGroup = 'Unit_Penthouse';
-        // }else{
-        // }
-        console.log('here');
+        console.log('tag: ' + tag);
         mediaGroup = 'Unit';
-        this.assignToToken();
-        // break;
-        // mediaGroup = 'Unit_Penthouse';
-        // mediaGroup = 'Unit';
+
+        var unit = this.props.current.currentUnit;
+        console.log('unit: ' + unit);
+        if(unit === 'PHA' || unit === 'PHB'){
+          //do nothing
+        }else{
+          this.assignToToken();
+        }
+
         break;
       case 'am':
         mediaGroup = 'Amenities';
@@ -223,7 +224,8 @@ class Assets extends React.Component {
     const currentTag = this.props.current.currentTag;
     assignUnitToToken(currentTag, '');
     var path = currentTag;
-    this.context.router.push(path);
+    // this.context.router.push(path);
+    this.context.router.goBack();
   }
 
   renderRemoveUnitButton(){

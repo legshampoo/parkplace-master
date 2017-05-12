@@ -4,6 +4,7 @@ var express = require('express');
 var getData = require('./RequestData');
 
 var app = express();
+var open = require('open');
 
 const NODE_ENV = process.env.NODE_ENV;
 
@@ -30,14 +31,27 @@ app.get('*', function(req, res){
 
 var PORT = 7770;
 
-app.listen(PORT, 'localhost', function(err){
+// app.listen(PORT, 'localhost', function(err){
+//   if(err){
+//     console.log(err);
+//     return;
+//   }
+//
+//   console.log('45ParkPlace User Interface Server listening at http://localhost:' + PORT);
+// });
+
+const server = app.listen(PORT, 'localhost', function(err){
   if(err){
     console.log(err);
     return;
+  }else{
+    // open(`http://localhost:${PORT}`);
+    console.log('45ParkPlace User Interface Server listening at http://localhost:' + PORT);
   }
-
-  console.log('DevServer listening at http://localhost:' + PORT);
 });
+
+const io = require('socket.io')(server);
+var registeredSockets = [];
 
 //request apartment data
 getData.fetchData('residence');
@@ -62,7 +76,7 @@ tcpServer.listen(tcpPort, function(){
 
 function handleConnection(conn){
   var remoteAddress = conn.remoteAddress + ':' + conn.remotePort;
-  console.log('new client connection from: ' , remoteAddress);
+  console.log('new TCP connection from: ' , remoteAddress);
 
   conn.on('data', onConnData);
   conn.once('close', onConnClose);
@@ -72,6 +86,14 @@ function handleConnection(conn){
     try{
       var msg = decoder.write(d);
       console.log(JSON.parse(msg));
+
+      //socket.io broadcast here
+      // console.log('sending emit');
+      console.log('registeredSockets.length: ' + registeredSockets.length);
+      for(var i = 0; i < registeredSockets.length; i++){
+        console.log('socket.io emitting to client: ' + i);
+        // registeredSockets[i].emit('message', msg);
+      }
 
       if(socket.length == 0){
         console.log('No clients to relay message to: UI is not connected...');
@@ -93,6 +115,35 @@ function handleConnection(conn){
     console.log('Connection %s error: %s', remoteAddress, err.message);
   }
 }
+
+
+
+//------------------------------
+//
+//  SOCKET.IO
+//
+//------------------------------
+// io.on('connection', (socket) => {
+//   // socket.emit('news', { hello: 'world' });
+//   console.log('NEW SOCKET.IO CONNECTION, SOCKET ID: ' + socket.id);
+//   // registeredSockets[socket.id] = socket;
+//   registeredSockets.push(socket);
+//
+//   socket.on('message', (msg) => {
+//     console.log('socket.io message received: ' + msg);
+//     socket.send('socket.io echo: ' + msg);
+//   });
+//
+//   socket.on('disconnect', () => {
+//     console.log('user disconnected');
+//     // var index = registeredSockets.indexOf(socket);
+//     // registeredSockets.splice(index, 1);
+//   });
+// });
+
+
+
+
 
 
 

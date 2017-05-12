@@ -24,7 +24,9 @@ class GridUnit extends React.Component {
 
   render(){
     return(
-      <button className='grid-unit' onClick={(e) => this.onClick(e)}>
+      <button
+        className={this.props.interactive === true ? 'grid-unit' : 'grid-unit-category'}
+        onClick={(e) => this.onClick(e)}>
         <h1>{this.props.name}</h1>
       </button>
     )
