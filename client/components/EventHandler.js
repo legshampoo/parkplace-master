@@ -7,6 +7,8 @@ import { updateTagStatus, updateCurrentTag, updateCurrentUnit } from '../actions
 
 import { handleNewTag, handleTagRemoved } from './RouteLogic';
 import { socketConnectCMS } from './MessageHandler';
+import { lightingControl } from './LightingControls';
+import { getLightingId } from './AssetManager';
 
 const io = require('socket.io-client');
 
@@ -78,6 +80,16 @@ class EventHandler extends React.Component {
         }else if(json.status == 'false'){
           // console.log(json.tag + ' removed');
           path = handleTagRemoved();
+          var unit = '';
+
+          if(json.tag == 'am'){
+            unit = 'Amenities';
+          }else{
+            unit = this.props.current.currentUnit;
+          }
+
+          var led_id = getLightingId(unit);
+          lightingControl(led_id, false);
           // console.log('pushing to ' + path);
           this.context.router.push(path);
           return;

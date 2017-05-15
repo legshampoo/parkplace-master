@@ -129,11 +129,3 @@ export var assetSelection = {
     'url': 'path'
   }
 }
-
-// export var addToFolio = {
-//   'command': 'add-to-folio',
-//   'to': 'wall',
-//   'params': {
-//     'url': 'path'
-//   }
-// }

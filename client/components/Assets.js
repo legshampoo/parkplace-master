@@ -15,8 +15,9 @@ import RemoveUnit from './RemoveUnit';
 import ViewHeader from './ViewHeader';
 import * as folioActions from '../actions/actionCreators';
 import { updateCurrentUnit, assignUnitToToken } from '../actions/actionCreators';
-import { sendCommand, assetSelection } from './MessageHandler';
-import { combineAssets, getUnitId, getAssets, checkUnitExists, checkIfEmpty } from './AssetManager';
+import { sendCommand, assetSelection, fitVertical } from './MessageHandler';
+import { combineAssets, getUnitId, getAssets, checkUnitExists, checkIfEmpty, getLightingId } from './AssetManager';
+import { lightingControl } from './LightingControls';
 
 class Assets extends React.Component {
   constructor(props){
@@ -46,8 +47,8 @@ class Assets extends React.Component {
   updateProps(){
 
     var mediaGroup = this.state.mediaGroup;
-
     var tag = this.props.current.currentTag;
+    var led_id = 0;
 
     switch(tag){
       case 'ap1':
@@ -65,16 +66,30 @@ class Assets extends React.Component {
           this.assignToToken();
         }
 
+        led_id = getLightingId(unit);
+        console.log('led_id: ' + led_id);
+        //send request to LED lighting API
+        lightingControl(led_id, true);
+
         break;
       case 'am':
         mediaGroup = 'Amenities';
+        led_id = getLightingId(mediaGroup);
+        console.log('led_id: ' + led_id);
+        lightingControl(led_id, true);
         break;
       case 'n':
         // console.log(tag);
         mediaGroup = 'Neighborhood';
+        led_id = getLightingId(mediaGroup);
+        console.log('led_id: ' + led_id);
+        lightingControl(led_id, true);
         break;
       case 't':
         mediaGroup = 'Team';
+        led_id = getLightingId(mediaGroup);
+        console.log('led_id: ' + led_id);
+        lightingControl(led_id, true);
         break;
       default:
         console.log('default');
@@ -153,7 +168,11 @@ class Assets extends React.Component {
       msg.params.url = media.wall;
     }
 
+    //send asset command to CMS
     sendCommand(msg);
+
+    //send fit to height command to CMS as default way to display asset
+    sendCommand(fitVertical)
   }
 
   renderControlPanel(){
@@ -181,7 +200,10 @@ class Assets extends React.Component {
   sendControlMessage(cmd){
     var command = cmd;
     var path = 'path';
-    sendCommand(command, path);
+    console.log('sending control panel command...');
+
+    //send control panel command to CMS
+    sendCommand(command);
 
   }
 
@@ -220,6 +242,13 @@ class Assets extends React.Component {
 
   removeUnit(d){
     console.log('remove unit from token');
+
+    //turn off the LED lighting
+    var unit = this.props.current.currentUnit;
+    var led_id = getLightingId(unit);
+    //send command to turn LED lights off
+    lightingControl(led_id, false);
+
     updateCurrentUnit('');
     const currentTag = this.props.current.currentTag;
     assignUnitToToken(currentTag, '');

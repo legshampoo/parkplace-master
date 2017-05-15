@@ -1,4 +1,6 @@
 import store from '../store';
+import residence from '../data/residence';
+import media from '../data/media';
 
 export function combineAssets(d, type){
   var data = [];
@@ -66,6 +68,30 @@ export function getUnitId(){
   //   }
 
   return unitId;
+}
+
+//takes the Unit ID or the mediagroup as input and returns the lighting ID
+export function getLightingId(val){
+  var dataset = {};
+  var led_id = 0;
+
+  if(val === 'Amenities' || val === 'Neighborhood' || val === 'Team'){
+    // dataset = media;
+    led_id = 7;
+  }else{
+    dataset = residence;
+    try{
+      Object.keys(dataset).map(function(key, index){
+        if(dataset[key].name == val){
+          led_id = dataset[key].led_id;
+        }
+      })
+    }catch(err){
+      console.log('error finding led_id');
+    }
+  }
+
+  return led_id;
 }
 
 
