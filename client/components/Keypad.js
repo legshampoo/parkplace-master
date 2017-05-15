@@ -88,8 +88,8 @@ class Keypad extends React.Component {
               <KeypadButton styleClass='keypad-button' displayText='W' value='W' updateInput={this.updateInput}/>
               <KeypadButton styleClass='keypad-button' displayText='0' value='0' updateInput={this.updateInput}/>
               <KeypadButton styleClass='keypad-button' displayText='E' value='E' updateInput={this.updateInput}/>
-              <KeypadButton styleClass='keypad-button' displayText='PHA' value='PHA' updateInput={this.updateInput}/>
-              <KeypadButton styleClass='keypad-button' displayText='PHB' value='PHB' updateInput={this.updateInput}/>
+              {/* <KeypadButton styleClass='keypad-button' displayText='PHA' value='PHA' updateInput={this.updateInput}/> */}
+              {/* <KeypadButton styleClass='keypad-button' displayText='PHB' value='PHB' updateInput={this.updateInput}/> */}
               <KeypadButton styleClass='keypad-button' displayText='ENTER' value='submit' updateInput={this.submit}/>
             </div>
           </div>
