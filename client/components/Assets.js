@@ -79,7 +79,6 @@ class Assets extends React.Component {
         lightingControl(led_id, true);
         break;
       case 'n':
-        // console.log(tag);
         mediaGroup = 'Neighborhood';
         led_id = getLightingId(mediaGroup);
         console.log('led_id: ' + led_id);

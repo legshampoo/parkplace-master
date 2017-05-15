@@ -50,9 +50,6 @@ class EventHandler extends React.Component {
       var json = JSON.parse(event.data);
       console.log(json);
 
-      //Rename the incoming tags
-      // .toString() needed for actual RFID tags,
-      //but not used for dev menu
       try{
 
         switch(json.tag.toString()){
@@ -69,16 +66,16 @@ class EventHandler extends React.Component {
 
         var path = '/';
 
-        // if(json.status == 'true'){  //use this line for actual RFID
         if(json.status == 'true'){
-          // console.log(json.tag + ' active');
           updateCurrentTag(json.tag);
+
           var tag = this.props.current.currentTag;
           path = handleNewTag(tag);
+
+          //go to tag path
           this.context.router.push(path);
           return;
         }else if(json.status == 'false'){
-          // console.log(json.tag + ' removed');
           path = handleTagRemoved();
           var unit = '';
 
@@ -88,14 +85,18 @@ class EventHandler extends React.Component {
             unit = this.props.current.currentUnit;
           }
 
+          //get lighting id only for Amenities
           var led_id = getLightingId(unit);
+
+          //send command to turn off LED
           lightingControl(led_id, false);
-          // console.log('pushing to ' + path);
+
+          //go to path for any remaining token
           this.context.router.push(path);
           return;
         }
       }catch(err){
-        console.log('Unable to parse, message not formatted as JSON');
+        // console.log('Unable to parse, message not formatted as JSON');
       }
     }
   }

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// var request = require('request');
 
 import ControlGroup from './ControlGroup';
 import AddToFolio from './AddToFolio';
