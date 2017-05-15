@@ -13,7 +13,7 @@ export function lightingControl(id, on){
   }
 
   if(id === 6 || id === 7){
-    url = 'http://' + ip + '/api/space/' + id + '/' + state + '/';
+    url = 'http://' + ip + '/api/group/' + id + '/' + state + '/';
   }else{
     url = 'http://' + ip + '/api/space/' + id + '/' + state + '/';
   }
