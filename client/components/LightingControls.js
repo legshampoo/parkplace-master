@@ -3,6 +3,7 @@ const ip = '192.168.45.122';
 //takes the led_id and a true/false for on/off
 export function lightingControl(id, on){
   console.log('unit ID: ' + id + ' LED: ' + on);
+  var url = '';
   var state = '';
 
   if(on){
@@ -11,7 +12,11 @@ export function lightingControl(id, on){
     state = 'off';
   }
 
-  var url = 'http://' + ip + '/api/space/' + id + '/' + state + '/';
+  if(id === 6 || id === 7){
+    url = 'http://' + ip + '/api/space/' + id + '/' + state + '/';
+  }else{
+    url = 'http://' + ip + '/api/space/' + id + '/' + state + '/';
+  }
 
   var params = {
     method: 'GET',

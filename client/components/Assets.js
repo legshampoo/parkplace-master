@@ -55,13 +55,16 @@ class Assets extends React.Component {
       case 'ap2':
       case 'PHA':
       case 'PHB':
-        console.log('tag: ' + tag);
+        // console.log('tag: ' + tag);
         mediaGroup = 'Unit';
 
         var unit = this.props.current.currentUnit;
         console.log('unit: ' + unit);
-        if(unit === 'PHA' || unit === 'PHB'){
-          //do nothing
+        if(tag === 'PHA'){
+          unit = 'PHA';
+        }
+        if(tag === 'PHB'){
+          unit = 'PHB';
         }else{
           this.assignToToken();
         }
@@ -100,7 +103,7 @@ class Assets extends React.Component {
         mediaGroup: mediaGroup,
         locationPathname: this.props.location.pathname
       }, function(){
-        console.log('media group set to ' + mediaGroup);
+        // console.log('media group set to ' + mediaGroup);
       });
     }
   }
@@ -244,6 +247,7 @@ class Assets extends React.Component {
 
     //turn off the LED lighting
     var unit = this.props.current.currentUnit;
+    console.log('removing unit: ' + unit);
     var led_id = getLightingId(unit);
     //send command to turn LED lights off
     lightingControl(led_id, false);

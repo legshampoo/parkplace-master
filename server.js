@@ -123,23 +123,23 @@ function handleConnection(conn){
 //  SOCKET.IO
 //
 //------------------------------
-// io.on('connection', (socket) => {
-//   // socket.emit('news', { hello: 'world' });
-//   console.log('NEW SOCKET.IO CONNECTION, SOCKET ID: ' + socket.id);
-//   // registeredSockets[socket.id] = socket;
-//   registeredSockets.push(socket);
-//
-//   socket.on('message', (msg) => {
-//     console.log('socket.io message received: ' + msg);
-//     socket.send('socket.io echo: ' + msg);
-//   });
-//
-//   socket.on('disconnect', () => {
-//     console.log('user disconnected');
-//     // var index = registeredSockets.indexOf(socket);
-//     // registeredSockets.splice(index, 1);
-//   });
-// });
+io.on('connection', (socket) => {
+  // socket.emit('news', { hello: 'world' });
+  console.log('NEW SOCKET.IO CONNECTION, SOCKET ID: ' + socket.id);
+  // registeredSockets[socket.id] = socket;
+  registeredSockets.push(socket);
+
+  socket.on('message', (msg) => {
+    console.log('socket.io message received: ' + msg);
+    // socket.send('socket.io echo: ' + msg);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+    // var index = registeredSockets.indexOf(socket);
+    // registeredSockets.splice(index, 1);
+  });
+});
 
 
 

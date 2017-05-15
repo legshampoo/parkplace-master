@@ -25,7 +25,7 @@ class EventHandler extends React.Component {
   componentDidMount(){
 
     // var sock = io();
-
+    //
     // sock.on('connect', function(){
     //   console.log('socket ID: ' + sock.id);
     //   sock.emit('msg', { clientMessage: 'connecting...' });
@@ -76,20 +76,38 @@ class EventHandler extends React.Component {
           this.context.router.push(path);
           return;
         }else if(json.status == 'false'){
-          path = handleTagRemoved();
           var unit = '';
 
-          if(json.tag == 'am'){
+          if(json.tag === 'am'){
             unit = 'Amenities';
-          }else{
+          }
+          if(json.tag === 'PHA'){
+            unit = 'PHA';
+          }
+          if(json.tag === 'PHB'){
+            unit = 'PHB';
+          }
+          if(json.tag === 'ap1' || json.tag === 'ap2'){
+            //get the current Unit before clearing it
             unit = this.props.current.currentUnit;
           }
 
-          //get lighting id only for Amenities
+          console.log('turning off LED for unit: ' + unit);
+
           var led_id = getLightingId(unit);
 
           //send command to turn off LED
           lightingControl(led_id, false);
+
+          path = handleTagRemoved();
+          // var unit = '';
+
+          // if(json.tag == 'am'){
+          //   unit = 'Amenities';
+          // }else{
+          //   unit = this.props.current.currentUnit;
+          // }
+
 
           //go to path for any remaining token
           this.context.router.push(path);

@@ -74,10 +74,13 @@ export function getUnitId(){
 export function getLightingId(val){
   var dataset = {};
   var led_id = 0;
+  console.log('getting led_id for val: ' + val);
 
-  if(val === 'Amenities' || val === 'Neighborhood' || val === 'Team'){
+  if(val === 'Amenities'){
     // dataset = media;
     led_id = 7;
+  }else if(val === 'PHA' || val === 'PHB'){
+    led_id = 6;
   }else{
     dataset = residence;
     try{
@@ -90,6 +93,8 @@ export function getLightingId(val){
       console.log('error finding led_id');
     }
   }
+
+  console.log('returning led_id: ' + led_id);
 
   return led_id;
 }
@@ -136,7 +141,7 @@ export function checkUnitExists(d, unit){
   }catch(err){
     console.log('unit exists errrr');
   }
-  console.log('Unit Found: ' + found);
+  // console.log('Unit Found: ' + found);
   return found;
 }
 
