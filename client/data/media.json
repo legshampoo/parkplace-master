@@ -5,73 +5,73 @@
         "name": "Building Hero",
         "icon": "assets/renders/led/45PP_01 BUILDING HERO-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_01 BUILDING HERO-2304x1280.jpg",
-        "ipad": "assets/renders/led/45PP_01 BUILDING HERO-2304x1280.jpg"
+        "ipad": "assets/renders/ipad/45PP_01 BUILDING HERO-5464x4096.jpg"
       },
       {
         "name": "Top of Tower",
         "icon": "assets/renders/led/45PP_03 TOP OF TOWER DUSK-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_03 TOP OF TOWER DUSK-2304x1280.jpg",
-        "ipad": "assets/renders/led/45PP_03 TOP OF TOWER DUSK-2304x1280.jpg"
+        "ipad": "assets/renders/ipad/03 TOP OF TOWER DUSK_5464x4096.jpg"
       },
       {
         "name": "Arrival",
         "icon": "assets/renders/led/45PP_04 ARRIVAL-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_04 ARRIVAL-2304x1280.jpg",
-        "ipad": "assets/renders/led/45PP_04 ARRIVAL-2304x1280.jpg"
+        "ipad": "assets/renders/ipad/45PP_04 ARRIVAL-5464x4096.jpg"
       },
       {
         "name": "Lobby To Street",
         "icon": "assets/renders/led/45PP_05 LOBBY TO STREET-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_05 LOBBY TO STREET-2304x1280.jpg",
-        "ipad": "assets/renders/led/45PP_05 LOBBY TO STREET-2304x1280.jpg"
+        "ipad": "assets/renders/ipad/45PP_05 LOBBY TO STREET-5464x4096.jpg"
       },
       {
         "name": "Lobby Desk",
         "icon": "assets/renders/led/45PP_05DET-LOBBY DESK-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_05DET-LOBBY DESK-2304x1280.jpg",
-        "ipad": "assets/renders/led/45PP_05DET-LOBBY DESK-2304x1280.jpg"
+        "ipad": "assets/renders/ipad/45PP_05-LOBBY DESK-5464x4096.jpg"
       },
       {
         "name": "Lobby To Courtyard",
         "icon": "assets/renders/led/45PP_06 LOBBY TO COURTYARD-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_06 LOBBY TO COURTYARD-2304x1280.jpg",
-        "ipad": "assets/renders/led/45PP_06 LOBBY TO COURTYARD-2304x1280.jpg"
+        "ipad": "assets/renders/ipad/45PP_06 LOBBY TO COURTYARD-5464x4096.jpg"
       },
       {
         "name": "Second Floor Lounge",
         "icon": "assets/renders/led/45PP_07 SECOND FLOOR LOUNGE-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_07 SECOND FLOOR LOUNGE-2304x1280.jpg",
-        "ipad": "assets/renders/led/45PP_07 SECOND FLOOR LOUNGE-2304x1280.jpg"
+        "ipad": "assets/renders/ipad/45PP_07 SECOND FLOOR LOUNGE-5464x4096.jpg"
       },
       {
         "name": "Second Floor Lounge - Straight Down",
         "icon": "assets/renders/led/45PP_07B SECOND FLOOR LOUNGE STRAIGHT DOWN-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_07B SECOND FLOOR LOUNGE STRAIGHT DOWN-2304x1280.jpg",
-        "ipad": "assets/renders/led/45PP_07B SECOND FLOOR LOUNGE STRAIGHT DOWN-2304x1280.jpg"
+        "ipad": "assets/renders/ipad/45PP_07B SECOND FLOOR LOUNGE STRAIGHT DOWN-5464x4096.jpg"
       },
       {
         "name": "Fitness Center",
         "icon": "assets/renders/led/45PP_08 FITNESS-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_08 FITNESS-2304x1280.jpg",
-        "ipad": "assets/renders/led/45PP_08 FITNESS-2304x1280.jpg"
+        "ipad": "assets/renders/ipad/45PP_08 FITNESS-5464x4096.jpg"
       },
       {
         "name": "Children's Playroom",
         "icon": "assets/renders/led/45PP_09 CHILDRENS PLAYROOM-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_09 CHILDRENS PLAYROOM-2304x1280.jpg",
-        "ipad": "assets/renders/led/45PP_09 CHILDRENS PLAYROOM-2304x1280.jpg"
+        "ipad": "assets/renders/ipad/45PP_09 CHILDRENS PLAYROOM-5464x4096.jpg"
       },
       {
         "name": "Pool",
         "icon": "assets/renders/led/45PP_10 POOL-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_10 POOL-2304x1280.jpg",
-        "ipad": "assets/renders/led/45PP_10 POOL-2304x1280.jpg"
+        "ipad": "assets/renders/ipad/45PP_10 POOL-5464x4096.jpg"
       },
       {
         "name": "Pool - Straight On",
         "icon": "assets/renders/led/45PP_10 POOL STRAIGHT ON-2304x1280.jpg",
         "wall": "assets/renders/led/45PP_10 POOL STRAIGHT ON-2304x1280.jpg",
-        "ipad": "assets/renders/led/45PP_10 POOL STRAIGHT ON-2304x1280.jpg"
+        "ipad": "assets/renders/ipad/45PP_10 POOL STRAIGHT ON-5464x4096.jpg"
       }
     ],
     "videos": [],
@@ -212,7 +212,14 @@
         "ipad": "assets/images/team/tablet/visionaries_collective/visionaries_collective_5464x4096_9.jpg"
       }
     ],
-    "videos": [],
+    "videos": [
+      {
+        "name": "Visionaries Film",
+        "icon": "",
+        "wall": "assets/video/vision_w_aerial_2_7-h264_mov_10mbps_30fps_nb.mov",
+        "ipad": "assets/video/vision_w_aerial_2_7-h264_mov_10mbps_30fps_nb.mov"
+      }
+    ],
     "name": "Team"
   }
 ]

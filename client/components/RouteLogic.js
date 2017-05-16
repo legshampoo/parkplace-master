@@ -39,7 +39,7 @@ export function handleNewTag(tag){
       break;
   }
 
-  // console.log(path);
+  // console.log('here');
   return path;
 }
 

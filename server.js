@@ -57,6 +57,45 @@ var registeredSockets = [];
 getData.fetchData('residence');
 getData.fetchData('media');
 
+
+//------------------------------
+//
+//  SOCKET.IO
+//
+//------------------------------
+io.on('connection', (socket) => {
+  console.log('NEW SOCKET.IO CONNECTION, SOCKET ID: ' + socket.id);
+  registeredSockets.push(socket);
+  console.log('total sockets connected: ' + registeredSockets.length);
+
+  var serverMessage = 'connection with http://localhost:7770 has been established'
+  socket.emit('connection-established', {
+    data: serverMessage
+  });
+
+  var pingInterval = setInterval(function(){
+    var data = 'localhost ping';
+    socket.emit('ping', { data: data })
+  }, 10000);
+
+  socket.on('ping', (d) => {
+    console.log('ping: ' + d.data);
+    socket.emit('echo', d);
+  });
+
+  socket.on('disconnect', (d) => {
+    console.log('user disconnected');
+    var index = registeredSockets.indexOf(socket);
+    registeredSockets.splice(index, 1);
+  });
+});
+
+
+
+
+
+
+
 //------------------------------
 //
 //  TCP SERVER
@@ -93,15 +132,16 @@ function handleConnection(conn){
       for(var i = 0; i < registeredSockets.length; i++){
         console.log('socket.io emitting to client: ' + i);
         // registeredSockets[i].emit('message', msg);
+        registeredSockets[i].emit('message', { data: msg });
       }
 
-      if(socket.length == 0){
-        console.log('No clients to relay message to: UI is not connected...');
-      }else{
-        for(var i = 0; i < socket.length; i++){
-          socket[i].send(msg);
-        }
-      }
+      // if(socket.length == 0){
+      //   console.log('No clients to relay message to: UI is not connected...');
+      // }else{
+      //   for(var i = 0; i < socket.length; i++){
+      //     socket[i].send(msg);
+      //   }
+      // }
     }catch(e){
       console.log('errrrrror:', e);
     }
@@ -118,31 +158,6 @@ function handleConnection(conn){
 
 
 
-//------------------------------
-//
-//  SOCKET.IO
-//
-//------------------------------
-io.on('connection', (socket) => {
-  // socket.emit('news', { hello: 'world' });
-  console.log('NEW SOCKET.IO CONNECTION, SOCKET ID: ' + socket.id);
-  // registeredSockets[socket.id] = socket;
-  registeredSockets.push(socket);
-
-  socket.on('message', (msg) => {
-    console.log('socket.io message received: ' + msg);
-    // socket.send('socket.io echo: ' + msg);
-  });
-
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-    // var index = registeredSockets.indexOf(socket);
-    // registeredSockets.splice(index, 1);
-  });
-});
-
-
-
 
 
 
@@ -153,33 +168,33 @@ io.on('connection', (socket) => {
 //
 //------------------------------
 
-const WebSocket = require('ws');
-const webSocketPort = 5560;
-const wss = new WebSocket.Server({ port: webSocketPort });
-var socket = [];
-var connectionIndex = 0;
-
-wss.on('connection', function connection(ws){
-  socket.push(ws);
-  // ws.index = connectionIndex;
-  // connectionIndex++;
-  // console.log('new WebSocket connection #:', connectionIndex);
-  console.log('total socket connections: ', socket.length);
-
-  ws.on('message', function incoming(message){
-    console.log('WebSocket message received: ' + message);
-    ws.send('WebSocket Server echo: ' + message);
-  });
-
-  ws.on('close', function(){
-    console.log('WebSocket connection closed');
-    var index = socket.indexOf(ws);
-    socket.splice(index, 1);
-  });
-});
-
-
-console.log('45Park WebSocket server started on port: ' + webSocketPort);
+// const WebSocket = require('ws');
+// const webSocketPort = 5560;
+// const wss = new WebSocket.Server({ port: webSocketPort });
+// var socket = [];
+// var connectionIndex = 0;
+//
+// wss.on('connection', function connection(ws){
+//   socket.push(ws);
+//   // ws.index = connectionIndex;
+//   // connectionIndex++;
+//   // console.log('new WebSocket connection #:', connectionIndex);
+//   console.log('total socket connections: ', socket.length);
+//
+//   ws.on('message', function incoming(message){
+//     console.log('WebSocket message received: ' + message);
+//     ws.send('WebSocket Server echo: ' + message);
+//   });
+//
+//   ws.on('close', function(){
+//     console.log('WebSocket connection closed');
+//     var index = socket.indexOf(ws);
+//     socket.splice(index, 1);
+//   });
+// });
+//
+//
+// console.log('45Park WebSocket server started on port: ' + webSocketPort);
 
 
 //------------------------------

@@ -74,7 +74,7 @@ export function getUnitId(){
 export function getLightingId(val){
   var dataset = {};
   var led_id = 0;
-  console.log('getting led_id for val: ' + val);
+  // console.log('getting led_id for val: ' + val);
 
   if(val === 'Amenities'){
     // dataset = media;
@@ -94,7 +94,7 @@ export function getLightingId(val){
     }
   }
 
-  console.log('returning led_id: ' + led_id);
+  // console.log('returning led_id: ' + led_id);
 
   return led_id;
 }

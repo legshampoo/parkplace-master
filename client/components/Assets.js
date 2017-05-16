@@ -78,19 +78,19 @@ class Assets extends React.Component {
       case 'am':
         mediaGroup = 'Amenities';
         led_id = getLightingId(mediaGroup);
-        console.log('led_id: ' + led_id);
+        // console.log('led_id: ' + led_id);
         lightingControl(led_id, true);
         break;
       case 'n':
         mediaGroup = 'Neighborhood';
         led_id = getLightingId(mediaGroup);
-        console.log('led_id: ' + led_id);
+        // console.log('led_id: ' + led_id);
         lightingControl(led_id, true);
         break;
       case 't':
         mediaGroup = 'Team';
         led_id = getLightingId(mediaGroup);
-        console.log('led_id: ' + led_id);
+        // console.log('led_id: ' + led_id);
         lightingControl(led_id, true);
         break;
       default:

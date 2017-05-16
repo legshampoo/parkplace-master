@@ -2,7 +2,7 @@ const ip = '192.168.45.122';
 
 //takes the led_id and a true/false for on/off
 export function lightingControl(id, on){
-  console.log('unit ID: ' + id + ' LED: ' + on);
+  // console.log('unit ID: ' + id + ' LED: ' + on);
   var url = '';
   var state = '';
 
@@ -36,6 +36,6 @@ export function lightingControl(id, on){
   }).then(function(error){
     console.log(error);
   }).then(function(){
-    console.log('led lighting command sent');
+    // console.log('led lighting command sent');
   });
 }

@@ -4,6 +4,23 @@ const socketPortCMS = 8080;
 // const socketPortCMS = 5560;  //localhost port
 var socketCMS;
 
+const io = require('socket.io-client');
+
+export function openSocketCMS(){
+  // console.log('connn');
+  var options = {
+    reconnection: true,
+    reconnectionDelay: 1000,
+    timeout: 5000
+  }
+  // var socket = io.connect('http://192.168.45.21:8080');
+  var socket = io.connect('ws://' + ip + ':' + socketPortCMS);
+  socket.on('connect', d => {
+    console.log('CMS socket connected');
+  });
+}
+
+
 export function socketConnectCMS(){
 
   socketCMS = new WebSocket('ws://' + ip + ':' + socketPortCMS);
