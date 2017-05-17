@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Redux, { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as folioActions from '../actions/actionCreators';
 
 import KeypadButton from './KeypadButton';
 import KeypadConsole from './KeypadConsole';
@@ -7,8 +10,8 @@ import KeypadSubmit from './KeypadSubmit';
 import NavButton from './NavButton';
 import ViewTitle from './ViewTitle';
 
-import { updateCurrentUnit } from '../actions/actionCreators';
-import { handleNewTag } from './RouteLogic';
+import { updateCurrentUnit, assignUnitToToken } from '../actions/actionCreators';
+import { handleNewTag, checkBothActive, handleBothActive, checkCompareMode } from './RouteLogic';
 import { checkUnitExists } from './AssetManager';
 import residenceData from '../data/residence';
 
@@ -42,6 +45,13 @@ class Keypad extends React.Component {
     })
   }
 
+  // assignToToken(){
+  //   const currentTag = this.props.current.currentTag;
+  //   const currentUnit = this.props.current.currentUnit;
+  //
+  //   assignUnitToToken(currentTag, currentUnit);
+  // }
+
   submit(){
     var path = '';
     path = '/assets/' + this.state.input;
@@ -58,7 +68,22 @@ class Keypad extends React.Component {
 
     //check if unit exists
     if(unitExists){
+      assignUnitToToken(this.props.current.currentTag, this.state.input);
       updateCurrentUnit(this.state.input);
+      var bothTagsActive = checkBothActive();
+      console.log('both tags active, checking is should compare');
+      if(bothTagsActive){
+        console.log('both are active');
+        var compare = checkCompareMode();
+        console.log(compare);
+        if(compare){
+          console.log('compare is true');
+          // path = handleBothActive(this.props.folio.ap1, this.props.folio.ap2);
+          path = '/compare-units/' + this.props.folio.ap1 + '+' + this.props.folio.ap2;
+          console.log(path);
+        }
+      }
+
       this.context.router.push(path)
     }else{
       this.setState({
@@ -103,4 +128,17 @@ Keypad.contextTypes = {
   router: PropTypes.object
 }
 
-export default Keypad
+function mapStateToProps(state){
+  return {
+    folio: state.folio,
+    current: state.current
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    folioActions: bindActionCreators(folioActions, dispatch)
+  }
+}
+// export default Keypad;
+export default connect(mapStateToProps, mapDispatchToProps)(Keypad);

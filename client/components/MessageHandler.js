@@ -4,30 +4,31 @@ const socketPortCMS = 8080;
 // const socketPortCMS = 5560;  //localhost port
 var socketCMS;
 
-const io = require('socket.io-client');
+// const io = require('socket.io-client');
 
-export function openSocketCMS(){
-  // console.log('connn');
-  var options = {
-    reconnection: true,
-    reconnectionDelay: 1000,
-    timeout: 5000
-  }
-  // var socket = io.connect('http://192.168.45.21:8080');
-  var socket = io.connect('ws://' + ip + ':' + socketPortCMS);
-  socket.on('connect', d => {
-    console.log('CMS socket connected');
-  });
-}
+// export function openSocketCMS(){
+  // var url = 'ws://192.168.45.21:8080';
+  // var options = {
+  //   path: '/',
+  //   reconnection: true,
+  //   reconnectionDelay: 1000,
+  //   timeout: 5000,
+  //   transports: ['websocket', 'polling']
+  // }
+  // var socket = io.connect(url, options);
+  // socket.on('connect', d => {
+  //   console.log('CMS socketIO CONNECTED');
+  // });
+// }
 
 
 export function socketConnectCMS(){
+  console.log('Attempting to connect to CMS...');
 
   socketCMS = new WebSocket('ws://' + ip + ':' + socketPortCMS);
-  // socketCMS = new WebSocket('ws://192.168.45.21:8080');
 
   socketCMS.onopen = function(event){
-    console.log('Websocket connecting to CMS: ' + event.currentTarget.URL);
+    console.log('CMS WEBSOCKET CONNECTED');
   }
 
   socketCMS.onmessage = event => {
@@ -41,23 +42,53 @@ export function socketConnectCMS(){
   }
 
   socketCMS.onerror = event => {
+    console.log('ERROR Connecting to CMS');
     console.log(event.data);
+    reconnectCMS();
   }
 }
 
+function reconnectCMS(){
+  setTimeout(function(){
+    console.log('Reconnect CMS...');
+    socketConnectCMS();
+  }, 5000);
+}
+
 export function sendCommand(msg){
+  console.log('sending');
   var message = JSON.stringify(msg);
-  console.log('sending message: ');
-  console.log(message);
-  socketCMS.send(message);
+
+  switch(socketCMS.readyState){
+    case 0:  //connecting
+      console.log('socket is in CONNECTING STATE, cant send message.  Attempting to reconnect...');
+      reconnectCMS();
+      break;
+    case 1:   //open
+      console.log('socket is OPEN, sending command...');
+      console.log(message);
+      socketCMS.send(message);
+      break;
+    case 2:  //closing
+      console.log('socket is in CLOSING state, cant send.  Attempting to Reconnect');
+      reconnectCMS();
+      break;
+    case 3:  //closed
+      console.log('socket is CLOSED, attempting to reconnect...');
+      reconnectCMS();
+      break;
+    default:
+      console.log('default');
+      break;
+  }
 }
 
 
 export function addToFolio(path){
   console.log('Sending ADD TO FOLIO: ' + path);
 
-  // var url = 'http://192.168.45.21/api/folio/';
-  var url = 'http://' + ip + '/api/folio/';
+  // var url = 'http://' + ip + '/api/folio/';
+  var url = 'http://192.168.45.21/api/folio/';
 
   var message = {
     'url': path
@@ -68,9 +99,7 @@ export function addToFolio(path){
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*'
     },
-    mode: 'no-cors',
     body: JSON.stringify({message})
   }).then(function(response){
     if(!response.ok){
@@ -144,5 +173,14 @@ export var assetSelection = {
   'to': 'wall',
   'params': {
     'url': 'path'
+  }
+}
+
+export var compareMode = {
+  'command': 'compare-mode',
+  'to': 'wall',
+  'params': {
+    'unit1': 'unit1',
+    'unit2': 'unit2'
   }
 }

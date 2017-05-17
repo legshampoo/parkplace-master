@@ -34,7 +34,7 @@ class RenderAssets extends React.Component {
               selectedMedia={_this.props.selectedMedia}
               id={media.name}
               key={index}
-              path={media.wall}
+              // path={media.wall}
               displayText={media.name}
               styleClass={media.name === _this.props.selectedMedia.name ? 'media-asset-button-active' : (media.name === '' ? 'media-asset-button-blank' : 'media-asset-button') }
             />

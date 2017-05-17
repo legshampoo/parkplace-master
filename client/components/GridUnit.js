@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Redux, { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as folioActions from '../actions/actionCreators';
 
-import { updateCurrentUnit } from '../actions/actionCreators';
+import { updateCurrentUnit, assignUnitToToken } from '../actions/actionCreators';
+import { handleNewTag, checkBothActive, handleBothActive, checkCompareMode } from './RouteLogic';
+import { checkUnitExists } from './AssetManager';
 
 class GridUnit extends React.Component {
   constructor(){
@@ -16,6 +21,14 @@ class GridUnit extends React.Component {
 
     if(this.props.interactive){
       updateCurrentUnit(this.props.name);
+      assignUnitToToken(this.props.current.currentTag, this.props.name);
+      var bothTagsActive = checkBothActive();
+      if(bothTagsActive){
+        var compare = checkCompareMode();
+        if(compare){
+          path = '/compare-units/' + this.props.folio.ap1 + '+' + this.props.folio.ap2;
+        }
+      }
       this.context.router.push(path);
     }else{
       return;
@@ -42,4 +55,18 @@ GridUnit.propTypes = {
   interactive: PropTypes.bool.isRequired
 }
 
-export default GridUnit;
+function mapStateToProps(state){
+  return {
+    folio: state.folio,
+    current: state.current
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    folioActions: bindActionCreators(folioActions, dispatch)
+  }
+}
+
+// export default GridUnit;
+export default connect(mapStateToProps, mapDispatchToProps)(GridUnit);

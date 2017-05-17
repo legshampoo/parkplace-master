@@ -49,49 +49,41 @@ class Assets extends React.Component {
     var mediaGroup = this.state.mediaGroup;
     var tag = this.props.current.currentTag;
     var led_id = 0;
+    var unitLED = '';
 
     switch(tag){
       case 'ap1':
       case 'ap2':
       case 'PHA':
       case 'PHB':
-        // console.log('tag: ' + tag);
         mediaGroup = 'Unit';
 
-        var unit = this.props.current.currentUnit;
-        console.log('unit: ' + unit);
         if(tag === 'PHA'){
-          unit = 'PHA';
-        }
-        if(tag === 'PHB'){
-          unit = 'PHB';
+          unitLED = 'PHA';
+        }else if(tag === 'PHB'){
+          unitLED = 'PHB';
         }else{
+          unitLED = this.props.current.currentUnit;
           this.assignToToken();
         }
 
-        led_id = getLightingId(unit);
-        console.log('led_id: ' + led_id);
+        led_id = getLightingId(unitLED);
         //send request to LED lighting API
         lightingControl(led_id, true);
 
         break;
       case 'am':
         mediaGroup = 'Amenities';
-        led_id = getLightingId(mediaGroup);
-        // console.log('led_id: ' + led_id);
+        unitLED = 'Amenities';
+        led_id = getLightingId(unitLED);
+
         lightingControl(led_id, true);
         break;
       case 'n':
         mediaGroup = 'Neighborhood';
-        led_id = getLightingId(mediaGroup);
-        // console.log('led_id: ' + led_id);
-        lightingControl(led_id, true);
         break;
       case 't':
         mediaGroup = 'Team';
-        led_id = getLightingId(mediaGroup);
-        // console.log('led_id: ' + led_id);
-        lightingControl(led_id, true);
         break;
       default:
         console.log('default');
@@ -103,7 +95,7 @@ class Assets extends React.Component {
         mediaGroup: mediaGroup,
         locationPathname: this.props.location.pathname
       }, function(){
-        // console.log('media group set to ' + mediaGroup);
+        console.log('media group set to ' + mediaGroup);
       });
     }
   }
@@ -164,7 +156,8 @@ class Assets extends React.Component {
       msg.command = 'video'
     }
 
-    if(this.state.mediaGroup == 'Unit' || this.state.mediaGroup == 'Unit_Penthouse'){
+    // if(this.state.mediaGroup == 'Unit' || this.state.mediaGroup == 'Unit_Penthouse'){
+    if(this.state.mediaGroup == 'Unit'){
       msg.params.url = media.full_screen;
     }else{
       msg.params.url = media.wall;

@@ -22,7 +22,7 @@ const middlewares = [thunkMiddleware];
 // Create logger
 const logger = createLogger();
 if (process.env.NODE_ENV !== 'production') {
-  middlewares.push(logger);
+  // middlewares.push(logger);
 } else {
   //console.log = () => {};
 }

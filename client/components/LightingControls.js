@@ -12,7 +12,7 @@ export function lightingControl(id, on){
     state = 'off';
   }
 
-  if(id === 6 || id === 7){
+  if(id === 7){
     url = 'http://' + ip + '/api/group/' + id + '/' + state + '/';
   }else{
     url = 'http://' + ip + '/api/space/' + id + '/' + state + '/';

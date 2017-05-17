@@ -27,7 +27,7 @@ class UnitInfo extends React.Component {
 
   renderDetails(d, unit){
     var details = this.getUnitData(d, unit)
-    console.log(details);
+    // console.log(details);
 
     return(
       <Details details={details} />

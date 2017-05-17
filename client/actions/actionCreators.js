@@ -10,7 +10,7 @@ export function updateCurrentTag(tagName){
 }
 
 export function updateCurrentUnit(unit){
-  store.dispatch({
+  return store.dispatch({
     type: 'UPDATE_CURRENT_UNIT',
     unit: unit
   })

@@ -6,7 +6,8 @@ export function combineAssets(d, type){
   var data = [];
 
   //the unit type determines how far down the tree to go
-  if(type === 'Unit' || type === 'Unit_Penthouse'){
+  // if(type === 'Unit' || type === 'Unit_Penthouse'){
+  if(type === 'Unit'){
     // console.log(d);
     data = d.media;
     // console.log(data);
@@ -74,14 +75,16 @@ export function getUnitId(){
 export function getLightingId(val){
   var dataset = {};
   var led_id = 0;
-  // console.log('getting led_id for val: ' + val);
 
   if(val === 'Amenities'){
-    // dataset = media;
     led_id = 7;
-  }else if(val === 'PHA' || val === 'PHB'){
-    led_id = 6;
   }else{
+    if(val === 'PHA'){
+      val = 'PH A';
+    }
+    if(val === 'PHB'){
+      val = 'PH B';
+    }
     dataset = residence;
     try{
       Object.keys(dataset).map(function(key, index){
@@ -93,8 +96,6 @@ export function getLightingId(val){
       console.log('error finding led_id');
     }
   }
-
-  // console.log('returning led_id: ' + led_id);
 
   return led_id;
 }

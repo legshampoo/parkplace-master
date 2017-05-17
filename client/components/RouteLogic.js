@@ -1,10 +1,9 @@
 import * as types from '../reducers/types';
 import store from '../store';
 import { updateCurrentUnit, updateCurrentTag } from '../actions/actionCreators';
-
+import { sendCommand, compareMode } from './MessageHandler';
 
 export function handleNewTag(tag){
-  // console.log(tag);
   var path = '';
   switch(tag){
     case 'ap1':
@@ -12,14 +11,17 @@ export function handleNewTag(tag){
       var ap1Unit = store.getState().folio['ap1'];
       var ap2Unit = store.getState().folio['ap2'];
       var bothTagsActive = checkBothActive();
-      // console.log(bothTagsActive);
+
       if(bothTagsActive){
-        console.log('both');
+        console.log('both tags true');
+        // var message = compareMode;
+        // message.params.unit1 = 'ap1Unit';
+        // message.params.unit2 = 'ap2Unit';
+        //
+        // sendCommand(message);
         path = handleBothActive(ap1Unit, ap2Unit);
-        console.log(path);
       }else if(!bothTagsActive){
         path = handleOneTagActive(ap1Unit, ap2Unit);
-        // console.log(path);
       }
       break;
     case 'am':
@@ -39,23 +41,19 @@ export function handleNewTag(tag){
       break;
   }
 
-  // console.log('here');
   return path;
 }
 
 export function handleTagRemoved(){
-  // console.log('start');
   var tags = store.getState().tags;
-  // console.log(tags);
   var isTagActive = Object.keys(tags).filter(function(key){
     return tags[key] == 'true';
   }, this);
-  // console.log(isTagActive);
+
   var path = '';
-  // console.log(path);
+
   if(isTagActive.length > 0){
     var lastTag = isTagActive[isTagActive.length - 1];
-    // updateCurrentTag(lastTag);
 
     console.log('a tag is still active: ' + lastTag);
     updateCurrentTag(lastTag);
@@ -67,13 +65,11 @@ export function handleTagRemoved(){
     path = '/';
     updateCurrentTag('');
     updateCurrentUnit('');
-    // console.log(path);
   }
-  // console.log(path);
   return path;
 }
 
-function checkBothActive(){
+export function checkBothActive(){
   var bothAlive = false;
 
   var isAp1 = store.getState().tags['ap1'];
@@ -92,10 +88,10 @@ function test(){
   console.log('test');
 }
 
-function handleBothActive(ap1Unit, ap2Unit){
+export function handleBothActive(ap1Unit, ap2Unit){
   var tag = store.getState().current.currentTag;
   var path = '';
-  console.log('1');
+
   if(ap1Unit != '' && ap2Unit != ''){
     path = '/compare-units/' + ap1Unit + '+' + ap2Unit;
   }
@@ -130,4 +126,16 @@ function handleOneTagActive(ap1Unit, ap2Unit){
     }
   }
   return path;
+}
+
+export function checkCompareMode(){
+  var ap1Unit = store.getState().folio['ap1'];
+  var ap2Unit = store.getState().folio['ap2'];
+  console.log(ap1Unit);
+  console.log(ap2Unit);
+  if(ap1Unit != '' && ap2Unit != ''){
+    return true;
+  }else{
+    return false;
+  }
 }

@@ -15,30 +15,35 @@ const io = require('socket.io-client');
 class EventHandler extends React.Component {
   constructor(props){
     super(props);
-    // console.log(props);
+
     this.state = {
-      penthouseA: 'PHA',
-      penthouseB: 'PHB'
+      // penthouseA: 'PHA',
+      // penthouseB: 'PHB'
     }
   }
 
   componentDidMount(){
 
     socketConnectCMS();
-    // openSocketCMS();
 
     var options = {
       reconnection: true,
-      reconnectionDelay: 1000,
-      timeout: 5000
+      reconnectionDelay: 1000
+      // timeout: 5000
     }
     var sock = io.connect('http://localhost:7770', options);
 
     sock.on('connect', d => {
-      console.log('io.on connect: ' + d);
+      console.log('Socket CONNECTED to Localhost');
     });
 
-    sock.emit('ping', { data: 'browser client ping' });
+    var pingInterval = 60000;
+    setInterval(function(){
+      var pingMessage = 'browser client heartbeat';
+      sock.emit('client-ping', {
+        data: pingMessage
+      });
+    }, pingInterval);
 
     sock.on('echo', d => {
       console.log('server echo:');
@@ -49,7 +54,7 @@ class EventHandler extends React.Component {
       console.log(d);
     });
 
-    sock.on('ping', d => {
+    sock.on('server-ping', d => {
       console.log(d);
     });
 
@@ -80,7 +85,7 @@ class EventHandler extends React.Component {
           path = handleNewTag(tag);
 
           this.context.router.push(path);
-          console.log('1');
+
           return;
         }else if(json.status == 'false'){
           var unitLED = '';
@@ -99,12 +104,15 @@ class EventHandler extends React.Component {
             unitLED = this.props.current.currentUnit;
           }
 
-          // console.log('turning off LED for unit: ' + unit);
 
-          var led_id = getLightingId(unitLED);
-
-          //send command to turn off LED
-          lightingControl(led_id, false);
+          if(json.tag === 'n' || json.tag === 't'){
+            //don't send any lighting command
+          }else{
+            console.log('turning off LED for unit: ' + unitLED);
+            var led_id = getLightingId(unitLED);
+            //send command to turn off LED
+            lightingControl(led_id, false);
+          }
 
           path = handleTagRemoved();
 
@@ -116,14 +124,6 @@ class EventHandler extends React.Component {
         // console.log('Unable to parse, message not formatted as JSON');
       }
     });
-
-    // socketConnectCMS();
-
-    // const webSocketPort = 5560;
-    // this.socket = new WebSocket('ws://localhost:' + webSocketPort);
-    // this.socket.onopen = function(event){
-    //   console.log('Websocket connecting to server: ' + event.currentTarget.URL);
-    // }
   }
 
   render(){
