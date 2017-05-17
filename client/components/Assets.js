@@ -101,11 +101,12 @@ class Assets extends React.Component {
   }
 
   componentDidUpdate() {
-    if(this.state.locationPathname !== this.props.location.pathname) {
-      console.log(this.props.location, this.props.match)
-      console.log('did update');
-      this.updateProps();
-    }
+    //WTF WAS THIS ABOUT??!!
+    // if(this.state.locationPathname !== this.props.location.pathname) {
+    //   console.log(this.props.location, this.props.match)
+    //   console.log('did update');
+    //   this.updateProps();
+    // }
   }
 
 

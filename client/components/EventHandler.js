@@ -15,11 +15,6 @@ const io = require('socket.io-client');
 class EventHandler extends React.Component {
   constructor(props){
     super(props);
-
-    this.state = {
-      // penthouseA: 'PHA',
-      // penthouseB: 'PHB'
-    }
   }
 
   componentDidMount(){
@@ -78,9 +73,10 @@ class EventHandler extends React.Component {
         var path = '/';
 
         if(json.status == 'true'){
-          updateCurrentTag(json.tag);
+          var tag = json.tag;
+          updateCurrentTag(tag);
 
-          var tag = this.props.current.currentTag;
+          // var tag = this.props.current.currentTag;
 
           path = handleNewTag(tag);
 
