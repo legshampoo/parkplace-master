@@ -29,14 +29,20 @@ class RenderAssets extends React.Component {
           var mediaType = media.type;
           return(
             <TextLink
-              handleClick={mediaType === 'video' || mediaType === 'photo' ? _this.props.handleClick.bind(this, media, mediaType) : _this.emptyClickHandler}
+              handleClick={
+                mediaType === 'video' || mediaType === 'photo'
+                ? _this.props.handleClick.bind(this, media, mediaType)
+                : _this.emptyClickHandler}
               mediaType={mediaType}
               selectedMedia={_this.props.selectedMedia}
               id={media.name}
               key={index}
-              // path={media.wall}
               displayText={media.name}
-              styleClass={media.name === _this.props.selectedMedia.name ? 'media-asset-button-active' : (media.name === '' ? 'media-asset-button-blank' : 'media-asset-button') }
+              styleClass={media.name === _this.props.selectedMedia.name
+                ? 'media-asset-button-active'
+                : (media.name === ''
+                ? 'media-asset-button-blank'
+                : 'media-asset-button') }
             />
           )
         }
@@ -52,7 +58,5 @@ class RenderAssets extends React.Component {
     )
   }
 }
-
-
 
 export default RenderAssets;

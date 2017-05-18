@@ -16,5 +16,7 @@ export default {
   current:{
     currentTag: '',
     currentUnit: ''
-  }
+  },
+  residences: {},
+  media: {},
 }

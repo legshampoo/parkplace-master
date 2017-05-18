@@ -1,6 +1,21 @@
 import * as types from '../reducers/types';
 import store from '../store';
 
+
+export function updateResidenceAssets(data){
+  store.dispatch({
+    type: 'UPDATE_RESIDENCE_ASSETS',
+    data: data
+  })
+}
+
+export function updateMediaAssets(data){
+  store.dispatch({
+    type: 'UPDATE_MEDIA_ASSETS',
+    data: data
+  })
+}
+
 export function updateCurrentTag(tagName){
 
   store.dispatch({
@@ -10,7 +25,7 @@ export function updateCurrentTag(tagName){
 }
 
 export function updateCurrentUnit(unit){
-  return store.dispatch({
+  store.dispatch({
     type: 'UPDATE_CURRENT_UNIT',
     unit: unit
   })

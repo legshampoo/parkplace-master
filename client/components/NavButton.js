@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as browserHistory from './History';
 
 class NavButton extends React.Component {
   constructor(){
@@ -9,7 +10,8 @@ class NavButton extends React.Component {
   onClick(event){
     event.preventDefault();
     // console.log('nav to: ' + this.props.path);
-    this.context.router.push(this.props.path)
+    // this.context.router.push(this.props.path);
+    browserHistory.push(this.props.path);
   }
 
   render(){

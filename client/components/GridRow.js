@@ -1,12 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Redux, { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as folioActions from '../actions/actionCreators';
 
-import sample_data from '../data/residence.json';
 import GridUnit from './GridUnit';
 
 class GridRow extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
+
+    this.state = {
+      residences: {}
+    }
+  }
+
+  componentDidMount(){
+    this.setState({ residences: this.props.residences.data });
   }
 
   createUnit(unit){
@@ -17,11 +27,11 @@ class GridRow extends React.Component {
 
   createUnits(type){
     var list = [];
-
+    var d = this.state.residences;
     //get all of the units of the current type (# of bedrooms)
-    Object.keys(sample_data).map(function(key){
-      if(sample_data[key].bedrooms == type){
-        list.push(sample_data[key].name);
+    Object.keys(d).map(function(key){
+      if(d[key].bedrooms == type){
+        list.push(d[key].name);
       }
     });
 
@@ -48,4 +58,19 @@ GridRow.propTypes = {
   type: PropTypes.number.isRequired
 }
 
-export default GridRow;
+function mapStateToProps(state){
+  return {
+    folio: state.folio,
+    current: state.current,
+    residences: state.assets.residences,
+    media: state.assets.media
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    folioActions: bindActionCreators(folioActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GridRow);

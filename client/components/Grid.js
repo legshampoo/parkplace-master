@@ -1,5 +1,8 @@
 import React from 'react'
-import data from '../data/residence.json';
+import Redux, { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as folioActions from '../actions/actionCreators';
+// import data from '../data/residence.json';
 
 import GridRow from './GridRow'
 import NavButton from './NavButton';
@@ -8,6 +11,14 @@ class Grid extends React.Component {
   constructor(){
     super();
     this.createRow = this.createRow.bind(this);
+
+    this.state = {
+      residences: {}
+    }
+  }
+
+  componentDidMount(){
+    this.setState({ residences: this.props.residences.data });
   }
 
 
@@ -42,11 +53,27 @@ class Grid extends React.Component {
         <div className='grid-wrapper'>
           <span className ='grid-border-overlay'></span>
           <span className = 'grid-vertical-overlay'></span>
-          {this.createRows(data)}
+          {this.createRows(this.state.residences)}
         </div>
       </div>
     )
   }
 }
 
-export default Grid;
+function mapStateToProps(state){
+  return {
+    folio: state.folio,
+    current: state.current,
+    residences: state.assets.residences,
+    media: state.assets.media
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    folioActions: bindActionCreators(folioActions, dispatch)
+  }
+}
+
+// export default Grid;
+export default connect(mapStateToProps, mapDispatchToProps)(Grid);

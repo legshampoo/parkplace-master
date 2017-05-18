@@ -50,7 +50,6 @@ class CompareUnits extends React.Component {
 
   removeUnitAp1(){
     console.log('remove from Ap1');
-    // removeUnitFromToken('ap1', this.props.folio['ap1']);
     removeFromFolio('ap1');
   }
 
@@ -64,8 +63,16 @@ class CompareUnits extends React.Component {
       <div className='view'>
         <div className='compare-container'>
           <div className='compare-division-line'></div>
-          <CompareUnitDetails tag='ap1' unitId={this.getUnitId('ap1')} lastPath='/ap1'/>
-          <CompareUnitDetails tag='ap2' unitId={this.getUnitId('ap2')} lastPath='/ap2'/>
+          <CompareUnitDetails
+            tag='ap1'
+            unitId={this.getUnitId('ap1')}
+            lastPath='/ap1'
+          />
+          <CompareUnitDetails
+            tag='ap2'
+            unitId={this.getUnitId('ap2')}
+            lastPath='/ap2'
+          />
         </div>
       </div>
     )

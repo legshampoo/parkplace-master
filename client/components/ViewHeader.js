@@ -9,12 +9,7 @@ class ViewHeader extends React.Component {
     return(
       <div className='view-header'>
         <div className='view-header-text'>
-          {/* <div className='view-header-title'>
-            RESIDENCE
-          </div> */}
-          <div className='view-header-unit'>
-            {this.props.unitId}
-          </div>
+          {this.props.unitId}
         </div>
       </div>
     )

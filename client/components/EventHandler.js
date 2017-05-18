@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Redux, { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as tagActions from '../actions/actionCreators';
-import { updateTagStatus, updateCurrentTag, updateCurrentUnit } from '../actions/actionCreators';
+import { updateTagStatus, updateCurrentTag, updateCurrentUnit, updateResidenceAssets, updateMediaAssets } from '../actions/actionCreators';
+import * as browserHistory from './History';
 
 import { handleNewTag, handleTagRemoved } from './RouteLogic';
 import { socketConnectCMS, openSocketCMS } from './MessageHandler';
@@ -30,6 +31,12 @@ class EventHandler extends React.Component {
 
     sock.on('connect', d => {
       console.log('Socket CONNECTED to Localhost');
+      sock.emit('request-assets', {
+        type: 'residences'
+      });
+      sock.emit('request-assets', {
+        type: 'media'
+      });
     });
 
     var pingInterval = 60000;
@@ -51,6 +58,28 @@ class EventHandler extends React.Component {
 
     sock.on('server-ping', d => {
       console.log(d);
+    });
+
+    sock.on('residence-assets', d => {
+      console.log('RESIDENCE ASSETS UPDATED');
+      // console.log(d);
+      // this.setState({
+      //   residences: d
+      // }, function(){
+      //   console.log('RESIDENCES state updated');
+      // });
+      updateResidenceAssets(d);
+    });
+
+    sock.on('media-assets', d => {
+      console.log('MEDIA ASSETS UPDATED');
+      // console.log(d);
+      // this.setState({
+      //   media: d
+      // }, function(){
+      //   console.log('MEDIA state updated');
+      // });
+      updateMediaAssets(d);
     });
 
     sock.on('message', d => {
@@ -79,8 +108,9 @@ class EventHandler extends React.Component {
           // var tag = this.props.current.currentTag;
 
           path = handleNewTag(tag);
-
-          this.context.router.push(path);
+          // console.log(path);
+          // this.context.router.push(path);
+          browserHistory.push(path);
 
           return;
         }else if(json.status == 'false'){
@@ -104,16 +134,21 @@ class EventHandler extends React.Component {
           if(json.tag === 'n' || json.tag === 't'){
             //don't send any lighting command
           }else{
-            console.log('turning off LED for unit: ' + unitLED);
             var led_id = getLightingId(unitLED);
-            //send command to turn off LED
-            lightingControl(led_id, false);
+            if(led_id === 0){
+              //do nothing
+            }else{
+              console.log('turning off LED for unit: ' + unitLED);
+              //send command to turn off LED
+              lightingControl(led_id, false);
+            }
           }
 
           path = handleTagRemoved();
 
           //go to path for any remaining token
-          this.context.router.push(path);
+          // this.context.router.push(path);
+          browserHistory.push(path);
           return;
         }
       }catch(err){
@@ -138,14 +173,15 @@ function mapStateToProps(state){
   return {
     tags: state.tags,
     folio: state.folio,
-    current: state.current
+    current: state.current,
+    residences: state.residences,
+    media: state.media
   }
 }
 
 function mapDispatchToProps(dispatch){
   return {
     tagActions: bindActionCreators(tagActions, dispatch)
-
   }
 }
 

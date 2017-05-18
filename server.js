@@ -2,12 +2,19 @@ var path = require('path');
 var express = require('express');
 var getData = require('./RequestData');
 
+//------------------------------
+//
+//  HTTP Server
+//
+//------------------------------
 var app = express();
 var open = require('open');
 
+var PORT = 7770;
 const NODE_ENV = process.env.NODE_ENV;
 
-if (NODE_ENV==='dev'){
+if (NODE_ENV === 'dev'){
+  //if dev environment, use webpack and HMR
   var webpack = require('webpack');
   var config = require('./webpack.config.dev');
 
@@ -20,16 +27,15 @@ if (NODE_ENV==='dev'){
 
   app.use(require('webpack-hot-middleware')(compiler));
 } else {
+  //else serve the production build
   app.use(express.static('dist'))
 }
-
 
 app.get('*', function(req, res){
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-var PORT = 7770;
-
+//start the HTTP server
 const server = app.listen(PORT, 'localhost', function(err){
   if(err){
     console.log(err);
@@ -39,19 +45,14 @@ const server = app.listen(PORT, 'localhost', function(err){
   }
 });
 
-const io = require('socket.io')(server);
-var registeredSockets = [];
-
-//request apartment data
-getData.fetchData('residence');
-getData.fetchData('media');
-
-
 //------------------------------
 //
 //  SOCKET.IO
 //
 //------------------------------
+const io = require('socket.io')(server);
+var registeredSockets = [];
+
 io.on('connection', (socket) => {
   console.log('NEW SOCKET.IO CONNECTION, SOCKET ID: ' + socket.id);
   registeredSockets.push(socket);
@@ -61,7 +62,6 @@ io.on('connection', (socket) => {
   socket.emit('connection-established', {
     data: serverMessage
   });
-
 
   var pingInterval = setInterval(function(){
     var data = 'Localhost Heartbeat';
@@ -73,6 +73,15 @@ io.on('connection', (socket) => {
     socket.emit('echo', d);
   });
 
+  socket.on('request-assets', (d) => {
+    console.log('client requesting ' + d.type + ' assets');
+    if(d.type === 'residences'){
+      socket.emit('residence-assets', { data: residenceAssets });
+    }else if(d.type === 'media'){
+      socket.emit('media-assets', { data: mediaAssets });
+    }
+  })
+
   socket.on('disconnect', (d) => {
     console.log('user disconnected');
     var index = registeredSockets.indexOf(socket);
@@ -80,6 +89,34 @@ io.on('connection', (socket) => {
   });
 });
 
+
+//----------------------------------------
+//
+//REQUEST DATA FROM CMS AND THEN RELAY TO CLIENT
+//
+//----------------------------------------
+
+//empty objects to temporarily store JSON
+var residenceAssets = {};
+var mediaAssets = {};
+
+//makes a Request for JSON and then sets a timer to repeat indefinitely
+getData.fetchData('residence', function(d){
+  console.log('Sending Residence Assets JSON to Client');
+  residenceAssets = JSON.parse(d);
+  for(var i = 0; i < registeredSockets.length; i++){
+    registeredSockets[i].emit('residence-assets', { data: residenceAssets });
+  }
+});
+
+//makes a Request for JSON and then sets a timer to repeat indefinitely
+getData.fetchData('media', function(d){
+  console.log('Sending Media Assets JSON to Client');
+  mediaAssets = JSON.parse(d);
+  for(var i = 0; i < registeredSockets.length; i++){
+    registeredSockets[i].emit('media-assets', { data: mediaAssets });
+  }
+});
 
 
 //------------------------------
@@ -93,27 +130,31 @@ const decoder = new StringDecoder('utf8');
 var tcpServer = net.createServer();
 var tcpPort = 5550;
 
-tcpServer.on('connection', handleConnection);
 
+//start the TCP server
 tcpServer.listen(tcpPort, function(){
   console.log('45 Park TCP Server listening on: ', tcpPort);
 });
 
+//on connection, handle it with function
+tcpServer.on('connection', handleConnection);
+
+//on connection...
 function handleConnection(conn){
   var remoteAddress = conn.remoteAddress + ':' + conn.remotePort;
-  console.log('new TCP connection from: ' , remoteAddress);
+  console.log('New TCP connection from Client: ' , remoteAddress);
 
   conn.on('data', onConnData);
   conn.once('close', onConnClose);
   conn.on('error', onConnError);
 
+  //on message received
   function onConnData(d){
     try{
       var msg = decoder.write(d);
       console.log(JSON.parse(msg));
 
-      //socket.io broadcast here
-      // console.log('registeredSockets.length: ' + registeredSockets.length);
+      //For each socket.io connection, emit the message to Client
       for(var i = 0; i < registeredSockets.length; i++){
         console.log('socket.io emitting to client: ' + i);
         registeredSockets[i].emit('message', { data: msg });

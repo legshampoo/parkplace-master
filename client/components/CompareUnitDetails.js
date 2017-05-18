@@ -32,9 +32,6 @@ class CompareUnitDetails extends React.Component {
   render(){
     return(
       <div className='compare-unit-wrapper'>
-        {/* <div className='add-to-folio-wrapper-compare'> */}
-          {/* <AddToFolioButton styleClass='add-to-folio-button-compare' /> */}
-        {/* </div> */}
         <ViewHeader unitId={this.props.unitId}/>
         <div className='compare-unit-header'>
           FLOORPLAN

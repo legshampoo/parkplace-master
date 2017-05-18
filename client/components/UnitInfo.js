@@ -1,12 +1,21 @@
 import React from 'react';
+import Redux, { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as folioActions from '../actions/actionCreators';
 
-import data from '../data/residence.json';
 import Details from './Details'
 
 class UnitInfo extends React.Component {
   constructor(props){
     super(props);
-    // console.log(props);
+
+    this.state = {
+      residences: {}
+    }
+  }
+
+  componentDidMount(){
+    this.setState({ residences: this.props.residences.data });
   }
 
   getUnitData(d, unit){
@@ -36,10 +45,25 @@ class UnitInfo extends React.Component {
   render(){
     return(
       <div className='unit-info'>
-        {this.renderDetails(data, this.props.unitId)}
+        {this.renderDetails(this.state.residences, this.props.unitId)}
       </div>
     )
   }
 }
 
-export default UnitInfo;
+function mapStateToProps(state){
+  return {
+    folio: state.folio,
+    current: state.current,
+    residences: state.assets.residences,
+    media: state.assets.media
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    folioActions: bindActionCreators(folioActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UnitInfo);

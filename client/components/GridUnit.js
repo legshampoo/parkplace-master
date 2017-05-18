@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Redux, { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as folioActions from '../actions/actionCreators';
+import * as browserHistory from './History';
 
 import { updateCurrentUnit, assignUnitToToken } from '../actions/actionCreators';
 import { handleNewTag, checkBothActive, handleBothActive, checkCompareMode } from './RouteLogic';
@@ -26,10 +27,12 @@ class GridUnit extends React.Component {
       if(bothTagsActive){
         var compare = checkCompareMode();
         if(compare){
-          path = '/compare-units/' + this.props.folio.ap1 + '+' + this.props.folio.ap2;
+          // path = '/compare-units/' + this.props.folio.ap1 + '+' + this.props.folio.ap2;
+          path = `/compare-units/${compare[0]}+${compare[1]}`;
         }
       }
-      this.context.router.push(path);
+      // this.context.router.push(path);
+      browserHistory.push(path);
     }else{
       return;
     }

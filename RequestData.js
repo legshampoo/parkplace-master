@@ -4,33 +4,31 @@ var request = require('request');
 var fetchTimer = 1000 * 60;
 var requestTimeout = 1000 * 10;
 
-const residenceURL = '/residence/';
-const residenceFilename = 'data.json';
-const nonResidenceURL = '/media/';
-const nonResidenceFilename = 'media_groups.json';
-
-var options = {
-  baseUrl: 'http://192.168.45.21/api',
-  uri: '',
-  method: 'GET',
-  headers: {
-    Accept: 'application/json'
-  },
-  cache: 'default',
-  timeout: requestTimeout
-}
-
 module.exports = {
-
-  //fetch data, type passed in argument
-  //if successful, set a timer to request again later
-  //if not successful, try again immediately
-  fetchData: function(type){
+  //-----------------------------
+  // Request JSON - 'type' is either 'unit' or 'media'
+  // callback takes the returned data and relays it to
+  // browser client
+  //-----------------------------
+  fetchData: function(type, callback){
     var _this = this;
+    var residenceURL = '/residence/';
+    var nonResidenceURL = '/media/';
 
     console.log('fetching ' + type + ' data...');
 
-    //build the path to data type
+    var options = {
+      baseUrl: 'http://192.168.45.21/api',
+      uri: '',
+      method: 'GET',
+      headers: {
+        Accept: 'application/json'
+      },
+      cache: 'default',
+      timeout: requestTimeout
+    }
+
+    //construct the path to data type
     options.uri = '/' + type + '/';
 
     //make the request for data
@@ -43,25 +41,25 @@ module.exports = {
           var parsedData= JSON.parse(body);
           var json = JSON.stringify(parsedData, null, 2);
 
-          fs.writeFile('./client/data/' + type + '.json', json, 'utf8', function(){
-            console.log('finished saving ' + type + ' data to file');
-            console.log('Another request for ' + type + ' data will occur in ' + fetchTimer / 1000 + ' seconds');
-            //if successful, set it to repeat later
-            setTimeout(function(){
-              _this.fetchData(type);
-            }, fetchTimer);
-          });
+          //make the Request again later
+          setTimeout(function(){
+            _this.fetchData(type, callback);
+          }, fetchTimer);
+
+          //pass the returned JSON to whatever function was passed in
+          callback(json);
+
         }catch(e){
-          //if there's a save to file error, retry
+          //if there's an error, retry the Request immediately
           console.log(e);
-          console.log('File save error, attempting ' + type + ' data request immediately...');
-          _this.fetchData(type);
+          console.log('Error Requesting ' + type + ' JSON, attempting Request again...');
+          _this.fetchData(type, callback);
         }
       }else{
         //if there's a request error, retry
         console.log(error);
-        console.log('GET request error, attempting ' + type + ' data request immediately...');
-        _this.fetchData(type);
+        console.log('Error Requesting ' + type + ' JSON, attempting Request again...');
+        _this.fetchData(type, callback);
       }
     })
   }

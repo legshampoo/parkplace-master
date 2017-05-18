@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Redux, { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as browserHistory from './History';
+
+import residence from '../data/residence.json';
+import media from '../data/media.json';
+
 import TextLink from './TextLink';
 import TextLinkBorder from './TextLinkBorder';
 import NextPageButton from './NextPageButton';
@@ -33,29 +36,18 @@ class Assets extends React.Component {
       mediaGroup: '',
       selectedMedia: {},
       selectedMediaType: '',
-      pageIndex: 0,
-      residences: {},
-      media: {}
+      pageIndex: 0
     }
   }
 
   componentDidMount(){
-    this.setState({
-      media: this.props.media.data,
-      residences: this.props.residences.data
-    }, function(){
-      // console.log(this.state.media);
-      // console.log(this.state.residences);
-    });
-    // console.log('mounted');
     this.updateProps();
   }
 
   updateProps(){
-    // console.log('update props');
     var mediaGroup = this.state.mediaGroup;
     var tag = this.props.current.currentTag;
-    // var led_id = 0;
+    var led_id = 0;
     var unitLED = '';
 
     switch(tag){
@@ -69,23 +61,21 @@ class Assets extends React.Component {
           unitLED = 'PHA';
         }else if(tag === 'PHB'){
           unitLED = 'PHB';
-        }else if(tag === 'ap1' || tag === 'ap2'){
+        }else{
           unitLED = this.props.current.currentUnit;
-          // this.assignToToken();
+          this.assignToToken();
         }
 
-        var led_id = getLightingId(unitLED);
+        led_id = getLightingId(unitLED);
         //send request to LED lighting API
-        console.log('turn on LED for unit: ' + unitLED);
         lightingControl(led_id, true);
 
         break;
       case 'am':
         mediaGroup = 'Amenities';
         unitLED = 'Amenities';
-        var led_id = getLightingId(unitLED);
+        led_id = getLightingId(unitLED);
 
-        console.log('turn on LED for: ' + unitLED);
         lightingControl(led_id, true);
         break;
       case 'n':
@@ -96,19 +86,15 @@ class Assets extends React.Component {
         break;
       default:
         console.log('default');
-        mediaGroup = '';
         break;
     }
 
     if(this.state.mediaGroup !== mediaGroup) {
       this.setState({
         mediaGroup: mediaGroup,
-        previousTag: tag,
         locationPathname: this.props.location.pathname
       }, function(){
-        // console.log('media group set to ' + mediaGroup);
-        console.log('finished initial update');
-        // this.updateProps();
+        console.log('media group set to ' + mediaGroup);
       });
     }
   }
@@ -120,14 +106,6 @@ class Assets extends React.Component {
     //   console.log('did update');
     //   this.updateProps();
     // }
-    if(this.state.previousTag !== this.props.current.currentTag) {
-      // console.log(this.props.location, this.props.match)
-      this.setState({ previousTag: this.props.current.currentTag }, function(){
-        console.log('tag is different then previous, preparing to update...');
-        this.updateProps();
-      });
-    }
-    // this.updateProps();
   }
 
 
@@ -147,11 +125,9 @@ class Assets extends React.Component {
     var dataSet = {};
     if(this.state.mediaGroup === 'Unit'){
       var unit = getUnitId();
-      // dataSet = getAssets(residence, unit).media;  //ORIGINAL
-      dataSet = getAssets(this.state.residences, unit).media;
+      dataSet = getAssets(residence, unit).media;
     }else{
-      // var d = getAssets(media, this.state.mediaGroup);  //ORIGINAL
-      var d = getAssets(this.state.media, this.state.mediaGroup);
+      var d = getAssets(media, this.state.mediaGroup);
       dataSet = combineAssets(d, this.state.mediaGroup);
     }
 
@@ -180,6 +156,7 @@ class Assets extends React.Component {
       msg.command = 'video'
     }
 
+    // if(this.state.mediaGroup == 'Unit' || this.state.mediaGroup == 'Unit_Penthouse'){
     if(this.state.mediaGroup == 'Unit'){
       msg.params.url = media.full_screen;
     }else{
@@ -229,8 +206,10 @@ class Assets extends React.Component {
     var details = {};
     if(this.state.mediaGroup === 'Unit'){
       var unit = getUnitId();
-      var found = checkUnitExists(d, unit);
-
+      // var found = checkUnitExists(d, unit);
+      var found = checkUnitExists(unit, function(f){
+        console.log('found is: ' + f);
+      });
       try{
         if(found){
           details = getAssets(d, unit);
@@ -254,45 +233,27 @@ class Assets extends React.Component {
           selectedMedia={this.state.selectedMedia} />
       )
     }else{
-      // empty array do nothing
+      // console.log('empty array');
     }
 
   }
 
   removeUnit(d){
+    console.log('remove unit from token');
+
     //turn off the LED lighting
     var unit = this.props.current.currentUnit;
+    console.log('removing unit: ' + unit);
     var led_id = getLightingId(unit);
+    //send command to turn LED lights off
+    lightingControl(led_id, false);
 
-    if(led_id != 0){
-      //send command to turn LED lights off
-      console.log('turn off LED for: ' + unit);
-      lightingControl(led_id, false);
-    }
-
-    console.log('remove unit from token assignment: ' + unit);
     updateCurrentUnit('');
     const currentTag = this.props.current.currentTag;
     assignUnitToToken(currentTag, '');
     var path = currentTag;
-    // console.log(this.props.location.pathname);
-    console.log(this.props.router);
     // this.context.router.push(path);
-    let history = browserHistory.getHistoryList();
-    console.log(history);
-
-    //if the previous path was from 'home' then go to keypad
-    if(history.length>2 && (history[history.length-2] === '/')){
-      browserHistory.returnTo(path, true);
-    }else if(history.length>2 && (history[history.length-2].includes("compare"))){
-      //if the previous path was from 'compare mode' then go to keypad
-      browserHistory.returnTo(path, true);
-    }else{
-      //otherwise go back to where the user came from (keypad or grid)
-      browserHistory.goBack();
-    }
-    //this.context.router.goBack();
-
+    this.context.router.goBack();
   }
 
   renderRemoveUnitButton(){
@@ -313,7 +274,7 @@ class Assets extends React.Component {
         <div className='media-assets-container'>
           <TextLinkBorder />
           <div className='media-container-border-overlay'></div>
-        {this.state.mediaGroup === 'Unit' ? this.renderAssets(this.state.residences) : this.renderAssets(this.state.media)}
+          {this.state.mediaGroup === 'Unit' ? this.renderAssets(residence) : this.renderAssets(media)}
         </div>
         <ViewHeader unitId={this.state.mediaGroup == 'Unit' ? getUnitId() : this.state.mediaGroup} />
         {this.state.mediaGroup == 'Unit' ? this.renderRemoveUnitButton() : '' }
@@ -331,9 +292,7 @@ Assets.contextTypes = {
 function mapStateToProps(state){
   return {
     folio: state.folio,
-    current: state.current,
-    residences: state.assets.residences,
-    media: state.assets.media
+    current: state.current
   }
 }
 

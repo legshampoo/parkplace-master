@@ -12,16 +12,19 @@ export function lightingControl(id, on){
     state = 'off';
   }
 
+  //if id is for 'Amenities' use the /group/ path
   if(id === 7){
     url = 'http://' + ip + '/api/group/' + id + '/' + state + '/';
   }else{
+    //if it's anything else, use the /space/ path
     url = 'http://' + ip + '/api/space/' + id + '/' + state + '/';
   }
 
   var params = {
     method: 'GET',
     headers: {
-      'Accept': 'application/json',
+      // 'Accept': 'application/json',
+      'Accept': 'text/html',
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*'
     },
@@ -35,7 +38,5 @@ export function lightingControl(id, on){
     return response;
   }).then(function(error){
     console.log(error);
-  }).then(function(){
-    // console.log('led lighting command sent');
   });
 }

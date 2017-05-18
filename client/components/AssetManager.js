@@ -1,6 +1,6 @@
 import store from '../store';
-import residence from '../data/residence';
-import media from '../data/media';
+// import residence from '../data/residence';
+// import media from '../data/media';
 
 export function combineAssets(d, type){
   var data = [];
@@ -63,11 +63,6 @@ export function getUnitId(){
     }
   }
 
-  // else if(store.getState().current.currentTag == 'ap1' || store.getState().current.currentTag == 'ap2'){
-  //   if(store.getState().current.currentUnit == 'PHA' || store.getState().current.currentUnit == 'PHB'){
-  //     unitId = store.get
-  //   }
-
   return unitId;
 }
 
@@ -85,7 +80,11 @@ export function getLightingId(val){
     if(val === 'PHB'){
       val = 'PH B';
     }
-    dataset = residence;
+    // dataset = residence;
+    dataset = store.getState().assets.residences.data;
+    // console.log(dataset);
+    // console.log(store.getState().assets.residences.data);
+
     try{
       Object.keys(dataset).map(function(key, index){
         if(dataset[key].name == val){
@@ -145,6 +144,7 @@ export function checkUnitExists(d, unit){
   // console.log('Unit Found: ' + found);
   return found;
 }
+
 
 //check that the object has assets inside it
 export function checkIfEmpty(obj){

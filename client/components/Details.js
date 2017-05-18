@@ -15,9 +15,23 @@ class Details extends React.Component{
             // console.log('found object');
             return;
           }else{
-            return(
-              <DetailText title={key} value={d[key]} key={index} />
-            )
+            // console.log(key, d[key]);
+            if(
+              key === 'availability' ||
+              key === 'unit' ||
+              key === 'name' ||
+              key === 'line' ||
+              key === 'led_id')
+              {
+                //do nothing
+              }else{
+                return(
+                  <DetailText
+                    title={key}
+                    value={d[key]}
+                    key={index} />
+                )
+              }
           }
       })
     )

@@ -9,7 +9,9 @@ class TextLink extends React.Component {
   render(){
     return(
       <div className={this.props.styleClass} onClick={() => this.props.handleClick()}>
-        <div className='text-link-text'>{this.props.displayText}</div>
+        <div className='text-link-text'>
+          {this.props.displayText}
+        </div>
       </div>
     )
   }

@@ -20,6 +20,7 @@ export function handleNewTag(tag){
         //
         // sendCommand(message);
         path = handleBothActive(ap1Unit, ap2Unit);
+        //path = handleBothActive(bothTagsActive[0], bothTagsActive[1]);
       }else if(!bothTagsActive){
         path = handleOneTagActive(ap1Unit, ap2Unit);
       }
@@ -84,10 +85,6 @@ export function checkBothActive(){
   return bothAlive;
 }
 
-function test(){
-  console.log('test');
-}
-
 export function handleBothActive(ap1Unit, ap2Unit){
   var tag = store.getState().current.currentTag;
   var path = '';
@@ -130,11 +127,11 @@ function handleOneTagActive(ap1Unit, ap2Unit){
 
 export function checkCompareMode(){
   var ap1Unit = store.getState().folio['ap1'];
-  var ap2Unit = store.getState().folio['ap2'];
   console.log(ap1Unit);
+  var ap2Unit = store.getState().folio['ap2'];
   console.log(ap2Unit);
   if(ap1Unit != '' && ap2Unit != ''){
-    return true;
+    return [ap1Unit, ap2Unit];
   }else{
     return false;
   }

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Redux, { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as folioActions from '../actions/actionCreators';
+import * as browserHistory from './History';
 
 import KeypadButton from './KeypadButton';
 import KeypadConsole from './KeypadConsole';
@@ -13,7 +14,6 @@ import ViewTitle from './ViewTitle';
 import { updateCurrentUnit, assignUnitToToken } from '../actions/actionCreators';
 import { handleNewTag, checkBothActive, handleBothActive, checkCompareMode } from './RouteLogic';
 import { checkUnitExists } from './AssetManager';
-import residenceData from '../data/residence';
 
 class Keypad extends React.Component {
   constructor(){
@@ -22,12 +22,16 @@ class Keypad extends React.Component {
     this.submit = this.submit.bind(this)
 
     this.state = {
-      input: ''
+      input: '',
+      residences: {}
     }
   }
 
+  componentDidMount(){
+    this.setState({ residences: this.props.residences.data });
+  }
+
   updateInput(val){
-    // console.log(val);
     let newString = this.state.input;
 
     if(val == 'del'){
@@ -38,53 +42,36 @@ class Keypad extends React.Component {
       newString = this.state.input + val;
     }
 
-    // console.log('INPUT: ' + newString);
-
-    this.setState({input: newString}, () => {
-      // console.log(this.state.input)
-    })
+    this.setState({ input: newString });
   }
-
-  // assignToToken(){
-  //   const currentTag = this.props.current.currentTag;
-  //   const currentUnit = this.props.current.currentUnit;
-  //
-  //   assignUnitToToken(currentTag, currentUnit);
-  // }
 
   submit(){
     var path = '';
     path = '/assets/' + this.state.input;
 
-    var unitExists = checkUnitExists(residenceData, this.state.input);
-    // var path = '/assets/' + this.state.input;
-    // console.log(this.state.input);
-    // if(this.state.input == 'PHA' || this.state.input == 'PHB'){
-    //   path = handleNewTag(this.state.input);
-    // }else{
-    //   path = '/assets/' + this.state.input;
-    // }
-
+    // var unitExists = checkUnitExists(residenceData, this.state.input);
+    var unitExists = checkUnitExists(this.state.residences, this.state.input);
 
     //check if unit exists
     if(unitExists){
+      console.log(this.props.current.currentTag, this.state.input);
       assignUnitToToken(this.props.current.currentTag, this.state.input);
       updateCurrentUnit(this.state.input);
       var bothTagsActive = checkBothActive();
-      console.log('both tags active, checking is should compare');
+
       if(bothTagsActive){
-        console.log('both are active');
+        console.log('both tags are active');
         var compare = checkCompareMode();
-        console.log(compare);
+
+        console.log('compare mode is: ' + compare);
+
         if(compare){
-          console.log('compare is true');
-          // path = handleBothActive(this.props.folio.ap1, this.props.folio.ap2);
-          path = '/compare-units/' + this.props.folio.ap1 + '+' + this.props.folio.ap2;
-          console.log(path);
+          path = '/compare-units/' + compare[0] + '+' + compare[1];
         }
       }
 
-      this.context.router.push(path)
+      // this.context.router.push(path)
+      browserHistory.push(path);
     }else{
       this.setState({
         input: ''
@@ -113,8 +100,6 @@ class Keypad extends React.Component {
               <KeypadButton styleClass='keypad-button' displayText='W' value='W' updateInput={this.updateInput}/>
               <KeypadButton styleClass='keypad-button' displayText='0' value='0' updateInput={this.updateInput}/>
               <KeypadButton styleClass='keypad-button' displayText='E' value='E' updateInput={this.updateInput}/>
-              {/* <KeypadButton styleClass='keypad-button' displayText='PHA' value='PHA' updateInput={this.updateInput}/> */}
-              {/* <KeypadButton styleClass='keypad-button' displayText='PHB' value='PHB' updateInput={this.updateInput}/> */}
               <KeypadButton styleClass='keypad-button' displayText='ENTER' value='submit' updateInput={this.submit}/>
             </div>
           </div>
@@ -131,7 +116,9 @@ Keypad.contextTypes = {
 function mapStateToProps(state){
   return {
     folio: state.folio,
-    current: state.current
+    current: state.current,
+    residences: state.assets.residences,
+    media: state.assets.media
   }
 }
 
@@ -140,5 +127,5 @@ function mapDispatchToProps(dispatch){
     folioActions: bindActionCreators(folioActions, dispatch)
   }
 }
-// export default Keypad;
+
 export default connect(mapStateToProps, mapDispatchToProps)(Keypad);
