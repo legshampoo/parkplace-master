@@ -185,7 +185,7 @@ class Assets extends React.Component {
     sendCommand(msg);
 
     //send fit to height command to CMS as default way to display asset
-    sendCommand(fitVertical)
+    sendCommand(fitHorizontal);
   }
 
   renderControlPanel(){
