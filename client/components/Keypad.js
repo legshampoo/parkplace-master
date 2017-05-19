@@ -54,13 +54,13 @@ class Keypad extends React.Component {
 
     //check if unit exists
     if(unitExists){
-      console.log(this.props.current.currentTag, this.state.input);
+      // console.log(this.props.current.currentTag, this.state.input);
       assignUnitToToken(this.props.current.currentTag, this.state.input);
       updateCurrentUnit(this.state.input);
       var bothTagsActive = checkBothActive();
 
       if(bothTagsActive){
-        console.log('both tags are active');
+        // console.log('both tags are active');
         var compare = checkCompareMode();
 
         console.log('compare mode is: ' + compare);

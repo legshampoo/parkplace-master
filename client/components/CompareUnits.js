@@ -7,38 +7,56 @@ import CompareUnitDetails from './CompareUnitDetails';
 import RemoveUnit from './RemoveUnit';
 import { assignUnitToToken, removeUnitFromToken, removeFromFolio } from '../actions/actionCreators'
 import { lightingControl } from './LightingControls';
-import { getLightingId } from './AssetManager';
-import { sendCommand, compareMode } from './MessageHandler';
+import { getLightingId, getAssets, getFloorplan } from './AssetManager';
+import { sendCommand, assetSelection } from './MessageHandler';
 
 class CompareUnits extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.removeUnitAp1 = this.removeUnitAp1.bind(this);
     this.removeUnitAp2 = this.removeUnitAp2.bind(this);
-
     this.sendMessageToCMS = this.sendMessageToCMS.bind(this);
     this.sendMessageLEDLighting = this.sendMessageLEDLighting.bind(this);
+
+    this.state = {
+      residences: {}
+    }
   }
 
   componentDidMount(){
+    this.setState({
+      residences: this.props.residences.data
+    }, function(){
+      // console.log('finished storing residence data in state');
+      this.sendMessageToCMS();
+    });
 
-    this.sendMessageToCMS();
     this.sendMessageLEDLighting();
-
   }
 
   sendMessageToCMS(){
-    var message = compareMode;
-    message.params.unit1 = this.props.folio.ap1;
-    message.params.unit2 = this.props.folio.ap2;
+    var ap1Message = new assetSelection();
+    var ap1Floorplan = getFloorplan(this.props.folio.ap1);
+    ap1Message.params.url = ap1Floorplan;
+    ap1Message.command = 'image';
+    ap1Message.params.canvas = 'left';
 
-    sendCommand(message);
+    var ap2Message = new assetSelection();
+    var ap2Floorplan = getFloorplan(this.props.folio.ap2);
+    ap2Message.params.url = ap2Floorplan;
+    ap2Message.command = 'image';
+    ap2Message.params.canvas = 'right';
+
+    //send both commands for compare mode
+    sendCommand(ap1Message);
+    sendCommand(ap2Message);
   }
 
   sendMessageLEDLighting(){
     var led_id_unit1 = getLightingId(this.props.folio.ap1);
     var led_id_unit2 = getLightingId(this.props.folio.ap2);
 
+    console.log(`COMPARE MODE: ap1: ${this.props.folio.ap1}, LED ON: ${led_id_unit1} || ap2: ${this.props.folio.ap2}, LED ON: ${led_id_unit2}`);
     lightingControl(led_id_unit1, true);
     lightingControl(led_id_unit2, true);
   }
@@ -81,7 +99,9 @@ class CompareUnits extends React.Component {
 
 function mapStateToProps(state){
   return {
-    folio: state.folio
+    folio: state.folio,
+    residences: state.assets.residences,
+    media: state.assets.media
   }
 }
 

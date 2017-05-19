@@ -12,6 +12,8 @@ import UnitInfo from './UnitInfo';
 import AddToFolio from './AddToFolio';
 import RemoveUnit from './RemoveUnit';
 import { updateCurrentUnit, updateCurrentTag, assignUnitToToken } from '../actions/actionCreators';
+import { lightingControl } from './LightingControls';
+import { getLightingId } from './AssetManager';
 
 class CompareUnitDetails extends React.Component {
   constructor(){
@@ -19,7 +21,15 @@ class CompareUnitDetails extends React.Component {
   }
 
   removeUnit(d){
-    console.log(this.props.tag);
+    //turn off the LED for the unit we are removing
+    var unitLED = this.props.unitId;
+    var led_id = getLightingId(unitLED);
+
+    if(led_id != 0){
+      //send command to turn LED lights off
+      console.log(`Removing Unit from ${this.props.tag}: ${unitLED} LED OFF: ${led_id}`);
+      lightingControl(led_id, false);
+    }
 
     const currentTag = this.props.tag;
     updateCurrentTag(this.props.tag);
@@ -62,7 +72,9 @@ CompareUnitDetails.propTypes = {
 function mapStateToProps(state){
   return {
     folio: state.folio,
-    current: state.current
+    current: state.current,
+    residences: state.assets.residences,
+    media: state.assets.media
   }
 }
 

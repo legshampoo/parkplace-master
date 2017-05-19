@@ -1,26 +1,6 @@
 var ip = '192.168.45.21';
-// var url = 'http://192.168.45.21'
 const socketPortCMS = 8080;
-// const socketPortCMS = 5560;  //localhost port
 var socketCMS;
-
-// const io = require('socket.io-client');
-
-// export function openSocketCMS(){
-  // var url = 'ws://192.168.45.21:8080';
-  // var options = {
-  //   path: '/',
-  //   reconnection: true,
-  //   reconnectionDelay: 1000,
-  //   timeout: 5000,
-  //   transports: ['websocket', 'polling']
-  // }
-  // var socket = io.connect(url, options);
-  // socket.on('connect', d => {
-  //   console.log('CMS socketIO CONNECTED');
-  // });
-// }
-
 
 export function socketConnectCMS(){
   console.log('Attempting to connect to CMS...');
@@ -56,7 +36,6 @@ function reconnectCMS(){
 }
 
 export function sendCommand(msg){
-  console.log('sending');
   var message = JSON.stringify(msg);
 
   switch(socketCMS.readyState){
@@ -65,8 +44,9 @@ export function sendCommand(msg){
       reconnectCMS();
       break;
     case 1:   //open
-      console.log('socket is OPEN, sending command...');
+      console.log('socket is OPEN, sending command:');
       console.log(message);
+      // console.log(msg);
       socketCMS.send(message);
       break;
     case 2:  //closing
@@ -168,19 +148,20 @@ export var restart = {
   }
 }
 
-export var assetSelection = {
-  'command': 'select-asset',
-  'to': 'wall',
-  'params': {
-    'url': 'path'
-  }
-}
+// export var assetSelection = {
+//   'command': 'select-asset',
+//   'to': 'wall',
+//   'params': {
+//     'url': 'path',
+//     'canvas': ''
+//   }
+// }
 
-export var compareMode = {
-  'command': 'compare-mode',
-  'to': 'wall',
-  'params': {
-    'unit1': 'unit1',
-    'unit2': 'unit2'
+export function assetSelection() {
+  this.command = 'select-asset',
+  this.to = 'wall',
+  this.params = {
+    'url': '/asset-path',
+    'canvas': ''
   }
 }

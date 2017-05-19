@@ -52,10 +52,8 @@ class Assets extends React.Component {
   }
 
   updateProps(){
-    // console.log('update props');
     var mediaGroup = this.state.mediaGroup;
     var tag = this.props.current.currentTag;
-    // var led_id = 0;
     var unitLED = '';
 
     switch(tag){
@@ -71,12 +69,11 @@ class Assets extends React.Component {
           unitLED = 'PHB';
         }else if(tag === 'ap1' || tag === 'ap2'){
           unitLED = this.props.current.currentUnit;
-          // this.assignToToken();
         }
 
         var led_id = getLightingId(unitLED);
         //send request to LED lighting API
-        console.log('turn on LED for unit: ' + unitLED);
+        console.log(`${unitLED} LED On: ${led_id}`);
         lightingControl(led_id, true);
 
         break;
@@ -85,7 +82,7 @@ class Assets extends React.Component {
         unitLED = 'Amenities';
         var led_id = getLightingId(unitLED);
 
-        console.log('turn on LED for: ' + unitLED);
+        console.log(`${unitLED} LED ON: ${led_id}`);
         lightingControl(led_id, true);
         break;
       case 'n':
@@ -106,9 +103,7 @@ class Assets extends React.Component {
         previousTag: tag,
         locationPathname: this.props.location.pathname
       }, function(){
-        // console.log('media group set to ' + mediaGroup);
-        console.log('finished initial update');
-        // this.updateProps();
+        // console.log('finished initial update');
       });
     }
   }
@@ -123,7 +118,7 @@ class Assets extends React.Component {
     if(this.state.previousTag !== this.props.current.currentTag) {
       // console.log(this.props.location, this.props.match)
       this.setState({ previousTag: this.props.current.currentTag }, function(){
-        console.log('tag is different then previous, preparing to update...');
+        // console.log('tag is different then previous, preparing to update...');
         this.updateProps();
       });
     }
@@ -164,7 +159,7 @@ class Assets extends React.Component {
 
 
   selectMedia(media, type){
-    var msg = assetSelection;
+    var msg = new assetSelection();
 
     this.setState({
       selectedMedia: media,
@@ -260,23 +255,26 @@ class Assets extends React.Component {
   }
 
   removeUnit(d){
+    // console.log(this.props.unitId);
     //turn off the LED lighting
     var unit = this.props.current.currentUnit;
+    // console.log(unit);
     var led_id = getLightingId(unit);
 
     if(led_id != 0){
       //send command to turn LED lights off
-      console.log('turn off LED for: ' + unit);
+      // console.log('turn off LED for: ' + unit);
+      console.log(`Remove Unit: ${unit} , LED OFF: ${led_id}`);
       lightingControl(led_id, false);
     }
 
-    console.log('remove unit from token assignment: ' + unit);
+    // console.log('remove unit from token assignment: ' + unit);
     updateCurrentUnit('');
     const currentTag = this.props.current.currentTag;
     assignUnitToToken(currentTag, '');
     var path = currentTag;
     // console.log(this.props.location.pathname);
-    console.log(this.props.router);
+    // console.log(this.props.router);
     // this.context.router.push(path);
     let history = browserHistory.getHistoryList();
     console.log(history);
@@ -287,10 +285,21 @@ class Assets extends React.Component {
     }else if(history.length>2 && (history[history.length-2].includes("compare"))){
       //if the previous path was from 'compare mode' then go to keypad
       browserHistory.returnTo(path, true);
+    }else if(history.length>2 && (history[history.length-2].includes("am"))){
+      browserHistory.returnTo(path, true);
+    }else if(history.length>2 && (history[history.length-2].includes("t"))){
+      browserHistory.returnTo(path, true);
+    }else if(history.length>2 && (history[history.length-2].includes("n"))){
+      browserHistory.returnTo(path, true);
+    }else if(history.length>2 && (history[history.length-2].includes("PHA"))){
+      browserHistory.returnTo(path, true);
+    }else if(history.length>2 && (history[history.length-2].includes("PHB"))){
+      browserHistory.returnTo(path, true);
     }else{
       //otherwise go back to where the user came from (keypad or grid)
       browserHistory.goBack();
     }
+
     //this.context.router.goBack();
 
   }

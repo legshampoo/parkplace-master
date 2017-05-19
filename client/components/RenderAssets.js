@@ -1,7 +1,7 @@
 import React from 'react';
 
 import TextLink from './TextLink';
-import { assetSelection } from './MessageHandler';
+// import { assetSelection } from './MessageHandler';
 import { combineAssets } from './AssetManager';
 
 class RenderAssets extends React.Component {

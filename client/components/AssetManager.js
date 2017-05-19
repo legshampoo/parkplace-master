@@ -1,16 +1,13 @@
 import store from '../store';
-// import residence from '../data/residence';
-// import media from '../data/media';
 
 export function combineAssets(d, type){
   var data = [];
 
   //the unit type determines how far down the tree to go
-  // if(type === 'Unit' || type === 'Unit_Penthouse'){
   if(type === 'Unit'){
     // console.log(d);
     data = d.media;
-    // console.log(data);
+
     for(var i = 0; i < data.length; i++){
       data[i].type = 'photo';
     }
@@ -80,10 +77,8 @@ export function getLightingId(val){
     if(val === 'PHB'){
       val = 'PH B';
     }
-    // dataset = residence;
+
     dataset = store.getState().assets.residences.data;
-    // console.log(dataset);
-    // console.log(store.getState().assets.residences.data);
 
     try{
       Object.keys(dataset).map(function(key, index){
@@ -141,7 +136,7 @@ export function checkUnitExists(d, unit){
   }catch(err){
     console.log('unit exists errrr');
   }
-  // console.log('Unit Found: ' + found);
+
   return found;
 }
 
@@ -154,4 +149,24 @@ export function checkIfEmpty(obj){
     return true;
   }
   return false;
+}
+
+export function getFloorplan(unit){
+  let dataset = store.getState().assets.residences.data;
+  var unitInfo = getAssets(dataset, unit);
+  var media = unitInfo.media;
+  var floorplanURL = '/empty';
+
+  try{
+    Object.keys(media).map(function(key, index){
+      // console.log(`key: ${key} , val: ${media[key]}`);
+      if(media[key].name == 'Floorplan'){
+        floorplanURL = media[key].half_screen;
+        // console.log(`${unit} floorplan: ${floorplanURL}`);
+      }
+    })
+  }catch(e){
+    console.log(e);
+  }
+  return floorplanURL;
 }

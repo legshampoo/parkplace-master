@@ -13,7 +13,7 @@ export function handleNewTag(tag){
       var bothTagsActive = checkBothActive();
 
       if(bothTagsActive){
-        console.log('both tags true');
+        // console.log('both tags true');
         // var message = compareMode;
         // message.params.unit1 = 'ap1Unit';
         // message.params.unit2 = 'ap2Unit';
