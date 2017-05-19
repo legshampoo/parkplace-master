@@ -99,55 +99,62 @@ class EventHandler extends React.Component {
 
         updateTagStatus(json.tag, json.status)
 
-        var path = '/';
+        // var path = '/';
 
-        if(json.status == 'true'){
+        if(json.status === 'true'){
+          console.log(json.status);
           var tag = json.tag;
+          console.log(`tag: ${tag}`);
+
           updateCurrentTag(tag);
 
           // var tag = this.props.current.currentTag;
 
-          path = handleNewTag(tag);
-          // console.log(path);
+          var path = handleNewTag(tag);
+          console.log(`path: ${path}`);
           // this.context.router.push(path);
           browserHistory.push(path);
 
           return;
-        }else if(json.status == 'false'){
+        }else if(json.status === 'false'){
+          console.log(`${json.tag}: ${json.status}`);
           var unitLED = '';
 
           if(json.tag === 'am'){
             unitLED = 'Amenities';
-          }
-          if(json.tag === 'PHA'){
+          }else if(json.tag === 'PHA'){
             unitLED = 'PHA';
-          }
-          if(json.tag === 'PHB'){
+          }else if(json.tag === 'PHB'){
             unitLED = 'PHB';
-          }
-          if(json.tag === 'ap1' || json.tag === 'ap2'){
+          }else if(json.tag === 'ap1'){
             //get the current Unit before clearing it
-            unitLED = this.props.current.currentUnit;
+            unitLED = this.props.folio.ap1;
+            console.log(`${unitLED}`)
+          }else if(json.tag === 'ap2'){
+            //get the current Unit before clearing it
+            // unitLED = this.props.current.currentUnit;
+            unitLED = this.props.folio.ap2;
+            console.log(`${unitLED}`)
           }
 
 
-          if(json.tag === 'n' || json.tag === 't'){
-            //don't send any lighting command
+          var led_id = getLightingId(unitLED);
+          // console.log(`getting lighting id: ${led_id}`);
+
+          if(led_id != 0){
+            console.log(`${unitLED} LED OFF: ${led_id}`);
+            //send command to turn off LED
+            lightingControl(led_id, false);
           }else{
-            var led_id = getLightingId(unitLED);
-            if(led_id === 0){
-              //do nothing
-            }else{
-              console.log('turning off LED for unit: ' + unitLED);
-              //send command to turn off LED
-              lightingControl(led_id, false);
-            }
+            //do nothing
           }
 
-          path = handleTagRemoved();
+
+          var path = handleTagRemoved();
 
           //go to path for any remaining token
           // this.context.router.push(path);
+          console.log('pushing');
           browserHistory.push(path);
           return;
         }

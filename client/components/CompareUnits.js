@@ -13,8 +13,8 @@ import { sendCommand, assetSelection } from './MessageHandler';
 class CompareUnits extends React.Component {
   constructor(props){
     super(props);
-    this.removeUnitAp1 = this.removeUnitAp1.bind(this);
-    this.removeUnitAp2 = this.removeUnitAp2.bind(this);
+    // this.removeUnitAp1 = this.removeUnitAp1.bind(this);
+    // this.removeUnitAp2 = this.removeUnitAp2.bind(this);
     this.sendMessageToCMS = this.sendMessageToCMS.bind(this);
     this.sendMessageLEDLighting = this.sendMessageLEDLighting.bind(this);
 
@@ -66,15 +66,15 @@ class CompareUnits extends React.Component {
     return unitId;
   }
 
-  removeUnitAp1(){
-    console.log('remove from Ap1');
-    removeFromFolio('ap1');
-  }
-
-  removeUnitAp2(){
-    console.log('remove from Ap2');
-    removeFromFolio('ap2');
-  }
+  // removeUnitAp1(){
+  //   console.log('remove from Ap1');
+  //   removeFromFolio('ap1');
+  // }
+  //
+  // removeUnitAp2(){
+  //   console.log('remove from Ap2');
+  //   removeFromFolio('ap2');
+  // }
 
   render(){
     return(

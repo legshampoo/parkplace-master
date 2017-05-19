@@ -13,7 +13,7 @@ export function handleNewTag(tag){
       var bothTagsActive = checkBothActive();
 
       if(bothTagsActive){
-        // console.log('both tags true');
+        console.log(`both tags: ${bothTagsActive}`);
         // var message = compareMode;
         // message.params.unit1 = 'ap1Unit';
         // message.params.unit2 = 'ap2Unit';
@@ -46,6 +46,7 @@ export function handleNewTag(tag){
 }
 
 export function handleTagRemoved(){
+  console.log(`handle tag removed`);
   var tags = store.getState().tags;
   var isTagActive = Object.keys(tags).filter(function(key){
     return tags[key] == 'true';
@@ -71,6 +72,7 @@ export function handleTagRemoved(){
 }
 
 export function checkBothActive(){
+  console.log(`check both tags active`);
   var bothAlive = false;
 
   var isAp1 = store.getState().tags['ap1'];
@@ -81,24 +83,32 @@ export function checkBothActive(){
   }else{
     bothAlive = false;
   }
+  console.log(`bothAlive: ${bothAlive}`);
 
   return bothAlive;
 }
 
 export function handleBothActive(ap1Unit, ap2Unit){
+  console.log(`handle both tags active`);
   var tag = store.getState().current.currentTag;
+
   var path = '';
 
   if(ap1Unit != '' && ap2Unit != ''){
+    console.log(`ap1 and ap2 both have units`);
     path = '/compare-units/' + ap1Unit + '+' + ap2Unit;
-  }
-  if(tag == 'ap1' && ap1Unit == ''){
+  }else if(tag === 'ap1' && ap1Unit === ''){
+    console.log(`ap1 has a unit but ap2 does not`);
     path = '/ap1';
-  }
-  if(tag == 'ap2' && ap2Unit == ''){
+  }else if(tag === 'ap2' && ap2Unit === ''){
+    console.log(`ap2 has a unit but ap1 does not`);
     path = '/ap2';
+  }else{
+    console.log(`defaulting to currentTag`);
+    // path = this.props.current.currentTag;
+    path = tag;
   }
-
+  console.log(`path: ${path}`);
   return path;
 }
 

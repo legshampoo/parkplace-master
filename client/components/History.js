@@ -9,9 +9,10 @@ export function push(url) {
 }
 
 export function goBack() {
-  console.log("going back 1 ");
+  console.log(`go back`);
   if (history.length) {
     history.pop();
+    // console.log(`going back to ${history[history.length - 1]}`);
     browserHistory.goBack();
   }
 }

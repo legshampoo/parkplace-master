@@ -12,7 +12,7 @@ import RemoveUnit from './RemoveUnit';
 import ViewHeader from './ViewHeader';
 import * as folioActions from '../actions/actionCreators';
 import { updateCurrentUnit, assignUnitToToken } from '../actions/actionCreators';
-import { sendCommand, assetSelection, fitVertical } from './MessageHandler';
+import { sendCommand, assetSelection, fitVertical, fitHorizontal } from './MessageHandler';
 import { combineAssets, getUnitId, getAssets, checkUnitExists, checkIfEmpty, getLightingId } from './AssetManager';
 import { lightingControl } from './LightingControls';
 
@@ -69,12 +69,17 @@ class Assets extends React.Component {
           unitLED = 'PHB';
         }else if(tag === 'ap1' || tag === 'ap2'){
           unitLED = this.props.current.currentUnit;
+          console.log(`UnitLED: ${unitLED}`);
         }
 
         var led_id = getLightingId(unitLED);
         //send request to LED lighting API
         console.log(`${unitLED} LED On: ${led_id}`);
-        lightingControl(led_id, true);
+        if(led_id != 0){
+          lightingControl(led_id, true);
+        }else{
+          //do nothing
+        }
 
         break;
       case 'am':
@@ -118,7 +123,7 @@ class Assets extends React.Component {
     if(this.state.previousTag !== this.props.current.currentTag) {
       // console.log(this.props.location, this.props.match)
       this.setState({ previousTag: this.props.current.currentTag }, function(){
-        // console.log('tag is different then previous, preparing to update...');
+        console.log('tag is different then previous, preparing to update...');
         this.updateProps();
       });
     }
@@ -258,7 +263,7 @@ class Assets extends React.Component {
     // console.log(this.props.unitId);
     //turn off the LED lighting
     var unit = this.props.current.currentUnit;
-    // console.log(unit);
+    console.log(unit);
     var led_id = getLightingId(unit);
 
     if(led_id != 0){
@@ -280,28 +285,89 @@ class Assets extends React.Component {
     console.log(history);
 
     //if the previous path was from 'home' then go to keypad
-    if(history.length>2 && (history[history.length-2] === '/')){
-      browserHistory.returnTo(path, true);
-    }else if(history.length>2 && (history[history.length-2].includes("compare"))){
-      //if the previous path was from 'compare mode' then go to keypad
-      browserHistory.returnTo(path, true);
-    }else if(history.length>2 && (history[history.length-2].includes("am"))){
-      browserHistory.returnTo(path, true);
-    }else if(history.length>2 && (history[history.length-2].includes("t"))){
-      browserHistory.returnTo(path, true);
-    }else if(history.length>2 && (history[history.length-2].includes("n"))){
-      browserHistory.returnTo(path, true);
-    }else if(history.length>2 && (history[history.length-2].includes("PHA"))){
-      browserHistory.returnTo(path, true);
-    }else if(history.length>2 && (history[history.length-2].includes("PHB"))){
-      browserHistory.returnTo(path, true);
+
+    // if(history.length>2 && (history[history.length-2] === '/')){
+    //   console.log(`previous path: ${history[history.length-2]}`)
+    //   browserHistory.push(path);
+    // }else if(history.length>2 && (history[history.length-2].includes("compare-units"))){
+    //   //if the previous path was from 'compare mode' then go to keypad
+    //   console.log(`previous path: ${history[history.length-2]}`)
+    //   console.log(`path: ${path}`);
+    //   browserHistory.push(path);
+    //   return;
+    // }else if(history.length>2 && (history[history.length-2].includes("am"))){
+    //   console.log(`previous path: ${history[history.length-2]}`)
+    //   browserHistory.push(path);
+    //   return;
+    // }else if(history.length>2 && (history[history.length-2].includes("t"))){
+    //   console.log(`previous path: ${history[history.length-2]}`)
+    //   browserHistory.push(path);
+    //   return;
+    // }else if(history.length>2 && (history[history.length-2].includes("n"))){
+    //   console.log(`previous path: ${history[history.length-2]}`)
+    //   browserHistory.push(path);
+    //   return;
+    // }else if(history.length>2 && (history[history.length-2].includes("PHA"))){
+    //   console.log(`previous path: ${history[history.length-2]}`)
+    //   browserHistory.push(path);
+    //   return;
+    // }else if(history.length>2 && (history[history.length-2].includes("PHB"))){
+    //   console.log(`previous path: ${history[history.length-2]}`)
+    //   browserHistory.push(path);
+    //   return;
+    // }else if(history.length>2 && (history[history.length-2].includes("grid"))){
+    //   console.log(`previous path: ${history[history.length-2]}`)
+    //   browserHistory.push('/grid');
+    //   return;
+    // }else{
+    //   console.log(`previous path: ${history[history.length-2]}`)
+    //   console.log(`go back`);
+    //   //otherwise go back to where the user came from (keypad or grid)
+    //   browserHistory.goBack();
+    //   return;
+    // }
+    console.log(`last path: ${history[history.length - 2]}`);
+
+    if(history[history.length - 2] === '/'
+      || history[history.length - 2] === '/assets/n'
+      || history[history.length - 2] === '/assets/am'
+      || history[history.length - 2] === '/assets/t'
+      || history[history.length - 2] === '/assets/PHA'
+      || history[history.length - 2] === '/assets/PHB'
+      || history[history.length - 2].includes('compare-units')){
+
+      //go to the current tag url
+      browserHistory.push(currentTag);
     }else{
-      //otherwise go back to where the user came from (keypad or grid)
+      //go back (should either be keypad or grid)
       browserHistory.goBack();
     }
+    //-------------------------------------
+    // if(history.length <= 2){
+    //   console.log(`less than 2`);
+    //   browserHistory.goBack();
+    // }else if(history.length>2 && (history[history.length-1] === '/')){
+    //   console.log(`previous path: ${history[history.length-2]}`)
+    //   //push to currentTag
+    //   console.log(`path: ${path}`);
+    //   browserHistory.push(path);
+    //   return
+    // }else if(history.length>2 && (history[history.length-1].includes("grid"))){
+    //   console.log(`previous path: ${history[history.length-1]}`)
+    //   browserHistory.push('/grid');
+    //   return;
+    // }else if(history.length>2 && (history[history.length-1].includes("keypad"))){
+    //   console.log(`previous path: ${history[history.length-1]}`)
+    //   browserHistory.push('/keypad');
+    //   return;
+    // }else if(history.length>2 && (history[history.length-1].includes("ap1"))){
+    //   console.log(`previous path: ${history[history.length-1]}`)
+    //   browserHistory.push('ap1');
+    //   return;
+    // }
 
-    //this.context.router.goBack();
-
+    // console.log(`no conditions true, defaulting to go back`);
+    // browserHistory.goBack();
   }
 
   renderRemoveUnitButton(){

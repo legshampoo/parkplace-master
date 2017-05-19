@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import * as folioActions from '../actions/actionCreators';
 import { removeFromFolio } from '../actions/actionCreators';
 
+import * as browserHistory from './History';
+
 import ViewHeader from './ViewHeader';
 import TextLink from './TextLink';
 import GenericButton from './GenericButton';
@@ -36,7 +38,8 @@ class CompareUnitDetails extends React.Component {
     updateCurrentUnit('');
     assignUnitToToken(currentTag, '');
     var path = '/' + this.props.tag;
-    this.context.router.push(path);
+    // this.context.router.push(path);
+    browserHistory.push(path);
   }
 
   render(){
