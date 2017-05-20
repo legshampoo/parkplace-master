@@ -87,7 +87,7 @@ class Assets extends React.Component {
         unitLED = 'Amenities';
         var led_id = getLightingId(unitLED);
 
-        console.log(`${unitLED} LED ON: ${led_id}`);
+        // console.log(`${unitLED} LED ON: ${led_id}`);
         lightingControl(led_id, true);
         break;
       case 'n':
@@ -165,7 +165,7 @@ class Assets extends React.Component {
 
   selectMedia(media, type){
     var msg = new assetSelection();
-
+    console.log(media.zoom);
     this.setState({
       selectedMedia: media,
       selectedMediaType: type
@@ -199,7 +199,7 @@ class Assets extends React.Component {
 
     if(this.state.selectedMediaType === 'video'){
       controlType = 'video-controls';
-    }else if(this.state.selectedMediaType === 'photo'){
+    }else if(this.state.selectedMediaType === 'photo' && this.state.selectedMedia.zoom){
       controlType = 'photo-controls';
     }else{
       controlType = 'blank'
@@ -268,105 +268,39 @@ class Assets extends React.Component {
 
     if(led_id != 0){
       //send command to turn LED lights off
-      // console.log('turn off LED for: ' + unit);
       console.log(`Remove Unit: ${unit} , LED OFF: ${led_id}`);
       lightingControl(led_id, false);
     }
 
-    // console.log('remove unit from token assignment: ' + unit);
     updateCurrentUnit('');
     const currentTag = this.props.current.currentTag;
     assignUnitToToken(currentTag, '');
     var path = currentTag;
-    // console.log(this.props.location.pathname);
-    // console.log(this.props.router);
-    // this.context.router.push(path);
     let history = browserHistory.getHistoryList();
     console.log(history);
 
-    //if the previous path was from 'home' then go to keypad
-
-    // if(history.length>2 && (history[history.length-2] === '/')){
-    //   console.log(`previous path: ${history[history.length-2]}`)
-    //   browserHistory.push(path);
-    // }else if(history.length>2 && (history[history.length-2].includes("compare-units"))){
-    //   //if the previous path was from 'compare mode' then go to keypad
-    //   console.log(`previous path: ${history[history.length-2]}`)
-    //   console.log(`path: ${path}`);
-    //   browserHistory.push(path);
-    //   return;
-    // }else if(history.length>2 && (history[history.length-2].includes("am"))){
-    //   console.log(`previous path: ${history[history.length-2]}`)
-    //   browserHistory.push(path);
-    //   return;
-    // }else if(history.length>2 && (history[history.length-2].includes("t"))){
-    //   console.log(`previous path: ${history[history.length-2]}`)
-    //   browserHistory.push(path);
-    //   return;
-    // }else if(history.length>2 && (history[history.length-2].includes("n"))){
-    //   console.log(`previous path: ${history[history.length-2]}`)
-    //   browserHistory.push(path);
-    //   return;
-    // }else if(history.length>2 && (history[history.length-2].includes("PHA"))){
-    //   console.log(`previous path: ${history[history.length-2]}`)
-    //   browserHistory.push(path);
-    //   return;
-    // }else if(history.length>2 && (history[history.length-2].includes("PHB"))){
-    //   console.log(`previous path: ${history[history.length-2]}`)
-    //   browserHistory.push(path);
-    //   return;
-    // }else if(history.length>2 && (history[history.length-2].includes("grid"))){
-    //   console.log(`previous path: ${history[history.length-2]}`)
-    //   browserHistory.push('/grid');
-    //   return;
-    // }else{
-    //   console.log(`previous path: ${history[history.length-2]}`)
-    //   console.log(`go back`);
-    //   //otherwise go back to where the user came from (keypad or grid)
-    //   browserHistory.goBack();
-    //   return;
-    // }
     console.log(`last path: ${history[history.length - 2]}`);
 
     if(history[history.length - 2] === '/'
       || history[history.length - 2] === '/assets/n'
       || history[history.length - 2] === '/assets/am'
       || history[history.length - 2] === '/assets/t'
+      || history[history.length - 2] === '/assets/ap1'
+      || history[history.length - 2] === '/assets/ap2'
       || history[history.length - 2] === '/assets/PHA'
       || history[history.length - 2] === '/assets/PHB'
       || history[history.length - 2].includes('compare-units')){
 
+      console.log('came from somewhere else, go to current tag');
       //go to the current tag url
       browserHistory.push(currentTag);
+      return;
     }else{
       //go back (should either be keypad or grid)
+      console.log(`came from keypad or grid, go back`);
       browserHistory.goBack();
+      return;
     }
-    //-------------------------------------
-    // if(history.length <= 2){
-    //   console.log(`less than 2`);
-    //   browserHistory.goBack();
-    // }else if(history.length>2 && (history[history.length-1] === '/')){
-    //   console.log(`previous path: ${history[history.length-2]}`)
-    //   //push to currentTag
-    //   console.log(`path: ${path}`);
-    //   browserHistory.push(path);
-    //   return
-    // }else if(history.length>2 && (history[history.length-1].includes("grid"))){
-    //   console.log(`previous path: ${history[history.length-1]}`)
-    //   browserHistory.push('/grid');
-    //   return;
-    // }else if(history.length>2 && (history[history.length-1].includes("keypad"))){
-    //   console.log(`previous path: ${history[history.length-1]}`)
-    //   browserHistory.push('/keypad');
-    //   return;
-    // }else if(history.length>2 && (history[history.length-1].includes("ap1"))){
-    //   console.log(`previous path: ${history[history.length-1]}`)
-    //   browserHistory.push('ap1');
-    //   return;
-    // }
-
-    // console.log(`no conditions true, defaulting to go back`);
     // browserHistory.goBack();
   }
 

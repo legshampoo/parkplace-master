@@ -46,8 +46,8 @@ class Keypad extends React.Component {
   }
 
   submit(){
-    var path = '';
-    path = '/assets/' + this.state.input;
+    // var path = '';
+    // path = '/assets/' + this.state.input;
 
     // var unitExists = checkUnitExists(residenceData, this.state.input);
     var unitExists = checkUnitExists(this.state.residences, this.state.input);
@@ -59,18 +59,18 @@ class Keypad extends React.Component {
       updateCurrentUnit(this.state.input);
       var bothTagsActive = checkBothActive();
 
+      var path = '/assets/' + this.state.input;
+
       if(bothTagsActive){
         // console.log('both tags are active');
         var compare = checkCompareMode();
 
         console.log('compare mode is: ' + compare);
-
         if(compare){
           path = '/compare-units/' + compare[0] + '+' + compare[1];
         }
-      }
 
-      // this.context.router.push(path)
+      }
       browserHistory.push(path);
     }else{
       this.setState({

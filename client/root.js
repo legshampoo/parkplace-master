@@ -23,7 +23,9 @@ const router = (
       <Route path='/' component={App}>
         <IndexRoute component={Home}></IndexRoute>
         <Route path='/ap1' component={Keypad}></Route>
+        <Route path='/assets/ap1' component={Keypad}></Route>
         <Route path='/ap2' component={Keypad}></Route>
+        <Route path='/assets/ap2' component={Keypad}></Route>
         <Route path='/am' component={Assets}></Route>
         <Route path='/n' component={Assets}></Route>
         <Route path='/PHA' component={Assets}></Route>

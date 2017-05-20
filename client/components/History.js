@@ -4,8 +4,8 @@ let history = [];
 
 export function push(url) {
   console.log("going to ", url);
-    history.push(url);
-    browserHistory.push(url);
+  history.push(url);
+  browserHistory.push(url);
 }
 
 export function goBack() {

@@ -22,7 +22,7 @@ export function lightingControl(id, on){
     //if it's anything else, use the /space/ path
     url = 'http://' + ip + '/api/space/' + id + '/' + state + '/';
   }
-  console.log(`setting params`);
+  // console.log(`setting params`);
   var params = {
     method: 'GET',
     headers: {
@@ -34,17 +34,17 @@ export function lightingControl(id, on){
     mode: 'no-cors'
   }
 
-  console.log(`fetching`);
+  // console.log(`fetching`);
   fetch(url).then(function(response){
-    console.log(`checking response`);
+    // console.log(`checking response`);
     if(!response.ok){
-      console.log(`response NOT ok`);
+      // console.log(`response NOT ok`);
       throw Error(response.statusText);
     }
-    console.log(`returning response`);
+    // console.log(`returning response`);
     return response;
   }).then(function(error){
-    console.log(`response error?`);
+    // console.log(`response error?`);
     console.log(error);
   });
 }

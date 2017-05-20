@@ -38,6 +38,7 @@ class RenderAssets extends React.Component {
               id={media.name}
               key={index}
               displayText={media.name}
+              zoom={media.zoom}
               styleClass={media.name === _this.props.selectedMedia.name
                 ? 'media-asset-button-active'
                 : (media.name === ''

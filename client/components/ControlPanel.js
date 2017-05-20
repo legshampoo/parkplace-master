@@ -9,10 +9,14 @@ import RemoveUnit from './RemoveUnit';
 import { fitHorizontal, fitVertical, panLeft, panRight, panCenter, play, restart, addToFolio } from './MessageHandler';
 
 class ControlPanel extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.renderControls = this.renderControls.bind(this);
     this.handleAddToFolio = this.handleAddToFolio.bind(this);
+  }
+
+  componentDidMount(){
+    // console.log(this.props.selectedMedia);
   }
 
   handleAddToFolio(media){

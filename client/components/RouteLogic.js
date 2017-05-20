@@ -8,6 +8,7 @@ export function handleNewTag(tag){
   switch(tag){
     case 'ap1':
     case 'ap2':
+      console.log(`handleNewTag ${tag}`);
       var ap1Unit = store.getState().folio['ap1'];
       var ap2Unit = store.getState().folio['ap2'];
       var bothTagsActive = checkBothActive();
@@ -41,7 +42,7 @@ export function handleNewTag(tag){
       path = '/assets/' + 't';
       break;
   }
-
+  console.log(`path: ${path}`);
   return path;
 }
 

@@ -48,7 +48,7 @@ class EventHandler extends React.Component {
     }, pingInterval);
 
     sock.on('echo', d => {
-      console.log('server echo:');
+      // console.log('server echo:');
       console.log(d);
     })
 
@@ -102,16 +102,16 @@ class EventHandler extends React.Component {
         // var path = '/';
 
         if(json.status === 'true'){
-          console.log(json.status);
+          // console.log(json.status);
           var tag = json.tag;
-          console.log(`tag: ${tag}`);
+          // console.log(`tag: ${tag}`);
 
           updateCurrentTag(tag);
 
           // var tag = this.props.current.currentTag;
 
           var path = handleNewTag(tag);
-          console.log(`path: ${path}`);
+          // console.log(`path: ${path}`);
           // this.context.router.push(path);
           browserHistory.push(path);
 
@@ -132,14 +132,12 @@ class EventHandler extends React.Component {
             console.log(`${unitLED}`)
           }else if(json.tag === 'ap2'){
             //get the current Unit before clearing it
-            // unitLED = this.props.current.currentUnit;
             unitLED = this.props.folio.ap2;
             console.log(`${unitLED}`)
           }
 
 
           var led_id = getLightingId(unitLED);
-          // console.log(`getting lighting id: ${led_id}`);
 
           if(led_id != 0){
             console.log(`${unitLED} LED OFF: ${led_id}`);
