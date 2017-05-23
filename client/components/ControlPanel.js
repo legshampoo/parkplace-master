@@ -59,7 +59,7 @@ class ControlPanel extends React.Component {
         </div>
         <div className='control-panel-right'>
           <ControlButton
-            message={panLeft}
+            message={panRight}
             name='pan-left'
             icon={require('../assets/icons/left_arrow.png')}
             handleClick={this.props.handleClick.bind(this)}/>
@@ -69,7 +69,7 @@ class ControlPanel extends React.Component {
             icon={require('../assets/icons/center.png')}
             handleClick={this.props.handleClick.bind(this)}/>
           <ControlButton
-            message={panRight}
+            message={panLeft}
             name='pan-right'
             icon={require('../assets/icons/right_arrow.png')}
             handleClick={this.props.handleClick.bind(this)}/>
