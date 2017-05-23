@@ -39,43 +39,54 @@ class ControlPanel extends React.Component {
   }
 
   renderPhotoControls(){
-    return (
-      <div className='control-panel-groups'>
-        <AddToFolio
-          message={addToFolio}
-          selectedMedia={this.props.selectedMedia}
-          add={this.handleAddToFolio}/>
-      <div className='control-panel-right'>
-          <ControlButton
-            message={fitHorizontal}
-            name='fill-horizontal'
-            icon={require('../assets/icons/left_right_arrow.png')}
-            handleClick={this.props.handleClick.bind(this)}/>
-          <ControlButton
-            message={fitVertical}
-            name='fill-vertical'
-            icon={require('../assets/icons/up_down_arrow.png')}
-            handleClick={this.props.handleClick.bind(this)}/>
+    if(this.props.zoom){
+      return (
+        <div className='control-panel-groups'>
+          <AddToFolio
+            message={addToFolio}
+            selectedMedia={this.props.selectedMedia}
+            add={this.handleAddToFolio}/>
+          <div className='control-panel-right'>
+            <ControlButton
+              message={fitHorizontal}
+              name='fill-horizontal'
+              icon={require('../assets/icons/left_right_arrow.png')}
+              handleClick={this.props.handleClick.bind(this)}/>
+            <ControlButton
+              message={fitVertical}
+              name='fill-vertical'
+              icon={require('../assets/icons/up_down_arrow.png')}
+              handleClick={this.props.handleClick.bind(this)}/>
+          </div>
+          <div className='control-panel-right'>
+            <ControlButton
+              message={panRight}
+              name='pan-left'
+              icon={require('../assets/icons/left_arrow.png')}
+              handleClick={this.props.handleClick.bind(this)}/>
+            <ControlButton
+              message={panCenter}
+              name='center-image'
+              icon={require('../assets/icons/center.png')}
+              handleClick={this.props.handleClick.bind(this)}/>
+            <ControlButton
+              message={panLeft}
+              name='pan-right'
+              icon={require('../assets/icons/right_arrow.png')}
+              handleClick={this.props.handleClick.bind(this)}/>
+          </div>
         </div>
-        <div className='control-panel-right'>
-          <ControlButton
-            message={panRight}
-            name='pan-left'
-            icon={require('../assets/icons/left_arrow.png')}
-            handleClick={this.props.handleClick.bind(this)}/>
-          <ControlButton
-            message={panCenter}
-            name='center-image'
-            icon={require('../assets/icons/center.png')}
-            handleClick={this.props.handleClick.bind(this)}/>
-          <ControlButton
-            message={panLeft}
-            name='pan-right'
-            icon={require('../assets/icons/right_arrow.png')}
-            handleClick={this.props.handleClick.bind(this)}/>
+      )
+    }else{
+      return (
+        <div className='control-panel-groups'>
+          <AddToFolio
+            message={addToFolio}
+            selectedMedia={this.props.selectedMedia}
+            add={this.handleAddToFolio}/>
         </div>
-      </div>
-    )
+      )
+    }
   }
 
   renderVideoControls(){

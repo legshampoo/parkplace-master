@@ -199,7 +199,8 @@ class Assets extends React.Component {
 
     if(this.state.selectedMediaType === 'video'){
       controlType = 'video-controls';
-    }else if(this.state.selectedMediaType === 'photo' && this.state.selectedMedia.zoom){
+    // }else if(this.state.selectedMediaType === 'photo' && this.state.selectedMedia.zoom){
+    }else if(this.state.selectedMediaType === 'photo'){
       controlType = 'photo-controls';
     }else{
       controlType = 'blank'
@@ -208,6 +209,7 @@ class Assets extends React.Component {
     return(
       <ControlPanel
         type={controlType}
+        zoom={this.state.selectedMedia.zoom}
         mediaGroup={this.state.mediaGroup}
         selectedMedia={this.state.selectedMedia}
         handleClick={this.sendControlMessage.bind(this)}/>
