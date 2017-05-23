@@ -2,6 +2,7 @@ import store from '../store';
 
 export function combineAssets(d, type){
   var data = [];
+  console.log(`unit type: ${type}`);
 
   //the unit type determines how far down the tree to go
   if(type === 'Unit'){
@@ -9,16 +10,27 @@ export function combineAssets(d, type){
     data = d.media;
 
     for(var i = 0; i < data.length; i++){
-      data[i].type = 'photo';
+      // console.log(data[i].type);
+      if(data[i].type == 'Animation'){
+        data[i].assetType = 'video';
+      }else{
+        data[i].assetType = 'photo';
+      }
+      // data[i].type = 'photo';  //ORIGINAL
     }
   }else{
+    console.log(`else`);
     //consolidate non unit photos and videos into one array
     for(var i = 0; i < d.videos.length; i++){
-      d.videos[i].type = 'video';
+      // d.videos[i].type = 'video';  //ORIGINAL
+      console.log(`video: ${i}`);
+      d.videos[i].assetType = 'video';
       data.push(d.videos[i]);
     }
     for(var i = 0; i < d.photos.length; i++){
-      d.photos[i].type = 'photo';
+      // d.photos[i].type = 'photo';  //ORIGINAL
+      console.log(`photo: ${i}`);
+      d.photos[i].assetType = 'photo';
       data.push(d.photos[i]);
     }
   }
@@ -30,9 +42,11 @@ export function combineAssets(d, type){
     var emptyObject = {
       name: '',
       path: 'blank-path',
-      type: 'blank-type'
+      type: 'blank-type',  //remove this when done
+      assetType: 'blank-type'
     };
     for(var i = 0; i < 6 - remainder; i++){
+      console.log(`empty asset: ${i}`);
       data.push(emptyObject);
     }
   }

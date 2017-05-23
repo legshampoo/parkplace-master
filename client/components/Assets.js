@@ -34,6 +34,8 @@ class Assets extends React.Component {
       selectedMedia: {},
       selectedMediaType: '',
       pageIndex: 0,
+      showLeftArrow: true,
+      showRightArrow: true,
       residences: {},
       media: {}
     }
@@ -140,8 +142,18 @@ class Assets extends React.Component {
 
   changePageIndex(val){
     var index = this.state.pageIndex + val;
+    // var showLeftArrow = false;
+
     if(index < 0){
       index = 0;
+      // showLeftArrow = false;
+      this.setState({ showLeftArrow: false }, function(){
+        console.log('hide left arrow');
+      });
+    }else{
+      this.setState({ showLeftArrow: true }, function(){
+        console.log('show left arrow');
+      });
     }
 
     var dataSet = {};
@@ -157,6 +169,13 @@ class Assets extends React.Component {
 
     if((index + 1) > Math.ceil(dataSet.length / 6)){
       index = index - 1;
+      this.setState({ showRightArrow: false }, function(){
+        console.log('hide right arrow');
+      });
+    }else{
+      this.setState({ showRightArrow: true }, function(){
+        console.log('show right arrow');
+      });
     }
 
     this.setState({pageIndex: index});
@@ -218,12 +237,13 @@ class Assets extends React.Component {
   }
 
   sendControlMessage(cmd){
-    var command = cmd;
-    var path = 'path';
+    // var command = cmd;
+    // console.log()
+    // var path = 'path';
     console.log('sending control panel command...');
 
     //send control panel command to CMS
-    sendCommand(command);
+    sendCommand(cmd);
 
   }
 
@@ -328,7 +348,7 @@ class Assets extends React.Component {
         </div>
         <ViewHeader unitId={this.state.mediaGroup == 'Unit' ? getUnitId() : this.state.mediaGroup} />
         {this.state.mediaGroup == 'Unit' ? this.renderRemoveUnitButton() : '' }
-        <NextPageButton handleClick={this.changePageIndex} />
+        <NextPageButton showLeft={this.state.showLeftArrow} showRight={this.state.showRightArrow} handleClick={this.changePageIndex} />
         {this.renderControlPanel()}
       </div>
     )

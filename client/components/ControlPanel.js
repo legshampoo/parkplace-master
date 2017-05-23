@@ -6,7 +6,7 @@ import AddToFolio from './AddToFolio';
 import ControlButton from './ControlButton';
 import RemoveUnit from './RemoveUnit';
 
-import { fitHorizontal, fitVertical, panLeft, panRight, panCenter, play, restart, addToFolio } from './MessageHandler';
+import { fitHorizontal, fitVertical, panLeft, panRight, panCenter, resume, rewind, addToFolio } from './MessageHandler';
 
 class ControlPanel extends React.Component {
   constructor(props){
@@ -98,15 +98,15 @@ class ControlPanel extends React.Component {
           selectedMedia={this.props.selectedMedia}/>
         <div className='control-panel-left'>
           <ControlButton
-            message={play}
+            message={resume}
             name='play'
             icon={require('../assets/icons/play.png')}
             handleClick={this.props.handleClick.bind(this)}/>
         </div>
         <div className='control-panel-right'>
           <ControlButton
-            message={restart}
-            name='restart'
+            message={rewind}
+            name='rewind'
             icon={require('../assets/icons/restart.png')}
             handleClick={this.props.handleClick.bind(this)}/>
         </div>

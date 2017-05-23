@@ -26,7 +26,9 @@ class RenderAssets extends React.Component {
     return(
       data.map(function(media,index){
         if((_this.props.pageIndex * 6) <= index && index < ((_this.props.pageIndex + 1) * 6)){
-          var mediaType = media.type;
+          // var mediaType = media.type;  //ORIGINAL
+          var mediaType = media.assetType;
+
           return(
             <TextLink
               handleClick={

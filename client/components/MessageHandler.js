@@ -132,20 +132,14 @@ export var panCenter = {
   }
 }
 
-export var play = {
-  'command': 'play',
-  'to': 'wall',
-  'params': {
-    'url': 'path'
-  }
+export var resume = {
+  'command': 'resume',
+  'to': 'wall'
 }
 
-export var restart = {
-  'command': 'restart',
-  'to': 'wall',
-  'params': {
-    'url': 'path'
-  }
+export var rewind = {
+  'command': 'rewind',
+  'to': 'wall'
 }
 
 // export var assetSelection = {
