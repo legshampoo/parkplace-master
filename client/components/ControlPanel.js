@@ -5,18 +5,39 @@ import ControlGroup from './ControlGroup';
 import AddToFolio from './AddToFolio';
 import ControlButton from './ControlButton';
 import RemoveUnit from './RemoveUnit';
+// import { sendCommand, resume } from './MessageHandler';
 
-import { fitHorizontal, fitVertical, panLeft, panRight, panCenter, resume, rewind, addToFolio } from './MessageHandler';
+import { sendCommand, fitHorizontal, fitVertical, panLeft, panRight, panCenter, resume, pause, rewind, addToFolio } from './MessageHandler';
 
 class ControlPanel extends React.Component {
   constructor(props){
     super(props);
     this.renderControls = this.renderControls.bind(this);
     this.handleAddToFolio = this.handleAddToFolio.bind(this);
+    this.videoPlay = this.videoPlay.bind(this);
+
+    this.state = {
+      videoPlay: true
+    }
   }
 
   componentDidMount(){
     // console.log(this.props.selectedMedia);
+  }
+
+  videoPlay(){
+    var play = this.state.videoPlay;
+
+    this.setState({ videoPlay: !play }, function(){
+      // console.log(`video play: ${this.state.videoPlay}`);
+      var cmd = {};
+      if(this.state.videoPlay){
+        cmd = resume;
+      }else{
+        cmd = pause;
+      }
+      sendCommand(cmd);
+    });
   }
 
   handleAddToFolio(media){
@@ -101,7 +122,8 @@ class ControlPanel extends React.Component {
             message={resume}
             name='play'
             icon={require('../assets/icons/play.png')}
-            handleClick={this.props.handleClick.bind(this)}/>
+            // handleClick={this.props.handleClick.bind(this)}/>
+            handleClick={this.videoPlay.bind(this)}/>
         </div>
         <div className='control-panel-right'>
           <ControlButton

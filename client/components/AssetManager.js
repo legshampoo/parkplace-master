@@ -19,13 +19,13 @@ export function combineAssets(d, type){
     //consolidate non unit photos and videos into one array
     for(var i = 0; i < d.videos.length; i++){
       // d.videos[i].type = 'video';  //ORIGINAL
-      console.log(`video: ${i}`);
+      // console.log(`video: ${i}`);
       d.videos[i].assetType = 'video';
       data.push(d.videos[i]);
     }
     for(var i = 0; i < d.photos.length; i++){
       // d.photos[i].type = 'photo';  //ORIGINAL
-      console.log(`photo: ${i}`);
+      // console.log(`photo: ${i}`);
       d.photos[i].assetType = 'photo';
       data.push(d.photos[i]);
     }

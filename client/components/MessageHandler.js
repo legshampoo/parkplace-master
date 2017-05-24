@@ -44,7 +44,7 @@ export function sendCommand(msg){
       reconnectCMS();
       break;
     case 1:   //open
-      console.log('socket is OPEN, sending command:');
+      // console.log('socket is OPEN, sending command:');
       console.log(message);
       // console.log(msg);
       socketCMS.send(message);
@@ -134,6 +134,11 @@ export var panCenter = {
 
 export var resume = {
   'command': 'resume',
+  'to': 'wall'
+}
+
+export var pause = {
+  'command': 'pause',
   'to': 'wall'
 }
 
