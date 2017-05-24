@@ -51,6 +51,7 @@ class Assets extends React.Component {
     });
     // console.log('mounted');
     this.updateProps();
+    // this.changePageIndex(0);
   }
 
   updateProps(){
@@ -110,7 +111,11 @@ class Assets extends React.Component {
         previousTag: tag,
         locationPathname: this.props.location.pathname
       }, function(){
-        // console.log('finished initial update');
+        if(mediaGroup === ''){
+          //do nothing and let it go back to home
+        }else{
+          this.changePageIndex(0);
+        }
       });
     }
   }
@@ -142,17 +147,15 @@ class Assets extends React.Component {
 
   changePageIndex(val){
     var index = this.state.pageIndex + val;
-    // var showLeftArrow = false;
 
-    if(index < 0){
+    if(index <= 0){
       index = 0;
-      // showLeftArrow = false;
       this.setState({ showLeftArrow: false }, function(){
-        console.log('hide left arrow');
+        // console.log('hide left arrow');
       });
     }else{
       this.setState({ showLeftArrow: true }, function(){
-        console.log('show left arrow');
+        // console.log('show left arrow');
       });
     }
 
@@ -164,32 +167,43 @@ class Assets extends React.Component {
     }else{
       // var d = getAssets(media, this.state.mediaGroup);  //ORIGINAL
       var d = getAssets(this.state.media, this.state.mediaGroup);
+      // console.log(`mediaGroup: ${this.state.mediaGroup}`);
       dataSet = combineAssets(d, this.state.mediaGroup);
     }
 
+
     if((index + 1) > Math.ceil(dataSet.length / 6)){
       index = index - 1;
-      this.setState({ showRightArrow: false }, function(){
-        console.log('hide right arrow');
+    }else{
+      //let index increment
+    }
+
+    //check how many assets are left
+    var remainder = dataSet.length - ((index + 1) * 6);
+
+    //if any assets are left, keep the right arrow displayed
+    //otherwise hide the arrow
+    if(remainder > 0){
+      this.setState({ showRightArrow: true }, function(){
+        // console.log('show right arrow');
       });
     }else{
-      this.setState({ showRightArrow: true }, function(){
-        console.log('show right arrow');
+      this.setState({ showRightArrow: false }, function(){
+        // console.log('hide right arrow');
       });
     }
 
     this.setState({pageIndex: index});
   }
 
-
   selectMedia(media, type){
     var msg = new assetSelection();
-    console.log(media.zoom);
+    // console.log(media.zoom);
     this.setState({
       selectedMedia: media,
       selectedMediaType: type
     }, function(){
-      console.log('state updated');
+      // console.log('state updated');
     });
 
     if(type == 'photo'){
@@ -209,7 +223,7 @@ class Assets extends React.Component {
     sendCommand(msg);
 
     //send fit to height command to CMS as default way to display asset
-    sendCommand(fitHorizontal);
+    sendCommand(fitVertical);
   }
 
   renderControlPanel(){
@@ -218,7 +232,6 @@ class Assets extends React.Component {
 
     if(this.state.selectedMediaType === 'video'){
       controlType = 'video-controls';
-    // }else if(this.state.selectedMediaType === 'photo' && this.state.selectedMedia.zoom){
     }else if(this.state.selectedMediaType === 'photo'){
       controlType = 'photo-controls';
     }else{
@@ -277,15 +290,14 @@ class Assets extends React.Component {
       )
     }else{
       // empty array do nothing
+      // console.log('no media found');
     }
 
   }
 
   removeUnit(d){
-    // console.log(this.props.unitId);
     //turn off the LED lighting
     var unit = this.props.current.currentUnit;
-    console.log(unit);
     var led_id = getLightingId(unit);
 
     if(led_id != 0){
@@ -323,7 +335,6 @@ class Assets extends React.Component {
       browserHistory.goBack();
       return;
     }
-    // browserHistory.goBack();
   }
 
   renderRemoveUnitButton(){

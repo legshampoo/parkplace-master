@@ -42,7 +42,7 @@ export function handleNewTag(tag){
       path = '/assets/' + 't';
       break;
   }
-  console.log(`path: ${path}`);
+  // console.log(`path: ${path}`);
   return path;
 }
 
@@ -73,7 +73,7 @@ export function handleTagRemoved(){
 }
 
 export function checkBothActive(){
-  console.log(`check both tags active`);
+  // console.log(`check both tags active`);
   var bothAlive = false;
 
   var isAp1 = store.getState().tags['ap1'];

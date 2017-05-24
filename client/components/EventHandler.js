@@ -117,7 +117,7 @@ class EventHandler extends React.Component {
 
           return;
         }else if(json.status === 'false'){
-          console.log(`${json.tag}: ${json.status}`);
+          // console.log(`${json.tag}: ${json.status}`);
           var unitLED = '';
 
           if(json.tag === 'am'){
@@ -152,7 +152,7 @@ class EventHandler extends React.Component {
 
           //go to path for any remaining token
           // this.context.router.push(path);
-          console.log('pushing');
+          // console.log('pushing');
           browserHistory.push(path);
           return;
         }

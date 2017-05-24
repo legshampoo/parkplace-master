@@ -2,15 +2,12 @@ import store from '../store';
 
 export function combineAssets(d, type){
   var data = [];
-  console.log(`unit type: ${type}`);
 
   //the unit type determines how far down the tree to go
   if(type === 'Unit'){
-    // console.log(d);
     data = d.media;
 
     for(var i = 0; i < data.length; i++){
-      // console.log(data[i].type);
       if(data[i].type == 'Animation'){
         data[i].assetType = 'video';
       }else{
@@ -19,7 +16,6 @@ export function combineAssets(d, type){
       // data[i].type = 'photo';  //ORIGINAL
     }
   }else{
-    console.log(`else`);
     //consolidate non unit photos and videos into one array
     for(var i = 0; i < d.videos.length; i++){
       // d.videos[i].type = 'video';  //ORIGINAL
@@ -46,7 +42,7 @@ export function combineAssets(d, type){
       assetType: 'blank-type'
     };
     for(var i = 0; i < 6 - remainder; i++){
-      console.log(`empty asset: ${i}`);
+      // console.log(`empty asset: ${i}`);
       data.push(emptyObject);
     }
   }
