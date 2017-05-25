@@ -32,6 +32,10 @@ Raven.config(sentry_url);
 //   email: 'daniel.c.baker@gmail.com'
 // });
 
+logException(new Error('Test Message: Browser was refreshed'), {
+  email: 'daniel.c.baker@gmail.com'
+});
+
 //to get error without all the extra info
 // Raven.captureMessage('Something bad happened');
 
