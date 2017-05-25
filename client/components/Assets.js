@@ -193,11 +193,9 @@ class Assets extends React.Component {
     //otherwise hide the arrow
     if(remainder > 0){
       this.setState({ showRightArrow: true }, function(){
-        // console.log('show right arrow');
       });
     }else{
       this.setState({ showRightArrow: false }, function(){
-        // console.log('hide right arrow');
       });
     }
 
@@ -206,12 +204,10 @@ class Assets extends React.Component {
 
   selectMedia(media, type){
     var msg = new assetSelection();
-    // console.log(media.zoom);
+
     this.setState({
       selectedMedia: media,
       selectedMediaType: type
-    }, function(){
-      // console.log('state updated');
     });
 
     if(type == 'photo'){
@@ -231,7 +227,13 @@ class Assets extends React.Component {
     sendCommand(msg);
 
     //send fit to height command to CMS as default way to display asset
-    sendCommand(fitVertical);
+    if(media.zoom){
+      console.log('fit to width');
+      sendCommand(fitHorizontal);
+    }else{
+      console.log('fit to height');
+      sendCommand(fitVertical);
+    }
   }
 
   renderControlPanel(){
@@ -258,28 +260,20 @@ class Assets extends React.Component {
   }
 
   sendControlMessage(cmd){
-    // var command = cmd;
-    // console.log()
-    // var path = 'path';
-    console.log('sending control panel command...');
-
+    // console.log('sending control panel command...');
     //send control panel command to CMS
     sendCommand(cmd);
 
   }
 
   renderAssets(d){
-    console.log('RENDER ASSETS');
     var details = {};
     if(this.state.mediaGroup === 'Unit'){
       var unit = getUnitId();
-      console.log(`unit: ${unit}`);
       var found = checkUnitExists(d, unit);
-      console.log(`found: ${found}`);
       try{
         if(found){
           details = getAssets(d, unit);
-          console.log(`details: ${details}`);
         }
       }catch(e){
         console.log('error finding unit media');
@@ -301,7 +295,6 @@ class Assets extends React.Component {
       )
     }else{
       // empty array do nothing
-      // console.log('no media found');
     }
 
   }
@@ -324,7 +317,7 @@ class Assets extends React.Component {
     let history = browserHistory.getHistoryList();
     console.log(history);
 
-    console.log(`last path: ${history[history.length - 2]}`);
+    // console.log(`last path: ${history[history.length - 2]}`);
 
     if(history[history.length - 2] === '/'
       || history[history.length - 2] === '/assets/n'
@@ -336,7 +329,7 @@ class Assets extends React.Component {
       || history[history.length - 2] === '/assets/PHB'
       || history[history.length - 2].includes('compare-units')){
 
-      console.log('came from somewhere else, go to current tag');
+      // console.log('came from somewhere else, go to current tag');
       //go to the current tag url
       browserHistory.push(currentTag);
       return;
