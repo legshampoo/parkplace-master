@@ -34,6 +34,7 @@ module.exports = {
       var toggle = false;
 
       //test lighting message
+      var toggleTimer = 10000;
       setInterval(function(){
         var toggleLights = {
           'lights': ''
@@ -48,7 +49,7 @@ module.exports = {
         var msg = JSON.stringify(toggleLights);
         console.log(msg);
         client.write(msg);
-      }, 1000);
+      }, toggleTimer);
 
     }).on('error', function(err){
       console.log(err);
