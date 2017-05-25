@@ -9,7 +9,40 @@ import CompareUnits from './components/CompareUnits'
 import Grid from './components/Grid'
 import Keypad from './components/Keypad'
 
-//include raven/sentry stuff here
+//---------------------------------------------
+//
+//  RAVEN/SENTRY
+//
+//---------------------------------------------
+import Raven from 'raven-js';
+import { sentry_url, logException } from './config/Raven_Config';
+console.log(`sentry_url: ${sentry_url}`);
+
+// Raven.config(sentry_url, {
+//   tags: {
+//     git_commit: 'randomcommitasdkf',
+//     userLevel: 'editor'
+//   }
+// }).install();
+
+Raven.config(sentry_url);
+
+//is this a test message???
+// logException(new Error('Raven download failed!'), {
+//   email: 'daniel.c.baker@gmail.com'
+// });
+
+//to get error without all the extra info
+// Raven.captureMessage('Something bad happened');
+
+//popup that allows user to submit crash report attached to their current session
+//Raven.showReportDialog();
+
+//---------------------------------------------
+//
+//
+//
+//---------------------------------------------
 
 import { Router, Route, IndexRoute, browserHistory as reactRouterBrowserHistory } from 'react-router';
 import {Provider } from 'react-redux';

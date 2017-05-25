@@ -8,7 +8,7 @@ export function handleNewTag(tag){
   switch(tag){
     case 'ap1':
     case 'ap2':
-      console.log(`handleNewTag ${tag}`);
+      // console.log(`handleNewTag ${tag}`);
       var ap1Unit = store.getState().folio['ap1'];
       var ap2Unit = store.getState().folio['ap2'];
       var bothTagsActive = checkBothActive();
@@ -46,7 +46,7 @@ export function handleNewTag(tag){
   return path;
 }
 
-export function handleTagRemoved(){
+export function handleTagRemoved(callback){
   console.log(`handle tag removed`);
   var tags = store.getState().tags;
   var isTagActive = Object.keys(tags).filter(function(key){
@@ -68,8 +68,24 @@ export function handleTagRemoved(){
     path = '/';
     updateCurrentTag('');
     updateCurrentUnit('');
+    callback();
   }
   return path;
+}
+
+export function checkTagsLeft(){
+  var tags = store.getState().tags;
+  var isTagActive = Object.keys(tags).filter(function(key){
+    return tags[key] === 'true';
+  }, this);
+
+  console.log(isTagActive);
+  if(isTagActive > 0){
+    //do nothing
+    return false;
+  }else{
+    return true;
+  }
 }
 
 export function checkBothActive(){

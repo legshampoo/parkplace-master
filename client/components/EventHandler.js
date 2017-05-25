@@ -6,10 +6,11 @@ import * as tagActions from '../actions/actionCreators';
 import { updateTagStatus, updateCurrentTag, updateCurrentUnit, updateResidenceAssets, updateMediaAssets } from '../actions/actionCreators';
 import * as browserHistory from './History';
 
-import { handleNewTag, handleTagRemoved } from './RouteLogic';
-import { socketConnectCMS, openSocketCMS } from './MessageHandler';
+import { handleNewTag, handleTagRemoved, checkTagsLeft } from './RouteLogic';
+import { socketConnectCMS, openSocketCMS, crestronLightsOn, crestronLightsOff, sendHeartbeat, heartbeat } from './MessageHandler';
 import { lightingControl } from './LightingControls';
 import { getLightingId } from './AssetManager';
+
 
 const io = require('socket.io-client');
 
@@ -21,6 +22,7 @@ class EventHandler extends React.Component {
   componentDidMount(){
 
     socketConnectCMS();
+    // sendHeartbeat();
 
     var options = {
       reconnection: true,
@@ -39,16 +41,16 @@ class EventHandler extends React.Component {
       });
     });
 
-    var pingInterval = 60000;
+    var heartbeatInterval = 10000;
     setInterval(function(){
-      var pingMessage = 'browser client heartbeat';
-      sock.emit('client-ping', {
-        data: pingMessage
-      });
-    }, pingInterval);
+      // var pingMessage = 'browser client heartbeat';
+      // sock.emit('client-ping', {
+      //   data: pingMessage
+      // });
+      sock.emit('crestron-command', JSON.stringify(heartbeat));
+    }, heartbeatInterval);
 
     sock.on('echo', d => {
-      // console.log('server echo:');
       console.log(d);
     })
 
@@ -56,29 +58,17 @@ class EventHandler extends React.Component {
       console.log(d);
     });
 
-    sock.on('server-ping', d => {
+    sock.on('server-heartbeat', d => {
       console.log(d);
     });
 
     sock.on('residence-assets', d => {
       console.log('RESIDENCE ASSETS UPDATED');
-      // console.log(d);
-      // this.setState({
-      //   residences: d
-      // }, function(){
-      //   console.log('RESIDENCES state updated');
-      // });
       updateResidenceAssets(d);
     });
 
     sock.on('media-assets', d => {
       console.log('MEDIA ASSETS UPDATED');
-      // console.log(d);
-      // this.setState({
-      //   media: d
-      // }, function(){
-      //   console.log('MEDIA state updated');
-      // });
       updateMediaAssets(d);
     });
 
@@ -102,6 +92,12 @@ class EventHandler extends React.Component {
         // var path = '/';
 
         if(json.status === 'true'){
+          //send lighting command to crestron
+          console.log('Crestron ON');
+          // sock.emit('crestron-command', {
+          //   data: JSON.stringify(crestronLightsOn)
+          // });
+          sock.emit('crestron-command', JSON.stringify(crestronLightsOn));
           // console.log(json.status);
           var tag = json.tag;
           // console.log(`tag: ${tag}`);
@@ -148,7 +144,22 @@ class EventHandler extends React.Component {
           }
 
 
-          var path = handleTagRemoved();
+          var path = handleTagRemoved(function(){
+            console.log('Crestron OFF');
+            // sock.emit('crestron-command', {
+            //   data: JSON.stringify(crestronLightsOff)
+            // });
+            sock.emit('crestron-command', JSON.stringify(crestronLightsOff));
+          });
+
+          // var isTagStillActive = checkTagsLeft();
+          //
+          // if(isTagStillActive){
+          //   console.log('tag is still active');
+          // }else{
+          //   console.log('tag IS NOT still active');
+          // }
+
 
           //go to path for any remaining token
           // this.context.router.push(path);

@@ -10,8 +10,10 @@
     "clean": "rimraf dist",
     "start:dev": "NODE_ENV=dev node server.js",
     "start:prod": "NODE_ENV=production node server.js",
-    "start:forever": "NODE_ENV=production forever start server.js && npm run forever:logs",
-    "forever:logs": "forever logs server.js -f"
+    "start:forever": "NODE_ENV=production forever start server.js",
+    "forever:logs": "forever logs server.js -f",
+    "supervisor:dev": "NODE_ENV=dev supervisor server.js",
+    "supervisor:prod": "NODE_ENV=prod supervisor server.js"
   },
   "author": "Dan Baker",
   "license": "ISC",

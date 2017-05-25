@@ -65,7 +65,7 @@ export function sendCommand(msg){
 
 
 export function addToFolio(path){
-  console.log('Sending ADD TO FOLIO: ' + path);
+  console.log('ADD TO FOLIO:');
 
   // var url = 'http://' + ip + '/api/folio/';
   var url = 'http://192.168.45.21/api/folio/';
@@ -74,13 +74,17 @@ export function addToFolio(path){
     'url': path
   }
 
+  console.log(JSON.stringify(message));
+  // console.log(message);
+
   fetch(url, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({message})
+    body: JSON.stringify(message)
+    // body: message
   }).then(function(response){
     if(!response.ok){
       throw Error(response.statusText);
@@ -147,15 +151,6 @@ export var rewind = {
   'to': 'wall'
 }
 
-// export var assetSelection = {
-//   'command': 'select-asset',
-//   'to': 'wall',
-//   'params': {
-//     'url': 'path',
-//     'canvas': ''
-//   }
-// }
-
 export function assetSelection() {
   this.command = 'select-asset',
   this.to = 'wall',
@@ -163,4 +158,18 @@ export function assetSelection() {
     'url': '/asset-path',
     'canvas': ''
   }
+}
+
+export var crestronLightsOn = {
+  'lights': 'on'
+}
+
+export var crestronLightsOff = {
+  'lights': 'off'
+}
+
+export var heartbeat = {
+  'from': 'PGS_Table_UI',
+  'status': 'alive',
+  'conductor': 'connected'
 }

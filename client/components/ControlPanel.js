@@ -29,7 +29,6 @@ class ControlPanel extends React.Component {
     var play = this.state.videoPlay;
 
     this.setState({ videoPlay: !play }, function(){
-      // console.log(`video play: ${this.state.videoPlay}`);
       var cmd = {};
       if(this.state.videoPlay){
         cmd = resume;

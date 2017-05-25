@@ -6,21 +6,11 @@ import thunkMiddleware from 'redux-thunk';
 
 import rootReducer from './reducers/index';
 
-//import sample data
-// import data from './data/data';
-// import comments from './data/comments';
-// import posts from './data/posts';
-
-//create an object for the default data
-// const defaultState = {
-//   data: data,
-//   ap1: false
-// }
-
 // Middlewares
 const middlewares = [thunkMiddleware];
 // Create logger
 const logger = createLogger();
+
 if (process.env.NODE_ENV !== 'production') {
   // middlewares.push(logger);
 } else {

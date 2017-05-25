@@ -65,13 +65,8 @@ io.on('connection', (socket) => {
 
   var pingInterval = setInterval(function(){
     var data = 'Localhost Heartbeat';
-    socket.emit('server-ping', { data: data })
+    socket.emit('server-heartbeat', { data: data })
   }, 60000);
-
-  socket.on('client-ping', (d) => {
-    console.log('ping: ' + d.data);
-    socket.emit('echo', d);
-  });
 
   socket.on('request-assets', (d) => {
     console.log('client requesting ' + d.type + ' assets');
@@ -80,6 +75,10 @@ io.on('connection', (socket) => {
     }else if(d.type === 'media'){
       socket.emit('media-assets', { data: mediaAssets });
     }
+  });
+
+  socket.on('crestron-command', (d) => {
+    crestron.send(d);
   })
 
   socket.on('disconnect', (d) => {
@@ -172,3 +171,24 @@ function handleConnection(conn){
     console.log('Connection %s error: %s', remoteAddress, err.message);
   }
 }
+
+
+//----------------------------------
+//
+//  TCP Client Messaging to Crestron
+//
+//----------------------------------
+// var netCrestron = require('net');
+// var clientCrestron = new netCrestron.Socket();
+var crestron = require('./Crestron');
+
+crestron.connect();
+
+
+//test crash
+var killTimer = 60000;
+console.log('APPLICATION WILL BE KILLED IN ' + killTimer / 1000 + ' SECONDS');
+setTimeout(function(){
+  console.log('KILLING APPLICATION');
+  process.kill(process.pid)
+}, killTimer);
