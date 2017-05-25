@@ -3,7 +3,7 @@ var client;
 var address = '192.168.45.169';
 // var port = 5154;  //port for my laptop
 var port = 5153;  //port for mac mini
-var timeout = 5000;
+var timeout = 10000;
 var reconnectTimer = 30000;
 var toggleTimer = 10000;
 

@@ -60,16 +60,27 @@ export function getUnitId(){
   //if the current tag is PH1 or PH2
   if(store.getState().current.currentTag == 'PHA' || store.getState().current.currentTag == 'PHB'){
     unitId = store.getState().current.currentTag;
-    if(unitId == 'PHA' || unitId == 'PHB'){
-      unitId = unitId.slice(0, 2) + " " + unitId.slice(2);
-    }
-  }else{
-    unitId = store.getState().current.currentUnit;
-    console.log(`unitId in getUnitId: ${unitId}`);
-    if(unitId == 'PHA' || unitId == 'PHB'){
-      unitId = unitId.slice(0, 2) + " " + unitId.slice(2);
-    }
+    // if(unitId == 'PHA' || unitId == 'PHB'){
+    //   unitId = unitId.slice(0, 2) + " " + unitId.slice(2);
+    // }
+  }else if(store.getState().current.currentTag === 'ap1'){
+    unitId = store.getState().folio.ap1;
+  }else if(store.getState().current.currentTag === 'ap2'){
+    unitId = store.getState().folio.ap2;
   }
+
+  if(unitId == 'PHA' || unitId == 'PHB'){
+    unitId = unitId.slice(0, 2) + " " + unitId.slice(2);
+  }
+
+    //original
+  // }else{
+  //   unitId = store.getState().current.currentUnit;
+  //   console.log(`unitId in getUnitId: ${unitId}`);
+  //   if(unitId == 'PHA' || unitId == 'PHB'){
+  //     unitId = unitId.slice(0, 2) + " " + unitId.slice(2);
+  //   }
+  // }
 
   return unitId;
 }
