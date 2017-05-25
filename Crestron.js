@@ -37,21 +37,21 @@ module.exports = {
       var toggle = false;
 
       //test lighting message
-      setInterval(function(){
-        var toggleLights = {
-          'lights': ''
-        }
-        toggle = !toggle;
-        if(toggle){
-          toggleLights.lights = 'on';
-        }else{
-          toggleLights.lights = 'off';
-        }
-
-        var msg = JSON.stringify(toggleLights);
-        console.log(msg);
-        client.write(msg);
-      }, toggleTimer);
+      // setInterval(function(){
+      //   var toggleLights = {
+      //     'lights': ''
+      //   }
+      //   toggle = !toggle;
+      //   if(toggle){
+      //     toggleLights.lights = 'on';
+      //   }else{
+      //     toggleLights.lights = 'off';
+      //   }
+      //
+      //   var msg = JSON.stringify(toggleLights);
+      //   console.log(msg);
+      //   client.write(msg);
+      // }, toggleTimer);
 
     }).on('error', function(err){
       console.log(err);

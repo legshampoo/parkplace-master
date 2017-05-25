@@ -17,7 +17,7 @@ export function updateMediaAssets(data){
 }
 
 export function updateCurrentTag(tagName){
-
+  console.log('updateCurrentTag');
   store.dispatch({
     type: 'UPDATE_CURRENT_TAG',
     tagName: tagName
@@ -62,10 +62,10 @@ export function assignUnitToToken(tagName, unit){
   })
 }
 
-export function removeUnitFromToken(tagName, unit){
-  store.dispatch({
-    type: 'REMOVE_UNIT_FROM_TOKEN',
-    tagName: tagName,
-    unit
-  })
-}
+// export function removeUnitFromToken(tagName, unit){
+//   store.dispatch({
+//     type: 'REMOVE_UNIT_FROM_TOKEN',
+//     tagName: tagName,
+//     unit
+//   })
+// }

@@ -100,15 +100,17 @@ class EventHandler extends React.Component {
           sock.emit('crestron-command', JSON.stringify(crestronLightsOn));
           // console.log(json.status);
           var tag = json.tag;
-          // console.log(`tag: ${tag}`);
+          console.log(`tag: ${tag}`);
 
           updateCurrentTag(tag);
 
+          console.log('after updateCurrentTag');
           // var tag = this.props.current.currentTag;
 
           var path = handleNewTag(tag);
-          // console.log(`path: ${path}`);
+          console.log(`path: ${path}`);
           // this.context.router.push(path);
+          // console.log(path);
           browserHistory.push(path);
 
           return;

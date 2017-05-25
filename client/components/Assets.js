@@ -70,14 +70,22 @@ class Assets extends React.Component {
           unitLED = 'PHA';
         }else if(tag === 'PHB'){
           unitLED = 'PHB';
-        }else if(tag === 'ap1' || tag === 'ap2'){
-          unitLED = this.props.current.currentUnit;
-          console.log(`UnitLED: ${unitLED}`);
+        }else if(tag === 'ap1'){
+          unitLED = this.props.folio.ap1;
+        }else if(tag === 'ap2'){
+          unitLED = this.props.folio.ap2;
         }
+
+        console.log(`UnitLED: ${unitLED}`);
+        // }else if(tag === 'ap1' || tag === 'ap2'){
+        //   unitLED = this.props.current.currentUnit;
+        //   console.log(`UnitLED: ${unitLED}`);
+        // }
 
         var led_id = getLightingId(unitLED);
         //send request to LED lighting API
         console.log(`${unitLED} LED On: ${led_id}`);
+
         if(led_id != 0){
           lightingControl(led_id, true);
         }else{
@@ -261,14 +269,17 @@ class Assets extends React.Component {
   }
 
   renderAssets(d){
+    console.log('RENDER ASSETS');
     var details = {};
     if(this.state.mediaGroup === 'Unit'){
       var unit = getUnitId();
+      console.log(`unit: ${unit}`);
       var found = checkUnitExists(d, unit);
-
+      console.log(`found: ${found}`);
       try{
         if(found){
           details = getAssets(d, unit);
+          console.log(`details: ${details}`);
         }
       }catch(e){
         console.log('error finding unit media');

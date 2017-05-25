@@ -5,16 +5,16 @@ export function current(state=initialState.current, action){
   switch(action.type){
 
     case 'UPDATE_CURRENT_TAG':
-
+      console.log('inside reducer');
       return Object.assign({}, state, {
         ['currentTag'] : action.tagName
-      })
+      });
 
-      case 'UPDATE_CURRENT_UNIT':
+    case 'UPDATE_CURRENT_UNIT':
 
-        return Object.assign({}, state, {
-          ['currentUnit'] : action.unit
-      })
+      return Object.assign({}, state, {
+        ['currentUnit'] : action.unit
+      });
 
     default:
       return state;

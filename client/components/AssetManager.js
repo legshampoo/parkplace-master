@@ -65,6 +65,7 @@ export function getUnitId(){
     }
   }else{
     unitId = store.getState().current.currentUnit;
+    console.log(`unitId in getUnitId: ${unitId}`);
     if(unitId == 'PHA' || unitId == 'PHB'){
       unitId = unitId.slice(0, 2) + " " + unitId.slice(2);
     }
