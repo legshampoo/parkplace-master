@@ -4,6 +4,7 @@ var address = '192.168.45.169';
 var port = 5153;
 var timeout = 5000;
 var reconnectTimer = 30000;
+var toggleTimer = 10000;
 
 module.exports = {
 
@@ -35,7 +36,6 @@ module.exports = {
       var toggle = false;
 
       //test lighting message
-      var toggleTimer = 10000;
       setInterval(function(){
         var toggleLights = {
           'lights': ''

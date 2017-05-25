@@ -186,9 +186,9 @@ crestron.connect();
 
 
 //test crash
-var killTimer = 60000;
-console.log('APPLICATION WILL BE KILLED IN ' + killTimer / 1000 + ' SECONDS');
-setTimeout(function(){
-  console.log('KILLING APPLICATION');
-  process.kill(process.pid)
-}, killTimer);
+// var killTimer = 60000;
+// console.log('APPLICATION WILL BE KILLED IN ' + killTimer / 1000 + ' SECONDS');
+// setTimeout(function(){
+//   console.log('KILLING APPLICATION');
+//   process.kill(process.pid)
+// }, killTimer);
