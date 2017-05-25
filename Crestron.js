@@ -3,6 +3,7 @@ var client;
 var address = '192.168.45.169';
 var port = 5153;
 var timeout = 5000;
+var reconnectTimer = 30000;
 
 module.exports = {
 
@@ -65,7 +66,7 @@ module.exports = {
       setTimeout(function(){
         console.log('attemptimg to reconnect Crestron...');
         _this.connect();
-      }, 5000);
+      }, reconnectTimer);
     });
 
     // client.on('end', function(){
