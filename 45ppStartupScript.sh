@@ -1,1 +1,2 @@
-/Users/45ppsc/Documents/45PARK/45park/parkplace-master npm run supervisor:dev
+cd /Users/45ppsc/Documents/45PARK/45park/parkplace-master
+npm run supervisor:dev
