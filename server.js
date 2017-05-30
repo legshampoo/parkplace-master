@@ -42,6 +42,7 @@ const server = app.listen(PORT, 'localhost', function(err){
     return;
   }else{
     console.log('45ParkPlace User Interface Server listening at http://localhost:' + PORT);
+    open('http://localhost:' + PORT);
   }
 });
 
