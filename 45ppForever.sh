@@ -1,1 +1,1 @@
-npm run start:forever
+npm run supervisor:dev
