@@ -1,4 +1,4 @@
-var bodyParser = require('body-parser')
+// var bodyParser = require('body-parser')
 
 var ip = '192.168.45.21';
 const socketPortCMS = 8080;
