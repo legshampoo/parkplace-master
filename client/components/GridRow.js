@@ -20,8 +20,12 @@ class GridRow extends React.Component {
   }
 
   createUnit(unit){
+    // console.log(unit);
     return(
-      <GridUnit key={unit} name={unit} interactive={true}/>
+      <GridUnit
+        key={unit}
+        name={unit.includes('empty') ? '' : unit}
+        interactive={unit.includes('empty') ? false : true}/>
     )
   }
 
@@ -29,11 +33,25 @@ class GridRow extends React.Component {
     var list = [];
     var d = this.state.residences;
     //get all of the units of the current type (# of bedrooms)
+    var count = 0;
     Object.keys(d).map(function(key){
-      if(d[key].bedrooms == type){
+      //if it's the right number of bedrooms and it's checked as featured in the CMS
+      if(d[key].bedrooms == type && d[key].featured){
         list.push(d[key].name);
+        count++;  //keeps track of how many in the row
+      }else{
+
       }
     });
+
+    //if there aren't enough units to fill a row
+    if(count <= 5){
+      //add a blank title
+      for(var i = count; i <= 5; i++){
+        var blank = 'empty_' + i;
+        list.push(blank);
+      }
+    }
 
     //to view 4 units per page
     var viewIndex = 0;
@@ -46,7 +64,11 @@ class GridRow extends React.Component {
   render(){
     return(
       <div className='grid-row'>
-        <GridUnit key={this.props.name} name={this.props.rowName} interactive={false}/>
+        <GridUnit
+          key={this.props.name}
+          name={this.props.rowName}
+          interactive={false}
+        />
         {this.createUnits(this.props.type)}
       </div>
     )

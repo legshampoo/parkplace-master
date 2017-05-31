@@ -7,13 +7,30 @@ import * as tagActions from '../actions/actionCreators';
 class AddToFolio extends React.Component{
   constructor(props){
     super(props)
+    this.renderIcon = this.renderIcon.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    // console.log('got props');
+    // if(this.props.selectedMedia.saved !== nextProps.selectedMedia.saved)
+    // {
+    //        this.renderIcon();
+    // }
+  }
+
+  renderIcon(){
+    if(this.props.saved){
+      return '-';
+    }else{
+      return '+';
+    }
+  }
   render(){
     return(
-      <div className='add-to-folio-button'
+      <div
+        className='add-to-folio-button'
         onClick={(e) => this.props.add(this.props.selectedMedia)}>
-        +
+        {this.renderIcon()}
       </div>
     )
   }

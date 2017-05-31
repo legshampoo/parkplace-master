@@ -8,16 +8,14 @@ class Details extends React.Component{
   }
 
   renderDetails(d){
-    // console.log(d);
     return(
         Object.keys(d).map(function(key, index){
           if(typeof(d[key]) === 'object'){
-            // console.log('found object');
             return;
           }else{
-            // console.log(key, d[key]);
             if(
               key === 'availability' ||
+              key === 'featured' ||
               key === 'unit' ||
               key === 'name' ||
               key === 'line' ||
@@ -25,10 +23,13 @@ class Details extends React.Component{
               {
                 //do nothing
               }else{
+                console.log(key);
+                var str = key.replace(/_/g, ' ');
+                var title = str.split(' ').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ');
                 return(
                   <DetailText
-                    title={key}
-                    value={d[key]}
+                    title={title}
+                    value={d[key].toString()}
                     key={index} />
                 )
               }

@@ -7,7 +7,7 @@ import ControlButton from './ControlButton';
 import RemoveUnit from './RemoveUnit';
 // import { sendCommand, resume } from './MessageHandler';
 
-import { sendCommand, fitHorizontal, fitVertical, panLeft, panRight, panCenter, resume, pause, rewind, addToFolio } from './MessageHandler';
+import { sendCommand, fitHorizontal, fitVertical, panLeft, panRight, panCenter, resume, pause, rewind, addToFolio, removeFromFolio } from './MessageHandler';
 
 class ControlPanel extends React.Component {
   constructor(props){
@@ -15,6 +15,7 @@ class ControlPanel extends React.Component {
     this.renderControls = this.renderControls.bind(this);
     this.handleAddToFolio = this.handleAddToFolio.bind(this);
     this.videoPlay = this.videoPlay.bind(this);
+    this.updateFolioStatus = this.updateFolioStatus.bind(this);
 
     this.state = {
       videoPlay: true
@@ -22,6 +23,7 @@ class ControlPanel extends React.Component {
   }
 
   componentDidMount(){
+    // console.log(this.props.selectedMedia);
     // console.log(this.props.selectedMedia);
   }
 
@@ -47,8 +49,36 @@ class ControlPanel extends React.Component {
     }else{
       mediaPath = media.wall;
     }
-    console.log('add to folio');
-    addToFolio(mediaPath);
+
+    if(!media.saved){
+      //add to folio, return with the folio id for later use
+      var _this = this;
+      addToFolio(mediaPath, function(id){
+        console.log(`folio id: ${id}`);
+        media.folio_id = id;
+        media.saved = true;
+        _this.updateFolioStatus(media);
+      });
+
+    }else{
+      var _this = this;
+      console.log(`removing ${media.folio_id} from folio`);
+      removeFromFolio(media, function(id){
+        console.log(`${id} removed from folio success`);
+        // media.saved = !media.saved;
+        // this.setState({ selectedMedia: media });
+        media.folio_id = id;
+        media.saved = false;
+        _this.updateFolioStatus(media);
+      });
+    }
+  }
+
+  updateFolioStatus(media){
+    // media.saved = !media.saved;
+    this.setState({ selectedMedia: media }, function(){
+      console.log('finished updating media status');
+    });
   }
 
   renderBlankPanel(){
@@ -65,7 +95,9 @@ class ControlPanel extends React.Component {
           <AddToFolio
             message={addToFolio}
             selectedMedia={this.props.selectedMedia}
-            add={this.handleAddToFolio}/>
+            add={this.handleAddToFolio}
+            saved={this.props.selectedMedia.saved}
+          />
           <div className='control-panel-right'>
             <ControlButton
               message={fitHorizontal}
@@ -103,7 +135,9 @@ class ControlPanel extends React.Component {
           <AddToFolio
             message={addToFolio}
             selectedMedia={this.props.selectedMedia}
-            add={this.handleAddToFolio}/>
+            add={this.handleAddToFolio}
+            saved={this.props.selectedMedia.saved}
+        />
         </div>
       )
     }
@@ -115,12 +149,14 @@ class ControlPanel extends React.Component {
         <AddToFolio
           message={addToFolio}
           add={this.handleAddToFolio}
-          selectedMedia={this.props.selectedMedia}/>
+          selectedMedia={this.props.selectedMedia}
+          saved={this.props.selectedMedia.saved}
+        />
         <div className='control-panel-left'>
           <ControlButton
             message={resume}
             name='play'
-            icon={require('../assets/icons/play.png')}
+            icon={this.state.videoPlay ? require('../assets/icons/pause.png') : require('../assets/icons/play.png')}
             // handleClick={this.props.handleClick.bind(this)}/>
             handleClick={this.videoPlay.bind(this)}/>
         </div>
@@ -136,6 +172,7 @@ class ControlPanel extends React.Component {
   }
 
   renderControls(type){
+    // console.log(this.props.selectedMedia);
     switch(type){
       case 'blank':
         return this.renderBlankPanel();

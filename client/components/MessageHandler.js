@@ -1,3 +1,5 @@
+var bodyParser = require('body-parser')
+
 var ip = '192.168.45.21';
 const socketPortCMS = 8080;
 var socketCMS;
@@ -64,7 +66,7 @@ export function sendCommand(msg){
 }
 
 
-export function addToFolio(path){
+export function addToFolio(path, callback){
   console.log('ADD TO FOLIO:');
 
   // var url = 'http://' + ip + '/api/folio/';
@@ -75,7 +77,6 @@ export function addToFolio(path){
   }
 
   console.log(JSON.stringify(message));
-  // console.log(message);
 
   fetch(url, {
     method: 'POST',
@@ -84,14 +85,49 @@ export function addToFolio(path){
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(message)
-    // body: message
+  }).then(function(response){
+    if(!response.ok){
+      throw Error(response.statusText);
+    }
+    return response.json();
+  }).then(function(data){
+    // console.log(data);
+    callback(data.id);
+  }).catch(function(error){
+    console.log('ERROR: ', error);
+  });
+
+}
+
+export function removeFromFolio(media, callback){
+  console.log('REMOVE FROM FOLIO:');
+  // console.log(media.folio_id);
+  // var url = 'http://' + ip + '/api/folio/';
+  var url = 'http://192.168.45.21/api/folio/' + media.folio_id + '/';
+  // var path = 'fake_path';
+  // var message = {
+  //   'url': path
+  // }
+
+  // console.log(JSON.stringify(message));
+  // console.log(message);
+
+  fetch(url, {
+    method: 'DELETE',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    }
   }).then(function(response){
     if(!response.ok){
       throw Error(response.statusText);
     }
     return response;
-  }).then(function(error){
-    console.log(error);
+  }).then(function(res){
+    console.log(res);
+    callback(media.folio_id);
+  }).catch(function(err){
+    console.log('ERROR: ', err);
   });
 }
 

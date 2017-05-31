@@ -83,7 +83,7 @@ class Keypad extends React.Component {
     return(
       <div className='view'>
         <div className='keypad-container'>
-          <NavButton styleClass='nav-keypad-to-grid' name='Chart Option' path='/grid'/>
+          <NavButton styleClass='nav-keypad-to-grid' name='FILTER' path='/grid'/>
 
           <div className='keypad'>
             <KeypadConsole userInput={this.state.input} updateInput={this.updateInput}/>

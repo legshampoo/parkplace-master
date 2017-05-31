@@ -205,9 +205,13 @@ class Assets extends React.Component {
   selectMedia(media, type){
     var msg = new assetSelection();
 
+    // media.saved = false;
+
     this.setState({
       selectedMedia: media,
       selectedMediaType: type
+    }, function(){
+      // console.log(this.state.selectedMedia);
     });
 
     if(type == 'photo'){
