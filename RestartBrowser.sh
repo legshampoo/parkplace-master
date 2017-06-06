@@ -1,0 +1,1 @@
+/Applications/Google\ Chrome.app/contents/MacOS/Google\ Chrome --kiosk "http://localhost:7770"

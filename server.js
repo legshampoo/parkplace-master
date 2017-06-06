@@ -1,6 +1,9 @@
 var path = require('path');
 var express = require('express');
-var getData = require('./RequestData');
+var open = require('open');   //not used anymore
+var getData = require('./RequestData');  //for handling cms data
+var startup = require('./startup');  //for handling startup/restart/crash processes
+
 
 //------------------------------
 //
@@ -8,7 +11,6 @@ var getData = require('./RequestData');
 //
 //------------------------------
 var app = express();
-var open = require('open');
 
 var PORT = 7770;
 const NODE_ENV = process.env.NODE_ENV;
@@ -35,16 +37,43 @@ app.get('*', function(req, res){
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-//start the HTTP server
+
+
+
+//------------------------------
+//
+// KILL THE BROWSER, then wait and start the browser again
+//
+//------------------------------
+var waitBeforeRestart = 5000;
+
+//kill chrome
+startup.killBrowser();
+
+//open chrome in kiosk mode in 5 seconds
+setTimeout(startup.openBrowser, waitBeforeRestart);
+
+
+
+
+//------------------------------
+//
+//  start the HTTP server
+//
+//------------------------------
 const server = app.listen(PORT, 'localhost', function(err){
   if(err){
     console.log(err);
     return;
   }else{
     console.log('45ParkPlace User Interface Server listening at http://localhost:' + PORT);
-    open('http://localhost:' + PORT);
   }
 });
+
+
+
+
+
 
 //------------------------------
 //
@@ -90,9 +119,12 @@ io.on('connection', (socket) => {
 });
 
 
+
+
+
 //----------------------------------------
 //
-//REQUEST DATA FROM CMS AND THEN RELAY TO CLIENT
+//  REQUEST DATA FROM CMS AND THEN RELAY TO CLIENT
 //
 //----------------------------------------
 
@@ -119,9 +151,12 @@ getData.fetchData('media', function(d){
 });
 
 
+
+
+
 //------------------------------
 //
-//  TCP SERVER
+//  TCP SERVER (for communicating with RFID tags)
 //
 //------------------------------
 var net = require('net');
@@ -179,17 +214,24 @@ function handleConnection(conn){
 //  TCP Client Messaging to Crestron
 //
 //----------------------------------
-// var netCrestron = require('net');
-// var clientCrestron = new netCrestron.Socket();
 var crestron = require('./Crestron');
 
 crestron.connect();
 
 
-//test crash
-// var killTimer = 60000;
-// console.log('APPLICATION WILL BE KILLED IN ' + killTimer / 1000 + ' SECONDS');
-// setTimeout(function(){
-//   console.log('KILLING APPLICATION');
-//   process.kill(process.pid)
-// }, killTimer);
+
+
+
+
+//------------------------------
+//
+//  TESTING THE CRASH (comment this out for deployment)
+//
+//------------------------------
+
+var killTimer = 30000;
+console.log('APPLICATION WILL BE KILLED IN ' + killTimer / 1000 + ' SECONDS');
+setTimeout(function(){
+  console.log('KILLING APPLICATION');
+  process.kill(process.pid)
+}, killTimer);
