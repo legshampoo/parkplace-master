@@ -229,9 +229,4 @@ crestron.connect();
 //
 //------------------------------
 
-var killTimer = 30000;
-console.log('APPLICATION WILL BE KILLED IN ' + killTimer / 1000 + ' SECONDS');
-setTimeout(function(){
-  console.log('KILLING APPLICATION');
-  process.kill(process.pid)
-}, killTimer);
+// startup.killServer();
