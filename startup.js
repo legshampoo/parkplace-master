@@ -15,6 +15,7 @@ module.exports = {
   },
 
   openBrowser: function(){
+    //comment this out when devving, otherwise you can't use console
       exec('./RestartBrowser.sh', (error, stdout, stderr) => {
         if(error){
           console.error('open error: ' + error);
