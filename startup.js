@@ -16,10 +16,10 @@ module.exports = {
 
   openBrowser: function(){
       exec('./RestartBrowser.sh', (error, stdout, stderr) => {
-      if(error){
-        console.error('open error: ' + error);
-      }
-    })
+        if(error){
+          console.error('open error: ' + error);
+        }
+      })
   },
 
   killServer: function(){
