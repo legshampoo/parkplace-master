@@ -8,9 +8,11 @@ class Home extends React.Component {
   render(){
     return(
       <div className='home-screen'>
+      	sjdhfjsdkhfjsdhfskdjfskdl
+      	fkerjfkerjfk
         {/* <Toggle isHidden={false} child={DevMenu}/> */}
         {/* <ControlPanel /> */}
-        {/* <HomepageLogo /> */}
+        <HomepageLogo />
       </div>
     )
   }

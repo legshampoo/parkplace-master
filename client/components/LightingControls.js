@@ -1,4 +1,7 @@
-const ip = '192.168.45.122';
+
+//ip address of model LED lighting computer
+// const ip = '192.168.45.122';  // localhost...
+const ip = '192.168.45.124';  //new ip address
 
 //takes the led_id and a true/false for on/off
 export function lightingControl(id, on){
