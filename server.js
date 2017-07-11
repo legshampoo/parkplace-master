@@ -48,10 +48,10 @@ app.get('*', function(req, res){
 var waitBeforeRestart = 5000;
 
 //kill chrome
-// startup.killBrowser();
+startup.killBrowser();
 
 //open chrome in kiosk mode in 5 seconds
-// setTimeout(startup.openBrowser, waitBeforeRestart);
+setTimeout(startup.openBrowser, waitBeforeRestart);
 
 
 
