@@ -39,7 +39,7 @@ export function lightingControl(id, on){
 
   // console.log(`fetching`);
   console.log(`Sending LED: ${id}, ${on}`);
-  
+
   console.log(url);
   
   fetch(url).then(function(response){
@@ -52,6 +52,34 @@ export function lightingControl(id, on){
     return response;
   }).then(function(error){
     // console.log(`response error?`);
+    console.log(error);
+  });
+}
+
+
+export function LED_ALL_OFF(){
+  var url = 'http://' + ip + '/api/config/2/off/';
+
+  var params = {
+    method: 'GET',
+    headers: {
+      // 'Accept': 'application/json',
+      'Accept': 'text/html',
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    },
+    mode: 'no-cors'
+  }
+
+  fetch(url)
+  .then(function(response){
+    if(!response.ok){
+      throw Error(response.statusText);
+    }
+    
+    return response;
+  })
+  .then(function(error){
     console.log(error);
   });
 }

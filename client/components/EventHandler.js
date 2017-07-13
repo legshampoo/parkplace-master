@@ -8,7 +8,7 @@ import * as browserHistory from './History';
 
 import { handleNewTag, handleTagRemoved, checkTagsLeft } from './RouteLogic';
 import { socketConnectCMS, openSocketCMS, crestronLightsOn, crestronLightsOff, sendHeartbeat, heartbeat } from './MessageHandler';
-import { lightingControl } from './LightingControls';
+import { lightingControl, lightingControl_ALL_OFF } from './LightingControls';
 import { getLightingId } from './AssetManager';
 
 
@@ -155,8 +155,9 @@ class EventHandler extends React.Component {
             //send an 'all off' command to LED lights
             var all = 2;
 
-            lightingControl(all, false);
-            
+            // lightingControl(all, false);
+            lightingControl_ALL_OFF();
+
             sock.emit('crestron-command', JSON.stringify(crestronLightsOff));
           });
 
