@@ -310,7 +310,7 @@ class Assets extends React.Component {
 
     if(led_id != 0){
       //send command to turn LED lights off
-      // console.log(`Remove Unit: ${unit} , LED OFF: ${led_id}`);
+      console.log(`Remove Unit: ${unit} , LED OFF: ${led_id}`);
       lightingControl(led_id, false);
     }
 

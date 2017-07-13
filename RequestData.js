@@ -1,7 +1,10 @@
 var http = require('http');
 var fs = require('fs');
 var request = require('request');
-var fetchTimer = 1000 * 60;
+var oneMinute = 1000 * 60;
+var oneHour = oneMinute * 60;
+
+var fetchTimer = oneHour * 60;
 var requestTimeout = 1000 * 10;
 
 module.exports = {

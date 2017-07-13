@@ -16,7 +16,7 @@
     "supervisor:dev": "NODE_ENV=dev supervisor server.js",
     "supervisor:prod": "NODE_ENV=prod supervisor server.js"
   },
-  "author": "Dan Baker",
+  "author": "Dan Baker", 
   "license": "ISC",
   "dependencies": {
     "babel-core": "^6.23.1",

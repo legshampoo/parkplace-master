@@ -38,7 +38,8 @@ export function lightingControl(id, on){
   }
 
   // console.log(`fetching`);
-  console.log(`Sending LED: ${id} ${on}`);
+  console.log(`Sending LED: ${id}, ${on}`);
+  
   console.log(url);
   
   fetch(url).then(function(response){
