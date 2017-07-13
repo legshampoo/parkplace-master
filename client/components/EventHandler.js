@@ -152,6 +152,11 @@ class EventHandler extends React.Component {
             // sock.emit('crestron-command', {
             //   data: JSON.stringify(crestronLightsOff)
             // });
+            //send an 'all off' command to LED lights
+            var all = 2;
+
+            lightingControl(all, false);
+            
             sock.emit('crestron-command', JSON.stringify(crestronLightsOff));
           });
 
