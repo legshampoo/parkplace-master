@@ -153,7 +153,6 @@ class EventHandler extends React.Component {
             //   data: JSON.stringify(crestronLightsOff)
             // });
             //send an 'all off' command to LED lights
-            var all = 2;
 
             // lightingControl(all, false);
             lightingControl_ALL_OFF();

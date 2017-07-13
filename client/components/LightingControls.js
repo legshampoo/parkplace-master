@@ -57,7 +57,9 @@ export function lightingControl(id, on){
 }
 
 
-export function LED_ALL_OFF(){
+export function lightingControl_ALL_OFF(){
+  console.log('sending ALL OFF command to LED lights');
+
   var url = 'http://' + ip + '/api/config/2/off/';
 
   var params = {
@@ -76,10 +78,11 @@ export function LED_ALL_OFF(){
     if(!response.ok){
       throw Error(response.statusText);
     }
-    
+    console.log(response);
     return response;
   })
   .then(function(error){
     console.log(error);
   });
+  
 }
