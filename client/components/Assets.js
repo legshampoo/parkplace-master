@@ -76,7 +76,7 @@ class Assets extends React.Component {
           unitLED = this.props.folio.ap2;
         }
 
-        console.log(`UnitLED: ${unitLED}`);
+        // console.log(`UnitLED: ${unitLED}`);
         // }else if(tag === 'ap1' || tag === 'ap2'){
         //   unitLED = this.props.current.currentUnit;
         //   console.log(`UnitLED: ${unitLED}`);
@@ -84,7 +84,7 @@ class Assets extends React.Component {
 
         var led_id = getLightingId(unitLED);
         //send request to LED lighting API
-        console.log(`${unitLED} LED On: ${led_id}`);
+        // console.log(`${unitLED} LED On: ${led_id}`);
 
         if(led_id != 0){
           lightingControl(led_id, true);
@@ -108,7 +108,7 @@ class Assets extends React.Component {
         mediaGroup = 'Team';
         break;
       default:
-        console.log('default');
+        console.log('update props: default (no assets selected)');
         mediaGroup = '';
         break;
     }
@@ -138,7 +138,7 @@ class Assets extends React.Component {
     if(this.state.previousTag !== this.props.current.currentTag) {
       // console.log(this.props.location, this.props.match)
       this.setState({ previousTag: this.props.current.currentTag }, function(){
-        console.log('tag is different then previous, preparing to update...');
+        console.log('tag change, preparing to update...');
         this.updateProps();
       });
     }
@@ -310,7 +310,7 @@ class Assets extends React.Component {
 
     if(led_id != 0){
       //send command to turn LED lights off
-      console.log(`Remove Unit: ${unit} , LED OFF: ${led_id}`);
+      // console.log(`Remove Unit: ${unit} , LED OFF: ${led_id}`);
       lightingControl(led_id, false);
     }
 
@@ -319,7 +319,7 @@ class Assets extends React.Component {
     assignUnitToToken(currentTag, '');
     var path = currentTag;
     let history = browserHistory.getHistoryList();
-    console.log(history);
+    // console.log(history);
 
     // console.log(`last path: ${history[history.length - 2]}`);
 
@@ -339,7 +339,7 @@ class Assets extends React.Component {
       return;
     }else{
       //go back (should either be keypad or grid)
-      console.log(`came from keypad or grid, go back`);
+      // console.log(`came from keypad or grid, go back`);
       browserHistory.goBack();
       return;
     }

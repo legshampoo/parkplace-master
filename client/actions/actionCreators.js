@@ -17,7 +17,7 @@ export function updateMediaAssets(data){
 }
 
 export function updateCurrentTag(tagName){
-  console.log('updateCurrentTag');
+  // console.log('updateCurrentTag');
   store.dispatch({
     type: 'UPDATE_CURRENT_TAG',
     tagName: tagName

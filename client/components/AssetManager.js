@@ -17,17 +17,18 @@ export function combineAssets(d, type){
     }
   }else{
     //consolidate non unit photos and videos into one array
-    for(var i = 0; i < d.videos.length; i++){
-      // d.videos[i].type = 'video';  //ORIGINAL
-      // console.log(`video: ${i}`);
-      d.videos[i].assetType = 'video';
-      data.push(d.videos[i]);
-    }
+    //photos first, then animations
     for(var i = 0; i < d.photos.length; i++){
       // d.photos[i].type = 'photo';  //ORIGINAL
       // console.log(`photo: ${i}`);
       d.photos[i].assetType = 'photo';
       data.push(d.photos[i]);
+    }
+    for(var i = 0; i < d.videos.length; i++){
+      // d.videos[i].type = 'video';  //ORIGINAL
+      // console.log(`video: ${i}`);
+      d.videos[i].assetType = 'video';
+      data.push(d.videos[i]);
     }
   }
 

@@ -5,7 +5,7 @@ export function current(state=initialState.current, action){
   switch(action.type){
 
     case 'UPDATE_CURRENT_TAG':
-      console.log('inside reducer');
+      // console.log('inside reducer');
       return Object.assign({}, state, {
         ['currentTag'] : action.tagName
       });

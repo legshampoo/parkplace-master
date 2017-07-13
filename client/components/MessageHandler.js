@@ -10,7 +10,7 @@ export function socketConnectCMS(){
   socketCMS = new WebSocket('ws://' + ip + ':' + socketPortCMS);
 
   socketCMS.onopen = function(event){
-    console.log('CMS WEBSOCKET CONNECTED');
+    console.log('Browser connection to CMS successful...');
   }
 
   socketCMS.onmessage = event => {

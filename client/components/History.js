@@ -3,13 +3,13 @@ import { browserHistory } from "react-router";
 let history = [];
 
 export function push(url) {
-  console.log("going to ", url);
+  // console.log("going to ", url);
   history.push(url);
   browserHistory.push(url);
 }
 
 export function goBack() {
-  console.log(`go back`);
+  // console.log(`go back`);
   if (history.length) {
     history.pop();
     // console.log(`going back to ${history[history.length - 1]}`);

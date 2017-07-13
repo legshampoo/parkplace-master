@@ -16,7 +16,7 @@ import Keypad from './components/Keypad'
 //---------------------------------------------
 import Raven from 'raven-js';
 import { sentry_url, logException } from './config/Raven_Config';
-console.log(`sentry_url: ${sentry_url}`);
+// console.log(`sentry_url: ${sentry_url}`);
 
 // Raven.config(sentry_url, {
 //   tags: {

@@ -23,9 +23,32 @@ class Details extends React.Component{
               {
                 //do nothing
               }else{
-                console.log(key);
+                console.log(`key: ${key}`);
+                console.log(`value: ${d[key]}`);
+                if(key === 'terrace'){
+                  if(d[key] === false){
+                    //terrace is false, don't show it
+                    return;
+                  }else{
+                    //it has a terrace, change it to display Yes
+                    d[key] = 'Yes';
+                  }
+                }
+
+                if(key === 'interior_square_feet' || key === 'exterior_square_feet'){
+                  var rounded = Math.round(d[key]);
+                  d[key] = rounded;
+                }
+
+                if(key === 'interior_square_meters' || key === 'exterior_square_meters'){
+                  var rounded = Math.round(d[key] * 10) / 10;
+                  d[key] = rounded;
+                }
+
                 var str = key.replace(/_/g, ' ');
                 var title = str.split(' ').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ');
+
+
                 return(
                   <DetailText
                     title={title}

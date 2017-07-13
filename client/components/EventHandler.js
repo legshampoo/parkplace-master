@@ -32,7 +32,7 @@ class EventHandler extends React.Component {
     var sock = io.connect('http://localhost:7770', options);
 
     sock.on('connect', d => {
-      console.log('Socket CONNECTED to Localhost');
+      // console.log('Node Server connected to React Front End via Socket.io');
       sock.emit('request-assets', {
         type: 'residences'
       });
@@ -55,20 +55,21 @@ class EventHandler extends React.Component {
     })
 
     sock.on('connection-established', d => {
+      console.log('Browser connection to node server successful, ready for RFID tags...');
       console.log(d);
     });
 
     sock.on('server-heartbeat', d => {
-      console.log(d);
+      // console.log(d);
     });
 
     sock.on('residence-assets', d => {
-      console.log('RESIDENCE ASSETS UPDATED');
+      // console.log('RESIDENCE ASSETS UPDATED');
       updateResidenceAssets(d);
     });
 
     sock.on('media-assets', d => {
-      console.log('MEDIA ASSETS UPDATED');
+      // console.log('MEDIA ASSETS UPDATED');
       updateMediaAssets(d);
     });
 
@@ -93,22 +94,22 @@ class EventHandler extends React.Component {
 
         if(json.status === 'true'){
           //send lighting command to crestron
-          console.log('Crestron ON');
+          console.log('Crestron Lighting Command: LIGHTS-ON');
           // sock.emit('crestron-command', {
           //   data: JSON.stringify(crestronLightsOn)
           // });
           sock.emit('crestron-command', JSON.stringify(crestronLightsOn));
           // console.log(json.status);
           var tag = json.tag;
-          console.log(`tag: ${tag}`);
+          // console.log(`tag: ${tag}`);
 
           updateCurrentTag(tag);
 
-          console.log('after updateCurrentTag');
+          // console.log('after updateCurrentTag');
           // var tag = this.props.current.currentTag;
 
           var path = handleNewTag(tag);
-          console.log(`path: ${path}`);
+          // console.log(`path: ${path}`);
           // this.context.router.push(path);
           // console.log(path);
           browserHistory.push(path);
@@ -127,18 +128,18 @@ class EventHandler extends React.Component {
           }else if(json.tag === 'ap1'){
             //get the current Unit before clearing it
             unitLED = this.props.folio.ap1;
-            console.log(`${unitLED}`)
+            console.log(`Unit LED: ${unitLED}`);
           }else if(json.tag === 'ap2'){
             //get the current Unit before clearing it
             unitLED = this.props.folio.ap2;
-            console.log(`${unitLED}`)
+            console.log(`Unit LED: ${unitLED}`);
           }
 
 
           var led_id = getLightingId(unitLED);
 
           if(led_id != 0){
-            console.log(`${unitLED} LED OFF: ${led_id}`);
+            // console.log(`${unitLED} LED OFF: ${led_id}`);
             //send command to turn off LED
             lightingControl(led_id, false);
           }else{
@@ -147,7 +148,7 @@ class EventHandler extends React.Component {
 
 
           var path = handleTagRemoved(function(){
-            console.log('Crestron OFF');
+            console.log('Crestron Lighting Command: LIGHTS-OFF');
             // sock.emit('crestron-command', {
             //   data: JSON.stringify(crestronLightsOff)
             // });

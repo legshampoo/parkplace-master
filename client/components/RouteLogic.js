@@ -47,7 +47,7 @@ export function handleNewTag(tag){
 }
 
 export function handleTagRemoved(callback){
-  console.log(`handle tag removed`);
+  // console.log(`handle tag removed`);
   var tags = store.getState().tags;
   var isTagActive = Object.keys(tags).filter(function(key){
     return tags[key] == 'true';
@@ -61,7 +61,7 @@ export function handleTagRemoved(callback){
     console.log('a tag is still active: ' + lastTag);
     updateCurrentTag(lastTag);
     path = handleNewTag(lastTag);
-    console.log(path);
+    // console.log(path);
   }else{
     //if there is no tag on table, go to home path
     // console.log('no tags active, going to home');
@@ -100,7 +100,7 @@ export function checkBothActive(){
   }else{
     bothAlive = false;
   }
-  console.log(`bothAlive: ${bothAlive}`);
+  // console.log(`bothAlive: ${bothAlive}`);
 
   return bothAlive;
 }

@@ -7,7 +7,7 @@ const ip = '192.168.45.124';  //new ip address
 export function lightingControl(id, on){
   // console.log('unit ID: ' + id + ' LED: ' + on);
 
-  console.log(`Sending: ${id} ${on}`);
+  // console.log(`Sending: ${id} ${on}`);
 
   var url = '';
   var state = '';
@@ -38,6 +38,9 @@ export function lightingControl(id, on){
   }
 
   // console.log(`fetching`);
+  console.log(`Sending LED: ${id} ${on}`);
+  console.log(url);
+  
   fetch(url).then(function(response){
     // console.log(`checking response`);
     if(!response.ok){

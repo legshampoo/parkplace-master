@@ -47,11 +47,26 @@ app.get('*', function(req, res){
 //------------------------------
 var waitBeforeRestart = 5000;
 
-//kill chrome
-startup.killBrowser();
+if(process.env.DEBUG_ENV === 'true'){
+  console.log('BROWSER IS IN DEV MODE');
+  console.log('CRESTRON CONNECTION DISABLED');
+}else{
+  console.log('LAUNCHING BROWSER IN PRODUCTION MODE');
+  //kill chrome
+  startup.killBrowser();
 
-//open chrome in kiosk mode in 5 seconds
-setTimeout(startup.openBrowser, waitBeforeRestart);
+  //open chrome in kiosk mode in 5 seconds
+  setTimeout(startup.openBrowser, waitBeforeRestart);
+
+  //----------------------------------
+  //
+  //  TCP Client Messaging to Crestron
+  //
+  //----------------------------------
+  var crestron = require('./Crestron');
+
+  crestron.connect();
+}
 
 
 
@@ -99,7 +114,7 @@ io.on('connection', (socket) => {
   }, 60000);
 
   socket.on('request-assets', (d) => {
-    console.log('client requesting ' + d.type + ' assets');
+    // console.log('client requesting ' + d.type + ' assets');
     if(d.type === 'residences'){
       socket.emit('residence-assets', { data: residenceAssets });
     }else if(d.type === 'media'){
@@ -108,7 +123,11 @@ io.on('connection', (socket) => {
   });
 
   socket.on('crestron-command', (d) => {
-    crestron.send(d);
+    if(process.env.DEBUG_ENV === 'true'){
+      // console.log('DEV MODE: crestron comms disabled');
+    }else{
+      crestron.send(d);
+    }
   })
 
   socket.on('disconnect', (d) => {
@@ -134,7 +153,7 @@ var mediaAssets = {};
 
 //makes a Request for JSON and then sets a timer to repeat indefinitely
 getData.fetchData('residence', function(d){
-  console.log('Sending Residence Assets JSON to Client');
+  // console.log('Sending Residence Assets JSON to Client');
   residenceAssets = JSON.parse(d);
   for(var i = 0; i < registeredSockets.length; i++){
     registeredSockets[i].emit('residence-assets', { data: residenceAssets });
@@ -143,7 +162,7 @@ getData.fetchData('residence', function(d){
 
 //makes a Request for JSON and then sets a timer to repeat indefinitely
 getData.fetchData('media', function(d){
-  console.log('Sending Media Assets JSON to Client');
+  // console.log('Sending Media Assets JSON to Client');
   mediaAssets = JSON.parse(d);
   for(var i = 0; i < registeredSockets.length; i++){
     registeredSockets[i].emit('media-assets', { data: mediaAssets });
@@ -209,14 +228,14 @@ function handleConnection(conn){
 }
 
 
-//----------------------------------
-//
-//  TCP Client Messaging to Crestron
-//
-//----------------------------------
-var crestron = require('./Crestron');
+// //----------------------------------
+// //
+// //  TCP Client Messaging to Crestron
+// //
+// //----------------------------------
+// var crestron = require('./Crestron');
 
-crestron.connect();
+// crestron.connect();
 
 
 
