@@ -195,28 +195,96 @@ export function getFloorplan(unit){
 }
 
 export function formatData(data){
-  // console.log(data);
+  
   var newData = {
     Type: '',
     Bedrooms: '',
     Bathrooms: '',
+    hasTerrace: false,
     Interior: '',
     Exterior: '',
     Price: ''
   }
 
   var interiorDims = '';
+  var exteriorDims = '';
 
   Object.keys(data).map(function(key, index){
+
+    if(key === 'terrace'){
+      if(data[key] === false){
+        newData.hasTerrace = false;
+        return
+      }else{
+        newData.hasTerrace = true;
+        return
+      }
+    }
+
     if(key === 'interior_square_feet'){
-      interiorDims = interiorDims + data[key];
+      var numberFormatted = new Intl.NumberFormat('en', {
+        maximumFractionDigits: 0
+      }).format(data[key]);
+      
+      interiorDims = interiorDims + numberFormatted + ' Sq Ft / ';
+      newData.Interior = interiorDims;
     }
 
     if(key === 'interior_square_meters'){
-      interiorDims = interiorDims + data[key];
+      var numberFormatted = new Intl.NumberFormat('en', {
+        maximumFractionDigits: 1
+      }).format(data[key]);
+      
+      interiorDims = interiorDims + numberFormatted + ' Sq M';
+      newData.Interior = interiorDims;
+    }
+
+    if(!newData.hasTerrace){
+      if(key === 'exterior_square_feet' || key === 'exterior_square_meters'){
+        return
+      }
     }
     
-    newData.Interior = interiorDims;
+    if(key === 'exterior_square_feet'){
+      var numberFormatted = new Intl.NumberFormat('en', {
+        maximumFractionDigits: 0
+      }).format(data[key]);
+      
+      exteriorDims = exteriorDims + numberFormatted + ' Sq Ft / ';
+      newData.Exterior = exteriorDims;
+    }
+
+    if(key === 'exterior_square_meters'){
+      var numberFormatted = new Intl.NumberFormat('en', {
+        maximumFractionDigits: 1
+      }).format(data[key]);
+      exteriorDims = exteriorDims + numberFormatted + ' Sq M';
+      newData.Exterior = exteriorDims;
+    }
+
+    if(key === 'type'){
+      newData.Type = data[key];
+    }
+
+    if(key === 'price'){
+      var formattedPrice = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+      }).format(data[key]);
+      
+      newData.Price = formattedPrice;
+    }
+
+    if(key === 'bedrooms'){
+      newData.Bedrooms = data[key];
+    }
+
+    if(key === 'bathrooms'){
+      newData.Bathrooms = data[key];
+    }
+
   })
 
   return newData;
