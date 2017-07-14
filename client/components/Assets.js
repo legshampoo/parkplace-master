@@ -365,7 +365,10 @@ class Assets extends React.Component {
           <div className='media-container-border-overlay'></div>
         {this.state.mediaGroup === 'Unit' ? this.renderAssets(this.state.residences) : this.renderAssets(this.state.media)}
         </div>
-        <ViewHeader unitId={this.state.mediaGroup == 'Unit' ? getUnitId() : this.state.mediaGroup} />
+        <ViewHeader 
+          unitId={this.state.mediaGroup == 'Unit' ? getUnitId() : this.state.mediaGroup} 
+          compareMode={false}
+        />
         {this.state.mediaGroup == 'Unit' ? this.renderRemoveUnitButton() : '' }
         <NextPageButton showLeft={this.state.showLeftArrow} showRight={this.state.showRightArrow} handleClick={this.changePageIndex} />
         {this.renderControlPanel()}

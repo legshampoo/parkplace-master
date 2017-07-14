@@ -2,13 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class ViewHeader extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
   }
   render(){
+    var styleClass = '';
+    if(this.props.compareMode){
+      styleClass = 'view-header-text-compare';
+    }else{
+      styleClass = 'view-header-text';
+    }
     return(
       <div className='view-header'>
-        <div className='view-header-text'>
+      {/* <div className={styleClass}> */}
+        {/* <div className='view-header-text'> */}
+          <div className={styleClass}>
           {this.props.unitId}
         </div>
       </div>
@@ -17,7 +25,8 @@ class ViewHeader extends React.Component {
 }
 
 ViewHeader.propTypes = {
-  unitId: PropTypes.string.isRequired
+  unitId: PropTypes.string.isRequired,
+  compareMode: PropTypes.bool.isRequired
 }
 
 export default ViewHeader;

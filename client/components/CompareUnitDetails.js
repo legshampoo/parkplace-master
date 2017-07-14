@@ -45,7 +45,7 @@ class CompareUnitDetails extends React.Component {
   render(){
     return(
       <div className='compare-unit-wrapper'>
-        <ViewHeader unitId={this.props.unitId}/>
+        <ViewHeader unitId={this.props.unitId} compareMode={true}/>
         <div className='compare-unit-header'>
           FLOORPLAN
         </div>
