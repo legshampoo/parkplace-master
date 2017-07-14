@@ -193,3 +193,31 @@ export function getFloorplan(unit){
   }
   return floorplanURL;
 }
+
+export function formatData(data){
+  // console.log(data);
+  var newData = {
+    Type: '',
+    Bedrooms: '',
+    Bathrooms: '',
+    Interior: '',
+    Exterior: '',
+    Price: ''
+  }
+
+  var interiorDims = '';
+
+  Object.keys(data).map(function(key, index){
+    if(key === 'interior_square_feet'){
+      interiorDims = interiorDims + data[key];
+    }
+
+    if(key === 'interior_square_meters'){
+      interiorDims = interiorDims + data[key];
+    }
+    
+    newData.Interior = interiorDims;
+  })
+
+  return newData;
+}

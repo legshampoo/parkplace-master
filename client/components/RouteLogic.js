@@ -154,9 +154,9 @@ function handleOneTagActive(ap1Unit, ap2Unit){
 
 export function checkCompareMode(){
   var ap1Unit = store.getState().folio['ap1'];
-  console.log(ap1Unit);
+  // console.log(ap1Unit);
   var ap2Unit = store.getState().folio['ap2'];
-  console.log(ap2Unit);
+  // console.log(ap2Unit);
   if(ap1Unit != '' && ap2Unit != ''){
     return [ap1Unit, ap2Unit];
   }else{

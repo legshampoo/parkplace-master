@@ -56,7 +56,7 @@ class CompareUnits extends React.Component {
     var led_id_unit1 = getLightingId(this.props.folio.ap1);
     var led_id_unit2 = getLightingId(this.props.folio.ap2);
 
-    console.log(`COMPARE MODE: ap1: ${this.props.folio.ap1}, LED ON: ${led_id_unit1} || ap2: ${this.props.folio.ap2}, LED ON: ${led_id_unit2}`);
+    // console.log(`COMPARE MODE: ap1: ${this.props.folio.ap1}, LED ON: ${led_id_unit1} || ap2: ${this.props.folio.ap2}, LED ON: ${led_id_unit2}`);
     lightingControl(led_id_unit1, true);
     lightingControl(led_id_unit2, true);
   }
