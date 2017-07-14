@@ -11,11 +11,7 @@ class AddToFolio extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-    // console.log('got props');
-    // if(this.props.selectedMedia.saved !== nextProps.selectedMedia.saved)
-    // {
-    //        this.renderIcon();
-    // }
+    
   }
 
   renderIcon(){

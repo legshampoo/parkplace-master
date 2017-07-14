@@ -22,17 +22,14 @@ class EventHandler extends React.Component {
   componentDidMount(){
 
     socketConnectCMS();
-    // sendHeartbeat();
 
     var options = {
       reconnection: true,
       reconnectionDelay: 1000
-      // timeout: 5000
     }
     var sock = io.connect('http://localhost:7770', options);
 
     sock.on('connect', d => {
-      // console.log('Node Server connected to React Front End via Socket.io');
       sock.emit('request-assets', {
         type: 'residences'
       });
@@ -43,10 +40,6 @@ class EventHandler extends React.Component {
 
     var heartbeatInterval = 10000;
     setInterval(function(){
-      // var pingMessage = 'browser client heartbeat';
-      // sock.emit('client-ping', {
-      //   data: pingMessage
-      // });
       sock.emit('crestron-command', JSON.stringify(heartbeat));
     }, heartbeatInterval);
 
@@ -90,33 +83,23 @@ class EventHandler extends React.Component {
 
         updateTagStatus(json.tag, json.status)
 
-        // var path = '/';
-
         if(json.status === 'true'){
           //send lighting command to crestron
           console.log('Crestron Lighting Command: LIGHTS-ON');
-          // sock.emit('crestron-command', {
-          //   data: JSON.stringify(crestronLightsOn)
-          // });
+          
           sock.emit('crestron-command', JSON.stringify(crestronLightsOn));
-          // console.log(json.status);
+          
           var tag = json.tag;
-          // console.log(`tag: ${tag}`);
 
           updateCurrentTag(tag);
 
-          // console.log('after updateCurrentTag');
-          // var tag = this.props.current.currentTag;
-
           var path = handleNewTag(tag);
-          // console.log(`path: ${path}`);
-          // this.context.router.push(path);
-          // console.log(path);
+
           browserHistory.push(path);
 
           return;
         }else if(json.status === 'false'){
-          // console.log(`${json.tag}: ${json.status}`);
+          
           var unitLED = '';
 
           if(json.tag === 'am'){
@@ -139,7 +122,6 @@ class EventHandler extends React.Component {
           var led_id = getLightingId(unitLED);
 
           if(led_id != 0){
-            // console.log(`${unitLED} LED OFF: ${led_id}`);
             //send command to turn off LED
             lightingControl(led_id, false);
           }else{
@@ -151,11 +133,6 @@ class EventHandler extends React.Component {
             console.log('Send IDLE command to CMS');
             sendCommand(idle);
 
-            // sock.emit('crestron-command', {
-            //   data: JSON.stringify(crestronLightsOff)
-            // });
-            //send an 'all off' command to LED lights
-
             // lightingControl(all, false);
             console.log('Crestron Lighting Command: LIGHTS-OFF');
             lightingControl_ALL_OFF();
@@ -164,18 +141,6 @@ class EventHandler extends React.Component {
             sock.emit('crestron-command', JSON.stringify(crestronLightsOff));
           });
 
-          // var isTagStillActive = checkTagsLeft();
-          //
-          // if(isTagStillActive){
-          //   console.log('tag is still active');
-          // }else{
-          //   console.log('tag IS NOT still active');
-          // }
-
-
-          //go to path for any remaining token
-          // this.context.router.push(path);
-          // console.log('pushing');
           browserHistory.push(path);
           return;
         }

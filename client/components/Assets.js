@@ -49,9 +49,7 @@ class Assets extends React.Component {
       // console.log(this.state.media);
       // console.log(this.state.residences);
     });
-    // console.log('mounted');
     this.updateProps();
-    // this.changePageIndex(0);
   }
 
   updateProps(){
@@ -76,15 +74,7 @@ class Assets extends React.Component {
           unitLED = this.props.folio.ap2;
         }
 
-        // console.log(`UnitLED: ${unitLED}`);
-        // }else if(tag === 'ap1' || tag === 'ap2'){
-        //   unitLED = this.props.current.currentUnit;
-        //   console.log(`UnitLED: ${unitLED}`);
-        // }
-
         var led_id = getLightingId(unitLED);
-        //send request to LED lighting API
-        // console.log(`${unitLED} LED On: ${led_id}`);
 
         if(led_id != 0){
           lightingControl(led_id, true);
@@ -98,7 +88,6 @@ class Assets extends React.Component {
         unitLED = 'Amenities';
         var led_id = getLightingId(unitLED);
 
-        // console.log(`${unitLED} LED ON: ${led_id}`);
         lightingControl(led_id, true);
         break;
       case 'n':
@@ -129,12 +118,6 @@ class Assets extends React.Component {
   }
 
   componentDidUpdate() {
-    //WTF WAS THIS ABOUT??!!
-    // if(this.state.locationPathname !== this.props.location.pathname) {
-    //   console.log(this.props.location, this.props.match)
-    //   console.log('did update');
-    //   this.updateProps();
-    // }
     if(this.state.previousTag !== this.props.current.currentTag) {
       // console.log(this.props.location, this.props.match)
       this.setState({ previousTag: this.props.current.currentTag }, function(){
@@ -142,7 +125,6 @@ class Assets extends React.Component {
         this.updateProps();
       });
     }
-    // this.updateProps();
   }
 
 
@@ -159,23 +141,18 @@ class Assets extends React.Component {
     if(index <= 0){
       index = 0;
       this.setState({ showLeftArrow: false }, function(){
-        // console.log('hide left arrow');
       });
     }else{
       this.setState({ showLeftArrow: true }, function(){
-        // console.log('show left arrow');
       });
     }
 
     var dataSet = {};
     if(this.state.mediaGroup === 'Unit'){
       var unit = getUnitId();
-      // dataSet = getAssets(residence, unit).media;  //ORIGINAL
       dataSet = getAssets(this.state.residences, unit).media;
     }else{
-      // var d = getAssets(media, this.state.mediaGroup);  //ORIGINAL
       var d = getAssets(this.state.media, this.state.mediaGroup);
-      // console.log(`mediaGroup: ${this.state.mediaGroup}`);
       dataSet = combineAssets(d, this.state.mediaGroup);
     }
 
@@ -204,8 +181,6 @@ class Assets extends React.Component {
 
   selectMedia(media, type){
     var msg = new assetSelection();
-
-    // media.saved = false;
 
     this.setState({
       selectedMedia: media,
@@ -264,7 +239,6 @@ class Assets extends React.Component {
   }
 
   sendControlMessage(cmd){
-    // console.log('sending control panel command...');
     //send control panel command to CMS
     sendCommand(cmd);
 
@@ -319,10 +293,8 @@ class Assets extends React.Component {
     assignUnitToToken(currentTag, '');
     var path = currentTag;
     let history = browserHistory.getHistoryList();
-    // console.log(history);
 
-    // console.log(`last path: ${history[history.length - 2]}`);
-
+    //determine which path to push back to
     if(history[history.length - 2] === '/'
       || history[history.length - 2] === '/assets/n'
       || history[history.length - 2] === '/assets/am'
