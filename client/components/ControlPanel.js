@@ -83,7 +83,7 @@ class ControlPanel extends React.Component {
 
   renderBlankPanel(){
     return(
-      <div className='control-panel-basic'>
+      <div className='control-panel-container'>
       </div>
     )
   }
@@ -91,14 +91,14 @@ class ControlPanel extends React.Component {
   renderPhotoControls(){
     if(this.props.zoom){
       return (
-        <div className='control-panel-groups'>
+        <div className='control-panel-container'>
           <AddToFolio
             message={addToFolio}
             selectedMedia={this.props.selectedMedia}
             add={this.handleAddToFolio}
             saved={this.props.selectedMedia.saved}
           />
-          <div className='control-panel-right'>
+          <div className='control-panel-left'> 
             <ControlButton
               message={fitHorizontal}
               name='fill-horizontal'
@@ -109,8 +109,8 @@ class ControlPanel extends React.Component {
               name='fill-vertical'
               icon={require('../assets/icons/up_down_arrow.png')}
               handleClick={this.props.handleClick.bind(this)}/>
-          </div>
-          <div className='control-panel-right'>
+          </div> 
+          <div className='control-panel-right'> 
             <ControlButton
               message={panRight}
               name='pan-left'
@@ -126,12 +126,12 @@ class ControlPanel extends React.Component {
               name='pan-right'
               icon={require('../assets/icons/right_arrow.png')}
               handleClick={this.props.handleClick.bind(this)}/>
-          </div>
+          </div> 
         </div>
       )
     }else{
       return (
-        <div className='control-panel-groups'>
+        <div className='control-panel-container'>
           <AddToFolio
             message={addToFolio}
             selectedMedia={this.props.selectedMedia}
@@ -145,28 +145,28 @@ class ControlPanel extends React.Component {
 
   renderVideoControls(){
     return(
-      <div className='control-panel-groups'>
+      <div className='control-panel-container'>
         <AddToFolio
           message={addToFolio}
           add={this.handleAddToFolio}
           selectedMedia={this.props.selectedMedia}
           saved={this.props.selectedMedia.saved}
         />
-        <div className='control-panel-left'>
+        <div className='control-panel-left'> 
           <ControlButton
             message={resume}
             name='play'
             icon={this.state.videoPlay ? require('../assets/icons/pause.png') : require('../assets/icons/play.png')}
             // handleClick={this.props.handleClick.bind(this)}/>
             handleClick={this.videoPlay.bind(this)}/>
-        </div>
-        <div className='control-panel-right'>
+          </div> 
+          <div className='control-panel-right'> 
           <ControlButton
             message={rewind}
             name='rewind'
             icon={require('../assets/icons/restart.png')}
             handleClick={this.props.handleClick.bind(this)}/>
-        </div>
+        </div> 
       </div>
     )
   }

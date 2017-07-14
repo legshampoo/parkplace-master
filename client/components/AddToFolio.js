@@ -28,7 +28,7 @@ class AddToFolio extends React.Component{
   render(){
     return(
       <div
-        className='add-to-folio-button'
+        className='add-to-folio-button' 
         onClick={(e) => this.props.add(this.props.selectedMedia)}>
         {this.renderIcon()}
       </div>
