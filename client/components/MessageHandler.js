@@ -187,6 +187,10 @@ export var rewind = {
   'to': 'wall'
 }
 
+export var idle = {
+  'command': 'idle'
+}
+
 export function assetSelection() {
   this.command = 'select-asset',
   this.to = 'wall',
@@ -209,3 +213,4 @@ export var heartbeat = {
   'status': 'alive',
   'conductor': 'connected'
 }
+

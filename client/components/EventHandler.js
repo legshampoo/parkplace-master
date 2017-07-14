@@ -7,7 +7,7 @@ import { updateTagStatus, updateCurrentTag, updateCurrentUnit, updateResidenceAs
 import * as browserHistory from './History';
 
 import { handleNewTag, handleTagRemoved, checkTagsLeft } from './RouteLogic';
-import { socketConnectCMS, openSocketCMS, crestronLightsOn, crestronLightsOff, sendHeartbeat, heartbeat } from './MessageHandler';
+import { socketConnectCMS, openSocketCMS, crestronLightsOn, crestronLightsOff, sendHeartbeat, heartbeat, sendCommand, idle } from './MessageHandler';
 import { lightingControl, lightingControl_ALL_OFF } from './LightingControls';
 import { getLightingId } from './AssetManager';
 
@@ -148,14 +148,18 @@ class EventHandler extends React.Component {
 
 
           var path = handleTagRemoved(function(){
-            console.log('Crestron Lighting Command: LIGHTS-OFF');
+            console.log('Send IDLE command to CMS');
+            sendCommand(idle);
+
             // sock.emit('crestron-command', {
             //   data: JSON.stringify(crestronLightsOff)
             // });
             //send an 'all off' command to LED lights
 
             // lightingControl(all, false);
+            console.log('Crestron Lighting Command: LIGHTS-OFF');
             lightingControl_ALL_OFF();
+
 
             sock.emit('crestron-command', JSON.stringify(crestronLightsOff));
           });
