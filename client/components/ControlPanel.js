@@ -43,18 +43,32 @@ class ControlPanel extends React.Component {
 
   handleAddToFolio(media){
     // console.log(media);
-    var mediaPath = '';
-    if(this.props.mediaGroup === 'Unit' || this.props.mediaGroup === 'Unit_Penthouse'){
-      mediaPath = media.full_screen;
-    }else{
-      mediaPath = media.wall;
-    }
+    // var mediaPath = '';
+    // console.log('ADDDDDDDDDDD');
+    // console.log(media);
+    // if(media.ipad === ''){
+    //   // console.log('no ipad path');
+    //   mediaPath = '/no/path/exists/here';
+    // }else{
+    //   mediaPath = media.ipad;
+    // }
+
+    // if(this.props.mediaGroup === 'Unit' || this.props.mediaGroup === 'Unit_Penthouse'){
+    //   // mediaPath = media.full_screen;
+    //   mediaPath = media.ipad;
+    // }else{
+    //   console.log('not penthouse');
+    //   // mediaPath = media.wall;
+    //   mediaPath = media.ipad;
+    // }
+    
+    var mediaPath = media.ipad;
 
     if(!media.saved){
       //add to folio, return with the folio id for later use
       var _this = this;
       addToFolio(mediaPath, function(id){
-        console.log(`folio id: ${id}`);
+        console.log(`(Add to folio) folio id: ${id}`);
         media.folio_id = id;
         media.saved = true;
         _this.updateFolioStatus(media);
@@ -62,7 +76,7 @@ class ControlPanel extends React.Component {
 
     }else{
       var _this = this;
-      console.log(`removing ${media.folio_id} from folio`);
+      console.log(`(Remove from folio) folio id: ${media.folio_id}`);
       removeFromFolio(media, function(id){
         console.log(`${id} removed from folio success`);
         // media.saved = !media.saved;
@@ -77,7 +91,7 @@ class ControlPanel extends React.Component {
   updateFolioStatus(media){
     // media.saved = !media.saved;
     this.setState({ selectedMedia: media }, function(){
-      console.log('finished updating media status');
+      // console.log('finished updating media status');
     });
   }
 
